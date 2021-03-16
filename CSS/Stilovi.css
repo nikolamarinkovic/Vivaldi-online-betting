@@ -1,10 +1,49 @@
-#logo{
-    float: left;
+.logo{
+    flex-basis: 23%;
 }
-#moto{
-    vertical-align: middle;
-    display: block;
+.moto{
+    font-size: 15px;
+    text-align: left;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
 }
-#header{
-    display: block;
+.header{
+    display: flex;
+    align-items: center;
+}
+.prijava{
+    text-align: center;
+}
+td:hover{
+    background-color: red;
+}
+table{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+th,td{
+    border:2px solid black ;
+    color: black;
+    background-color: lightgreen;
+}
+a:visited{
+    color: blue;
+}
+a:link{
+    color:blue;
+}
+a:hover{
+    font-size: 17px;
+    color:purple;
+}
+.dobrodosli{
+    text-align: center;
+    vertical-align: bottom;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+body{
+    background-color: rgba(0, 255, 255, 0.253);
 }

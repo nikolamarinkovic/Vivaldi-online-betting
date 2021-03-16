@@ -1,18 +1,21 @@
 .logo{
-    flex-basis: 23%;
+    float:left
 }
 .moto{
     font-size: 15px;
-    text-align: left;
+    text-align: center;
     font-style: italic;
     font-family: 'Courier New', Courier, monospace;
+    margin-left: 50px;
+
 }
 .header{
     display: flex;
     align-items: center;
 }
 .prijava{
-    text-align: center;
+    text-align: middle;
+    margin-left: 70px;
 }
 td:hover{
     background-color: red;
@@ -43,6 +46,7 @@ a:hover{
     font-size: 50px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+    margin-top: 150px;
 }
 body{
     background-color: rgba(0, 255, 255, 0.253);

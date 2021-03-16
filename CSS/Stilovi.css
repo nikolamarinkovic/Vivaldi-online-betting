@@ -1,3 +1,10 @@
 #logo{
-    vertical-align:middle;
+    float: left;
+}
+#moto{
+    vertical-align: middle;
+    display: block;
+}
+#header{
+    display: block;
 }

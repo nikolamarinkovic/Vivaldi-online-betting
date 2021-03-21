@@ -280,21 +280,24 @@ body{
 .profil .unos{
     display: inline;
 }
-.profil table{
+table{
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 20px;
     width: 100%;
     margin-bottom: 20px;
 }
-.profil th, td{
+th, td{
     border: 1px solid #ffffff;
 }
-.profil th{
+th{
     background-color: #D84C00;
 }
-.profil tr:nth-child(even) {
+tr:nth-child(even) {
     background-color: #9b9b9b;
 }
-.profil tr:nth-child(odd) {
+tr:nth-child(odd) {
     background-color: #cdcdcd;
+}
+.uvid p{
+    display: inline;
 }

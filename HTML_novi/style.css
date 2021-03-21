@@ -140,7 +140,10 @@ body{
     padding-top: 10px;
 }
 .menu li:hover{
-    background-color: #712700;
+    background-color: #ecc375
+}
+.menu a:hover{
+	color:black
 }
 .body{
     width: 80%;

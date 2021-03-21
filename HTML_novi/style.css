@@ -271,3 +271,30 @@ body{
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
 }
+.naslov{
+    margin-bottom: 20px;
+}
+.profil p{
+    margin: 0px;
+}
+.profil .unos{
+    display: inline;
+}
+.profil table{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.profil th, td{
+    border: 1px solid #ffffff;
+}
+.profil th{
+    background-color: #D84C00;
+}
+.profil tr:nth-child(even) {
+    background-color: #9b9b9b;
+}
+.profil tr:nth-child(odd) {
+    background-color: #cdcdcd;
+}

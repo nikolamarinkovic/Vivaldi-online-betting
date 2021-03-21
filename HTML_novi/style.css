@@ -193,13 +193,13 @@ body{
     background-color: #1f2124;
     height: 30px;
 }
-.registracija{
+.registracija, .dodavanje_tima, .dod_mod_amd{
     margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.registracija input{
+.registracija input, .dodavanje_tima input, .dod_mod_amd input{
     margin-bottom: 20px;
 }
 .rulet{
@@ -266,4 +266,8 @@ body{
 }
 .utakmica input, .domacin, .gost{
     margin-bottom: 20px;
+}
+.dod_mod_amd div{
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
 }

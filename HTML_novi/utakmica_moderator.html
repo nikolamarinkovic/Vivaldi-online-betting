@@ -35,20 +35,29 @@
             <li><a href="profil.html">Profil</a></li>
         </ul>
         <div class="body">
-            <h1 class="naslov">Prijava</h1>
-            <div class="registracija" action="pocetna_korisnik.html">
-                <input type="text" placeholder="Korisnicko ime">
-                <input type="password" placeholder="Lozinka">
-                <form action="pocetna_korisnik.html">
-                    <input type="submit" value="Korisnik">
-                </form>
-                <form action="pocetna_moderator.html">
-                    <input type="submit" value="Moderator">
-                </form>
-                <form action="pocetna_administrator.html">
-                    <input type="submit" value="Administrator">
-                </form>
-            </div>
+            <h1 class="naslov">Dodavanje utakmice</h1>
+            <form class="utakmica" action="pocetna_moderator.html">
+                <div class="domacin">
+                    <h3>Domacin:</h3>
+                    <select name="domacin" id="">
+                        <option value="Partizan">Partizan</option>
+                        <option value="Crvena Zvezda">Crvena Zvezda</option>
+                        <option value="Hajduk">Hajduk</option>
+                    </select>
+                </div>
+                <div class="gost">
+                <h3>Gost:</h3>
+                    <select name="domacin" id="">
+                        <option value="Partizan">Partizan</option>
+                        <option value="Crvena Zvezda">Crvena Zvezda</option>
+                        <option value="Hajduk">Hajduk</option>
+                    </select>
+                </div>
+                <input type="number" placeholder="1">
+                <input type="number" placeholder="X">
+                <input type="number" placeholder="2">
+                <input type="submit">
+            </form>
         </div>
         <div class="footer">
 

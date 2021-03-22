@@ -140,10 +140,7 @@ body{
     padding-top: 10px;
 }
 .menu li:hover{
-    background-color: #ecc375
-}
-.menu a:hover{
-	color:black
+    background-color: #712700
 }
 .body{
     width: 80%;
@@ -300,4 +297,63 @@ tr:nth-child(odd) {
 }
 .uvid p{
     display: inline;
+}
+td input{
+    display: inline-block;
+    width: auto;
+}
+.sport_tiketi{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.sport_tiketi p{
+    margin: 0px;
+}
+.sport_tiketi div{
+    width: 50%;
+}
+.lucky6{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lucky6 p{
+    margin: 0px;
+}
+.lucky6 .uplata{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    background-color: blueviolet;
+}
+.lucky6 .uplata div, .lucky6 .uplata input{
+    display: block;
+    margin-right: 10px;
+    margin-left: 10px;  
+}
+.lucky6 .uplata .polja1 input{
+    /*width: 30px; */
+}
+.lucky6 .uplata .polja2 input{
+    margin: 0px;  
+}
+.tabela1 td{
+    text-align: center;
+    width: 50px;
+}
+.tabela2 td{
+    text-align: center;
+    width: 50px;
+}
+.tabela2 p{
+    display: block;
+    color: black;
+    margin: 0px;
 }

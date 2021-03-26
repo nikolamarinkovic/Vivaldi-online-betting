@@ -85,15 +85,21 @@ body{
 .prvi_red{
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
-    text-align: left;  
+    text-align: center;  
 }
 .drugi_red{
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
-    text-align: right;
+    text-align: center;
 }
 .prvi_red,.drugi_red{
     padding: 10px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+}
+.moto a{
+    text-decoration: none;
 }
 .reg_pri li{  
     background-color: #F0C574;
@@ -109,10 +115,13 @@ body{
 }
 .reg_pri a{
     font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
+    color: black;
     text-decoration: none;
     display: block;
     padding-top: 7%;
+}
+.reg_pri a:hover{
+    color: white;
 }
 .logo img{
     margin: 3.5%;
@@ -126,11 +135,12 @@ body{
     justify-content: space-between;
     align-items: stretch;
 }
-.menu li{
-    background-color: #D84C00;
+.menu li{ /*D84C00*/
+    background-color: #FF1200;
     height: calc(100%-1px);
     width: calc(100%);
     text-align: center;
+    
 }
 .menu a{
     font-family: Arial, Helvetica, sans-serif;
@@ -139,8 +149,11 @@ body{
     display: block;
     padding-top: 10px;
 }
+
 .menu li:hover{
-    background-color: #712700
+    background-color: #712700;
+    font-size: 18px;
+    font-style: bold;
 }
 .body{
     width: 80%;
@@ -190,14 +203,33 @@ body{
     background-color: #1f2124;
     height: 30px;
 }
+.registracija p{
+    text-align: center;
+}
 .registracija, .dodavanje_tima, .dod_mod_amd{
-    margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.registracija input, .dodavanje_tima input, .dod_mod_amd input{
+.dodavanje_tima input, .dod_mod_amd input{
     margin-bottom: 20px;
+}
+
+.registracija td{
+    align-items: center;
+    background-color: #25282f;
+    border: none;
+    color: white;
+}
+.leva_kolona p{
+    text-align: right;
+}
+.desna_kolona input{ 
+    text-align: left;
+}
+.submit_registracija{
+    text-align: center;
+    padding-top: 50px;
 }
 .rulet{
     display: flex;

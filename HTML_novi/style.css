@@ -376,6 +376,86 @@ td input{
 .lucky6 .uplata .polja2 input{
     margin: 0px;  
 }
+
+.slot{
+    display: flex;
+    flex-direction: column;
+}
+
+.upper_slot_wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.slot_tokeni {
+    width: 40%;
+    font-size: 23px;
+}
+.slot_tokeni td{
+    padding-top: 10px;
+}
+.slot_tokeni input{
+    font-size: 20px;
+}
+.prvi_red_slot_ulog p{
+    font-size: 20px;
+    text-align: center;
+}
+.slot_ulog{
+    width: 40%;
+}
+.slot_ulog td{
+    width: 50px;
+    font-size: 20px;
+}
+.slot_ulog input{
+    font-size: 20px;
+}
+.slot_ulog input[type='radio']{
+    height: 20px;
+    width: 20px;
+}
+.poslednji_red_slot_ulog{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.slot_bar img{
+    width: 500px;
+    height: 500px;
+    padding-left: calc(500px - 45%);
+    padding-right: 10%;
+}
+.poslednji_red_slot_tokeni{
+    padding-top: 20px;
+    text-align: center;
+}
+.desna_kolona_slot{
+    text-decoration: underline;
+}
+.slot td{
+    background-color: #25282f;
+    color: white;
+    border: none;
+}
+
+.pravila_slot{
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.button_play_slot input{
+    background-color: red;
+    width: 150px;
+    height: 75px;
+    margin-left: calc(50% - 70px);
+    margin-top: 20px;
+    font-size: 35px;
+}
 .tabela1 td{
     text-align: center;
     width: 50px;

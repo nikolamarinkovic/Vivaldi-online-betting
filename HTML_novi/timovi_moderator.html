@@ -36,7 +36,7 @@
             <li><a href="profil_moderator.html">Profil</a></li>
         </ul>
         <ul class="menu">
-            <li><a href="sport_moderator.html">Dodavanje utakmice</a></li>
+            <li><a href="utakmica_moderator.html">Dodavanje utakmice</a></li>
             <li><a href="kvote_moderator.html">Azuriranje kvota</a></li>
             <li><a href="timovi_moderator.html">Dodavanje tima</a></li>
         </ul>
@@ -44,8 +44,23 @@
             <h1 class="naslov">Dodavanje tima</h1>
             <hr>
             <form class="dodavanje_tima" action="pocetna_korisnik.html">
-                <input type="text" placeholder="Ime tima">
-                <input type="submit">
+                <table>
+                    <tr>
+                        <td class = "leva_kolona_tim">
+                            <p>Ime Tima: </p>
+                        </td>
+                        <td class = "desna_kolona_tim">
+                            <input type="text" placeholder="Ime tima" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class = "submit_tim">
+                            <input type="submit">
+                        </td>
+                    </tr>
+                </table>
+                
+                
             </form>
         </div>
         <div class="footer">

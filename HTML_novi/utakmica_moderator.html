@@ -26,7 +26,6 @@
             </ul>
 
         </div>
-
         <ul class="menu">
             <li><a href="pocetna_moderator.html">Pocetna</a></li>
             <li><a href="rulet_moderator.html">Rulet</a></li>
@@ -36,7 +35,7 @@
             <li><a href="profil_moderator.html">Profil</a></li>
         </ul>
         <ul class="menu">
-            <li><a href="sport_moderator.html">Dodavanje utakmice</a></li>
+            <li><a href="utakmica_moderator.html">Dodavanje utakmice</a></li>
             <li><a href="kvote_moderator.html">Azuriranje kvota</a></li>
             <li><a href="timovi_moderator.html">Dodavanje tima</a></li>
         </ul>
@@ -60,9 +59,14 @@
                         <option value="Hajduk">Hajduk</option>
                     </select>
                 </div>
-                <input type="number" placeholder="1">
-                <input type="number" placeholder="X">
-                <input type="number" placeholder="2">
+                <h3>Kvota za rezultat 1:</h3>
+                <input type="text" placeholder="1" required>
+                <h3>Kvota za rezultat X:</h3>
+                <input type="text" placeholder="X" required>
+                <h3>Kvota za rezultat 2:</h3>
+                <input type="text" placeholder="2" required>
+                <h3>Vreme:</h3>
+                <input type="datetime-local" required>
                 <input type="submit">
             </form>
         </div>

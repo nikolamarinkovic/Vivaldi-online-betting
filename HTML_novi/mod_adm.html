@@ -11,7 +11,7 @@
     <div class="wrapper">
         <div class="header">
             <div class="logo">
-                <a href="index.html">
+                <a href="pocetna_administrator.html">
                     <img src="slike/logo.png" alt="logo">
                 </a>
             </div>
@@ -47,11 +47,56 @@
             <h1 class="naslov">Dodavanje moderatora/administratora</h1>
             <hr>
             <form class="dod_mod_amd" action="pocetna_korisnik.html">
-                <input type="text" placeholder="Korisnicko ime">
-                <input type="password" placeholder="Lozinka">
-                <input type="text" placeholder="Ime">
-                <input type="text" placeholder="Prezime">
-                <input type="number" placeholder="JMBG">
+                <table>
+                    <tr>
+                        <td class = "leva_kolona_mod_adm">
+                            <p>Korisnicko ime:</p>
+                        </td>
+                        <td class = "desna_kolona_mod_adm">
+                            <input type="text" placeholder="Korisnicko ime" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = "leva_kolona_mod_adm">
+                            <p>Lozinka:</p>
+                        </td>
+                        <td class = "desna_kolona_mod_adm">
+                            <input type="password" placeholder="Lozinka" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = "leva_kolona_mod_adm">
+                            <p>Potvrdite lozinku:</p>
+                        </td>
+                        <td class = "desna_kolona_mod_adm">
+                            <input type="password" placeholder="Potvrdite lozinku" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = "leva_kolona_mod_adm">
+                            <p>Ime:</p>
+                        </td>
+                        <td class = "desna_kolona_mod_adm">
+                            <input type="text" placeholder="Ime" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = "leva_kolona_mod_adm">
+                            <p>Prezime:</p>
+                        </td>
+                        <td class = "desna_kolona_mod_adm">
+                            <input type="text" placeholder="Prezime" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = "leva_kolona_mod_adm">
+                            <p>JMBG:</p>
+                        </td>
+                        <td class = "desna_kolona_mod_adm">
+                            <input type="text" placeholder="JMBG" required>
+                        </td>
+                    </tr>
+                </table>
                 <div>
                     Tip:
                     <input name="vrsta" type="radio" checked>Moderator

@@ -215,6 +215,30 @@ body{
     margin-bottom: 20px;
 }
 
+.dodavanje_tima table{
+    width: 300px;
+}
+.dodavanje_tima td{
+    border:none;
+    background-color: #25282f;
+    color: white;
+    align-items: center;
+}
+
+.leva_kolona_tim p{
+    text-align: right;
+    padding-right: 5px;
+}
+
+.desna_kolona_tim input{
+    text-align: left;
+}
+
+.submit_tim{
+    text-align: center;
+    padding-right: 23px;
+}
+
 .registracija td{
     align-items: center;
     background-color: #25282f;
@@ -300,6 +324,15 @@ body{
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.dod_mod_amd td{
+    background-color: #25282f;
+    border: none;
+}
+
+.leva_kolona_mod_adm p{
+    text-align: right;
+}
 .naslov{
     margin-bottom: 20px;
 }
@@ -330,6 +363,9 @@ tr:nth-child(odd) {
 .uvid p{
     display: inline;
 }
+
+
+
 td input{
     display: inline-block;
     width: auto;
@@ -363,7 +399,6 @@ td input{
     width: 100%;
     flex-direction: row;
     justify-content: center;
-    background-color: blueviolet;
 }
 .lucky6 .uplata div, .lucky6 .uplata input{
     display: block;
@@ -373,6 +408,11 @@ td input{
 .lucky6 .uplata .polja1 input{
     /*width: 30px; */
 }
+.polja1 td{
+    border: none;
+    background-color: #25282f;
+}
+
 .lucky6 .uplata .polja2 input{
     margin: 0px;  
 }
@@ -422,9 +462,9 @@ td input{
 }
 
 .slot_bar img{
-    width: 500px;
-    height: 500px;
-    padding-left: calc(500px - 45%);
+    width: 350px;
+    height: 350px;
+    padding-left: calc(550px - 45%);
     padding-right: 10%;
 }
 .poslednji_red_slot_tokeni{
@@ -441,11 +481,7 @@ td input{
 }
 
 .pravila_slot{
-    text-align: center;
-    padding-left: 5%;
-    padding-right: 5%;
     margin-top: 20px;
-    font-size: 30px;
 }
 
 .button_play_slot input{
@@ -468,4 +504,8 @@ td input{
     display: block;
     color: black;
     margin: 0px;
+}
+
+.kvote td{
+    width: 100px;
 }

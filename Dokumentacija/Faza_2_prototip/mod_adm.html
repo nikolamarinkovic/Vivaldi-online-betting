@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivaldi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <a href="pocetna_administrator.html">
+                    <img src="slike/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="moto">
+                <a href="https://www.youtube.com/watch?v=BudvCadi5YA" target="_blank">
+                <p class="prvi_red">"Kockar se krije i cuci u svakome od nas...</p>
+                <p class="drugi_red">... i ceka pravi cas" - Djordje Balasevic</p>
+                </a>
+            </div>
+            <ul class="reg_pri">
+                <li><a href="index.html">Odjava</a></li>
+            </ul>
+
+        </div>
+        <ul class="menu">
+            <li><a href="pocetna_administrator.html">Pocetna</a></li>
+            <li><a href="rulet_administrator.html">Rulet</a></li>
+            <li><a href="slot_administrator.html">Slot masine</a></li>
+            <li><a href="lucky6_administrator.html">Lucky 6</a></li>
+            <li><a href="sport_administrator.html">Sportska kladjenja</a></li>
+            <li><a href="profil_administrator.html">Profil</a></li>
+        </ul>
+        <ul class="menu">
+            <li><a href="utakmica_administrator.html">Dodavanje utakmice</a></li>
+            <li><a href="kvote_administrator.html">Azuriranje kvota</a></li>
+            <li><a href="timovi_administrator.html">Dodavanje tima</a></li>
+        </ul>
+        <ul class="menu">
+            <li><a href="mod_adm.html">Dodavanje moderatora/administratora</a></li>
+            <li><a href="uvid_administrator.html">Uvid u korisnike</a></li>
+        </ul>
+        <div class="body">
+            <h1 class="naslov">Dodavanje moderatora/administratora</h1>
+            <hr>
+            <form class="dod_mod_amd" action="pocetna_korisnik.html">
+                <table>
+                    <tr>
+                        <td class = "leva_kolona_mod_adm">
+                            <p>Korisnicko ime:</p>
+                        </td>
+                        <td class = "desna_kolona_mod_adm">
+                            <input type="text" placeholder="Korisnicko ime" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = "leva_kolona_mod_adm">
+                            <p>Lozinka:</p>
+                        </td>
+                        <td class = "desna_kolona_mod_adm">
+                            <input type="password" placeholder="Lozinka" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = "leva_kolona_mod_adm">
+                            <p>Potvrdite lozinku:</p>
+                        </td>
+                        <td class = "desna_kolona_mod_adm">
+                            <input type="password" placeholder="Potvrdite lozinku" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = "leva_kolona_mod_adm">
+                            <p>Ime:</p>
+                        </td>
+                        <td class = "desna_kolona_mod_adm">
+                            <input type="text" placeholder="Ime" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = "leva_kolona_mod_adm">
+                            <p>Prezime:</p>
+                        </td>
+                        <td class = "desna_kolona_mod_adm">
+                            <input type="text" placeholder="Prezime" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = "leva_kolona_mod_adm">
+                            <p>JMBG:</p>
+                        </td>
+                        <td class = "desna_kolona_mod_adm">
+                            <input type="text" placeholder="JMBG" required>
+                        </td>
+                    </tr>
+                </table>
+                <div>
+                    Tip:
+                    <input name="vrsta" type="radio" checked>Moderator
+                    <input name="vrsta" type="radio">Administrator
+                </div>
+                <input type="submit">
+            </form>
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+</body>
+</html>

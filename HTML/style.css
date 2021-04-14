@@ -509,3 +509,7 @@ td input{
 .kvote td{
     width: 100px;
 }
+.filter label{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}

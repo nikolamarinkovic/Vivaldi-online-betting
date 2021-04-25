@@ -2618,6 +2618,123 @@
 									"headNameLabel": {
 										"$ref": "AAAAAAF5A8TtJ31CKi0="
 									}
+								},
+								{
+									"_type": "UMLNoteView",
+									"_id": "AAAAAAF5CnYgM3s2F44=",
+									"_parent": {
+										"$ref": "AAAAAAF5A3gdTXd+yaI="
+									},
+									"font": "Arial;13;0",
+									"left": 1384,
+									"top": 32,
+									"width": 80,
+									"height": 51,
+									"text": "Moze da stoji ulog i dobitak"
+								},
+								{
+									"_type": "UMLNoteView",
+									"_id": "AAAAAAF5Cnct+Hs6+5s=",
+									"_parent": {
+										"$ref": "AAAAAAF5A3gdTXd+yaI="
+									},
+									"font": "Arial;13;0",
+									"left": 1080,
+									"top": 344,
+									"width": 74.9072265625,
+									"height": 129,
+									"text": "Igra u nazivima je suvisna posto vec imamo npr tikerRulet"
+								},
+								{
+									"_type": "UMLNoteView",
+									"_id": "AAAAAAF5CnpXFXs/OVs=",
+									"_parent": {
+										"$ref": "AAAAAAF5A3gdTXd+yaI="
+									},
+									"font": "Arial;13;0",
+									"left": 144,
+									"top": 280,
+									"width": 71.29541015625,
+									"height": 77,
+									"text": "Za korisnika fali stanje tokena"
+								},
+								{
+									"_type": "UMLTextView",
+									"_id": "AAAAAAF5CntWk3tE0Tg=",
+									"_parent": {
+										"$ref": "AAAAAAF5A3gdTXd+yaI="
+									},
+									"font": "Arial;13;0",
+									"left": 608,
+									"top": 72,
+									"width": 75.76806640625,
+									"height": 142,
+									"text": "Mozda je suvisan IdTiketRul jer idKor i IdIgraRul jedinstveno odredjuju tiket"
+								},
+								{
+									"_type": "UMLNoteView",
+									"_id": "AAAAAAF5CpKZ/3tTKyo=",
+									"_parent": {
+										"$ref": "AAAAAAF5A3gdTXd+yaI="
+									},
+									"font": "Arial;13;0",
+									"left": 1232,
+									"top": 480,
+									"width": 71.30810546875,
+									"height": 90,
+									"text": "Dodati i kao string izvucene brojeve redom "
+								},
+								{
+									"_type": "UMLNoteView",
+									"_id": "AAAAAAF5CpiehntZBg0=",
+									"_parent": {
+										"$ref": "AAAAAAF5A3gdTXd+yaI="
+									},
+									"font": "Arial;13;0",
+									"left": 624,
+									"top": 520,
+									"width": 90.814453125,
+									"height": 51,
+									"text": "Kombinacija umesto brojevi"
+								},
+								{
+									"_type": "UMLNoteView",
+									"_id": "AAAAAAF5Cps5zHtjAX0=",
+									"_parent": {
+										"$ref": "AAAAAAF5A3gdTXd+yaI="
+									},
+									"font": "Arial;13;0",
+									"left": 880,
+									"top": 464,
+									"width": 85.76806640625,
+									"height": 142,
+									"text": "Mozda je suvisan IdTiketRul jer idKor i IdIgraRul jedinstveno odredjuju tiket"
+								},
+								{
+									"_type": "UMLNoteView",
+									"_id": "AAAAAAF5Cp1gHnto1s8=",
+									"_parent": {
+										"$ref": "AAAAAAF5A3gdTXd+yaI="
+									},
+									"font": "Arial;13;0",
+									"left": 648,
+									"top": 640,
+									"width": 70,
+									"height": 142,
+									"text": "Umesto prosao da bude stanje koje ce biti int i to su aktivan, dobitan i gubitan"
+								},
+								{
+									"_type": "UMLNoteView",
+									"_id": "AAAAAAF5CqCdi3tu8es=",
+									"_parent": {
+										"$ref": "AAAAAAF5A3gdTXd+yaI="
+									},
+									"font": "Arial;13;0",
+									"left": 432,
+									"top": 688,
+									"width": 70,
+									"height": 77,
+									"text": "Umesto tipa opklade konacan ishod "
 								}
 							]
 						},

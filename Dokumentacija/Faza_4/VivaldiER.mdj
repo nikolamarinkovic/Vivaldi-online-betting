@@ -349,13 +349,28 @@
 													"top": 358,
 													"width": 183,
 													"height": 13
+												},
+												{
+													"_type": "ERDColumnView",
+													"_id": "AAAAAAF5CrcbQvWdQPc=",
+													"_parent": {
+														"$ref": "AAAAAAF5A3gmd3eGaGc="
+													},
+													"model": {
+														"$ref": "AAAAAAF5CrYSDvV5v6s="
+													},
+													"font": "Arial;13;0",
+													"left": 221,
+													"top": 373,
+													"width": 183,
+													"height": 13
 												}
 											],
 											"font": "Arial;13;0",
 											"left": 216,
 											"top": 263,
 											"width": 193,
-											"height": 113
+											"height": 128
 										}
 									],
 									"font": "Arial;13;0",
@@ -2201,7 +2216,7 @@
 											"top": 485,
 											"width": 194.708984375,
 											"height": 13,
-											"text": "IgraLucky6"
+											"text": "Lucky6"
 										},
 										{
 											"_type": "ERDColumnCompartmentView",
@@ -2461,7 +2476,7 @@
 											"top": 309,
 											"width": 148.47265625,
 											"height": 13,
-											"text": "IgraRulet"
+											"text": "Rulet"
 										},
 										{
 											"_type": "ERDColumnCompartmentView",
@@ -2652,8 +2667,8 @@
 										"$ref": "AAAAAAF5A3gdTXd+yaI="
 									},
 									"font": "Arial;13;0",
-									"left": 144,
-									"top": 280,
+									"left": 136,
+									"top": 64,
 									"width": 71.29541015625,
 									"height": 77,
 									"text": "Za korisnika fali stanje tokena"
@@ -2665,7 +2680,7 @@
 										"$ref": "AAAAAAF5A3gdTXd+yaI="
 									},
 									"font": "Arial;13;0",
-									"left": 608,
+									"left": 600,
 									"top": 72,
 									"width": 75.76806640625,
 									"height": 142,
@@ -2705,7 +2720,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 880,
-									"top": 464,
+									"top": 456,
 									"width": 85.76806640625,
 									"height": 142,
 									"text": "Mozda je suvisan IdTiketRul jer idKor i IdIgraRul jedinstveno odredjuju tiket"
@@ -2718,7 +2733,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 648,
-									"top": 640,
+									"top": 632,
 									"width": 70,
 									"height": 142,
 									"text": "Umesto prosao da bude stanje koje ce biti int i to su aktivan, dobitan i gubitan"
@@ -2735,6 +2750,31 @@
 									"width": 70,
 									"height": 77,
 									"text": "Umesto tipa opklade konacan ishod "
+								},
+								{
+									"_type": "RectangleView",
+									"_id": "AAAAAAF5CrdF1/WgG6c=",
+									"_parent": {
+										"$ref": "AAAAAAF5A3gdTXd+yaI="
+									},
+									"font": "Arial;13;0",
+									"left": 144,
+									"top": 16,
+									"width": 128,
+									"height": 50
+								},
+								{
+									"_type": "UMLTextView",
+									"_id": "AAAAAAF5CrdL9/Wjiv8=",
+									"_parent": {
+										"$ref": "AAAAAAF5A3gdTXd+yaI="
+									},
+									"font": "Arial;13;0",
+									"left": 208,
+									"top": 24,
+									"width": 62.75537109375,
+									"height": 25,
+									"text": "Uradjeno"
 								}
 							]
 						},
@@ -2984,8 +3024,17 @@
 									},
 									"name": "BrojKartice",
 									"type": "String",
-									"length": 0,
-									"nullable": true
+									"length": 0
+								},
+								{
+									"_type": "ERDColumn",
+									"_id": "AAAAAAF5CrYSDvV5v6s=",
+									"_parent": {
+										"$ref": "AAAAAAF5A3gmdneCMvE="
+									},
+									"name": "Tokeni",
+									"type": "int",
+									"length": 0
 								}
 							]
 						},
@@ -3076,7 +3125,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF5A4GB53iFIoM="
 									},
-									"name": "Ulozeno",
+									"name": "Ulog",
 									"type": "int",
 									"length": 0
 								},
@@ -3086,7 +3135,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF5A4GB53iFIoM="
 									},
-									"name": "Dobijeno",
+									"name": "Dobitak",
 									"type": "int",
 									"length": 0
 								}
@@ -3128,7 +3177,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF5A4jNIXju5ZE="
 									},
-									"name": "Ulozeno",
+									"name": "Ulog",
 									"type": "int",
 									"length": 0
 								},
@@ -3138,7 +3187,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF5A4jNIXju5ZE="
 									},
-									"name": "Dobijeno",
+									"name": "Dobitak",
 									"type": "int",
 									"length": 0
 								},
@@ -3718,7 +3767,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF5A6NOS3viX3s="
 									},
-									"name": "Ulozeno",
+									"name": "Ulog",
 									"type": "int",
 									"length": 0
 								}
@@ -3730,7 +3779,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF5A3gdTXd9uOU="
 							},
-							"name": "IgraLucky6",
+							"name": "Lucky6",
 							"ownedElements": [
 								{
 									"_type": "ERDRelationship",
@@ -3768,7 +3817,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF5A6S6vXwDg4c="
 									},
-									"name": "IdIgraLucky",
+									"name": "IdLucky6",
 									"type": "int",
 									"length": 0,
 									"primaryKey": true
@@ -3802,7 +3851,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF5A3gdTXd9uOU="
 							},
-							"name": "IgraRulet",
+							"name": "Rulet",
 							"ownedElements": [
 								{
 									"_type": "ERDRelationship",
@@ -3840,7 +3889,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF5A62W8XyCYkM="
 									},
-									"name": "IdIgraRul",
+									"name": "IdRul",
 									"type": "int",
 									"length": 0,
 									"primaryKey": true

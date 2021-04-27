@@ -1,0 +1,3433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_281" class="java.beans.XMLDecoder">
+ <object class="org.jgraph.main.ER_Diagramer$MyGraph" id="ER_Diagramer$MyGraph0">
+  <object class="org.jgraph.main.ER_DiagramerSer$MyGraphModel" id="ER_DiagramerSer$MyGraphModel0">
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="org.jgraph.graph.DefaultGraphCell" id="DefaultGraphCell0">
+      <object class="org.jgraph.data.Entity">
+       <string>KORISNIK</string>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdKorisnik</string>
+          </void>
+          <void property="type">
+           <object class="java.lang.Enum" id="Field$sqlType0" method="valueOf">
+            <class>org.jgraph.data.Field$sqlType</class>
+            <string>CHAR</string>
+           </object>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Ime</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Prezime</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Lozinka</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>KorisnickoIme</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>JMBG</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>BrojKartice</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Tokeni</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+       </object>
+       <null/>
+       <int>0</int>
+       <boolean>false</boolean>
+      </object>
+      <object class="org.jgraph.graph.AttributeMap">
+       <void method="put">
+        <string>opaque</string>
+        <boolean>true</boolean>
+       </void>
+       <void method="put">
+        <string>gradientColor</string>
+        <object class="java.awt.Color" id="Color0">
+         <int>255</int>
+         <int>255</int>
+         <int>255</int>
+         <int>255</int>
+        </object>
+       </void>
+       <void method="put">
+        <string>backgroundColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>editable</string>
+        <boolean>false</boolean>
+       </void>
+       <void method="put">
+        <string>bounds</string>
+        <object class="org.jgraph.graph.AttributeMap$SerializableRectangle2D" id="AttributeMap$SerializableRectangle2D0">
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>x</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D0"/>
+           <double>264.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>y</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D0"/>
+           <double>7.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>width</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D0"/>
+           <double>98.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>height</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D0"/>
+           <double>148.0</double>
+          </void>
+         </void>
+        </object>
+       </void>
+       <void method="put">
+        <string>vertexShape</string>
+        <int>0</int>
+       </void>
+       <void method="put">
+        <string>bordercolor</string>
+        <object class="java.awt.Color" id="Color1">
+         <int>0</int>
+         <int>0</int>
+         <int>0</int>
+         <int>255</int>
+        </object>
+       </void>
+      </object>
+      <void method="add">
+       <object class="org.jgraph.graph.DefaultPort" id="DefaultPort0">
+        <null/>
+        <void id="HashSet0" property="edges">
+         <void method="add">
+          <object class="org.jgraph.graph.DefaultEdge" id="DefaultEdge0">
+           <object class="org.jgraph.data.Relation">
+            <string>E</string>
+            <null/>
+            <null/>
+            <int>0</int>
+            <int>2</int>
+            <int>0</int>
+           </object>
+           <object class="org.jgraph.graph.AttributeMap">
+            <void method="put">
+             <string>dashPattern</string>
+             <array class="float" length="2">
+              <void index="0">
+               <float>10.0</float>
+              </void>
+              <void index="1">
+               <float>10.0</float>
+              </void>
+             </array>
+            </void>
+            <void method="put">
+             <string>connectable</string>
+             <boolean>false</boolean>
+            </void>
+            <void method="put">
+             <string>disconnectable</string>
+             <boolean>false</boolean>
+            </void>
+            <void method="put">
+             <string>lineEnd</string>
+             <int>1</int>
+            </void>
+            <void method="put">
+             <string>bendable</string>
+             <boolean>true</boolean>
+            </void>
+            <void method="put">
+             <string>extraLabels</string>
+             <array class="java.lang.String" length="2">
+              <void index="0">
+               <string></string>
+              </void>
+              <void index="1">
+               <string>(0,N)</string>
+              </void>
+             </array>
+            </void>
+            <void method="put">
+             <string>editable</string>
+             <boolean>false</boolean>
+            </void>
+            <void method="put">
+             <string>extraLabelPositions</string>
+             <array class="java.awt.geom.Point2D" length="2">
+              <void index="0">
+               <object class="java.awt.geom.Point2D$Double" id="Point2D$Double0">
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>x</string>
+                 <void method="set">
+                  <object idref="Point2D$Double0"/>
+                  <double>875.0</double>
+                 </void>
+                </void>
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>y</string>
+                 <void method="set">
+                  <object idref="Point2D$Double0"/>
+                  <double>-10.0</double>
+                 </void>
+                </void>
+               </object>
+              </void>
+              <void index="1">
+               <object class="java.awt.geom.Point2D$Double" id="Point2D$Double1">
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>x</string>
+                 <void method="set">
+                  <object idref="Point2D$Double1"/>
+                  <double>125.0</double>
+                 </void>
+                </void>
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>y</string>
+                 <void method="set">
+                  <object idref="Point2D$Double1"/>
+                  <double>-10.0</double>
+                 </void>
+                </void>
+               </object>
+              </void>
+             </array>
+            </void>
+           </object>
+           <void property="source">
+            <object idref="DefaultPort0"/>
+           </void>
+           <void property="target">
+            <object class="org.jgraph.graph.DefaultPort" id="DefaultPort1">
+             <null/>
+             <void id="HashSet1" property="edges">
+              <void method="add">
+               <object idref="DefaultEdge0"/>
+              </void>
+             </void>
+             <void property="edges">
+              <object idref="HashSet1"/>
+             </void>
+            </object>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="org.jgraph.graph.DefaultEdge" id="DefaultEdge1">
+           <object class="org.jgraph.data.Relation">
+            <string>E</string>
+            <null/>
+            <null/>
+            <int>0</int>
+            <int>2</int>
+            <int>0</int>
+           </object>
+           <object class="org.jgraph.graph.AttributeMap">
+            <void method="put">
+             <string>dashPattern</string>
+             <array class="float" length="2">
+              <void index="0">
+               <float>10.0</float>
+              </void>
+              <void index="1">
+               <float>10.0</float>
+              </void>
+             </array>
+            </void>
+            <void method="put">
+             <string>connectable</string>
+             <boolean>false</boolean>
+            </void>
+            <void method="put">
+             <string>disconnectable</string>
+             <boolean>false</boolean>
+            </void>
+            <void method="put">
+             <string>lineEnd</string>
+             <int>1</int>
+            </void>
+            <void method="put">
+             <string>bendable</string>
+             <boolean>true</boolean>
+            </void>
+            <void method="put">
+             <string>extraLabels</string>
+             <array class="java.lang.String" length="2">
+              <void index="0">
+               <string></string>
+              </void>
+              <void index="1">
+               <string>(0,N)</string>
+              </void>
+             </array>
+            </void>
+            <void method="put">
+             <string>editable</string>
+             <boolean>false</boolean>
+            </void>
+            <void method="put">
+             <string>extraLabelPositions</string>
+             <array class="java.awt.geom.Point2D" length="2">
+              <void index="0">
+               <object class="java.awt.geom.Point2D$Double" id="Point2D$Double2">
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>x</string>
+                 <void method="set">
+                  <object idref="Point2D$Double2"/>
+                  <double>875.0</double>
+                 </void>
+                </void>
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>y</string>
+                 <void method="set">
+                  <object idref="Point2D$Double2"/>
+                  <double>-10.0</double>
+                 </void>
+                </void>
+               </object>
+              </void>
+              <void index="1">
+               <object class="java.awt.geom.Point2D$Double" id="Point2D$Double3">
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>x</string>
+                 <void method="set">
+                  <object idref="Point2D$Double3"/>
+                  <double>125.0</double>
+                 </void>
+                </void>
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>y</string>
+                 <void method="set">
+                  <object idref="Point2D$Double3"/>
+                  <double>-10.0</double>
+                 </void>
+                </void>
+               </object>
+              </void>
+             </array>
+            </void>
+           </object>
+           <void property="source">
+            <object idref="DefaultPort0"/>
+           </void>
+           <void property="target">
+            <object class="org.jgraph.graph.DefaultPort" id="DefaultPort2">
+             <null/>
+             <void id="HashSet2" property="edges">
+              <void method="add">
+               <object idref="DefaultEdge1"/>
+              </void>
+              <void method="add">
+               <object class="org.jgraph.graph.DefaultEdge" id="DefaultEdge2">
+                <object class="org.jgraph.data.Relation">
+                 <string>I</string>
+                 <null/>
+                 <null/>
+                 <int>0</int>
+                 <int>3</int>
+                 <int>0</int>
+                </object>
+                <object class="org.jgraph.graph.AttributeMap">
+                 <void method="put">
+                  <string>dashPattern</string>
+                  <array class="float" length="2">
+                   <void index="0">
+                    <float>10.0</float>
+                   </void>
+                   <void index="1">
+                    <float>10.0</float>
+                   </void>
+                  </array>
+                 </void>
+                 <void method="put">
+                  <string>connectable</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>disconnectable</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>lineEnd</string>
+                  <int>1</int>
+                 </void>
+                 <void method="put">
+                  <string>bendable</string>
+                  <boolean>true</boolean>
+                 </void>
+                 <void method="put">
+                  <string>extraLabels</string>
+                  <array class="java.lang.String" length="2">
+                   <void index="0">
+                    <string></string>
+                   </void>
+                   <void index="1">
+                    <string>(0,N)</string>
+                   </void>
+                  </array>
+                 </void>
+                 <void method="put">
+                  <string>endFill</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>editable</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>extraLabelPositions</string>
+                  <array class="java.awt.geom.Point2D" length="2">
+                   <void index="0">
+                    <object class="java.awt.geom.Point2D$Double" id="Point2D$Double4">
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>x</string>
+                      <void method="set">
+                       <object idref="Point2D$Double4"/>
+                       <double>875.0</double>
+                      </void>
+                     </void>
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>y</string>
+                      <void method="set">
+                       <object idref="Point2D$Double4"/>
+                       <double>-10.0</double>
+                      </void>
+                     </void>
+                    </object>
+                   </void>
+                   <void index="1">
+                    <object class="java.awt.geom.Point2D$Double" id="Point2D$Double5">
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>x</string>
+                      <void method="set">
+                       <object idref="Point2D$Double5"/>
+                       <double>125.0</double>
+                      </void>
+                     </void>
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>y</string>
+                      <void method="set">
+                       <object idref="Point2D$Double5"/>
+                       <double>-10.0</double>
+                      </void>
+                     </void>
+                    </object>
+                   </void>
+                  </array>
+                 </void>
+                </object>
+                <void property="source">
+                 <object idref="DefaultPort2"/>
+                </void>
+                <void property="target">
+                 <object class="org.jgraph.graph.DefaultPort" id="DefaultPort3">
+                  <null/>
+                  <void id="HashSet3" property="edges">
+                   <void method="add">
+                    <object class="org.jgraph.graph.DefaultEdge" id="DefaultEdge3">
+                     <object class="org.jgraph.data.Relation">
+                      <string>I</string>
+                      <null/>
+                      <null/>
+                      <int>0</int>
+                      <int>3</int>
+                      <int>0</int>
+                     </object>
+                     <object class="org.jgraph.graph.AttributeMap">
+                      <void method="put">
+                       <string>dashPattern</string>
+                       <array class="float" length="2">
+                        <void index="0">
+                         <float>10.0</float>
+                        </void>
+                        <void index="1">
+                         <float>10.0</float>
+                        </void>
+                       </array>
+                      </void>
+                      <void method="put">
+                       <string>connectable</string>
+                       <boolean>false</boolean>
+                      </void>
+                      <void method="put">
+                       <string>disconnectable</string>
+                       <boolean>false</boolean>
+                      </void>
+                      <void method="put">
+                       <string>lineEnd</string>
+                       <int>1</int>
+                      </void>
+                      <void method="put">
+                       <string>bendable</string>
+                       <boolean>true</boolean>
+                      </void>
+                      <void method="put">
+                       <string>extraLabels</string>
+                       <array class="java.lang.String" length="2">
+                        <void index="0">
+                         <string></string>
+                        </void>
+                        <void index="1">
+                         <string>(0,N)</string>
+                        </void>
+                       </array>
+                      </void>
+                      <void method="put">
+                       <string>endFill</string>
+                       <boolean>false</boolean>
+                      </void>
+                      <void method="put">
+                       <string>editable</string>
+                       <boolean>false</boolean>
+                      </void>
+                      <void method="put">
+                       <string>extraLabelPositions</string>
+                       <array class="java.awt.geom.Point2D" length="2">
+                        <void index="0">
+                         <object class="java.awt.geom.Point2D$Double" id="Point2D$Double6">
+                          <void class="java.awt.geom.Point2D$Double" method="getField">
+                           <string>x</string>
+                           <void method="set">
+                            <object idref="Point2D$Double6"/>
+                            <double>875.0</double>
+                           </void>
+                          </void>
+                          <void class="java.awt.geom.Point2D$Double" method="getField">
+                           <string>y</string>
+                           <void method="set">
+                            <object idref="Point2D$Double6"/>
+                            <double>-10.0</double>
+                           </void>
+                          </void>
+                         </object>
+                        </void>
+                        <void index="1">
+                         <object class="java.awt.geom.Point2D$Double" id="Point2D$Double7">
+                          <void class="java.awt.geom.Point2D$Double" method="getField">
+                           <string>x</string>
+                           <void method="set">
+                            <object idref="Point2D$Double7"/>
+                            <double>125.0</double>
+                           </void>
+                          </void>
+                          <void class="java.awt.geom.Point2D$Double" method="getField">
+                           <string>y</string>
+                           <void method="set">
+                            <object idref="Point2D$Double7"/>
+                            <double>-10.0</double>
+                           </void>
+                          </void>
+                         </object>
+                        </void>
+                       </array>
+                      </void>
+                     </object>
+                     <void property="source">
+                      <object class="org.jgraph.graph.DefaultPort" id="DefaultPort4">
+                       <null/>
+                       <void id="HashSet4" property="edges">
+                        <void method="add">
+                         <object idref="DefaultEdge3"/>
+                        </void>
+                        <void method="add">
+                         <object class="org.jgraph.graph.DefaultEdge" id="DefaultEdge4">
+                          <object class="org.jgraph.data.Relation">
+                           <string>E</string>
+                           <null/>
+                           <null/>
+                           <int>0</int>
+                           <int>2</int>
+                           <int>0</int>
+                          </object>
+                          <object class="org.jgraph.graph.AttributeMap">
+                           <void method="put">
+                            <string>dashPattern</string>
+                            <array class="float" length="2">
+                             <void index="0">
+                              <float>10.0</float>
+                             </void>
+                             <void index="1">
+                              <float>10.0</float>
+                             </void>
+                            </array>
+                           </void>
+                           <void method="put">
+                            <string>connectable</string>
+                            <boolean>false</boolean>
+                           </void>
+                           <void method="put">
+                            <string>disconnectable</string>
+                            <boolean>false</boolean>
+                           </void>
+                           <void method="put">
+                            <string>lineEnd</string>
+                            <int>1</int>
+                           </void>
+                           <void method="put">
+                            <string>bendable</string>
+                            <boolean>true</boolean>
+                           </void>
+                           <void method="put">
+                            <string>extraLabels</string>
+                            <array class="java.lang.String" length="2">
+                             <void index="0">
+                              <string></string>
+                             </void>
+                             <void index="1">
+                              <string>(0,N)</string>
+                             </void>
+                            </array>
+                           </void>
+                           <void method="put">
+                            <string>editable</string>
+                            <boolean>false</boolean>
+                           </void>
+                           <void method="put">
+                            <string>extraLabelPositions</string>
+                            <array class="java.awt.geom.Point2D" length="2">
+                             <void index="0">
+                              <object class="java.awt.geom.Point2D$Double" id="Point2D$Double8">
+                               <void class="java.awt.geom.Point2D$Double" method="getField">
+                                <string>x</string>
+                                <void method="set">
+                                 <object idref="Point2D$Double8"/>
+                                 <double>875.0</double>
+                                </void>
+                               </void>
+                               <void class="java.awt.geom.Point2D$Double" method="getField">
+                                <string>y</string>
+                                <void method="set">
+                                 <object idref="Point2D$Double8"/>
+                                 <double>-10.0</double>
+                                </void>
+                               </void>
+                              </object>
+                             </void>
+                             <void index="1">
+                              <object class="java.awt.geom.Point2D$Double" id="Point2D$Double9">
+                               <void class="java.awt.geom.Point2D$Double" method="getField">
+                                <string>x</string>
+                                <void method="set">
+                                 <object idref="Point2D$Double9"/>
+                                 <double>125.0</double>
+                                </void>
+                               </void>
+                               <void class="java.awt.geom.Point2D$Double" method="getField">
+                                <string>y</string>
+                                <void method="set">
+                                 <object idref="Point2D$Double9"/>
+                                 <double>-10.0</double>
+                                </void>
+                               </void>
+                              </object>
+                             </void>
+                            </array>
+                           </void>
+                          </object>
+                          <void property="source">
+                           <object class="org.jgraph.graph.DefaultPort" id="DefaultPort5">
+                            <null/>
+                            <void id="HashSet5" property="edges">
+                             <void method="add">
+                              <object idref="DefaultEdge4"/>
+                             </void>
+                            </void>
+                            <void property="edges">
+                             <object idref="HashSet5"/>
+                            </void>
+                           </object>
+                          </void>
+                          <void property="target">
+                           <object idref="DefaultPort4"/>
+                          </void>
+                         </object>
+                        </void>
+                       </void>
+                       <void property="edges">
+                        <object idref="HashSet4"/>
+                       </void>
+                      </object>
+                     </void>
+                     <void property="target">
+                      <object idref="DefaultPort3"/>
+                     </void>
+                    </object>
+                   </void>
+                   <void method="add">
+                    <object idref="DefaultEdge2"/>
+                   </void>
+                  </void>
+                  <void property="edges">
+                   <object idref="HashSet3"/>
+                  </void>
+                 </object>
+                </void>
+               </object>
+              </void>
+             </void>
+             <void property="edges">
+              <object idref="HashSet2"/>
+             </void>
+            </object>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="org.jgraph.graph.DefaultEdge" id="DefaultEdge5">
+           <object class="org.jgraph.data.Relation">
+            <string>I</string>
+            <null/>
+            <null/>
+            <int>0</int>
+            <int>3</int>
+            <int>0</int>
+           </object>
+           <object class="org.jgraph.graph.AttributeMap">
+            <void method="put">
+             <string>dashPattern</string>
+             <array class="float" length="2">
+              <void index="0">
+               <float>10.0</float>
+              </void>
+              <void index="1">
+               <float>10.0</float>
+              </void>
+             </array>
+            </void>
+            <void method="put">
+             <string>connectable</string>
+             <boolean>false</boolean>
+            </void>
+            <void method="put">
+             <string>disconnectable</string>
+             <boolean>false</boolean>
+            </void>
+            <void method="put">
+             <string>lineEnd</string>
+             <int>1</int>
+            </void>
+            <void method="put">
+             <string>bendable</string>
+             <boolean>true</boolean>
+            </void>
+            <void method="put">
+             <string>extraLabels</string>
+             <array class="java.lang.String" length="2">
+              <void index="0">
+               <string></string>
+              </void>
+              <void index="1">
+               <string>(0,N)</string>
+              </void>
+             </array>
+            </void>
+            <void method="put">
+             <string>endFill</string>
+             <boolean>false</boolean>
+            </void>
+            <void method="put">
+             <string>editable</string>
+             <boolean>false</boolean>
+            </void>
+            <void method="put">
+             <string>extraLabelPositions</string>
+             <array class="java.awt.geom.Point2D" length="2">
+              <void index="0">
+               <object class="java.awt.geom.Point2D$Double" id="Point2D$Double10">
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>x</string>
+                 <void method="set">
+                  <object idref="Point2D$Double10"/>
+                  <double>875.0</double>
+                 </void>
+                </void>
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>y</string>
+                 <void method="set">
+                  <object idref="Point2D$Double10"/>
+                  <double>-10.0</double>
+                 </void>
+                </void>
+               </object>
+              </void>
+              <void index="1">
+               <object class="java.awt.geom.Point2D$Double" id="Point2D$Double11">
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>x</string>
+                 <void method="set">
+                  <object idref="Point2D$Double11"/>
+                  <double>125.0</double>
+                 </void>
+                </void>
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>y</string>
+                 <void method="set">
+                  <object idref="Point2D$Double11"/>
+                  <double>-10.0</double>
+                 </void>
+                </void>
+               </object>
+              </void>
+             </array>
+            </void>
+           </object>
+           <void property="source">
+            <object idref="DefaultPort0"/>
+           </void>
+           <void property="target">
+            <object class="org.jgraph.graph.DefaultPort" id="DefaultPort6">
+             <null/>
+             <void id="HashSet6" property="edges">
+              <void method="add">
+               <object class="org.jgraph.graph.DefaultEdge" id="DefaultEdge6">
+                <object class="org.jgraph.data.Relation">
+                 <string>I</string>
+                 <null/>
+                 <null/>
+                 <int>0</int>
+                 <int>3</int>
+                 <int>0</int>
+                </object>
+                <object class="org.jgraph.graph.AttributeMap">
+                 <void method="put">
+                  <string>dashPattern</string>
+                  <array class="float" length="2">
+                   <void index="0">
+                    <float>10.0</float>
+                   </void>
+                   <void index="1">
+                    <float>10.0</float>
+                   </void>
+                  </array>
+                 </void>
+                 <void method="put">
+                  <string>connectable</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>disconnectable</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>lineEnd</string>
+                  <int>1</int>
+                 </void>
+                 <void method="put">
+                  <string>bendable</string>
+                  <boolean>true</boolean>
+                 </void>
+                 <void method="put">
+                  <string>extraLabels</string>
+                  <array class="java.lang.String" length="2">
+                   <void index="0">
+                    <string></string>
+                   </void>
+                   <void index="1">
+                    <string>(0,N)</string>
+                   </void>
+                  </array>
+                 </void>
+                 <void method="put">
+                  <string>endFill</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>editable</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>extraLabelPositions</string>
+                  <array class="java.awt.geom.Point2D" length="2">
+                   <void index="0">
+                    <object class="java.awt.geom.Point2D$Double" id="Point2D$Double12">
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>x</string>
+                      <void method="set">
+                       <object idref="Point2D$Double12"/>
+                       <double>875.0</double>
+                      </void>
+                     </void>
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>y</string>
+                      <void method="set">
+                       <object idref="Point2D$Double12"/>
+                       <double>-10.0</double>
+                      </void>
+                     </void>
+                    </object>
+                   </void>
+                   <void index="1">
+                    <object class="java.awt.geom.Point2D$Double" id="Point2D$Double13">
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>x</string>
+                      <void method="set">
+                       <object idref="Point2D$Double13"/>
+                       <double>125.0</double>
+                      </void>
+                     </void>
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>y</string>
+                      <void method="set">
+                       <object idref="Point2D$Double13"/>
+                       <double>-10.0</double>
+                      </void>
+                     </void>
+                    </object>
+                   </void>
+                  </array>
+                 </void>
+                </object>
+                <void property="source">
+                 <object class="org.jgraph.graph.DefaultPort" id="DefaultPort7">
+                  <null/>
+                  <void id="HashSet7" property="edges">
+                   <void method="add">
+                    <object idref="DefaultEdge6"/>
+                   </void>
+                  </void>
+                  <void property="edges">
+                   <object idref="HashSet7"/>
+                  </void>
+                 </object>
+                </void>
+                <void property="target">
+                 <object idref="DefaultPort6"/>
+                </void>
+               </object>
+              </void>
+              <void method="add">
+               <object idref="DefaultEdge5"/>
+              </void>
+             </void>
+             <void property="edges">
+              <object idref="HashSet6"/>
+             </void>
+            </object>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="org.jgraph.graph.DefaultEdge" id="DefaultEdge7">
+           <object class="org.jgraph.data.Relation">
+            <string>I</string>
+            <null/>
+            <null/>
+            <int>0</int>
+            <int>3</int>
+            <int>0</int>
+           </object>
+           <object class="org.jgraph.graph.AttributeMap">
+            <void method="put">
+             <string>dashPattern</string>
+             <array class="float" length="2">
+              <void index="0">
+               <float>10.0</float>
+              </void>
+              <void index="1">
+               <float>10.0</float>
+              </void>
+             </array>
+            </void>
+            <void method="put">
+             <string>connectable</string>
+             <boolean>false</boolean>
+            </void>
+            <void method="put">
+             <string>disconnectable</string>
+             <boolean>false</boolean>
+            </void>
+            <void method="put">
+             <string>lineEnd</string>
+             <int>1</int>
+            </void>
+            <void method="put">
+             <string>bendable</string>
+             <boolean>true</boolean>
+            </void>
+            <void method="put">
+             <string>extraLabels</string>
+             <array class="java.lang.String" length="2">
+              <void index="0">
+               <string></string>
+              </void>
+              <void index="1">
+               <string>(0,N)</string>
+              </void>
+             </array>
+            </void>
+            <void method="put">
+             <string>endFill</string>
+             <boolean>false</boolean>
+            </void>
+            <void method="put">
+             <string>editable</string>
+             <boolean>false</boolean>
+            </void>
+            <void method="put">
+             <string>extraLabelPositions</string>
+             <array class="java.awt.geom.Point2D" length="2">
+              <void index="0">
+               <object class="java.awt.geom.Point2D$Double" id="Point2D$Double14">
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>x</string>
+                 <void method="set">
+                  <object idref="Point2D$Double14"/>
+                  <double>875.0</double>
+                 </void>
+                </void>
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>y</string>
+                 <void method="set">
+                  <object idref="Point2D$Double14"/>
+                  <double>-10.0</double>
+                 </void>
+                </void>
+               </object>
+              </void>
+              <void index="1">
+               <object class="java.awt.geom.Point2D$Double" id="Point2D$Double15">
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>x</string>
+                 <void method="set">
+                  <object idref="Point2D$Double15"/>
+                  <double>125.0</double>
+                 </void>
+                </void>
+                <void class="java.awt.geom.Point2D$Double" method="getField">
+                 <string>y</string>
+                 <void method="set">
+                  <object idref="Point2D$Double15"/>
+                  <double>-10.0</double>
+                 </void>
+                </void>
+               </object>
+              </void>
+             </array>
+            </void>
+           </object>
+           <void property="source">
+            <object idref="DefaultPort0"/>
+           </void>
+           <void property="target">
+            <object class="org.jgraph.graph.DefaultPort" id="DefaultPort8">
+             <null/>
+             <void id="HashSet8" property="edges">
+              <void method="add">
+               <object class="org.jgraph.graph.DefaultEdge" id="DefaultEdge8">
+                <object class="org.jgraph.data.Relation">
+                 <string>E</string>
+                 <null/>
+                 <null/>
+                 <int>0</int>
+                 <int>2</int>
+                 <int>0</int>
+                </object>
+                <object class="org.jgraph.graph.AttributeMap">
+                 <void method="put">
+                  <string>dashPattern</string>
+                  <array class="float" length="2">
+                   <void index="0">
+                    <float>10.0</float>
+                   </void>
+                   <void index="1">
+                    <float>10.0</float>
+                   </void>
+                  </array>
+                 </void>
+                 <void method="put">
+                  <string>connectable</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>disconnectable</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>lineEnd</string>
+                  <int>1</int>
+                 </void>
+                 <void method="put">
+                  <string>bendable</string>
+                  <boolean>true</boolean>
+                 </void>
+                 <void method="put">
+                  <string>extraLabels</string>
+                  <array class="java.lang.String" length="2">
+                   <void index="0">
+                    <string></string>
+                   </void>
+                   <void index="1">
+                    <string>(0,N)</string>
+                   </void>
+                  </array>
+                 </void>
+                 <void method="put">
+                  <string>editable</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>extraLabelPositions</string>
+                  <array class="java.awt.geom.Point2D" length="2">
+                   <void index="0">
+                    <object class="java.awt.geom.Point2D$Double" id="Point2D$Double16">
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>x</string>
+                      <void method="set">
+                       <object idref="Point2D$Double16"/>
+                       <double>875.0</double>
+                      </void>
+                     </void>
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>y</string>
+                      <void method="set">
+                       <object idref="Point2D$Double16"/>
+                       <double>-10.0</double>
+                      </void>
+                     </void>
+                    </object>
+                   </void>
+                   <void index="1">
+                    <object class="java.awt.geom.Point2D$Double" id="Point2D$Double17">
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>x</string>
+                      <void method="set">
+                       <object idref="Point2D$Double17"/>
+                       <double>125.0</double>
+                      </void>
+                     </void>
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>y</string>
+                      <void method="set">
+                       <object idref="Point2D$Double17"/>
+                       <double>-10.0</double>
+                      </void>
+                     </void>
+                    </object>
+                   </void>
+                  </array>
+                 </void>
+                </object>
+                <void property="source">
+                 <object idref="DefaultPort8"/>
+                </void>
+                <void property="target">
+                 <object class="org.jgraph.graph.DefaultPort" id="DefaultPort9">
+                  <null/>
+                  <void id="HashSet9" property="edges">
+                   <void method="add">
+                    <object idref="DefaultEdge8"/>
+                   </void>
+                  </void>
+                  <void property="edges">
+                   <object idref="HashSet9"/>
+                  </void>
+                 </object>
+                </void>
+               </object>
+              </void>
+              <void method="add">
+               <object class="org.jgraph.graph.DefaultEdge" id="DefaultEdge9">
+                <object class="org.jgraph.data.Relation">
+                 <string>I</string>
+                 <null/>
+                 <null/>
+                 <int>0</int>
+                 <int>3</int>
+                 <int>0</int>
+                </object>
+                <object class="org.jgraph.graph.AttributeMap">
+                 <void method="put">
+                  <string>dashPattern</string>
+                  <array class="float" length="2">
+                   <void index="0">
+                    <float>10.0</float>
+                   </void>
+                   <void index="1">
+                    <float>10.0</float>
+                   </void>
+                  </array>
+                 </void>
+                 <void method="put">
+                  <string>connectable</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>disconnectable</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>lineEnd</string>
+                  <int>1</int>
+                 </void>
+                 <void method="put">
+                  <string>bendable</string>
+                  <boolean>true</boolean>
+                 </void>
+                 <void method="put">
+                  <string>extraLabels</string>
+                  <array class="java.lang.String" length="2">
+                   <void index="0">
+                    <string></string>
+                   </void>
+                   <void index="1">
+                    <string>(0,N)</string>
+                   </void>
+                  </array>
+                 </void>
+                 <void method="put">
+                  <string>endFill</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>editable</string>
+                  <boolean>false</boolean>
+                 </void>
+                 <void method="put">
+                  <string>extraLabelPositions</string>
+                  <array class="java.awt.geom.Point2D" length="2">
+                   <void index="0">
+                    <object class="java.awt.geom.Point2D$Double" id="Point2D$Double18">
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>x</string>
+                      <void method="set">
+                       <object idref="Point2D$Double18"/>
+                       <double>875.0</double>
+                      </void>
+                     </void>
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>y</string>
+                      <void method="set">
+                       <object idref="Point2D$Double18"/>
+                       <double>-10.0</double>
+                      </void>
+                     </void>
+                    </object>
+                   </void>
+                   <void index="1">
+                    <object class="java.awt.geom.Point2D$Double" id="Point2D$Double19">
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>x</string>
+                      <void method="set">
+                       <object idref="Point2D$Double19"/>
+                       <double>125.0</double>
+                      </void>
+                     </void>
+                     <void class="java.awt.geom.Point2D$Double" method="getField">
+                      <string>y</string>
+                      <void method="set">
+                       <object idref="Point2D$Double19"/>
+                       <double>-10.0</double>
+                      </void>
+                     </void>
+                    </object>
+                   </void>
+                  </array>
+                 </void>
+                </object>
+                <void property="source">
+                 <object class="org.jgraph.graph.DefaultPort" id="DefaultPort10">
+                  <null/>
+                  <void id="HashSet10" property="edges">
+                   <void method="add">
+                    <object idref="DefaultEdge9"/>
+                   </void>
+                  </void>
+                  <void property="edges">
+                   <object idref="HashSet10"/>
+                  </void>
+                 </object>
+                </void>
+                <void property="target">
+                 <object idref="DefaultPort8"/>
+                </void>
+               </object>
+              </void>
+              <void method="add">
+               <object idref="DefaultEdge7"/>
+              </void>
+             </void>
+             <void property="edges">
+              <object idref="HashSet8"/>
+             </void>
+            </object>
+           </void>
+          </object>
+         </void>
+        </void>
+        <void property="edges">
+         <object idref="HashSet0"/>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="org.jgraph.graph.DefaultGraphCell" id="DefaultGraphCell1">
+      <object class="org.jgraph.data.Entity">
+       <string>TIKET_SLOT</string>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdTiketSlot</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>IdKorisnik</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Ulog</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Dobitak</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Rezultat</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+       </object>
+       <null/>
+       <int>0</int>
+       <boolean>true</boolean>
+      </object>
+      <object class="org.jgraph.graph.AttributeMap">
+       <void method="put">
+        <string>opaque</string>
+        <boolean>true</boolean>
+       </void>
+       <void method="put">
+        <string>gradientColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>border</string>
+        <object class="javax.swing.border.CompoundBorder">
+         <object class="javax.swing.border.LineBorder">
+          <object idref="Color1"/>
+          <int>1</int>
+          <boolean>false</boolean>
+         </object>
+         <object class="javax.swing.border.CompoundBorder">
+          <object class="javax.swing.border.LineBorder">
+           <object idref="Color0"/>
+           <int>2</int>
+           <boolean>false</boolean>
+          </object>
+          <object class="javax.swing.border.LineBorder">
+           <object idref="Color1"/>
+           <int>1</int>
+           <boolean>false</boolean>
+          </object>
+         </object>
+        </object>
+       </void>
+       <void method="put">
+        <string>backgroundColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>editable</string>
+        <boolean>false</boolean>
+       </void>
+       <void method="put">
+        <string>bounds</string>
+        <object class="org.jgraph.graph.AttributeMap$SerializableRectangle2D" id="AttributeMap$SerializableRectangle2D1">
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>x</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D1"/>
+           <double>7.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>y</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D1"/>
+           <double>248.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>width</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D1"/>
+           <double>123.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>height</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D1"/>
+           <double>109.0</double>
+          </void>
+         </void>
+        </object>
+       </void>
+       <void method="put">
+        <string>vertexShape</string>
+        <int>0</int>
+       </void>
+       <void method="put">
+        <string>bordercolor</string>
+        <object idref="Color1"/>
+       </void>
+      </object>
+      <void method="add">
+       <object idref="DefaultPort1"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="org.jgraph.graph.DefaultGraphCell" id="DefaultGraphCell2">
+      <object class="org.jgraph.data.Entity">
+       <string>TIKET_LUCKY6</string>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdLucky6</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdKorisnik</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Ulog</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Dobitak</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Kombinacija</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+       </object>
+       <null/>
+       <int>0</int>
+       <boolean>true</boolean>
+      </object>
+      <object class="org.jgraph.graph.AttributeMap">
+       <void method="put">
+        <string>opaque</string>
+        <boolean>true</boolean>
+       </void>
+       <void method="put">
+        <string>gradientColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>border</string>
+        <object class="javax.swing.border.CompoundBorder">
+         <object class="javax.swing.border.LineBorder">
+          <object idref="Color1"/>
+          <int>1</int>
+          <boolean>false</boolean>
+         </object>
+         <object class="javax.swing.border.CompoundBorder">
+          <object class="javax.swing.border.LineBorder">
+           <object idref="Color0"/>
+           <int>2</int>
+           <boolean>false</boolean>
+          </object>
+          <object class="javax.swing.border.LineBorder">
+           <object idref="Color1"/>
+           <int>1</int>
+           <boolean>false</boolean>
+          </object>
+         </object>
+        </object>
+       </void>
+       <void method="put">
+        <string>backgroundColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>editable</string>
+        <boolean>false</boolean>
+       </void>
+       <void method="put">
+        <string>bounds</string>
+        <object class="org.jgraph.graph.AttributeMap$SerializableRectangle2D" id="AttributeMap$SerializableRectangle2D2">
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>x</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D2"/>
+           <double>155.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>y</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D2"/>
+           <double>244.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>width</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D2"/>
+           <double>146.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>height</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D2"/>
+           <double>109.0</double>
+          </void>
+         </void>
+        </object>
+       </void>
+       <void method="put">
+        <string>vertexShape</string>
+        <int>0</int>
+       </void>
+       <void method="put">
+        <string>bordercolor</string>
+        <object idref="Color1"/>
+       </void>
+      </object>
+      <void method="add">
+       <object idref="DefaultPort6"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="org.jgraph.graph.DefaultGraphCell" id="DefaultGraphCell3">
+      <object class="org.jgraph.data.Entity">
+       <string>TIKET_KLADJENJE</string>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdTiketKladjenje</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>IdKorisnik</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Ulog</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Dobitak</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Stauts</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+       </object>
+       <null/>
+       <int>0</int>
+       <boolean>true</boolean>
+      </object>
+      <object class="org.jgraph.graph.AttributeMap">
+       <void method="put">
+        <string>opaque</string>
+        <boolean>true</boolean>
+       </void>
+       <void method="put">
+        <string>gradientColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>border</string>
+        <object class="javax.swing.border.CompoundBorder">
+         <object class="javax.swing.border.LineBorder">
+          <object idref="Color1"/>
+          <int>1</int>
+          <boolean>false</boolean>
+         </object>
+         <object class="javax.swing.border.CompoundBorder">
+          <object class="javax.swing.border.LineBorder">
+           <object idref="Color0"/>
+           <int>2</int>
+           <boolean>false</boolean>
+          </object>
+          <object class="javax.swing.border.LineBorder">
+           <object idref="Color1"/>
+           <int>1</int>
+           <boolean>false</boolean>
+          </object>
+         </object>
+        </object>
+       </void>
+       <void method="put">
+        <string>backgroundColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>editable</string>
+        <boolean>false</boolean>
+       </void>
+       <void method="put">
+        <string>bounds</string>
+        <object class="org.jgraph.graph.AttributeMap$SerializableRectangle2D" id="AttributeMap$SerializableRectangle2D3">
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>x</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D3"/>
+           <double>315.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>y</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D3"/>
+           <double>248.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>width</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D3"/>
+           <double>176.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>height</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D3"/>
+           <double>109.0</double>
+          </void>
+         </void>
+        </object>
+       </void>
+       <void method="put">
+        <string>vertexShape</string>
+        <int>0</int>
+       </void>
+       <void method="put">
+        <string>bordercolor</string>
+        <object idref="Color1"/>
+       </void>
+      </object>
+      <void method="add">
+       <object idref="DefaultPort2"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="org.jgraph.graph.DefaultGraphCell" id="DefaultGraphCell4">
+      <object class="org.jgraph.data.Entity">
+       <string>TIKET_RULET</string>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdRulet</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdKorisnik</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Ulog</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Dobitak</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+       </object>
+       <null/>
+       <int>0</int>
+       <boolean>true</boolean>
+      </object>
+      <object class="org.jgraph.graph.AttributeMap">
+       <void method="put">
+        <string>opaque</string>
+        <boolean>true</boolean>
+       </void>
+       <void method="put">
+        <string>gradientColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>border</string>
+        <object class="javax.swing.border.CompoundBorder">
+         <object class="javax.swing.border.LineBorder">
+          <object idref="Color1"/>
+          <int>1</int>
+          <boolean>false</boolean>
+         </object>
+         <object class="javax.swing.border.CompoundBorder">
+          <object class="javax.swing.border.LineBorder">
+           <object idref="Color0"/>
+           <int>2</int>
+           <boolean>false</boolean>
+          </object>
+          <object class="javax.swing.border.LineBorder">
+           <object idref="Color1"/>
+           <int>1</int>
+           <boolean>false</boolean>
+          </object>
+         </object>
+        </object>
+       </void>
+       <void method="put">
+        <string>backgroundColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>editable</string>
+        <boolean>false</boolean>
+       </void>
+       <void method="put">
+        <string>bounds</string>
+        <object class="org.jgraph.graph.AttributeMap$SerializableRectangle2D" id="AttributeMap$SerializableRectangle2D4">
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>x</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D4"/>
+           <double>505.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>y</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D4"/>
+           <double>247.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>width</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D4"/>
+           <double>134.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>height</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D4"/>
+           <double>93.0</double>
+          </void>
+         </void>
+        </object>
+       </void>
+       <void method="put">
+        <string>vertexShape</string>
+        <int>0</int>
+       </void>
+       <void method="put">
+        <string>bordercolor</string>
+        <object idref="Color1"/>
+       </void>
+      </object>
+      <void method="add">
+       <object idref="DefaultPort8"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="org.jgraph.graph.DefaultGraphCell" id="DefaultGraphCell5">
+      <object class="org.jgraph.data.Entity">
+       <string>LUCKY6</string>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdLucky6</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>IzvuceniBrojevi</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Vreme</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+       </object>
+       <null/>
+       <int>0</int>
+       <boolean>false</boolean>
+      </object>
+      <object class="org.jgraph.graph.AttributeMap">
+       <void method="put">
+        <string>opaque</string>
+        <boolean>true</boolean>
+       </void>
+       <void method="put">
+        <string>gradientColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>backgroundColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>editable</string>
+        <boolean>false</boolean>
+       </void>
+       <void method="put">
+        <string>bounds</string>
+        <object class="org.jgraph.graph.AttributeMap$SerializableRectangle2D" id="AttributeMap$SerializableRectangle2D5">
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>x</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D5"/>
+           <double>178.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>y</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D5"/>
+           <double>431.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>width</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D5"/>
+           <double>87.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>height</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D5"/>
+           <double>70.0</double>
+          </void>
+         </void>
+        </object>
+       </void>
+       <void method="put">
+        <string>vertexShape</string>
+        <int>0</int>
+       </void>
+       <void method="put">
+        <string>bordercolor</string>
+        <object idref="Color1"/>
+       </void>
+      </object>
+      <void method="add">
+       <object idref="DefaultPort7"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="org.jgraph.graph.DefaultGraphCell" id="DefaultGraphCell6">
+      <object class="org.jgraph.data.Entity">
+       <string>STAVKA_TIKET</string>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdTiketKladjenje</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdUtakmica</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Iznos</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>KonacanIshod</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Status</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+       </object>
+       <null/>
+       <int>0</int>
+       <boolean>true</boolean>
+      </object>
+      <object class="org.jgraph.graph.AttributeMap">
+       <void method="put">
+        <string>opaque</string>
+        <boolean>true</boolean>
+       </void>
+       <void method="put">
+        <string>gradientColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>border</string>
+        <object class="javax.swing.border.CompoundBorder">
+         <object class="javax.swing.border.LineBorder">
+          <object idref="Color1"/>
+          <int>1</int>
+          <boolean>false</boolean>
+         </object>
+         <object class="javax.swing.border.CompoundBorder">
+          <object class="javax.swing.border.LineBorder">
+           <object idref="Color0"/>
+           <int>2</int>
+           <boolean>false</boolean>
+          </object>
+          <object class="javax.swing.border.LineBorder">
+           <object idref="Color1"/>
+           <int>1</int>
+           <boolean>false</boolean>
+          </object>
+         </object>
+        </object>
+       </void>
+       <void method="put">
+        <string>backgroundColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>editable</string>
+        <boolean>false</boolean>
+       </void>
+       <void method="put">
+        <string>bounds</string>
+        <object class="org.jgraph.graph.AttributeMap$SerializableRectangle2D" id="AttributeMap$SerializableRectangle2D6">
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>x</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D6"/>
+           <double>326.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>y</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D6"/>
+           <double>429.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>width</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D6"/>
+           <double>148.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>height</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D6"/>
+           <double>109.0</double>
+          </void>
+         </void>
+        </object>
+       </void>
+       <void method="put">
+        <string>vertexShape</string>
+        <int>0</int>
+       </void>
+       <void method="put">
+        <string>bordercolor</string>
+        <object idref="Color1"/>
+       </void>
+      </object>
+      <void method="add">
+       <object idref="DefaultPort3"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="org.jgraph.graph.DefaultGraphCell" id="DefaultGraphCell7">
+      <object class="org.jgraph.data.Entity">
+       <string>STAVKA_RULET</string>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdStavkaRulet</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>IdKorisnik</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>IdRulet</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Tip</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Prosla</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Ulog</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+       </object>
+       <null/>
+       <int>0</int>
+       <boolean>true</boolean>
+      </object>
+      <object class="org.jgraph.graph.AttributeMap">
+       <void method="put">
+        <string>opaque</string>
+        <boolean>true</boolean>
+       </void>
+       <void method="put">
+        <string>gradientColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>border</string>
+        <object class="javax.swing.border.CompoundBorder">
+         <object class="javax.swing.border.LineBorder">
+          <object idref="Color1"/>
+          <int>1</int>
+          <boolean>false</boolean>
+         </object>
+         <object class="javax.swing.border.CompoundBorder">
+          <object class="javax.swing.border.LineBorder">
+           <object idref="Color0"/>
+           <int>2</int>
+           <boolean>false</boolean>
+          </object>
+          <object class="javax.swing.border.LineBorder">
+           <object idref="Color1"/>
+           <int>1</int>
+           <boolean>false</boolean>
+          </object>
+         </object>
+        </object>
+       </void>
+       <void method="put">
+        <string>backgroundColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>editable</string>
+        <boolean>false</boolean>
+       </void>
+       <void method="put">
+        <string>bounds</string>
+        <object class="org.jgraph.graph.AttributeMap$SerializableRectangle2D" id="AttributeMap$SerializableRectangle2D7">
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>x</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D7"/>
+           <double>498.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>y</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D7"/>
+           <double>428.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>width</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D7"/>
+           <double>151.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>height</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D7"/>
+           <double>124.0</double>
+          </void>
+         </void>
+        </object>
+       </void>
+       <void method="put">
+        <string>vertexShape</string>
+        <int>0</int>
+       </void>
+       <void method="put">
+        <string>bordercolor</string>
+        <object idref="Color1"/>
+       </void>
+      </object>
+      <void method="add">
+       <object idref="DefaultPort9"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="org.jgraph.graph.DefaultGraphCell" id="DefaultGraphCell8">
+      <object class="org.jgraph.data.Entity">
+       <string>RULET</string>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdRulet</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>IzvucenBroj</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Vreme</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+       </object>
+       <null/>
+       <int>0</int>
+       <boolean>false</boolean>
+      </object>
+      <object class="org.jgraph.graph.AttributeMap">
+       <void method="put">
+        <string>opaque</string>
+        <boolean>true</boolean>
+       </void>
+       <void method="put">
+        <string>gradientColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>backgroundColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>editable</string>
+        <boolean>false</boolean>
+       </void>
+       <void method="put">
+        <string>bounds</string>
+        <object class="org.jgraph.graph.AttributeMap$SerializableRectangle2D" id="AttributeMap$SerializableRectangle2D8">
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>x</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D8"/>
+           <double>729.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>y</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D8"/>
+           <double>256.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>width</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D8"/>
+           <double>69.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>height</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D8"/>
+           <double>70.0</double>
+          </void>
+         </void>
+        </object>
+       </void>
+       <void method="put">
+        <string>vertexShape</string>
+        <int>0</int>
+       </void>
+       <void method="put">
+        <string>bordercolor</string>
+        <object idref="Color1"/>
+       </void>
+      </object>
+      <void method="add">
+       <object idref="DefaultPort10"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="org.jgraph.graph.DefaultGraphCell" id="DefaultGraphCell9">
+      <object class="org.jgraph.data.Entity">
+       <string>ZAPOSLENI</string>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdZapoelsni</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Ime</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Prezime</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Lozinka</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>KorisnickoIme</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>JMBG</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Tip</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+       </object>
+       <null/>
+       <int>0</int>
+       <boolean>false</boolean>
+      </object>
+      <object class="org.jgraph.graph.AttributeMap">
+       <void method="put">
+        <string>opaque</string>
+        <boolean>true</boolean>
+       </void>
+       <void method="put">
+        <string>gradientColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>backgroundColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>editable</string>
+        <boolean>false</boolean>
+       </void>
+       <void method="put">
+        <string>bounds</string>
+        <object class="org.jgraph.graph.AttributeMap$SerializableRectangle2D" id="AttributeMap$SerializableRectangle2D9">
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>x</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D9"/>
+           <double>46.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>y</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D9"/>
+           <double>599.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>width</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D9"/>
+           <double>107.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>height</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D9"/>
+           <double>133.0</double>
+          </void>
+         </void>
+        </object>
+       </void>
+       <void method="put">
+        <string>vertexShape</string>
+        <int>0</int>
+       </void>
+       <void method="put">
+        <string>bordercolor</string>
+        <object idref="Color1"/>
+       </void>
+      </object>
+      <void method="add">
+       <object class="org.jgraph.graph.DefaultPort" id="DefaultPort11">
+        <null/>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="org.jgraph.graph.DefaultGraphCell" id="DefaultGraphCell10">
+      <object class="org.jgraph.data.Entity">
+       <string>UTAKMICA</string>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdUtakmica</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Rezultat</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Vrene</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>IdDomacin</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>IdGost</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>KvotaX</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Kvota1</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Kvota2</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+       </object>
+       <null/>
+       <int>0</int>
+       <boolean>true</boolean>
+      </object>
+      <object class="org.jgraph.graph.AttributeMap">
+       <void method="put">
+        <string>opaque</string>
+        <boolean>true</boolean>
+       </void>
+       <void method="put">
+        <string>gradientColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>border</string>
+        <object class="javax.swing.border.CompoundBorder">
+         <object class="javax.swing.border.LineBorder">
+          <object idref="Color1"/>
+          <int>1</int>
+          <boolean>false</boolean>
+         </object>
+         <object class="javax.swing.border.CompoundBorder">
+          <object class="javax.swing.border.LineBorder">
+           <object idref="Color0"/>
+           <int>2</int>
+           <boolean>false</boolean>
+          </object>
+          <object class="javax.swing.border.LineBorder">
+           <object idref="Color1"/>
+           <int>1</int>
+           <boolean>false</boolean>
+          </object>
+         </object>
+        </object>
+       </void>
+       <void method="put">
+        <string>backgroundColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>editable</string>
+        <boolean>false</boolean>
+       </void>
+       <void method="put">
+        <string>bounds</string>
+        <object class="org.jgraph.graph.AttributeMap$SerializableRectangle2D" id="AttributeMap$SerializableRectangle2D10">
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>x</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D10"/>
+           <double>344.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>y</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D10"/>
+           <double>635.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>width</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D10"/>
+           <double>109.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>height</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D10"/>
+           <double>155.0</double>
+          </void>
+         </void>
+        </object>
+       </void>
+       <void method="put">
+        <string>vertexShape</string>
+        <int>0</int>
+       </void>
+       <void method="put">
+        <string>bordercolor</string>
+        <object idref="Color1"/>
+       </void>
+      </object>
+      <void method="add">
+       <object idref="DefaultPort4"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="org.jgraph.graph.DefaultGraphCell" id="DefaultGraphCell11">
+      <object class="org.jgraph.data.Entity">
+       <string>TIM</string>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>true</boolean>
+          </void>
+          <void property="name">
+           <string>IdTIm</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="org.jgraph.data.Field">
+          <void property="isKey">
+           <boolean>false</boolean>
+          </void>
+          <void property="name">
+           <string>Ime</string>
+          </void>
+          <void property="type">
+           <object idref="Field$sqlType0"/>
+          </void>
+         </object>
+        </void>
+       </object>
+       <null/>
+       <int>0</int>
+       <boolean>false</boolean>
+      </object>
+      <object class="org.jgraph.graph.AttributeMap">
+       <void method="put">
+        <string>opaque</string>
+        <boolean>true</boolean>
+       </void>
+       <void method="put">
+        <string>gradientColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>backgroundColor</string>
+        <object idref="Color0"/>
+       </void>
+       <void method="put">
+        <string>editable</string>
+        <boolean>false</boolean>
+       </void>
+       <void method="put">
+        <string>bounds</string>
+        <object class="org.jgraph.graph.AttributeMap$SerializableRectangle2D" id="AttributeMap$SerializableRectangle2D11">
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>x</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D11"/>
+           <double>561.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>y</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D11"/>
+           <double>683.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>width</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D11"/>
+           <double>41.0</double>
+          </void>
+         </void>
+         <void class="java.awt.geom.Rectangle2D$Double" method="getField">
+          <string>height</string>
+          <void method="set">
+           <object idref="AttributeMap$SerializableRectangle2D11"/>
+           <double>55.0</double>
+          </void>
+         </void>
+        </object>
+       </void>
+       <void method="put">
+        <string>vertexShape</string>
+        <int>0</int>
+       </void>
+       <void method="put">
+        <string>bordercolor</string>
+        <object idref="Color1"/>
+       </void>
+      </object>
+      <void method="add">
+       <object idref="DefaultPort5"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge0"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge5"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge1"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge7"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge6"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge2"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge3"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge4"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge9"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge8"/>
+    </void>
+   </object>
+   <object class="org.jgraph.graph.AttributeMap"/>
+  </object>
+  <object class="org.jgraph.graph.GraphLayoutCache" id="GraphLayoutCache0">
+   <object idref="ER_DiagramerSer$MyGraphModel0"/>
+   <object class="org.jgraph.graph.DefaultCellViewFactory"/>
+   <array class="org.jgraph.graph.CellView" length="34">
+    <void index="0">
+     <object class="org.jgraph.graph.VertexView">
+      <void property="cell">
+       <object idref="DefaultGraphCell10"/>
+      </void>
+     </object>
+    </void>
+    <void index="1">
+     <object class="org.jgraph.graph.VertexView">
+      <void property="cell">
+       <object idref="DefaultGraphCell8"/>
+      </void>
+     </object>
+    </void>
+    <void index="2">
+     <object class="org.jgraph.graph.EdgeView">
+      <void property="cell">
+       <object idref="DefaultEdge9"/>
+      </void>
+     </object>
+    </void>
+    <void index="3">
+     <object class="org.jgraph.graph.VertexView">
+      <void property="cell">
+       <object idref="DefaultGraphCell9"/>
+      </void>
+     </object>
+    </void>
+    <void index="4">
+     <object class="org.jgraph.graph.VertexView">
+      <void property="cell">
+       <object idref="DefaultGraphCell11"/>
+      </void>
+     </object>
+    </void>
+    <void index="5">
+     <object class="org.jgraph.graph.PortView">
+      <void property="cell">
+       <object idref="DefaultPort11"/>
+      </void>
+     </object>
+    </void>
+    <void index="6">
+     <object class="org.jgraph.graph.PortView">
+      <void property="cell">
+       <object idref="DefaultPort2"/>
+      </void>
+     </object>
+    </void>
+    <void index="7">
+     <object class="org.jgraph.graph.VertexView">
+      <void property="cell">
+       <object idref="DefaultGraphCell5"/>
+      </void>
+     </object>
+    </void>
+    <void index="8">
+     <object class="org.jgraph.graph.EdgeView">
+      <void property="cell">
+       <object idref="DefaultEdge3"/>
+      </void>
+     </object>
+    </void>
+    <void index="9">
+     <object class="org.jgraph.graph.VertexView">
+      <void property="cell">
+       <object idref="DefaultGraphCell1"/>
+      </void>
+     </object>
+    </void>
+    <void index="10">
+     <object class="org.jgraph.graph.PortView">
+      <void property="cell">
+       <object idref="DefaultPort10"/>
+      </void>
+     </object>
+    </void>
+    <void index="11">
+     <object class="org.jgraph.graph.PortView">
+      <void property="cell">
+       <object idref="DefaultPort9"/>
+      </void>
+     </object>
+    </void>
+    <void index="12">
+     <object class="org.jgraph.graph.EdgeView">
+      <void property="cell">
+       <object idref="DefaultEdge6"/>
+      </void>
+     </object>
+    </void>
+    <void index="13">
+     <object class="org.jgraph.graph.PortView">
+      <void property="cell">
+       <object idref="DefaultPort5"/>
+      </void>
+     </object>
+    </void>
+    <void index="14">
+     <object class="org.jgraph.graph.VertexView">
+      <void property="cell">
+       <object idref="DefaultGraphCell2"/>
+      </void>
+     </object>
+    </void>
+    <void index="15">
+     <object class="org.jgraph.graph.PortView">
+      <void property="cell">
+       <object idref="DefaultPort1"/>
+      </void>
+     </object>
+    </void>
+    <void index="16">
+     <object class="org.jgraph.graph.PortView">
+      <void property="cell">
+       <object idref="DefaultPort7"/>
+      </void>
+     </object>
+    </void>
+    <void index="17">
+     <object class="org.jgraph.graph.VertexView">
+      <void property="cell">
+       <object idref="DefaultGraphCell6"/>
+      </void>
+     </object>
+    </void>
+    <void index="18">
+     <object class="org.jgraph.graph.VertexView">
+      <void property="cell">
+       <object idref="DefaultGraphCell7"/>
+      </void>
+     </object>
+    </void>
+    <void index="19">
+     <object class="org.jgraph.graph.EdgeView">
+      <void property="cell">
+       <object idref="DefaultEdge4"/>
+      </void>
+     </object>
+    </void>
+    <void index="20">
+     <object class="org.jgraph.graph.EdgeView">
+      <void property="cell">
+       <object idref="DefaultEdge0"/>
+      </void>
+     </object>
+    </void>
+    <void index="21">
+     <object class="org.jgraph.graph.EdgeView">
+      <void property="cell">
+       <object idref="DefaultEdge2"/>
+      </void>
+     </object>
+    </void>
+    <void index="22">
+     <object class="org.jgraph.graph.EdgeView">
+      <void property="cell">
+       <object idref="DefaultEdge8"/>
+      </void>
+     </object>
+    </void>
+    <void index="23">
+     <object class="org.jgraph.graph.VertexView">
+      <void property="cell">
+       <object idref="DefaultGraphCell0"/>
+      </void>
+     </object>
+    </void>
+    <void index="24">
+     <object class="org.jgraph.graph.EdgeView">
+      <void property="cell">
+       <object idref="DefaultEdge1"/>
+      </void>
+     </object>
+    </void>
+    <void index="25">
+     <object class="org.jgraph.graph.EdgeView">
+      <void property="cell">
+       <object idref="DefaultEdge7"/>
+      </void>
+     </object>
+    </void>
+    <void index="26">
+     <object class="org.jgraph.graph.PortView">
+      <void property="cell">
+       <object idref="DefaultPort0"/>
+      </void>
+     </object>
+    </void>
+    <void index="27">
+     <object class="org.jgraph.graph.VertexView">
+      <void property="cell">
+       <object idref="DefaultGraphCell3"/>
+      </void>
+     </object>
+    </void>
+    <void index="28">
+     <object class="org.jgraph.graph.PortView">
+      <void property="cell">
+       <object idref="DefaultPort8"/>
+      </void>
+     </object>
+    </void>
+    <void index="29">
+     <object class="org.jgraph.graph.PortView">
+      <void property="cell">
+       <object idref="DefaultPort3"/>
+      </void>
+     </object>
+    </void>
+    <void index="30">
+     <object class="org.jgraph.graph.EdgeView">
+      <void property="cell">
+       <object idref="DefaultEdge5"/>
+      </void>
+     </object>
+    </void>
+    <void index="31">
+     <object class="org.jgraph.graph.PortView">
+      <void property="cell">
+       <object idref="DefaultPort4"/>
+      </void>
+     </object>
+    </void>
+    <void index="32">
+     <object class="org.jgraph.graph.VertexView">
+      <void property="cell">
+       <object idref="DefaultGraphCell4"/>
+      </void>
+     </object>
+    </void>
+    <void index="33">
+     <object class="org.jgraph.graph.PortView">
+      <void property="cell">
+       <object idref="DefaultPort6"/>
+      </void>
+     </object>
+    </void>
+   </array>
+   <array class="org.jgraph.graph.CellView" length="0"/>
+   <boolean>true</boolean>
+   <void property="visibleSet">
+    <void method="clear"/>
+    <void method="add">
+     <object idref="DefaultGraphCell1"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultGraphCell8"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultPort6"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge4"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultPort5"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultGraphCell6"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge2"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultPort7"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge3"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultPort1"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge6"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultGraphCell11"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultPort11"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultPort2"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultGraphCell10"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultPort8"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultGraphCell0"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultPort0"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultGraphCell7"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultGraphCell3"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultGraphCell9"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge8"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultPort9"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultGraphCell5"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge1"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultPort3"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultPort10"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultPort4"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge0"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultGraphCell2"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge5"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge9"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultEdge7"/>
+    </void>
+    <void method="add">
+     <object idref="DefaultGraphCell4"/>
+    </void>
+   </void>
+  </object>
+  <void property="size">
+   <object class="java.awt.Dimension" id="Dimension0">
+    <void class="java.awt.Dimension" method="getField">
+     <string>width</string>
+     <void method="set">
+      <object idref="Dimension0"/>
+      <int>1918</int>
+     </void>
+    </void>
+    <void class="java.awt.Dimension" method="getField">
+     <string>height</string>
+     <void method="set">
+      <object idref="Dimension0"/>
+      <int>956</int>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void property="offscreenOffset">
+   <object class="java.awt.geom.Point2D$Double"/>
+  </void>
+  <void id="ObjectArray0" property="selectionCells"/>
+  <void property="selectionCells">
+   <object idref="ObjectArray0"/>
+  </void>
+  <void id="DefaultGraphSelectionModel0" property="selectionModel">
+   <void id="ObjectArray1" property="selectionCells"/>
+   <void property="selectionCells">
+    <object idref="ObjectArray1"/>
+   </void>
+  </void>
+ </object>
+</java>

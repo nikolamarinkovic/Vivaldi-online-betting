@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.24, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: vivaldi_db
+-- Host: localhost    Database: vivaldi
 -- ------------------------------------------------------
--- Server version	8.0.22
+-- Server version	8.0.24
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,8 +29,8 @@ CREATE TABLE `korisnik` (
   `Lozinka` varchar(20) NOT NULL,
   `KorisnickoIme` varchar(20) NOT NULL,
   `JMBG` char(13) NOT NULL,
-  `BrojKartice` varchar(20) NOT NULL,
-  `Tokeni` int NOT NULL,
+  `BrojKartice` varchar(16) NOT NULL,
+  `Tokeni` double NOT NULL,
   PRIMARY KEY (`IdKorisnik`),
   UNIQUE KEY `idKor_UNIQUE` (`IdKorisnik`),
   UNIQUE KEY `KorisnickoIme_UNIQUE` (`KorisnickoIme`)
@@ -55,7 +55,7 @@ DROP TABLE IF EXISTS `lucky6`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `lucky6` (
   `IdLucky6` int NOT NULL AUTO_INCREMENT,
-  `IzvuceniBrojevi` varchar(100) DEFAULT NULL,
+  `IzvuceniBrojevi` varchar(130) DEFAULT NULL,
   `Vreme` datetime NOT NULL,
   PRIMARY KEY (`IdLucky6`),
   UNIQUE KEY `IdLucky_UNIQUE` (`IdLucky6`)
@@ -105,15 +105,15 @@ DROP TABLE IF EXISTS `stavka_rulet`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `stavka_rulet` (
   `IdStavkaRulet` int NOT NULL AUTO_INCREMENT,
+  `IdKorisnik` int NOT NULL,
+  `IdRulet` int NOT NULL,
   `Tip` varchar(20) NOT NULL,
   `Prosla` tinyint DEFAULT NULL,
-  `Ulog` int NOT NULL,
-  `IdTiketRulet` int NOT NULL,
-  `IdKorisnik` int NOT NULL,
+  `Ulog` double NOT NULL,
   PRIMARY KEY (`IdStavkaRulet`),
   UNIQUE KEY `IdStavkaRul_UNIQUE` (`IdStavkaRulet`),
-  KEY `FK_TiketRulet_Rulet_idRul_idx` (`IdTiketRulet`,`IdKorisnik`),
-  CONSTRAINT `FK_StavkaRulet_TiketRulet_IdTiketRul_IdKor` FOREIGN KEY (`IdTiketRulet`, `IdKorisnik`) REFERENCES `tiket_rulet` (`IdTiketRulet`, `IdKorisnik`)
+  KEY `FK_TiketRulet_Rulet_idRul_idx` (`IdRulet`,`IdKorisnik`),
+  CONSTRAINT `FK_StavkaRulet_TiketRulet_IdTiketRul_IdKor` FOREIGN KEY (`IdRulet`, `IdKorisnik`) REFERENCES `tiket_rulet` (`IdRulet`, `IdKorisnik`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -136,9 +136,9 @@ DROP TABLE IF EXISTS `stavka_tiket`;
 CREATE TABLE `stavka_tiket` (
   `IdTiketKladjenje` int NOT NULL,
   `IdUtakmica` int NOT NULL,
-  `Iznos` int NOT NULL,
-  `KonacanIshod` varchar(45) DEFAULT NULL,
-  `Stanje` int NOT NULL,
+  `Iznos` double NOT NULL,
+  `KonacanIshod` char(1) NOT NULL,
+  `Status` int DEFAULT NULL,
   PRIMARY KEY (`IdTiketKladjenje`,`IdUtakmica`),
   KEY `FK_StavkaTiket_IdUtakmica_idx` (`IdUtakmica`),
   CONSTRAINT `FK_StavkaTiket_IdTiketKladjenje` FOREIGN KEY (`IdTiketKladjenje`) REFERENCES `tiket_kladjenje` (`IdTiketKladjenje`),
@@ -165,9 +165,9 @@ DROP TABLE IF EXISTS `tiket_kladjenje`;
 CREATE TABLE `tiket_kladjenje` (
   `IdTiketKladjenje` int NOT NULL AUTO_INCREMENT,
   `IdKor` int NOT NULL,
-  `Ulog` int NOT NULL,
-  `Dobitak` varchar(45) DEFAULT NULL,
-  `Stanje` int NOT NULL,
+  `Ulog` double NOT NULL,
+  `Dobitak` double DEFAULT NULL,
+  `Status` int DEFAULT NULL,
   PRIMARY KEY (`IdTiketKladjenje`),
   UNIQUE KEY `IdTiketKladjenje_UNIQUE` (`IdTiketKladjenje`),
   KEY `FK_TiketKladjenje_Korisnik_IdKorisnik_idx` (`IdKor`),
@@ -194,8 +194,8 @@ DROP TABLE IF EXISTS `tiket_lucky6`;
 CREATE TABLE `tiket_lucky6` (
   `IdKorisnik` int NOT NULL,
   `IdLucky6` int NOT NULL,
-  `Ulog` int NOT NULL,
-  `Dobitak` int NOT NULL,
+  `Ulog` double NOT NULL,
+  `Dobitak` double DEFAULT NULL,
   `Kombinacija` varchar(20) NOT NULL,
   PRIMARY KEY (`IdKorisnik`,`IdLucky6`),
   KEY `FK_TiketLucky6_Lucky6_IdLucky6_idx` (`IdLucky6`),
@@ -221,14 +221,14 @@ DROP TABLE IF EXISTS `tiket_rulet`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tiket_rulet` (
-  `IdTiketRulet` int NOT NULL,
+  `IdRulet` int NOT NULL,
   `IdKorisnik` int NOT NULL,
-  `Ulog` int NOT NULL,
-  `Dobitak` int NOT NULL,
-  PRIMARY KEY (`IdTiketRulet`,`IdKorisnik`),
+  `Ulog` double NOT NULL,
+  `Dobitak` double DEFAULT NULL,
+  PRIMARY KEY (`IdRulet`,`IdKorisnik`),
   KEY `FK_TiketRulet_Rulet_idKor_idx` (`IdKorisnik`),
   CONSTRAINT `FK_TiketRulet_Rulet_idKor` FOREIGN KEY (`IdKorisnik`) REFERENCES `korisnik` (`IdKorisnik`),
-  CONSTRAINT `FK_TiketRulet_Rulet_idRul` FOREIGN KEY (`IdTiketRulet`) REFERENCES `rulet` (`IdRulet`)
+  CONSTRAINT `FK_TiketRulet_Rulet_idRul` FOREIGN KEY (`IdRulet`) REFERENCES `rulet` (`IdRulet`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -251,9 +251,9 @@ DROP TABLE IF EXISTS `tiket_slot`;
 CREATE TABLE `tiket_slot` (
   `IdTiketSlot` int NOT NULL AUTO_INCREMENT,
   `IdKorisnik` int NOT NULL,
-  `Ulog` int NOT NULL,
-  `Dobitak` int NOT NULL,
-  `Rezultat` varchar(30) NOT NULL,
+  `Ulog` double NOT NULL,
+  `Dobitak` double DEFAULT NULL,
+  `Rezultat` varchar(20) NOT NULL,
   PRIMARY KEY (`IdTiketSlot`),
   UNIQUE KEY `idTiketSlot_UNIQUE` (`IdTiketSlot`),
   KEY `FK_TiketSlot_Korisnik_IdKor_idx` (`IdKorisnik`),
@@ -304,7 +304,7 @@ DROP TABLE IF EXISTS `utakmica`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `utakmica` (
   `IdUtakmica` int NOT NULL AUTO_INCREMENT,
-  `Rezultat` varchar(10) DEFAULT NULL,
+  `Rezultat` varchar(5) NOT NULL,
   `Vreme` datetime NOT NULL,
   `IdDomacin` int NOT NULL,
   `IdGost` int NOT NULL,
@@ -358,10 +358,6 @@ LOCK TABLES `zaposleni` WRITE;
 /*!40000 ALTER TABLE `zaposleni` DISABLE KEYS */;
 /*!40000 ALTER TABLE `zaposleni` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'vivaldi_db'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -372,4 +368,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-26 16:33:50
+-- Dump completed on 2021-04-27 15:16:52

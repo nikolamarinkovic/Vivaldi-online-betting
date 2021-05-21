@@ -29,6 +29,6 @@ class Administrator extends BaseController {
         $this->prikaz('pocetna',[]);
     }
     public function odjava(){
-        $this->prikaz('odjava',[]);
+        $this->prikaz('odjavaAdmin',[]);
     }
 }

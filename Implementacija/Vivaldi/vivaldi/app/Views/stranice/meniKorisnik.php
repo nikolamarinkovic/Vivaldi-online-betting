@@ -1,8 +1,8 @@
-    <ul class="menu">
-        <li><a href="index.html">Pocetna</a></li>
-        <li><a href="rulet.html">Rulet</a></li>
-        <li><a href="slot.html">Slot masine</a></li>
-        <li><a href="lucky6.html">Lucky 6</a></li>
-        <li><a href="sport.html">Sportska kladjenja</a></li>
-        <li><a href="profil.html">Profil</a></li>
-    </ul>
+<ul class="menu">
+            <li><a href=<?php echo base_url('Korisnik/pocetna');?>>Pocetna</a></li>
+            <li><a href=<?php echo base_url('Korisnik/rulet');?>>Rulet</a></li>
+            <li><a href=<?php echo base_url('Korisnik/slot');?>>Slot masine</a></li>
+            <li><a href=<?php echo base_url('Korisnik/lucky6');?>>Lucky 6</a></li>
+            <li><a href=<?php echo base_url('Korisnik/sport');?>>Sportska kladjenja</a></li>
+            <li><a href=<?php echo base_url('Korisnik/profil');?>>Profil</a></li>
+        </ul>

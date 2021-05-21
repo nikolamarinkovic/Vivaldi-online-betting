@@ -11,8 +11,8 @@
     <div class="wrapper">
         <div class="header">
             <div class="logo">
-                <a href="pocetna_administrator.html">
-                    <img src="slike/logo.png" alt="logo">
+                <a href=<?php echo base_url('Administrator/pocetna');?>>
+                    <img src=<?php echo base_url("slike/logo.png");?> alt="logo">
                 </a>
             </div>
             <div class="moto">

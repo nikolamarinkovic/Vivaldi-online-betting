@@ -1,17 +1,17 @@
 <ul class="menu">
-            <li><a href="pocetna_administrator.html">Pocetna</a></li>
-            <li><a href="rulet_administrator.html">Rulet</a></li>
-            <li><a href="slot_administrator.html">Slot masine</a></li>
-            <li><a href="lucky6_administrator.html">Lucky 6</a></li>
-            <li><a href="sport_administrator.html">Sportska kladjenja</a></li>
-            <li><a href="profil_administrator.html">Profil</a></li>
+            <li><a href=<?php echo base_url('Administrator/pocetna');?>>Pocetna</a></li>
+            <li><a href=<?php echo base_url('Administrator/rulet');?>>Rulet</a></li>
+            <li><a href=<?php echo base_url('Administrator/slot');?>>Slot masine</a></li>
+            <li><a href=<?php echo base_url('Administrator/lucky6');?>>Lucky 6</a></li>
+            <li><a href=<?php echo base_url('Administrator/sport');?>>Sportska kladjenja</a></li>
+            <li><a href=<?php echo base_url('Administrator/profil');?>>Profil</a></li>
         </ul>
         <ul class="menu">
-            <li><a href="utakmica_administrator.html">Dodavanje utakmice</a></li>
-            <li><a href="kvote_administrator.html">Azuriranje kvota</a></li>
-            <li><a href="timovi_administrator.html">Dodavanje tima</a></li>
+            <li><a href=<?php echo base_url('Administrator/utakmica');?>>Dodavanje utakmice</a></li>
+            <li><a href=<?php echo base_url('Administrator/kvote');?>>Azuriranje kvota</a></li>
+            <li><a href=<?php echo base_url('Administrator/tim');?>>Dodavanje tima</a></li>
         </ul>
         <ul class="menu">
-            <li><a href="mod_adm.html">Dodavanje moderatora/administratora</a></li>
-            <li><a href="uvid_administrator.html">Uvid u korisnike</a></li>
+            <li><a href=<?php echo base_url('Administrator/modadm');?>>Dodavanje moderatora/administratora</a></li>
+            <li><a href=<?php echo base_url('Administrator/uvid');?>>Uvid u korisnike</a></li>
         </ul>

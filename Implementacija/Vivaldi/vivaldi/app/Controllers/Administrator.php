@@ -31,9 +31,9 @@ class Administrator extends BaseController {
     }
     
     public function odjava(){
-        $this->prikaz('odjavaAdmin',[]);
+        $this->session->destroy();
+        return redirect()->to(base_url('/'));
     }
-    
     
     public function rulet(){
         $this->prikaz('ruletAdmin',[]);

@@ -1,8 +1,1 @@
-<?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+<h1 style="font-size: 50px; color: red; margin-top:50px; margin-bottom: 50px;background-color: palegoldenrod; text-align: center">Ne mozete da igrate lucky6 kao administrator!</h1>

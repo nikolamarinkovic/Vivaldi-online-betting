@@ -31,7 +31,8 @@ class Moderator extends BaseController{
     }
     
     public function odjava(){
-        $this->prikaz('odjavaModerator',[]);
+        $this->session->destroy();
+        return redirect()->to(base_url('/'));
     }
     
     

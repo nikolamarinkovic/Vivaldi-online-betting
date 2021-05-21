@@ -31,9 +31,9 @@ class Korisnik extends BaseController{
         $this->prikaz('pocetna',[]);
     }
     
-    public function odjava(){
-        $data['controller']='Gost';
-        $this->prikaz('pocetna',[]);
+    public function odjava(){  
+        $this->session->destroy();
+        return redirect()->to(base_url('/'));
 
     }
     

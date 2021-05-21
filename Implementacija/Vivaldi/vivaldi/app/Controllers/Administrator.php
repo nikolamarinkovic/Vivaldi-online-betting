@@ -25,10 +25,56 @@ class Administrator extends BaseController {
     public function index(){
         $this->prikaz('pocetna',[]);
     }
+    
     public function pocetna(){
         $this->prikaz('pocetna',[]);
     }
+    
     public function odjava(){
         $this->prikaz('odjavaAdmin',[]);
     }
+    
+    
+    public function rulet(){
+        $this->prikaz('ruletAdmin',[]);
+    }
+    
+    public function slot(){
+        $this->prikaz('slotAdmin',[]);
+    }
+    
+    public function lucky6(){
+        $this->prikaz('lucky6Admin',[]);
+    }
+    
+    public function sport(){
+        $this->prikaz('sportAdmin',[]);
+    }
+    
+    public function profil(){
+        $this->prikaz('profilAdmin',[]);
+    }
+    
+    public function utakmica(){
+        $this->prikaz('utakmicaAdmin',[]);
+    }
+    
+    public function kvote(){
+        $this->prikaz('kvoteAdmin',[]);
+    }
+    
+    public function tim(){
+        $this->prikaz('timAdmin',[]);
+    }
+    public function modadm(){
+        $this->prikaz('modadmAdmin',[]);
+    }
+    public function uvid(){
+        $this->prikaz('uvidAdmin',[]);
+    }
+    
+    
+    
+    
+    
 }

@@ -37,4 +37,24 @@ class Gost extends BaseController{
     public function registracija(){
         $this->prikaz('registracija',[]);
     }
+    
+    public function rulet(){
+        $this->prikaz('ruletGost',[]);
+    }
+    
+    public function slot(){
+        $this->prikaz('slotGost',[]);
+    }
+    
+    public function lucky6(){
+        $this->prikaz('lucky6Gost',[]);
+    }
+    
+    public function sport(){
+        $this->prikaz('sportGost',[]);
+    }
+    
+    public function profil(){
+        $this->prikaz('profilGost',[]);
+    }
 }

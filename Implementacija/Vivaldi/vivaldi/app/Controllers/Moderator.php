@@ -13,6 +13,58 @@ namespace App\Controllers;
  *
  * @author Marko
  */
-class Moderator {
-    //put your code here
+class Moderator extends BaseController{
+    protected function prikaz($page, $data) {
+        $data['controller']='Administrator';
+        echo view('sablon/header_moderator');
+        echo view ("stranice/meniModerator");
+        echo view ("stranice/$page");
+        echo view('sablon/footer');
+    }
+    
+    public function index(){
+        $this->prikaz('pocetna',[]);
+    }
+    
+    public function pocetna(){
+        $this->prikaz('pocetna',[]);
+    }
+    
+    public function odjava(){
+        $this->prikaz('odjavaModerator',[]);
+    }
+    
+    
+    public function rulet(){
+        $this->prikaz('ruletModerator',[]);
+    }
+    
+    public function slot(){
+        $this->prikaz('slotModerator',[]);
+    }
+    
+    public function lucky6(){
+        $this->prikaz('lucky6Moderator',[]);
+    }
+    
+    public function sport(){
+        $this->prikaz('sportModerator',[]);
+    }
+    
+    public function profil(){
+        $this->prikaz('profilModerator',[]);
+    }
+    
+    public function utakmica(){
+        $this->prikaz('utakmicaModerator',[]);
+    }
+    
+    public function kvote(){
+        $this->prikaz('kvoteModerator',[]);
+    }
+    
+    public function tim(){
+        $this->prikaz('timModerator',[]);
+    }
+
 }

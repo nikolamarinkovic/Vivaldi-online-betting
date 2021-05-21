@@ -12,7 +12,7 @@
         <div class="header">
             <div class="logo">
                 <a href=<?php echo base_url('Korisnik/pocetna');?>>
-                    <img src="slike/logo.png" alt="logo">
+                    <img src=<?php echo base_url("slike/logo.png");?> alt="logo">
                 </a>
             </div>
             <div class="moto">

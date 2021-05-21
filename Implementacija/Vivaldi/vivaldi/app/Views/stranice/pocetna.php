@@ -4,7 +4,7 @@
             <p>Vec dugi niz godina su kladionice i kockarnice najveca zabava u nasoj zemlji, a neki bi rekli i da je to deo srpske tradicije. U tu svrhu Vivaldi nudi mnostvo igara na srecu ukljucujuci sportska kladjenja, rulet, slot igre i mnogo drugih. Dajemo Vam sansu da promenite zivot.</p>
             <div class="igre">
                 <div>
-                    <a href=<?php echo base_url("rulet.html");?>><img src=<?php echo base_url("slike/rulet.jpg");?> alt="rulet"></a>
+                    <a href=<?php echo base_url("ruletGost.php");?>><img src=<?php echo base_url("slike/rulet.jpg");?> alt="rulet"></a>
                 </div>
 
                 <div>

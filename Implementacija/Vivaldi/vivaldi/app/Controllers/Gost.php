@@ -27,6 +27,9 @@ class Gost extends BaseController{
     public function index(){
         $this->prikaz('pocetna',[]);
     }
+    public function pocetna(){
+        $this->prikaz('pocetna',[]);
+    }
     
     public function prijava(){
         $this->prikaz('prijava',[]);

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vivaldi</title>
     <link rel="stylesheet" href="<?php echo base_url("style.css")?>">
+    <script src="<?php echo base_url("skripta_slot.js")?>"></script>
+    
 </head>
 <body>
     <div class="wrapper">

@@ -7,7 +7,7 @@
  */
 
 namespace App\Controllers;
-
+use \App\Models\KorisnikModel;
 /**
  * Description of Korisnik
  *
@@ -20,7 +20,7 @@ class Korisnik extends BaseController{
         $data['controller']='Korisnik';
         echo view('sablon/header_korisnik');
         echo view ("stranice/meniKorisnik");
-        echo view ("stranice/$page");
+        echo view ("stranice/$page", $data);
         echo view('sablon/footer');
     }
     
@@ -41,8 +41,48 @@ class Korisnik extends BaseController{
         $this->prikaz('ruletKorisnik',[]);
     }
     
+    public function spin(){
+        $coef = 2;
+        
+        $tokeni = intval($this->request->getVar('Tokeni'));
+        
+        $km = new KorisnikModel();
+        $korIme = $this->session->get('korisnik')->KorisnickoIme;
+        $Korisnik = $km
+                    ->where('KorisnickoIme', $korIme)
+                    ->first();
+        
+        if($Korisnik->Tokeni < $tokeni){
+            echo '0,0,0,'.$Korisnik->Tokeni;
+            return;
+        }
+        $Korisnik->Tokeni -= $tokeni;
+        
+        $num1 = rand(1,2);
+        $num2 = rand(1,1);
+        $num3 = rand(1,1);
+        
+        if($num1 == $num2 && $num2 == $num3){
+            //begin trans
+            $Korisnik->Tokeni += $tokeni * $coef;
+            
+            //end trans
+        }
+        $km->set("Tokeni",$Korisnik->Tokeni)
+                    ->where('KorisnickoIme', $Korisnik->KorisnickoIme)
+                    ->update();
+        echo $num1 . "," . $num2 . "," . $num3 . "," . $Korisnik->Tokeni;
+        
+    }
+    
     public function slot(){
-        $this->prikaz('slotKorisnik',[]);
+        $km = new KorisnikModel();
+        $korIme = $this->session->get('korisnik')->KorisnickoIme;
+        $Korisnik = $km
+                    ->where('KorisnickoIme', $korIme)
+                    ->first();
+        
+        $this->prikaz('slotKorisnik',['Tokeni'=>$Korisnik->Tokeni]);
     }
     
     public function lucky6(){

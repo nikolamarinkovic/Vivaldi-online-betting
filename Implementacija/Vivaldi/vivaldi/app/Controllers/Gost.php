@@ -118,6 +118,55 @@ class Gost extends BaseController{
         
        
     }
+    
+    public function registration()
+    {
+        $errors = [];
+        $info = ['UspesnaRegistracija' => 'Uspesno ste se registrovali!'];
+        if(!$this->validate(['username_registration'=>'required', 
+                                'password_registration'=>'required',
+                                'passconfirm_registration'=>'required',
+                                'name_registration'=>'required',
+                                'surname_registration'=>'required',
+                                'id_registration'=>'required|min_length[13]|max_length[13]',
+                                'card_registration'=>'required' ])){
+            if(!empty($this->validator->getErrors()['username_registration']))
+                $errors['KorisnickoIme'] = 'Unesite korisnicko ime';
+            if(!empty($this->validator->getErrors()['password_registration']))
+                $errors['Lozinka'] = 'Unesite lozinku';
+            if(!empty($this->validator->getErrors()['passconfirm_registration']))
+                $errors['PotvrdaLozinke'] = 'Potvrdite lozinku';
+            if(!empty($this->validator->getErrors()['name_registration']))
+                $errors['Ime'] = 'Unesite ime';
+            if(!empty($this->validator->getErrors()['surname_registration']))
+                $errors['Prezime'] = 'Unesite prezime';
+            if(!empty($this->validator->getErrors()['id_registration']))
+                $errors['JMBG'] = 'Unesite JMBG duzine 13';
+            if(!empty($this->validator->getErrors()['card_registration']))
+                $errors['BrojKartice'] = 'Unesite broj kartice';
+            
+            return $this->prikaz('registracija',['errors'=>$errors]);
+        }
+        
+        if($this->request->getVar('password_registration')!=$this->request->getVar('passconfrim_registration'))
+        {
+            $errors['LozinkeNisuIste']='Lozinke nisu iste';
+            return $this->prikaz('registracija',['errors'=>$errors]);
+        }
+       
+           $km = new KorisnikModel();
+           $km->save([ 'KorisnickoIme' => $this->request->getVar('username_registration'),
+               'Lozinka'=> $this->request->getVar('password_registration'),
+               'Ime' => $this->request->getVar('name_registration'),
+               'Prezime' => $this->request->getVar('surname_registration'),
+               'JMBG' => $this->request->getVar('id_registration'),
+               'BrojKartice' => $this->request->getVar('card_registration'),
+               'Tokeni' => '0']);
+           
+           return $this->prikaz('prijava',$info);
+       
+    }
+    
     public function registracija(){
         $this->prikaz('registracija',[]);
     }

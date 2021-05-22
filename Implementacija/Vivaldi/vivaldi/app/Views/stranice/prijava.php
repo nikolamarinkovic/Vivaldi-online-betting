@@ -4,13 +4,6 @@
             <div class="registracija">
                 <form action=<?php echo base_url("Gost/login")?> method="POST">
                     <table>
-                        <?php if(!empty($info['UspesnaRegistracija'])){ ?> 
-                        <tr>
-                            <td class="leva_kolona" colspan="2" style="text-align: center; color: green; padding-top: 10px;">
-                                <?php echo $info['UspesnaRegistracija']; ?>
-                            </td>
-                        </tr>
-                        <?php } ?>
                         <tr>
                             <td class="leva_kolona">
                                 <p>Korisnicko ime*:</p>

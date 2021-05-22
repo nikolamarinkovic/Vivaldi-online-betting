@@ -122,10 +122,9 @@ class Gost extends BaseController{
     public function registration()
     {
         $errors = [];
-        $info = ['UspesnaRegistracija' => 'Uspesno ste se registrovali!'];
         if(!$this->validate(['username_registration'=>'required', 
                                 'password_registration'=>'required',
-                                'passconfirm_registration'=>'required',
+                                'passconfirm_registration'=>'required|matches[password_registration]',
                                 'name_registration'=>'required',
                                 'surname_registration'=>'required',
                                 'id_registration'=>'required|min_length[13]|max_length[13]',
@@ -135,7 +134,7 @@ class Gost extends BaseController{
             if(!empty($this->validator->getErrors()['password_registration']))
                 $errors['Lozinka'] = 'Unesite lozinku';
             if(!empty($this->validator->getErrors()['passconfirm_registration']))
-                $errors['PotvrdaLozinke'] = 'Potvrdite lozinku';
+                $errors['PotvrdaLozinke'] = 'Lozinke se ne poklapaju';
             if(!empty($this->validator->getErrors()['name_registration']))
                 $errors['Ime'] = 'Unesite ime';
             if(!empty($this->validator->getErrors()['surname_registration']))
@@ -145,14 +144,12 @@ class Gost extends BaseController{
             if(!empty($this->validator->getErrors()['card_registration']))
                 $errors['BrojKartice'] = 'Unesite broj kartice';
             
+            
+        
             return $this->prikaz('registracija',['errors'=>$errors]);
         }
         
-        if($this->request->getVar('password_registration')!=$this->request->getVar('passconfrim_registration'))
-        {
-            $errors['LozinkeNisuIste']='Lozinke nisu iste';
-            return $this->prikaz('registracija',['errors'=>$errors]);
-        }
+        
        
            $km = new KorisnikModel();
            $km->save([ 'KorisnickoIme' => $this->request->getVar('username_registration'),
@@ -163,7 +160,7 @@ class Gost extends BaseController{
                'BrojKartice' => $this->request->getVar('card_registration'),
                'Tokeni' => '0']);
            
-           return $this->prikaz('prijava',$info);
+           return redirect()->to(base_url('Gost/prijava'));
        
     }
     

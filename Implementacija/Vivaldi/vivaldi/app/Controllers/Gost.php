@@ -33,7 +33,9 @@ class Gost extends BaseController{
     }
     
     public function prijava($poruka = null){
-        $this->prikaz('prijava', ['poruka'=>$poruka]);
+        
+        $info = $this->session->getFlashdata('info');
+        $this->prikaz('prijava', ['poruka'=>$poruka, 'info'=>$info]);
     }
     //0 nema korrisnika
     //1 ima korisnika
@@ -122,6 +124,7 @@ class Gost extends BaseController{
     public function registration()
     {
         $errors = [];
+        $info = "Uspesna registracija";
         if(!$this->validate(['username_registration'=>'required', 
                                 'password_registration'=>'required',
                                 'passconfirm_registration'=>'required|matches[password_registration]',
@@ -151,17 +154,19 @@ class Gost extends BaseController{
         
         
        
-           $km = new KorisnikModel();
-           $km->save([ 'KorisnickoIme' => $this->request->getVar('username_registration'),
-               'Lozinka'=> $this->request->getVar('password_registration'),
-               'Ime' => $this->request->getVar('name_registration'),
-               'Prezime' => $this->request->getVar('surname_registration'),
-               'JMBG' => $this->request->getVar('id_registration'),
-               'BrojKartice' => $this->request->getVar('card_registration'),
-               'Tokeni' => '0']);
-           
-           return redirect()->to(base_url('Gost/prijava'));
-       
+            $km = new KorisnikModel();
+            $km->save([ 'KorisnickoIme' => $this->request->getVar('username_registration'),
+                'Lozinka'=> $this->request->getVar('password_registration'),
+                'Ime' => $this->request->getVar('name_registration'),
+                'Prezime' => $this->request->getVar('surname_registration'),
+                'JMBG' => $this->request->getVar('id_registration'),
+                'BrojKartice' => $this->request->getVar('card_registration'),
+                'Tokeni' => '0']);
+
+            $this->session->setFlashdata('info',$info);
+            //redirect("home/index");
+            return redirect()->to(base_url('Gost/prijava'));
+
     }
     
     public function registracija(){

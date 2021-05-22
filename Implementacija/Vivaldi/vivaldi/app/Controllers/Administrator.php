@@ -138,6 +138,8 @@ class Administrator extends BaseController {
             return $this->prikaz('modadmAdmin',['errors'=>$errors]);
         }
         
+        //proveriti da ne postoji isti jmbg i da je stariji od 18 god
+        
         $zm->save([ 'KorisnickoIme' => $this->request->getVar('username_registration'),
             'Lozinka'=> $this->request->getVar('password_registration'),
             'Ime' => $this->request->getVar('name_registration'),

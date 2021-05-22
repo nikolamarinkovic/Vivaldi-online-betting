@@ -1,62 +1,112 @@
         <div class="body">
             <h1 class="naslov">Dodavanje moderatora/administratora</h1>
             <hr>
-            <form class="dod_mod_amd" action="pocetna_korisnik.html">
+            <form class="registracija" action=<?php echo base_url("Administrator/dodavanjeZaposlenog")?> method="POST">
                 <table>
                     <tr>
-                        <td class = "leva_kolona_mod_adm">
-                            <p>Korisnicko ime:</p>
-                        </td>
-                        <td class = "desna_kolona_mod_adm">
-                            <input type="text" placeholder="Korisnicko ime" required>
-                        </td>
+                        <td class = "leva_kolona"> <p>Korisnicko ime:</p> </td>
+                        <td class = "desna_kolona"><input type="text" placeholder="Korisnicko ime" name="username_registration"></td>
                     </tr>
+                    
+                    <?php if(!empty($errors['KorisnickoIme'])){ ?> 
+                        <tr>
+                            <td class="leva_kolona" colspan="2" style="text-align: center; color: red; padding-top: 10px;">
+                                <?php echo $errors['KorisnickoIme']; ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                        
                     <tr>
-                        <td class = "leva_kolona_mod_adm">
-                            <p>Lozinka:</p>
-                        </td>
-                        <td class = "desna_kolona_mod_adm">
-                            <input type="password" placeholder="Lozinka" required>
-                        </td>
+                        <td  class = "leva_kolona" > <p>Lozinka:</p></td>
+                        <td class = "desna_kolona"><input type="password" placeholder="Lozinka" name="password_registration"></td>
                     </tr>
+                    
+                    <?php if(!empty($errors['Lozinka'])){ ?> 
+                        <tr>
+                            <td class="leva_kolona" colspan="2" style="text-align: center; color: red; padding-top: 10px;">
+                                <?php echo $errors['Lozinka']; ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    
+                        
+                    <?php if(!empty($errors['LozinkeNisuIste'])){ ?> 
+                        <tr>
+                            <td class="leva_kolona" colspan="2" style="text-align: center; color: red; padding-top: 10px;">
+                                <?php echo $errors['LozinkeNisuIste']; ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
                     <tr>
-                        <td class = "leva_kolona_mod_adm">
-                            <p>Potvrdite lozinku:</p>
-                        </td>
-                        <td class = "desna_kolona_mod_adm">
-                            <input type="password" placeholder="Potvrdite lozinku" required>
-                        </td>
+                        <td class = "leva_kolona" > <p>Potrvdite lozinku:</p></td>
+                        <td class = "desna_kolona"><input type="password" placeholder="Potvrda lozinke" name="passconfirm_registration"></td>
                     </tr>
+                    
+                    <?php if(!empty($errors['PotvrdaLozinke'])){ ?> 
+                        <tr>
+                            <td class="leva_kolona" colspan="2" style="text-align: center; color: red; padding-top: 10px;">
+                                <?php echo $errors['PotvrdaLozinke']; ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                        
                     <tr>
-                        <td class = "leva_kolona_mod_adm">
-                            <p>Ime:</p>
-                        </td>
-                        <td class = "desna_kolona_mod_adm">
-                            <input type="text" placeholder="Ime" required>
-                        </td>
+                        <td class = "leva_kolona"> <p>Ime:</p></td>
+                        <td class = "desna_kolona"><input type="text" placeholder="Ime" name="name_registration"></td>
                     </tr>
+                    
+                    <?php if(!empty($errors['Ime'])){ ?> 
+                        <tr>
+                            <td class="leva_kolona" colspan="2" style="text-align: center; color: red; padding-top: 10px;">
+                                <?php echo $errors['Ime']; ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    
                     <tr>
-                        <td class = "leva_kolona_mod_adm">
-                            <p>Prezime:</p>
-                        </td>
-                        <td class = "desna_kolona_mod_adm">
-                            <input type="text" placeholder="Prezime" required>
-                        </td>
+                        <td class = "leva_kolona"><p>Prezime:</p></td>
+                        <td class = "desna_kolona"><input type="text" placeholder="Prezime" name="surname_registration"></td>
                     </tr>
+                    
+                    <?php if(!empty($errors['Prezime'])){ ?> 
+                        <tr>
+                            <td class="leva_kolona" colspan="2" style="text-align: center; color: red; padding-top: 10px;">
+                                <?php echo $errors['Prezime']; ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
                     <tr>
-                        <td class = "leva_kolona_mod_adm">
-                            <p>JMBG:</p>
-                        </td>
-                        <td class = "desna_kolona_mod_adm">
-                            <input type="text" placeholder="JMBG" required>
+                        <td class = "leva_kolona"><p>JMBG:</p></td>
+                        <td class = "desna_kolona"><input type="text" placeholder="JMBG" name="id_registration"></td>
+                    </tr>
+                    
+                    <?php if(!empty($errors['JMBG'])){ ?> 
+                        <tr>
+                            <td class="leva_kolona" colspan="2" style="text-align: center; color: red; padding-top: 10px;">
+                                <?php echo $errors['JMBG']; ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    <tr>
+                        <td class = "leva_kolona"><p>Tip:</p></td>
+                        <td class = "desna_kolona">
+                            <input name="type" type="radio" value="Moderator">Moderator
+                            <input name="type" type="radio" value="Administrator">Administrator
                         </td>
                     </tr>
+                    <?php if(!empty($errors['Tip'])){ ?> 
+                    <tr>
+                        <td class="leva_kolona" colspan="2" style="text-align: center; color: red; padding-top: 10px;">
+                            <?php echo $errors['Tip']; ?>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                    <tr>
+                        <td colspan="2" class="submit_registracija"> <input type="submit"> </td>
+                    </tr>
+
                 </table>
-                <div>
-                    Tip:
-                    <input name="vrsta" type="radio" checked>Moderator
-                    <input name="vrsta" type="radio">Administrator
-                </div>
-                <input type="submit">
             </form>
+            
+            
         </div>

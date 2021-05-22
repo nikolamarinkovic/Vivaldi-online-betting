@@ -7,7 +7,9 @@
  */
 
 namespace App\Controllers;
-
+use \App\Models\KorisnikModel;
+use \App\Models\ZaposleniModel;
+use \App\Models\TimModel;
 /**
  * Description of Moderator
  *
@@ -15,10 +17,10 @@ namespace App\Controllers;
  */
 class Moderator extends BaseController{
     protected function prikaz($page, $data) {
-        $data['controller']='Administrator';
+        $data['controller']='Moderator';
         echo view('sablon/header_moderator');
         echo view ("stranice/meniModerator");
-        echo view ("stranice/$page");
+        echo view ("stranice/$page", $data);
         echo view('sablon/footer');
     }
     
@@ -66,6 +68,24 @@ class Moderator extends BaseController{
     
     public function tim(){
         $this->prikaz('timModerator',[]);
+    }
+    public function dodajTim(){  
+        if(!$this->validate(['tim_ime'=>'required'])){
+            if(!empty($this->validator->getErrors()['tim_ime']))
+                $errors['TimIme'] = 'Unesite ime tima';
+            //echo var_dump($errors);                 //NE RADI 
+            return $this->prikaz('timModerator',['errors'=>$errors]);
+        }
+        $tm = new TimModel();     
+        $tim = $tm
+                ->where('Ime', $this->request->getVar('tim_ime'))
+                ->first();
+        if($tim != null){
+            $errors['TimIme'] = 'Tim vec postoji';
+            return $this->prikaz('timModerator',['errors'=>$errors]);
+        }
+        $tm->save(['Ime' => $this->request->getVar('tim_ime')]);
+        return redirect()->to(base_url('Moderator/rulet'));     
     }
 
 }

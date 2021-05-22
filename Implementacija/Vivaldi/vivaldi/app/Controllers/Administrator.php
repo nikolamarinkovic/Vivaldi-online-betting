@@ -9,7 +9,7 @@
 namespace App\Controllers;
 use \App\Models\KorisnikModel;
 use \App\Models\ZaposleniModel;
-
+use \App\Models\TimModel;
 /**
  * Description of Administrator
  *
@@ -69,9 +69,86 @@ class Administrator extends BaseController {
     public function tim(){
         $this->prikaz('timAdmin',[]);
     }
+    public function dodajTim(){
+        if(!$this->validate(['tim_ime'=>'required'])){
+            if(!empty($this->validator->getErrors()['tim_ime']))
+                $errors['TimIme'] = 'Unesite ime tima';
+            return $this->prikaz('timAdmin',['errors'=>$errors]);
+        }
+        $tm = new TimModel();     
+        $tim = $tm
+                ->where('Ime', $this->request->getVar('tim_ime'))
+                ->first();
+        if($tim != null){
+            $errors['TimIme'] = 'Tim vec postoji';
+            return $this->prikaz('timAdmin',['errors'=>$errors]);
+        }
+        $tm->save(['Ime' => $this->request->getVar('tim_ime')]);
+        return redirect()->to(base_url('Administrator/tim'));     
+    }
     public function modadm(){
         $this->prikaz('modadmAdmin',[]);
     }
+    
+    public function dodavanjeZaposlenog() {
+        $errors = [];
+        if(!$this->validate(['username_registration'=>'required', 
+                                'password_registration'=>'required',
+                                'passconfirm_registration'=>'required|matches[password_registration]',
+                                'name_registration'=>'required',
+                                'surname_registration'=>'required',
+                                'id_registration'=>'required|min_length[13]|max_length[13]',
+                                'type'=>'required' ])){
+            if(!empty($this->validator->getErrors()['username_registration']))
+                $errors['KorisnickoIme'] = 'Unesite korisnicko ime';
+            if(!empty($this->validator->getErrors()['password_registration']))
+                $errors['Lozinka'] = 'Unesite lozinku';
+            if(!empty($this->validator->getErrors()['passconfirm_registration']))
+                $errors['PotvrdaLozinke'] = 'Lozinke se ne poklapaju';
+            if(!empty($this->validator->getErrors()['name_registration']))
+                $errors['Ime'] = 'Unesite ime';
+            if(!empty($this->validator->getErrors()['surname_registration']))
+                $errors['Prezime'] = 'Unesite prezime';
+            if(!empty($this->validator->getErrors()['id_registration']))
+                $errors['JMBG'] = 'Unesite JMBG duzine 13';
+            if(!empty($this->validator->getErrors()['type']))
+                $errors['Tip'] = 'Unesite tip';
+            
+            return $this->prikaz('modadmAdmin',['errors'=>$errors]);
+        }
+        
+        $km = new KorisnikModel;
+        
+        $korisnik = $km
+                ->where('KorisnickoIme', $this->request->getVar('username_registration'))
+                ->first();
+        if($korisnik != null){
+            $errors['KorisnickoIme'] = 'Korisnicko ime postoji medju korisnicima';
+            return $this->prikaz('modadmAdmin',['errors'=>$errors]);
+        }
+        
+        
+        $zm = new ZaposleniModel();
+        
+        $zaposleni = $zm
+                ->where('KorisnickoIme', $this->request->getVar('username_registration'))
+                ->first();
+        if($zaposleni != null){
+            $errors['KorisnickoIme'] = 'Korisnicko ime postoji medju zaposlenima';
+            return $this->prikaz('modadmAdmin',['errors'=>$errors]);
+        }
+        
+        $zm->save([ 'KorisnickoIme' => $this->request->getVar('username_registration'),
+            'Lozinka'=> $this->request->getVar('password_registration'),
+            'Ime' => $this->request->getVar('name_registration'),
+            'Prezime' => $this->request->getVar('surname_registration'),
+            'JMBG' => $this->request->getVar('id_registration'),
+            'Tip' => $this->request->getVar('type') == "Moderator" ? 0 : 1]);
+
+        return redirect()->to(base_url('Administrator/modadmAdmin'));
+    }
+    
+    
     public function uvid(){
         $this->prikaz('uvidAdmin',[]);
     }

@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 class KorisnikModel extends Model
 {
     protected $table      = 'korisnik';
-    protected $primaryKey = 'IdKorisnik	';
+    protected $primaryKey = 'IdKorisnik';
     protected $useAutoIncrement = true;
     protected $returnType     = 'object';
     protected $useSoftDeletes = false;

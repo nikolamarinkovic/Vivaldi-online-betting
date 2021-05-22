@@ -1,10 +1,10 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
-class KorisnikModel extends Model
+class TimModel extends Model
 {
     protected $table      = 'tim';
-    protected $primaryKey = 'IdTim	';
+    protected $primaryKey = 'IdTim';
     protected $useAutoIncrement = true;
     protected $returnType     = 'object';
     protected $useSoftDeletes = false;

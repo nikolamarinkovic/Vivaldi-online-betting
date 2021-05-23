@@ -86,6 +86,33 @@ class Administrator extends BaseController {
         $tm->save(['Ime' => $this->request->getVar('tim_ime')]);
         return redirect()->to(base_url('Administrator/tim'));     
     }
+    
+    public function dodajUtakmicu(){
+        if(!$this->validate(['kvota1'=>'required',
+                            'kvotaX'=>'required',            
+                            'kvota2'=>'required',
+                            'vreme'=>'required'])){
+            if(!empty($this->validator->getErrors()['kvota1']))
+                $errors['Kvota1'] = 'Unesite kvotu za rezultat 1';
+            if(!empty($this->validator->getErrors()['kvotaX']))
+                $errors['KvotaX'] = 'Unesite kvotu za rezultat X';
+            if(!empty($this->validator->getErrors()['kvota2']))
+                $errors['Kvota2'] = 'Unesite kvotu za rezultat 2';
+            if(!empty($this->validator->getErrors()['vreme']))
+                $errors['Vreme'] = 'Izaberite vreme';
+            return $this->prikaz('utakmicaAdmin',['errors'=>$errors]);
+        }
+        //$um = new UtakmicaModel();     
+        /*$utakmica = $um
+                ->where('', $this->request->getVar('tim_ime'))
+                ->first();
+        if($tim != null){
+            $errors['TimIme'] = 'Tim vec postoji';
+            return $this->prikaz('timAdmin',['errors'=>$errors]);
+        }*/
+        //$um->save(['IdDomacin' => $this->request->getVar('Domacin')]);
+        return redirect()->to(base_url('Administrator/utakmica'));     
+    }
     public function modadm(){
         $this->prikaz('modadmAdmin',[]);
     }

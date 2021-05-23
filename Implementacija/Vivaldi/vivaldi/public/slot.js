@@ -9,34 +9,9 @@
 
     var slotMachine = function(){
 
-        var credits = 15,
-            spinning = 3,
+        var spinning = 3,
             spin = [0,0,0],
-            slotsTypes = {
-                'cherry': [2,5,10],
-                'orange': [0,15,30],
-                'prune': [0,40,50],
-                'bell': [0,50,80],
-                'bar1': [0,0,100],
-                'bar2': [0,0,150],
-                'bar3': [0,0,250],
-                'seven': [0,0,500],
-                'anybar': [0,0,80]
-            },
-            slots = [
-                ['orange','bell','orange','bar2','prune','orange',
-                    'bar3','prune','orange','bar1','bell','cherry','orange',
-                    'prune','bell','bar1','cherry','seven','orange','prune',
-                    'orange','bell','orange'],
-                ['cherry','prune','orange','bell','bar1','cherry','prune',
-                    'bar3','cherry','bell','orange','bar1','seven','cherry',
-                    'bar2','cherry','bell','prune','cherry','orange','cherry',
-                    'prune','orange'],
-                ['cherry','orange','bell','prune','bar2','cherry','prune',
-                    'orange','bar3','cherry','bell','orange','cherry','orange',
-                    'cherry','prune','bar1','seven','bell','cherry','cherry',
-                    'orange','bell'],
-            ],
+
             startSlot = function(){
 
                 spinning = false;
@@ -46,42 +21,6 @@
                 this.blur();
 
                 return false;
-
-            },
-            endSlot = function(){
-
-                $('#slot-block').show();
-                $('#slot-credits').text('VERLOREN!!!');
-
-                setInterval(blink($('#slot-credits')), 1000);
-
-            },
-            addCredit = function(incrementCredits){
-
-                var currentCredits = credits;
-                    credits += incrementCredits;
-
-                blink($('#slot-credits'));
-
-                $('#slot-credits')
-                    .css('credit', 0)
-                    .animate({
-                        credit: incrementCredits
-                    },{
-                        duration: 400 + incrementCredits,
-                        easing: 'easeOut',
-                        step: function (now){
-
-                            $(this).html(parseInt(currentCredits + now, 10));
-
-                        },
-                        complete: function(){
-
-                            $(this).html(credits);
-                            blink($('#slot-credits'));
-
-                        }
-                    });
 
             },
             spin = function(){
@@ -96,41 +35,58 @@
                     $('#slot-machine .ring1 .shadow, #slot-machine .ring2 .shadow').animate({ top: '50%', opacity: 1 });
 
                     spinning = 3;
-                    credits --;
 
-                    $('#slot-credits').html(credits);
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            res = this.responseText.split(",");
+                            setTimeout(function(){
+                                document.getElementById("ukupno_tokena").innerHTML = res[3];
+                            }, 3000);
+                            //document.getElementById("ukupno_tokena").innerHTML = res[3];
+                            document.getElementById("brojevi").innerHTML =res[0] + " " + res[1] + " " + res[2];
+                            this.responseText;
 
-                    spin[0] = parseInt(Math.random() * 23);
-                    spin[1] = parseInt(Math.random() * 23);
-                    spin[2] = parseInt(Math.random() * 23);
+                            spin[0] = parseInt(res[0]);
+                            spin[1] = parseInt(res[1]);
+                            spin[2] = parseInt(res[2]);
 
-                    $('#slot-trigger').addClass('slot-triggerDisabled');
+                            $('#slot-trigger').addClass('slot-triggerDisabled');
 
-                    $('img.slotSpinAnimation').show();
+                            $('img.slotSpinAnimation').show();
 
-                    $('#wheel1 img:first').css('top', - (spin[0] * 44 + 16) + 'px');
-                    $('#wheel2 img:first').css('top', - (spin[1] * 44 + 16) + 'px');
-                    $('#wheel3 img:first').css('top', - (spin[2] * 44 + 16) + 'px');
+                            $('#wheel1 img:first').css('top', - (spin[0] * 44 + 16) + 'px');
+                            $('#wheel2 img:first').css('top', - (spin[1] * 44 + 16) + 'px');
+                            $('#wheel3 img:first').css('top', - (spin[2] * 44 + 16) + 'px');
 
-                    setTimeout(function(){
-                        $('#slot-machine .arm').animate({ top: '-25px', height: '50%', overflow: 'visible' });
-                        $('#slot-machine .arm .knob').animate({ top: '-15px', height: '16px' });
-                        $('#slot-machine .arm-shadow').animate({ top: '13px' });
-                        $('#slot-machine .ring1 .shadow, #slot-machine .ring2 .shadow').animate({ top: '0', opacity: 0 });
-                    }, 500);
+                            setTimeout(function(){
+                                $('#slot-machine .arm').animate({ top: '-25px', height: '50%', overflow: 'visible' });
+                                $('#slot-machine .arm .knob').animate({ top: '-15px', height: '16px' });
+                                $('#slot-machine .arm-shadow').animate({ top: '13px' });
+                                $('#slot-machine .ring1 .shadow, #slot-machine .ring2 .shadow').animate({ top: '0', opacity: 0 });
+                            }, 500);
 
-                    setTimeout(function(){
-                        stopSpin(1);
-                    }, 1500 + parseInt(1500 * Math.random()));
+                            setTimeout(function(){
+                                stopSpin(1);
+                            }, 1500 + parseInt(1500 * Math.random()));
 
-                    setTimeout(function(){
-                        stopSpin(2);
-                    }, 1500 + parseInt(1500 * Math.random()));
+                            setTimeout(function(){
+                                stopSpin(2);
+                            }, 1500 + parseInt(1500 * Math.random()));
 
-                    setTimeout(function(){
-                        stopSpin(3);
-                    }, 1500 + parseInt(1500 * Math.random()));
+                            setTimeout(function(){
+                                stopSpin(3);
+                            }, 1500 + parseInt(1500 * Math.random()));
 
+
+
+                        }
+                    };
+                    xhttp.open("POST", "http://localhost:8080/Korisnik/spin" , true);
+                    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    var params = 'Tokeni='+document.getElementById("ulozeni_tokeni").innerHTML;
+                    document.getElementById("ulozeni_tokeni").innerHTML = 0;
+                    xhttp.send(params);
                 }
 
                 return false;
@@ -151,65 +107,10 @@
                         complete: function() {
 
                             spinning --;
-
-                            if(spinning <= 0){
-                                endSpin();
-                            }
-
                         }
                     });
-            },
-            endSpin = function(){
-
-                var slotType = slots[0][spin[0]],
-                    matches = 1,
-                    barMatch = /bar/.test(slotType) ? 1 : 0,
-                    winnedCredits = 0,
-                    waitToSpin = 10;
-
-                if(slotType == slots[1][spin[1]]){
-
-                    matches ++;
-
-                    if(slotType == slots[2][spin[2]]){
-                        matches ++;
-                    } else if(barMatch !=0 && /bar/.test(slots[2][spin[2]])){
-                        barMatch ++;
-                    }
-
-                } else if(barMatch != 0 && /bar/.test(slots[1][spin[1]])){
-
-                    barMatch ++;
-
-                    if(/bar/.test(slots[2][spin[2]])){
-                        barMatch ++;
-                    }
-
-                }
-
-                if(matches != 3 && barMatch == 3){
-                    slotType = 'anybar';
-                    matches = 3;
-                }
-
-                var winnedCredits = slotsTypes[slotType][matches-1];
-
-                if(winnedCredits > 0){
-                    addCredit(winnedCredits);
-                    waitToSpin = 410 + winnedCredits;
-                }
-
-                setTimeout(function(){
-
-                    if(credits == 0){
-                        endSlot();
-                    } else {
-                        $('#slot-trigger').removeClass('slot-triggerDisabled');
-                        spinning = false;
-                    }
-
-                }, waitToSpin);
             };
+            
         return {
 
             init: function(){
@@ -226,9 +127,9 @@
                     $('#slot-trigger').removeClass('slot-triggerDown');
                 });
 
-                $('#wheel1 img:first').css('top', - (parseInt(Math.random() * 23) * 44) + 'px');
-                $('#wheel2 img:first').css('top', - (parseInt(Math.random() * 23) * 44) + 'px');
-                $('#wheel3 img:first').css('top', - (parseInt(Math.random() * 23) * 44) + 'px');
+                $('#wheel1 img:first').css('top', - (parseInt(Math.random() * 8) * 44) + 'px');
+                $('#wheel2 img:first').css('top', - (parseInt(Math.random() * 8) * 44) + 'px');
+                $('#wheel3 img:first').css('top', - (parseInt(Math.random() * 8) * 44) + 'px');
 
             }
 

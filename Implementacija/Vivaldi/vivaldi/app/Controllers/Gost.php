@@ -59,12 +59,6 @@ class Gost extends BaseController{
         return 1;//redirect()->to(base_url('Korisnik'));
     }
      private function proveraZaposleni() {
-        
-         
-        $builder->set('Tokeni', 'field+1', false);
-        $builder->where('id', 2);
-        $builder->update();
-         
          
         $km = new ZaposleniModel();     
         $korisnik = $km

@@ -51,16 +51,16 @@
                     </div>
                 </div>
                 
-                <?php include 'slot.html';?>
+                <?php include 'slotMasina.php';?>
                 
                 <div class = "slot_bar" style="color:white; font-size: 50px; text-align: center;" id="brojevi">
                     _ _ _
                     <!--img src=<//?php echo base_url("slike/slotOff.png");?> alt="slot"-->
                 </div>  
                 
-                <div class = "button_play_slot">
+                <!--div class = "button_play_slot">
                     <input type="button" value="Spin!" onclick="zavrtiMe()">
-                </div>
+                </div-->
 
             </div>
         </div>

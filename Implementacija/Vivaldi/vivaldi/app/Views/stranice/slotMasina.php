@@ -1,4 +1,4 @@
-<div id="page">
+<div id="page" style="margin-left: 380px">
 
     <div id="content">
 
@@ -15,7 +15,7 @@
                 <div id="slot-display">
                     <div id="slot-overlay"></div>
                     <div id="slot-overlay-line"></div>
-                    <div id="slot-credits">15</div>
+                    <!--div id="slot-credits">15</div-->
                     <div id="slot-zeros">00000000000</div>
                 </div>
 
@@ -23,17 +23,17 @@
                     <div id="wheel1" class="wheel">
                         <div class="overlay"></div>
                         
-                        <img src="../slike/vocke.gif">   
+                        <img src="../slike/vocke.png">   
                         <img src="../slike/vocke_pokret.gif" class="slotSpinAnimation">  
                     </div>
                     <div id="wheel2" class="wheel">
                         <div class="overlay"></div>
-                        <img src="../slike/vocke.gif">   
+                        <img src="../slike/vocke.png">   
                         <img src="../slike/vocke_pokret.gif" class="slotSpinAnimation"> 
                     </div>
                     <div id="wheel3" class="wheel">
                         <div class="overlay"></div>
-                        <img src="../slike/vocke.gif">   
+                        <img src="../slike/vocke.png">   
                         <img src="../slike/vocke_pokret.gif" class="slotSpinAnimation"> 
                     </div>
                 </div>

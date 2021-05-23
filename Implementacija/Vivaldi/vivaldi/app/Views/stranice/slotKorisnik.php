@@ -1,3 +1,6 @@
+<script src="<?php echo base_url("jquery-3.6.0.min.js")?>"></script>
+<link rel="stylesheet" href="<?php echo base_url("slot.css")?>">
+<script src="<?php echo base_url("slot.js")?>"></script>
 <div class="body">
             <h1 class="naslov">Slot masine</h1>
             <hr>
@@ -47,6 +50,8 @@
                         </form>
                     </div>
                 </div>
+                
+                <?php include 'slot.html';?>
                 
                 <div class = "slot_bar" style="color:white; font-size: 50px; text-align: center;" id="brojevi">
                     _ _ _

@@ -8,6 +8,7 @@
 
 namespace App\Controllers;
 use \App\Models\KorisnikModel;
+use \App\Models\TiketSlotModel;
 /**
  * Description of Korisnik
  *
@@ -58,19 +59,28 @@ class Korisnik extends BaseController{
         }
         $Korisnik->Tokeni -= $tokeni;
         
-        $num1 = rand(1,2);
+        $num1 = rand(1,1);
         $num2 = rand(1,1);
         $num3 = rand(1,1);
-        
+        $dobitak = 0;
         if($num1 == $num2 && $num2 == $num3){
             //begin trans
             $Korisnik->Tokeni += $tokeni * $coef;
-            
+            $dobitak = $tokeni * $coef;
             //end trans
         }
         $km->set("Tokeni",$Korisnik->Tokeni)
                     ->where('KorisnickoIme', $Korisnik->KorisnickoIme)
                     ->update();
+        $tsm = new TiketSlotModel();
+        $tsm->save([
+        'IdKorisnik' => $Korisnik->IdKorisnik,
+        'Ulog' => $tokeni,
+        'Dobitak' => $dobitak,
+        'Rezultat' => $num1 . "," . $num2 . "," . $num3
+        ]);
+        
+        
         echo $num1 . "," . $num2 . "," . $num3 . "," . $Korisnik->Tokeni;
         
     }

@@ -1,7 +1,7 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
-class KorisnikModel extends Model
+class UtakmicaModel extends Model
 {
     protected $table      = 'utakmica';
     protected $primaryKey = 'IdUtakmica	';

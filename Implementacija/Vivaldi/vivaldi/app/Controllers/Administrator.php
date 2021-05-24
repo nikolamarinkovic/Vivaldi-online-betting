@@ -10,6 +10,7 @@ namespace App\Controllers;
 use \App\Models\KorisnikModel;
 use \App\Models\ZaposleniModel;
 use \App\Models\TimModel;
+use \App\Models\UtakmicaModel;
 /**
  * Description of Administrator
  *
@@ -59,6 +60,9 @@ class Administrator extends BaseController {
     }
     
     public function utakmica(){
+        /*$tm = new TimModel();        
+        $timovi = $tm->findAll();
+        return $this->prikaz('utakmicaAdmin',['teams'=>$timovi]);*/
         $this->prikaz('utakmicaAdmin',[]);
     }
     
@@ -88,6 +92,7 @@ class Administrator extends BaseController {
     }
     
     public function dodajUtakmicu(){
+        $errors = [];
         if(!$this->validate(['kvota1'=>'required',
                             'kvotaX'=>'required',            
                             'kvota2'=>'required',
@@ -100,18 +105,34 @@ class Administrator extends BaseController {
                 $errors['Kvota2'] = 'Unesite kvotu za rezultat 2';
             if(!empty($this->validator->getErrors()['vreme']))
                 $errors['Vreme'] = 'Izaberite vreme';
+            
             return $this->prikaz('utakmicaAdmin',['errors'=>$errors]);
-        }
-        //$um = new UtakmicaModel();     
-        /*$utakmica = $um
-                ->where('', $this->request->getVar('tim_ime'))
-                ->first();
-        if($tim != null){
-            $errors['TimIme'] = 'Tim vec postoji';
-            return $this->prikaz('timAdmin',['errors'=>$errors]);
-        }*/
-        //$um->save(['IdDomacin' => $this->request->getVar('Domacin')]);
-        return redirect()->to(base_url('Administrator/utakmica'));     
+        }       
+     
+        $um = new UtakmicaModel();   
+        $kvota1=$this->request->getVar('kvota1');
+        $kvota2=$this->request->getVar('kvota2');
+        $kvotaX=$this->request->getVar('kvotaX');
+        $idDomacin=$this->request->getVar('domacin');
+        $idGost=$this->request->getVar('gost');
+        if($idDomacin==$idGost)
+             $errors['Teams='] = 'Timovi moraju biti razliciti';
+        if($kvota1<1)
+             $errors['Kvota1-'] = 'Kvota mora biti veca od 1';
+        if($kvotaX<1)
+             $errors['KvotaX-'] = 'Kvota mora biti veca od 1';
+        if($kvota2<1)
+             $errors['Kvota2-'] = 'Kvota mora biti veca od 1';
+        if(!empty($errors))
+            return $this->prikaz('utakmicaAdmin',['errors'=>$errors]);
+        $um->save([ 'Rezultat' => "0",
+                'Vreme'=> $this->request->getVar('vreme'),
+                'IdDomacin' => $idDomacin,
+                'IdGost' => $idGost,
+                'KvotaX' => $kvotaX,
+                'Kvota1' => $kvota1,
+                'Kvota2' => $kvota2]);
+        return $this->prikaz('utakmicaAdmin',[]);
     }
     public function modadm(){
         $this->prikaz('modadmAdmin',[]);

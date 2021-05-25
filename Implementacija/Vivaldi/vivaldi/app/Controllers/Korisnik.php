@@ -44,58 +44,207 @@ class Korisnik extends BaseController{
     }
     
     public function rulet_spin(){
-        /*$coef = 0;
+        $handlers = [
+            '0' => function($num){
+                return  $num == 0 ? 35 : 0;
+            },
+            '1' => function($num){
+                return  $num == 1 ? 35 : 0;
+            },
+            '2' => function($num){
+                return  $num == 2 ? 35 : 0;
+            },
+            '3' => function($num){
+                return  $num == 3 ? 35 : 0;
+            },
+            '4' => function($num){
+                return  $num == 4 ? 35 : 0;
+            },
+            '5' => function($num){
+                return  $num == 5 ? 35 : 0;
+            },
+            '6' => function($num){
+                return  $num == 6 ? 35 : 0;
+            },
+            '7' => function($num){
+                return  $num == 7 ? 35 : 0;
+            },
+            '8' => function($num){
+                return  $num == 8 ? 35 : 0;
+            },
+            '9' => function($num){
+                return  $num == 9 ? 35 : 0;
+            },
+            '10' => function($num){
+                return  $num == 10 ? 35 : 0;
+            },
+            '11' => function($num){
+                return  $num == 11 ? 35 : 0;
+            },
+            '12' => function($num){
+                return  $num == 12 ? 35 : 0;
+            },
+            '13' => function($num){
+                return  $num == 13 ? 35 : 0;
+            },
+            '14' => function($num){
+                return  $num == 14 ? 35 : 0;
+            },
+            '15' => function($num){
+                return  $num == 15 ? 35 : 0;
+            },
+            '16' => function($num){
+                return  $num == 16 ? 35 : 0;
+            },
+            '17' => function($num){
+                return  $num == 17 ? 35 : 0;
+            },
+            '18' => function($num){
+                return  $num == 18 ? 35 : 0;
+            },
+            '19' => function($num){
+                return  $num == 19 ? 35 : 0;
+            },
+            '20' => function($num){
+                return  $num == 20 ? 35 : 0;
+            },
+            '21' => function($num){
+                return  $num == 21 ? 35 : 0;
+            },
+            '22' => function($num){
+                return  $num == 22 ? 35 : 0;
+            },
+            '23' => function($num){
+                return  $num == 23 ? 35 : 0;
+            },
+            '24' => function($num){
+                return  $num == 24 ? 35 : 0;
+            },
+            '25' => function($num){
+                return  $num == 25 ? 35 : 0;
+            },
+            '26' => function($num){
+                return  $num == 26 ? 35 : 0;
+            },
+            '27' => function($num){
+                return  $num == 27 ? 35 : 0;
+            },
+            '28' => function($num){
+                return  $num == 28 ? 35 : 0;
+            },
+            '29' => function($num){
+                return  $num == 29 ? 35 : 0;
+            },
+            '30' => function($num){
+                return  $num == 30 ? 35 : 0;
+            },
+            '31' => function($num){
+                return  $num == 31 ? 35 : 0;
+            },
+            '32' => function($num){
+                return  $num == 32 ? 35 : 0;
+            },
+            '33' => function($num){
+                return  $num == 33 ? 35 : 0;
+            },
+            '34' => function($num){
+                return  $num == 34 ? 35 : 0;
+            },
+            '35' => function($num){
+                return  $num == 35 ? 35 : 0;
+            },
+            '36' => function($num){
+                return  $num == 36 ? 35 : 0;
+            },
+            '2 to 1 a' => function($num){
+                return in_array($num, [3 , 6 , 9 , 12,
+                                       15, 18, 21, 24,
+                                       27, 30, 33, 36]) ? 35 : 0;
+            },
+            '2 to 1 b' => function($num){
+                return in_array($num, [2 , 5 , 8 , 11,
+                                       14, 17, 20, 23,
+                                       26, 29, 32, 35]) ? 35 : 0;
+            },
+            '2 to 1 c' => function($num){
+                return in_array($num, [1 , 4 , 7 , 10,
+                                       13, 16, 19, 22,
+                                       25, 28, 31, 34]) ? 35 : 0;
+            },
+            '1st12' => function($num){
+                return  (1 <= $num && $num <=12) ? 35 : 0;
+            },
+            '2nd12' => function($num){
+                return  (13 <= $num && $num <=24) ? 35 : 0;
+            },
+            '3rd12' => function($num){
+                return  (25 <= $num && $num <=36) ? 35 : 0;
+            },
+            '1 to 18' => function($num){
+                return  (1 <= $num && $num <=18) ? 35 : 0;
+            },
+            'Even' => function($num){
+                return  ($num % 2 == 0) ? 35 : 0;
+            },
+            'Red' => function($num){
+                return in_array($num, [1 , 3 , 5 , 7,
+                                       9 , 12, 14, 16,
+                                       18, 19, 21, 23,
+                                       25, 27, 30, 32,
+                                       34, 36]) ? 35 : 0;
+            },
+            'Black' => function($num){
+                return in_array($num, [2 , 4 , 6 , 8,
+                                       10, 11, 13, 15,
+                                       17, 20, 22, 24,
+                                       26, 28, 29, 31,
+                                       33, 35]) ? 35 : 0;
+            },
+            'Odd' => function($num){
+                return  ($num % 2 == 1) ? 35 : 0;
+            },
+            '19 to 36' => function($num){
+                return  (19 <= $num && $num <=36) ? 35 : 0;
+            }
+        ];
         
-        $tokeni = intval($this->request->getVar('Tokeni'));
-        $num = rand(0,36);
+        
+        $rulet = [];
+        
+        $niz = $this->request->getVar('niz');
+        $kvs = explode(',', $niz);
+        foreach($kvs as $kv){
+            $tmp = explode(':', $kv);
+            $rulet[$tmp[0]] = $tmp[1];
+            
+        }
+        
         //begin trans
         $km = new KorisnikModel();
         $korIme = $this->session->get('korisnik')->KorisnickoIme;
         $Korisnik = $km
                     ->where('KorisnickoIme', $korIme)
                     ->first();
-        
-        if($tokeni != 0 && $Korisnik->Tokeni > $tokeni){
-            $Korisnik->Tokeni -= $tokeni;
-            $dobitak = 0;
-            
-            if($num1==6 && $num2==6 && $num3==6)
-                $coef = 500;
-            else if($num1==4 && $num2==4 && $num3==4)
-                $coef = 250;
-            else if($num1==1 && $num2==1 && $num3==1)
-                $coef = 150;
-            else if($num1==7 && $num2==7 && $num3==7)
-                $coef = 100;
-            else if($num1==4 && $num2==7 && $num3==1)
-                $coef = 80;
-            else if($num1==2 && $num2==2 && $num3==2)
-                $coef = 80;
-            else if($num1==2 && $num2==2)
-                $coef = 50;
-            else if($num1==3 && $num2==3 && $num3==3)
-                $coef = 50;
-            else if($num1==3 && $num2==3)
-                $coef = 40;
-            else if($num1==0 && $num2==0 && $num3==0)
-                $coef = 30;
-            else if($num1==0 && $num2==0)
-                $coef = 15;
-            else if($num1==5 && $num2==5 && $num3==5)
-                $coef = 10;
-            else if($num1==5 && $num2==5)
-                $coef = 5;
-            else if($num1==5)
-                $coef = 2;
-            
-            
-            
-            $Korisnik->Tokeni += $tokeni * $coef;
-            $dobitak = $tokeni * $coef;
-            
-            $km->set("Tokeni",$Korisnik->Tokeni)
+        //kreita se rulet objekat
+        //kreira se rulet tiket objekat
+        $num = 0;//rand(0,36);
+        $dobitak = 0;
+        foreach($rulet as $tip => $ulozeno_str) {
+            $ulozeno = intval($ulozeno_str);
+            if($ulozeno > 0){
+                $coef = $handlers[$tip]($num);
+                $dobitak += $ulozeno * $coef;
+                //kreiranje stavke rulet
+            }
+        }
+        //azuriranje rulet tiket dobitka
+        $Korisnik->Tokeni += $dobitak;
+        $km->set("Tokeni",$Korisnik->Tokeni)
                         ->where('KorisnickoIme', $Korisnik->KorisnickoIme)
                         ->update();
+        
+        //end trans
+        /*$coef = 0;
             $tsm = new TiketSlotModel();
             $tsm->save([
             'IdKorisnik' => $Korisnik->IdKorisnik,
@@ -104,13 +253,14 @@ class Korisnik extends BaseController{
             'Rezultat' => $num1 . "," . $num2 . "," . $num3
             ]);
         }
-        //end trans
-        echo $num1 . "," . $num2 . "," . $num3 . "," . $Korisnik->Tokeni;
+        */
+        echo $num . "," . $Korisnik->Tokeni;
         
-       */
+       
     }
     
     public function spin(){
+        
         $coef = 0;
         
         $tokeni = intval($this->request->getVar('Tokeni'));

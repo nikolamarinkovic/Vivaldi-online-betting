@@ -13,7 +13,7 @@
                         <p>Ulozeni tokeni: <var>23</var></p>
                         <input type="button" value="Ukloni tokene">
                     </div>
-                    <div class="rulet_tabla">
+                    <div class="rulet_tabla" id="tabla">
                         <!--   <img src=<?php //echo base_url("slike/rulet_tabla.png");?> alt="rulet tabla"> -->
                         <table style="width: 400px; height: 200px">
                             <tr>
@@ -30,7 +30,7 @@
                                 <td> <button>30</button> <p></p></td>
                                 <td> <button>33</button> <p></p> </td>
                                 <td> <button>36</button> <p></p> </td>
-                                <td > <button style="width:55px">2 to 1</button> <p></p> </td>
+                                <td > <button style="width:55px">2 to 1 a</button> <p></p> </td>
                             </tr>
                             <tr>
                                 <td> <button>2</button> <p></p> </td>
@@ -45,14 +45,14 @@
                                 <td> <button>29</button> <p></p> </td>
                                 <td> <button>32</button> <p></p> </td>
                                 <td> <button>35</button> <p></p> </td>
-                                <td > <button style="width:55px">2 to 1</button> <p></p> </td>
+                                <td > <button style="width:55px">2 to 1 b</button> <p></p> </td>
                             </tr>
                             <tr>
                                 <td> <button>1</button> <p></p> </td>
                                 <td> <button>4</button> <p></p> </td>
                                 <td> <button>7</button> <p></p> </td>
                                 <td> <button>10</button> <p></p> </td>
-                                <td> <button>11</button> <p></p> </td>
+                                <td> <button>13</button> <p></p> </td>
                                 <td> <button>16</button> <p></p> </td>
                                 <td> <button>19</button> <p></p> </td>
                                 <td> <button>22</button> <p></p> </td>
@@ -60,7 +60,7 @@
                                 <td> <button>28</button> <p></p> </td>
                                 <td> <button>31</button> <p></p> </td>
                                 <td> <button>34</button> <p></p> </td>
-                                <td > <button style="width:55px">2 to 1</button> <p></p> </td>
+                                <td > <button style="width:55px">2 to 1 c</button> <p></p> </td>
                             </tr>
                             <tr>
                                 <td colspan="4"><button>1st12</button> <p></p> </td>

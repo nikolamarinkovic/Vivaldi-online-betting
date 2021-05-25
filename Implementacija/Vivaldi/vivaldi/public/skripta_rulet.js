@@ -1,6 +1,6 @@
-vreme = 15;
+vreme = 5;
 $(document).ready(function(){
-    vreme = 15;
+    vreme = 5;
     $("#vreme").text(vreme);
     $("button").click(function(){
         sibling = $(this).next();
@@ -16,30 +16,27 @@ $(document).ready(function(){
         vreme--;
         $("#vreme").text(vreme);
         if(vreme == 0){
-            dugmici = $("button");
+            dugmici = $("#tabla button");
             niz = [];
             for(let i = 0; i<dugmici.length;i++){
                 dugme =dugmici.eq(i);
                 broj = dugme.text();
-                if(broj != 'Ukloni tokene')
-                    niz[broj] = dugme.next().text();  
+                if(dugme.next().text() != '')
+                    niz[broj] = dugme.next().text();
+                else
+                    niz[broj] = '0';
             }
            
             s = "";
             i = 0;
             n = niz.length;
             for(var kljuc in niz){
-                if(niz[kljuc] == null || niz[kljuc] == '')
-                    s+=kljuc + ","+ 0;
-                else
-                    s += kljuc + ","+ niz[kljuc];
-                if(i != n - 2){
-                    s+="#"
-                }
-                i++;
+                s += kljuc + ":"+ niz[kljuc];
+                    s+=","
             }
+            s = s.substr(0, s.length - 1)
             console.log(s);
-            vreme = 15;
+            vreme = 5;
             $("#vreme").text(vreme);
             
             //ajax
@@ -51,8 +48,8 @@ $(document).ready(function(){
                 broj = niz[0];
                 tokeni = niz[1];
                 document.getElementById("ukupno_tokena").innerHTML = tokeni;
-                this.responseText;
-                vreme = 15;
+                //console.log(this.responseText);
+                vreme = 5;
                 $("#vreme").text(vreme);
                 
             }

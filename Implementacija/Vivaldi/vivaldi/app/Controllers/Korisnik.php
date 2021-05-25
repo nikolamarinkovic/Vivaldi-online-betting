@@ -348,6 +348,60 @@ class Korisnik extends BaseController{
     }
     
     public function profil(){
-        $this->prikaz('profilKorisnik',[]);
+        $km = new KorisnikModel();
+        $korisnik = $this->session->get('korisnik');
+        //var_dump($korIme);
+        
+        $this->prikaz('profilKorisnik',['korisnik'=>$korisnik]);
+    }
+    
+    public function promenaLozinke(){
+        $errors=[];
+        $km = new KorisnikModel();
+        $korisnik = $this->session->get('korisnik');
+        $stara=$this->request->getVar('stara');
+        $nova=$this->request->getVar('nova');
+        $potvrda=$this->request->getVar('potvrda');
+        
+        if(!$this->validate(['stara'=>'required', 
+                                'nova'=>'required',
+                                'potvrda'=>'required|matches[nova]'])){
+            if(!empty($this->validator->getErrors()['stara']))
+                $errors['stara'] = 'Unesite staru lozinku';
+            if(!empty($this->validator->getErrors()['nova']))
+                $errors['nova'] = 'Unesite novu lozinku';
+            if(!empty($this->validator->getErrors()['potvrda']))
+                $errors['potvrda'] = 'Potvrdite lozinku';
+            if($nova!=$potvrda)
+                $errors['poklapanje'] = 'Lozinke se ne poklapaju';
+            if($stara!=$korisnik->Lozinka)
+                $errors['losaLozinka'] = 'Stara lozinka je netacna';
+            
+                    
+            return $this->prikaz('profilKorisnik',['errors'=>$errors, 'korisnik'=>$korisnik]);
+        }
+        var_dump($stara);
+            var_dump($nova);
+            var_dump($potvrda);
+        $lozinka['Lozinka']=$nova;
+        $km->update($korisnik->IdKorisnik, $lozinka);
+        $this->prikaz('profilKorisnik',['korisnik'=>$korisnik]);
+    }
+    
+    public function kupovinaTokena(){$errors=[];
+        $km = new KorisnikModel();
+        $korisnik = $this->session->get('korisnik');
+        $tokeni=$this->request->getVar('tokeniKupovina');
+                
+        if(!$this->validate(['tokeniKupovina'=>'required'])){
+            if(!empty($this->validator->getErrors()['tokeni']))
+                $errors['tokeni'] = 'Unesite kolicinu tokena';
+            if($tokeni<10)
+                $errors['kolicina'] = 'Kolicina tokena mora biti veca od 10';
+            return $this->prikaz('profilKorisnik',['errors'=>$errors, 'korisnik'=>$korisnik]);
+        }
+        $noviTokeni['Tokeni']=$korisnik->Tokeni+$tokeni;
+        $km->update($korisnik->IdKorisnik, $noviTokeni);
+        $this->prikaz('profilKorisnik',['korisnik'=>$korisnik]);
     }
 }

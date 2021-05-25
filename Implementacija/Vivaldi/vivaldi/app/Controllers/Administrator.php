@@ -60,13 +60,10 @@ class Administrator extends BaseController {
     }
     
     public function utakmica(){
-        /*$tm = new TimModel();        
-        $timovi = $tm->findAll();
-        return $this->prikaz('utakmicaAdmin',['teams'=>$timovi]);*/
-        $this->prikaz('utakmicaAdmin',[]);
+                $this->prikaz('utakmicaAdmin',[]);
     }
     
-    public function kvote(){
+    public function kvote(){            
         $this->prikaz('kvoteAdmin',[]);
     }
     
@@ -267,7 +264,32 @@ class Administrator extends BaseController {
     }
     
     
-    
+    public function azurirajKvotu(){
+        $um=new UtakmicaModel();
+        $utakmice = $um->findAll();
+        $kele=1;
+        foreach ($utakmice as $utakmica){
+        $kvota1=$this->request->getVar('jedan'.$kele); 
+        $kvotaX=$this->request->getVar('iks'.$kele);
+        $kvota2=$this->request->getVar('dva'.$kele);        
+        $kvote=[];
+        
+            if(!empty($kvota1)&&($kvota1!=$utakmica->Kvota1)){
+                $kvote['Kvota1']=$kvota1;                
+            }
+            if(!empty($kvota2)&&($kvota2!=$utakmica->Kvota2)){
+                $kvote['Kvota2']=$kvota2;
+            }
+            if(!empty($kvotaX)&&($kvotaX!=$utakmica->KvotaX)){
+                $kvote['KvotaX']=$kvotaX;
+            }
+            if(!empty($kvote)){
+                $um->update($utakmica->IdUtakmica, $kvote);
+            }
+        $kele++;    
+        }   
+        $this->prikaz('kvoteAdmin',[]);
+    }
     
 }
 

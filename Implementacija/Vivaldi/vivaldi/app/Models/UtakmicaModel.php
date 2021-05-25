@@ -24,6 +24,7 @@ class UtakmicaModel extends Model
     protected $validationRules    = [];
     protected $validationMessages = [];
     protected $skipValidation     = false;
-    
+    public $ImeDomacin;
+    public $ImeGost;
     
 }

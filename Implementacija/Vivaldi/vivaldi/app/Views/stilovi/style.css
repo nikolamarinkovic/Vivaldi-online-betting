@@ -38,10 +38,7 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+
 /*END*/
 
 /* START */
@@ -218,6 +215,8 @@ body{
 .dodavanje_tima table{
     width: 300px;
 }
+
+
 .dodavanje_tima td{
     border:none;
     background-color: #25282f;
@@ -504,6 +503,11 @@ td input{
     display: block;
     color: black;
     margin: 0px;
+}
+
+.kvote table{
+    width: 500px;
+    
 }
 
 .kvote td{

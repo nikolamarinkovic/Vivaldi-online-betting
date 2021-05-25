@@ -1,5 +1,4 @@
-        <?php use \App\Models\TimModel;
-        ?>
+        <?php use \App\Models\TimModel;?>
 <div class="body">
             <h1 class="naslov">Dodavanje utakmice</h1>
             <hr>
@@ -18,16 +17,17 @@
                     <h3>Domacin:</h3>
                     <select name="domacin" id="domacin" <?php if($timovi==null||count($timovi)<2){ ?>disabled=""<?php } ?>>
                     <?php foreach($timovi as $tim){ ?> 
-                       <option <?php if($rang=2){ ?>selected<?php } ?> value=<?php echo $tim->IdTim?>><?php echo $tim->Ime?></option>
-                    <?php $rang++;} ?>                        
-                    </select>
+                       <option value=<?php echo $tim->IdTim?>><?php echo $tim->Ime?></option>
+                    <?php } ?>                        
+                </select>
                 </div>
                 <div class="gost">
                 <h3>Gost:</h3>
+                
                 <select name="gost" id="gost" <?php if($timovi==null||count($timovi)<2){ ?>disabled=""<?php } ?>>
                     <?php foreach($timovi as $tim){ ?> 
-                       <option value=<?php echo $tim->IdTim?>><?php echo $tim->Ime?></option>
-                    <?php } ?>                        
+                       <option <?php if($rang=2){ ?>selected<?php } ?> value=<?php echo $tim->IdTim?>><?php echo $tim->Ime?></option>
+                    <?php $rang++;} ?>                        
                     </select>
                 </div>  
                 <?php if(!empty($errors['Teams='])){ ?> 

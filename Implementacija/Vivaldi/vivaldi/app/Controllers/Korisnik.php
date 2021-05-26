@@ -389,6 +389,45 @@ class Korisnik extends BaseController{
         $this->prikaz('lucky6Korisnik',[]);
     }
     
+    public function lucky6_drawing(){
+        $niz = $this->request->getVar('niz');
+        
+        $korisnik_brojevi = [];
+        for($i = 0; $i < 6; $i++)
+            $korisnik_brojevi[i] = intval($niz[i]);
+        
+        $ulozeni_tokeni = intval($niz[6]);
+        
+        $brojevi = [];
+        
+        for($i = 1; $i < 48; $i++){
+            $brojevi = $i;
+        }
+        shuffle($brojevi);
+        
+        $izvuceni_brojevi = "";
+        $i = 1;
+        for(;$i < 48; $i++){
+            $num = array_shift($brojevi);
+            for($j = 0; $j < count($korisnik_brojevi); $j++){
+                if($num == $korisnik_brojevi[$i]){
+                    unset($korisnik_brojevi[$i]);
+                    $korisnik_brojevi = array_values($korisnik_brojevi);
+                }
+                
+            }
+            $izvuceni_brojevi .= $num .",";
+            if(count($korisnik_brojevi) == 0)
+                break;
+        }
+        $coef = 0;
+        if(count($korisnik_brojevi) == 0){
+            $coef = kvote[$i];
+        }
+        
+        $dobitak = $coef * $ulozeni_tokeni;
+    }
+    
     public function sport(){
         $this->prikaz('sportKorisnik',[]);
     }

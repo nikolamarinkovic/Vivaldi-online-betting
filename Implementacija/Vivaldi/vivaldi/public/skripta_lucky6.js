@@ -1,7 +1,7 @@
-vreme = 5;
+vreme = 10;
 $(document).ready(function(){
     //("#ulozeno_tokena").text(0)
-    vreme = 5;
+    vreme = 10;
     $("#vreme").text(vreme);
     $("button").click(function(){
         sibling = $(this).next();
@@ -25,27 +25,19 @@ $(document).ready(function(){
         vreme--;
         $("#vreme").text(vreme);
         if(vreme == 0){
-            dugmici = $("#tabla button");
-            niz = [];
-            for(let i = 0; i<dugmici.length;i++){
-                dugme =dugmici.eq(i);
-                broj = dugme.text();
-                if(dugme.next().text() != '')
-                    niz[broj] = dugme.next().text();
-                else
-                    niz[broj] = '0';
+            for(i = 1; i <= 35; i++){
+                    $("izvucen_" + i).text("")
+                }
+            
+            brojevi = ""
+            for(i = 1; i <= 6; i++){
+                brojevi += $("#broj_"+i).val() + ","
             }
+            brojevi += $("#ulozeno_tokena").val()
+                       
+            console.log(brojevi)
            
-            s = "";
-            i = 0;
-            n = niz.length;
-            for(var kljuc in niz){
-                s += kljuc + ":"+ niz[kljuc];
-                    s+=","
-            }
-            s = s.substr(0, s.length - 1)
-            console.log(s);
-            vreme = 5;
+            vreme = 10;
             $("#vreme").text(vreme);
             
             //ajax
@@ -54,22 +46,22 @@ $(document).ready(function(){
             xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 niz = this.responseText.split(",");
-                broj = niz[0];
-                tokeni = niz[1];
+                for(i = 1; i <= 35; i++){
+                    $("izvucen_" + i).text(niz[i])
+                }
+                tokeni = niz[36];
                 document.getElementById("ukupno_tokena").innerHTML = tokeni;
                 document.getElementById("ulozeno_tokena").innerHTML = "0";
                 console.log(this.responseText);
-                vreme = 5;
+                vreme = 10;
                 $("#vreme").text(vreme);
                 
-                $("#tabla button").next().text("")
-               
                 
             }
             };
-            xhttp.open("POST", "http://localhost:8080/Korisnik/rulet_spin" , true);
+            xhttp.open("POST", "http://localhost:8080/Korisnik/lucky6_drawing" , true);
             xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            var params = 'niz='+s;
+            var params = 'niz='+brojevi;
             xhttp.send(params);
             
         }

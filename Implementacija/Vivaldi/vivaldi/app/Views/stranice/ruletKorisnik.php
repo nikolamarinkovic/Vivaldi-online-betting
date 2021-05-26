@@ -9,8 +9,8 @@
                 </div>
                 <div class="interaktivna_tabla">
                     <div class="stanje_tokena">
-                        <p>Ukupno tokena: <var id="ukupno_tokena">100</var></p>
-                        <p>Ulozeni tokeni: <var>23</var></p>
+                        <p>Ukupno tokena: <var id="ukupno_tokena"><?php if(!empty($tokeni)) echo $tokeni?></var></p>
+                        <p>Ulozeni tokeni: <var id="ulozeno_tokena">0</var></p>
                         <input type="button" value="Ukloni tokene">
                     </div>
                     <div class="rulet_tabla" id="tabla">

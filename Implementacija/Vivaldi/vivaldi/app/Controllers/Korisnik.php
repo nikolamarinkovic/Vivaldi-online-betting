@@ -9,6 +9,10 @@
 namespace App\Controllers;
 use \App\Models\KorisnikModel;
 use \App\Models\TiketSlotModel;
+use \App\Models\RuletModel;
+use \App\Models\TiketRuletModel;
+use \App\Models\StavkaRuletModel;
+
 /**
  * Description of Korisnik
  *
@@ -39,8 +43,12 @@ class Korisnik extends BaseController{
     }
     
     public function rulet(){
-        
-        $this->prikaz('ruletKorisnik',[]);
+        $km = new KorisnikModel();
+        $korIme = $this->session->get('korisnik')->KorisnickoIme;
+        $Korisnik = $km
+                    ->where('KorisnickoIme', $korIme)
+                    ->first();
+        $this->prikaz('ruletKorisnik',['tokeni' => $Korisnik->Tokeni]);
     }
     
     public function rulet_spin(){
@@ -184,27 +192,27 @@ class Korisnik extends BaseController{
                 return  (1 <= $num && $num <=18) ? 35 : 0;
             },
             'Even' => function($num){
-                return  ($num % 2 == 0) ? 35 : 0;
+                return  ($num % 2 == 0) ? 2 : 0;
             },
             'Red' => function($num){
                 return in_array($num, [1 , 3 , 5 , 7,
                                        9 , 12, 14, 16,
                                        18, 19, 21, 23,
                                        25, 27, 30, 32,
-                                       34, 36]) ? 35 : 0;
+                                       34, 36]) ? 2 : 0;
             },
             'Black' => function($num){
                 return in_array($num, [2 , 4 , 6 , 8,
                                        10, 11, 13, 15,
                                        17, 20, 22, 24,
                                        26, 28, 29, 31,
-                                       33, 35]) ? 35 : 0;
+                                       33, 35]) ? 2 : 0;
             },
             'Odd' => function($num){
-                return  ($num % 2 == 1) ? 35 : 0;
+                return  ($num % 2 == 1) ? 2 : 0;
             },
             '19 to 36' => function($num){
-                return  (19 <= $num && $num <=36) ? 35 : 0;
+                return  (19 <= $num && $num <=36) ? 2 : 0;
             }
         ];
         
@@ -213,47 +221,85 @@ class Korisnik extends BaseController{
         
         $niz = $this->request->getVar('niz');
         $kvs = explode(',', $niz);
+        
+        $ulog = 0;
+        
         foreach($kvs as $kv){
             $tmp = explode(':', $kv);
-            $rulet[$tmp[0]] = $tmp[1];
-            
+            $rulet[$tmp[0]] = intval($tmp[1]);
+            $ulog += intval($tmp[1]);
         }
-        
+
         //begin trans
         $km = new KorisnikModel();
-        $korIme = $this->session->get('korisnik')->KorisnickoIme;
+        $korIme = "KELE";//$this->session->get('korisnik')->KorisnickoIme;
         $Korisnik = $km
                     ->where('KorisnickoIme', $korIme)
                     ->first();
-        //kreita se rulet objekat
-        //kreira se rulet tiket objekat
-        $num = 0;//rand(0,36);
-        $dobitak = 0;
-        foreach($rulet as $tip => $ulozeno_str) {
-            $ulozeno = intval($ulozeno_str);
-            if($ulozeno > 0){
-                $coef = $handlers[$tip]($num);
-                $dobitak += $ulozeno * $coef;
-                //kreiranje stavke rulet
-            }
-        }
-        //azuriranje rulet tiket dobitka
-        $Korisnik->Tokeni += $dobitak;
-        $km->set("Tokeni",$Korisnik->Tokeni)
-                        ->where('KorisnickoIme', $Korisnik->KorisnickoIme)
-                        ->update();
         
-        //end trans
-        /*$coef = 0;
-            $tsm = new TiketSlotModel();
-            $tsm->save([
-            'IdKorisnik' => $Korisnik->IdKorisnik,
-            'Ulog' => $tokeni,
-            'Dobitak' => $dobitak,
-            'Rezultat' => $num1 . "," . $num2 . "," . $num3
+        $num = 0;//rand(0,36);
+        
+        if($ulog > 0 && $ulog < $Korisnik->Tokeni){
+
+            $Korisnik->Tokeni -= $ulog;
+
+            //kreita se rulet objekat
+            $tm = new RuletModel();
+                $tm->save([
+                'IdKorisnik' => $Korisnik->IdKorisnik,
+                'IzvucenBroj' => $num,
+                'Vreme' => date("Y-m-d h:i:sa") //2021-05-27 13:35:35
             ]);
+
+            $idRulet = $tm->getInsertId();
+            //kreira se rulet tiket objekat
+            $trm = new TiketRuletModel();
+            $trm->save([
+                'IdRulet' => $idRulet,
+                'IdKorisnik' => $Korisnik->IdKorisnik,
+                'Ulog' => $ulog,
+                'Dobitak' => 0
+            ]);
+            
+
+            $dobitak = 0;
+
+            foreach($rulet as $tip => $ulozeno_str) {
+                $ulozeno = intval($ulozeno_str);
+                if($ulozeno > 0){
+
+                    $coef = $handlers[$tip]($num);
+                    $dobitak += $ulozeno * $coef;
+                    //kreiranje stavke rulet
+                    $srm = new StavkaRuletModel();
+                    $prosla = $coef != 0;
+                    $srm->save([
+                        'IdRulet' => $idRulet, 
+                        'IdKorisnik' => $Korisnik->IdKorisnik, 
+                        'Tip' => $tip, 
+                        'Prosla' => $prosla,
+                        'Ulog' => $ulozeno
+                    ]);
+                }
+            }
+
+            //azuriranje rulet tiket dobitka
+            $trm->set("Dobitak", $dobitak)
+                            ->where('IdRulet', $idRulet)
+                            ->where('IdKorisnik', $Korisnik->IdKorisnik)
+                            ->update();
+
+            
+            
+            $Korisnik->Tokeni += $dobitak;
+            $km->set("Tokeni",$Korisnik->Tokeni)
+                            ->where('KorisnickoIme', $Korisnik->KorisnickoIme)
+                            ->update();
+
+            
+            
         }
-        */
+        //end trans
         echo $num . "," . $Korisnik->Tokeni;
         
        

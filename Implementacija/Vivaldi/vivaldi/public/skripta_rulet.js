@@ -1,5 +1,6 @@
 vreme = 5;
 $(document).ready(function(){
+    //("#ulozeno_tokena").text(0)
     vreme = 5;
     $("#vreme").text(vreme);
     $("button").click(function(){
@@ -11,6 +12,14 @@ $(document).ready(function(){
             i = parseInt(i) + 1;
             sibling.text(i);
         }
+        if($("#ulozeno_tokena").text() == ""){
+            ulozeni = 1
+        }
+        else{
+            ulozeni = parseInt($("#ulozeno_tokena").text()) + 1;
+        }
+        $("#ulozeno_tokena").text(ulozeni)
+    
     })
     setInterval(function(){
         vreme--;
@@ -35,7 +44,7 @@ $(document).ready(function(){
                     s+=","
             }
             s = s.substr(0, s.length - 1)
-            console.log(s);
+            //console.log(s);
             vreme = 5;
             $("#vreme").text(vreme);
             
@@ -48,9 +57,13 @@ $(document).ready(function(){
                 broj = niz[0];
                 tokeni = niz[1];
                 document.getElementById("ukupno_tokena").innerHTML = tokeni;
-                //console.log(this.responseText);
+                document.getElementById("ulozeno_tokena").innerHTML = "0";
+                console.log(this.responseText);
                 vreme = 5;
                 $("#vreme").text(vreme);
+                
+                $("#tabla button").next().text("")
+               
                 
             }
             };

@@ -4,11 +4,12 @@ use CodeIgniter\Model;
 class TiketRuletModel extends Model
 {
     protected $table      = 'tiket_rulet';
-    protected $primaryKey = 'IdRulet';
+    protected $primaryKey = 'IdRulet IdKorisnik';
     protected $useAutoIncrement = true;
     protected $returnType     = 'object';
     protected $useSoftDeletes = false;
     protected $allowedFields = [
+        'IdRulet',
         'IdKorisnik', 
         'Ulog', 
         'Dobitak'

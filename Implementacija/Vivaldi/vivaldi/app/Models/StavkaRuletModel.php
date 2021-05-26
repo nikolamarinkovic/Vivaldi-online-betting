@@ -1,18 +1,19 @@
 <?php
 namespace App\Models;
 use CodeIgniter\Model;
-class KorisnikModel extends Model
+class StavkaRuletModel extends Model
 {
-    protected $table      = 'stavka_tiket';
-    protected $primaryKey = 'IdTiketKladjenje';
+    protected $table      = 'stavka_rulet';
+    protected $primaryKey = 'IdStavkaRulet';
     protected $useAutoIncrement = true;
     protected $returnType     = 'object';
     protected $useSoftDeletes = false;
     protected $allowedFields = [
-        'IdUtakmica', 
-        'Iznos', 
-        'KonacanIshod', 
-        'Status'
+        'IdRulet', 
+        'IdKorisnik', 
+        'Tip', 
+        'Prosla',
+        'Ulog'
         ];
     protected $useTimestamps = false;
     protected $createdField  = '';

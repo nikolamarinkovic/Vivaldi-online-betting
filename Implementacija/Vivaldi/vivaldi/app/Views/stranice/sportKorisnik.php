@@ -17,9 +17,9 @@
                         <tr>
                             <td><input type="radio" name="izbor"></td>
                             <td>Partizan:Zvezda</td>
-                            <td>1.5</td>
-                            <td>2.2</td>
-                            <td>1.7</td>
+                            <td>1.5<input type="radio" name="izbor"></td>
+                            <td>2.2<input type="radio" name="izbor"></td>
+                            <td>1.7<input type="radio" name="izbor"></td>
                             <td>22/06/2021,14:30 00</td>
                         </tr>
                     </table>

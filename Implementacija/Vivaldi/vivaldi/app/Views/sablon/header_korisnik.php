@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?php echo base_url("style.css")?>">
     <script src="<?php echo base_url("jquery-3.6.0.min.js")?>"></script>
     <script src="<?php echo base_url("skripta_slot.js")?>"></script>
-    <script src="<?php echo base_url("skripta_rulet.js")?>"></script>
+    
     
     
     

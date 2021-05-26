@@ -12,7 +12,8 @@ use \App\Models\TiketSlotModel;
 use \App\Models\RuletModel;
 use \App\Models\TiketRuletModel;
 use \App\Models\StavkaRuletModel;
-
+use App\Models\TimModel;
+use App\Models\UtakmicaModel;
 /**
  * Description of Korisnik
  *
@@ -429,7 +430,11 @@ class Korisnik extends BaseController{
     }
     
     public function sport(){
-        $this->prikaz('sportKorisnik',[]);
+            $tm = new TimModel();        
+            $timovi = $tm->findAll();
+            $um = new UtakmicaModel();        
+            $utakmice = $um->findAll();
+        $this->prikaz('sportKorisnik',['timovi'=>$timovi, 'utakmice'=>$utakmice]);
     }
     
     public function profil(){

@@ -27,11 +27,11 @@ class Administrator extends BaseController {
     }
     
     public function index(){
-        $this->prikaz('pocetna',[]);
+        $this->prikaz('pocetnaAdministrator',[]);
     }
     
     public function pocetna(){
-        $this->prikaz('pocetna',[]);
+        $this->prikaz('pocetnaAdministrator',[]);
     }
     
     public function odjava(){

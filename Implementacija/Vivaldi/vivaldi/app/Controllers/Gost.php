@@ -26,10 +26,10 @@ class Gost extends BaseController{
     }
     
     public function index(){
-        $this->prikaz('pocetna',[]);
+        $this->prikaz('pocetnaGost',[]);
     }
     public function pocetna(){
-        $this->prikaz('pocetna',[]);
+        $this->prikaz('pocetnaGost',[]);
     }
     
     public function prijava($poruka = null){

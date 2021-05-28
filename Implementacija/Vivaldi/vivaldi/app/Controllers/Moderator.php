@@ -26,11 +26,11 @@ class Moderator extends BaseController{
     }
     
     public function index(){
-        $this->prikaz('pocetna',[]);
+        $this->prikaz('pocetnaModerator',[]);
     }
     
     public function pocetna(){
-        $this->prikaz('pocetna',[]);
+        $this->prikaz('pocetnaModerator',[]);
     }
     
     public function odjava(){

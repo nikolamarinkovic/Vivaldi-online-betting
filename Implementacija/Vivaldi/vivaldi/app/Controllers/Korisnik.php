@@ -33,10 +33,10 @@ class Korisnik extends BaseController{
     }
     
     public function index(){
-        $this->prikaz('pocetna',[]);
+        $this->prikaz('pocetnaKorisnik',[]);
     }
     public function pocetna(){
-        $this->prikaz('pocetna',[]);
+        $this->prikaz('pocetnaKorisnik',[]);
     }
     
     public function odjava(){  

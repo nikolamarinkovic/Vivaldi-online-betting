@@ -3,9 +3,17 @@
             <h1 class="naslov">Lucky 6</h1>
             <hr>
             <p>Pravila Lucky 6 i upustva za korisnika: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, blanditiis!</p>
-            <div class="lucky6">
+            
+            <p style="text-align: center">Preostalo vreme: <var id="vreme">50</var> s</p>
+            <div class="polja2">
+                <p>Ukupni tokeni: <var id="ukupno_tokena">1089</var> </p>
+            </div>
+            <?php include_once 'lucky6.php';?>
+            
+            
+            <!--div class="lucky6">
                 <div class="izvucene_kuglice">
-                    <p>Preostalo vreme: <var id="vreme">50</var> s</p>
+                    
                     <table class="tabela1">
                         <tr>
                             <td><var id="izvucen_1"></var><br></td>
@@ -56,15 +64,6 @@
                             <td><var id="izvucen_34"></var><br><p>600</p></td>
                             <td><var id="izvucen_35"></var><br><p>500</p></td>
                         </tr>
-                        <!--tr>
-                            
-                            <td><var id="izvucen_36"></var><br><p>450</p></td>
-                            <td><var id="izvucen_37"></var><br><p>400</p></td>
-                            <td><var id="izvucen_38"></var><br><p>350</p></td>
-                            <td><var id="izvucen_39"></var><br><p>300</p></td>
-                            <td><var id="izvucen_40"></var><br><p>250</p></td>
-                            <td><var id="izvucen_41"></var><br><p>250</p></td>
-                        </tr-->
                     </table>
                 </div>
                 <div class="uplata">
@@ -129,5 +128,5 @@
                         <input id="ulozeno_tokena" type="number" required>
                     </div>
                 </div>
-            </div>
+            </div-->
         </div>

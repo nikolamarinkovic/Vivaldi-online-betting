@@ -14,6 +14,8 @@ use \App\Models\TiketRuletModel;
 use \App\Models\StavkaRuletModel;
 use App\Models\TimModel;
 use App\Models\UtakmicaModel;
+use \App\Models\Lucky6Model;
+use \App\Models\TiketLucky6Model;
 /**
  * Description of Korisnik
  *
@@ -391,42 +393,126 @@ class Korisnik extends BaseController{
     }
     
     public function lucky6_drawing(){
-        $niz = $this->request->getVar('niz');
+        $kvote = [
+            0,
+            0,
+            0,
+            0,
+            0,
+            25000,
+            15000,
+            7500,
+            3000,
+            1250,
+            700,
+            350,
+            250,
+            175,
+            125,
+            100,
+            90,
+            80,
+            70,
+            60,
+            50,
+            35,
+            25,
+            20,
+            15,
+            12,
+            10,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ];
         
+        $niz = explode(",", $this->request->getVar('niz'));
+        $kombinacija = [];
         $korisnik_brojevi = [];
         for($i = 0; $i < 6; $i++)
-            $korisnik_brojevi[i] = intval($niz[i]);
+            $kombinacija[$i] = 
+                $korisnik_brojevi[$i] = intval($niz[$i]);
         
         $ulozeni_tokeni = intval($niz[6]);
         
-        $brojevi = [];
-        
-        for($i = 1; $i < 48; $i++){
-            $brojevi = $i;
-        }
-        shuffle($brojevi);
-        
-        $izvuceni_brojevi = "";
-        $i = 1;
-        for(;$i < 48; $i++){
-            $num = array_shift($brojevi);
-            for($j = 0; $j < count($korisnik_brojevi); $j++){
-                if($num == $korisnik_brojevi[$i]){
-                    unset($korisnik_brojevi[$i]);
-                    $korisnik_brojevi = array_values($korisnik_brojevi);
-                }
-                
+        $km = new KorisnikModel();
+        $korIme = "KELE";//$this->session->get('korisnik')->KorisnickoIme;
+        $Korisnik = $km
+                    ->where('KorisnickoIme', $korIme)
+                    ->first();
+        if($ulozeni_tokeni != 0 && $Korisnik->Tokeni > $ulozeni_tokeni){
+            $Korisnik->Tokeni -= $ulozeni_tokeni;
+            $dobitak = 0;
+            $brojevi = [];
+
+            for($i = 1; $i < 48; $i++){
+                $brojevi[] = $i;
             }
-            $izvuceni_brojevi .= $num .",";
-            if(count($korisnik_brojevi) == 0)
-                break;
+            shuffle($brojevi);
+
+            $izvuceni_brojevi = "";
+            $izvucnen = 0;
+            for($i = 1 ; $i <= 35; $i++){
+                $num = array_shift($brojevi);
+                for($j = 0; $j < count($korisnik_brojevi); $j++){
+                    if($num == $korisnik_brojevi[$j]){
+                        unset($korisnik_brojevi[$j]);
+                        $korisnik_brojevi = array_values($korisnik_brojevi);
+                        break;
+                    }
+                }
+                $izvuceni_brojevi .= $num .",";
+                if(count($korisnik_brojevi) != 0)
+                    $izvucnen++;
+            }
+
+            $coef = $kvote[$izvucnen];
+            $dobitak = $coef * $ulozeni_tokeni;
+            
+            $Korisnik->Tokeni += $dobitak;
+            $km->set("Tokeni",$Korisnik->Tokeni)
+                        ->where('KorisnickoIme', $Korisnik->KorisnickoIme)
+                        ->update();
+            
+            $l6m = new Lucky6Model();
+            
+            $l6m->save([
+            'IzvuceniBrojevi' => substr($izvuceni_brojevi, 0, strlen($izvuceni_brojevi) - 1),
+            'Vreme' => date("Y-m-d h:i:sa")
+            ]);
+            $idl6 = $l6m->getInsertID();
+            
+            $tl6m = new TiketLucky6Model();
+            $tl6m->save([
+            'IdKorisnik' => $Korisnik->IdKorisnik, 
+            'IdLucky6' => $idl6, 
+            'Ulog' => $ulozeni_tokeni, 
+            'Dobitak' => $dobitak, 
+            'Kombinacija' => implode(",", $kombinacija)
+            ]);
+            
+  
         }
-        $coef = 0;
-        if(count($korisnik_brojevi) == 0){
-            $coef = kvote[$i];
-        }
-        
-        $dobitak = $coef * $ulozeni_tokeni;
+        //end trans
+        echo $izvuceni_brojevi . $Korisnik->Tokeni;
     }
     
     public function sport(){

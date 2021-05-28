@@ -18,7 +18,7 @@ let allOrange = document.querySelector('.allOrange');
 let allGray = document.querySelector('.allGray');
 
 // BET BUTTON
-let betBtn = document.querySelector('.add-bet button');
+//let betBtn = document.querySelector('.add-bet button');
 
 // VIEW
 let firstView = document.querySelector('.firstView');
@@ -39,32 +39,19 @@ flag = true
 vreme = 10;
 $(document).ready(function(){
     //("#ulozeno_tokena").text(0)
+    flag = true;
     vreme = 10;
     $("#vreme").text(vreme);
-    $("button").click(function(){
-        sibling = $(this).next();
-        if(sibling.text() == "")
-            sibling.text(1);
-        else{
-            i = sibling.text();
-            i = parseInt(i) + 1;
-            sibling.text(i);
-        }
-        if($("#ulozeno_tokena").text() == ""){
-            ulozeni = 1
-        }
-        else{
-            ulozeni = parseInt($("#ulozeno_tokena").text()) + 1;
-        }
-        $("#ulozeno_tokena").text(ulozeni)
     
-    })
+    
     setInterval(function(){
         if(!flag)
             return
         vreme--;
         $("#vreme").text(vreme);
-        if(vreme == 0 && betBalls.length == 6){
+        
+        ulozeno = parseInt($("#ulozeno_tokena").val());
+        if(vreme == 0 && betBalls.length == 6 && ulozeno != NaN && ulozeno > 0){
             
             brojevi = ""
             for(i = 0; i < betBalls.length; i++){
@@ -81,17 +68,17 @@ $(document).ready(function(){
                 for(i = 0; i < 35; i++){
                     izvuceni_brojevi[i] = parseInt(niz[i])
                 }
-                tokeni = niz[35];
-                document.getElementById("ukupno_tokena").innerHTML = tokeni;
+                tokeni = parseInt(niz[36]);
+                dobitak = parseInt(niz[35])
+                
                 document.getElementById("ulozeno_tokena").val = "0";
                 
                 
-                availableBetClick(izvuceni_brojevi)
-                flag = false
+                availableBetClick(izvuceni_brojevi,dobitak,tokeni)
+                flag = false;
                 //while(!flag);
-                
-                vreme = 10;
-                $("#vreme").text(vreme);
+               
+
                 
                 
             }
@@ -99,6 +86,7 @@ $(document).ready(function(){
             xhttp.open("POST", "http://localhost:8080/Korisnik/lucky6_drawing" , true);
             xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             var params = 'niz='+brojevi;
+            console.log(params);
             xhttp.send(params);
             
         }
@@ -168,19 +156,64 @@ function pickBall() {
 }; // KRAJ ball[i] EVENTLISTENERA
 
 // KADA SE KLIKNE NA DUGME DA NESTAME CEO PRVI DEO I POJAVI SE DRUGI
-function availableBetClick(izvuceni_brojevi) {
+function availableBetClick(izvuceni_brojevi,dobitak,tokeni) {
     firstView.style.display = 'none';
     secondView.style.display = 'block';
-    startWheel(izvuceni_brojevi);
-  console.log("kljdsblkasjbfla")
-  betBtn.style.background = '#1CC31C';
-  betBtn.style.color = '#DDDDDD';
+    startWheel(izvuceni_brojevi,dobitak,tokeni);
 //  betBtn.addEventListener('click', function () {
 //    
 //  });
 }
 
-function startWheel(izvuceni_brojevi) {
+function resetWheel(){
+    let bubanjBalls = document.querySelectorAll('.bubanj-balls');
+    kvote = [25000,
+            15000,
+            7500,
+            3000,
+            1250,
+            700,
+            350,
+            250,
+            175,
+            125,
+            100,
+            90,
+            80,
+            70,
+            60,
+            50,
+            35,
+            25,
+            20,
+            15,
+            12,
+            10,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1]
+    for(let i = 0 ; i < 5;i++){
+        bubanjBalls[i].innerHTML = "X";
+    }
+    for(let i = 0 ; i < 35;i++){
+      bubanjBalls[i].style.border = '3px solid #646464';
+      bubanjBalls[i].style.color = '#646464';
+    }
+    for(let i = 5; i <35;i++){
+        bubanjBalls[i].innerHTML = kvote[i-5];
+    }
+    $("#ulozeno_tokena").val("");
+    info.style.background = '##DDDDDD';
+    info.style.color = '##000';
+    info.style.display = 'none';
+}
+
+function startWheel(izvuceni_brojevi,dobitak,tokeni) {
   console.log("###" + izvuceni_brojevi)
   let bubanjBalls = document.querySelectorAll('.bubanj-balls');
   let i = 0;
@@ -193,11 +226,12 @@ function startWheel(izvuceni_brojevi) {
     
     randomBall = izvuceni_brojevi[i] - 1//Math.floor(Math.random() * newBalls.length);
     bubanjBalls[i].innerHTML = newBalls[randomBall];
+    bubanjBalls[i].border = "50px";
     arrayWheel.push(bubanjBalls[i].innerHTML);
     //newBalls.splice(randomBall, 1);
 
-    bubanjBalls[i].style.position = 'relative';
-    bubanjBalls[i].style.right = '50px';
+    //bubanjBalls[i].style.position = 'relative';
+    //bubanjBalls[i].style.right = '50px';
     if (bubanjBalls[i].innerHTML == 1 || bubanjBalls[i].innerHTML == 9 || bubanjBalls[i].innerHTML == 17 || bubanjBalls[i].innerHTML == 25 || bubanjBalls[i].innerHTML == 33 || bubanjBalls[i].innerHTML == 41) {
       bubanjBalls[i].style.border = '3px solid #DD1F1F';
       bubanjBalls[i].style.color = '#DDDDDD';
@@ -238,14 +272,16 @@ function startWheel(izvuceni_brojevi) {
 //    }
     
     if (i == 35) {
-        
+      clearInterval(loopWheel);
       setTimeout(function(){
         firstView.style.display = 'block';
         secondView.style.display = 'none';
+        vreme=10;
+        document.getElementById("ukupno_tokena").innerHTML = tokeni;
+        $("#vreme").text(vreme);
         flag = true
-        clearInterval(loopWheel);
-        console.log(arrayWheel);
-        console.log(betBalls);
+        resetWheel();
+        
       }, 5000)
 
         
@@ -256,7 +292,7 @@ function startWheel(izvuceni_brojevi) {
 //      console.log(arrayWheel);
 //      console.log(betBalls);
 //
-      if (arrayWheel.indexOf(betBalls[0]) != -1 && arrayWheel.indexOf(betBalls[1]) != -1 && arrayWheel.indexOf(betBalls[2]) != -1 && arrayWheel.indexOf(betBalls[3]) != -1 && arrayWheel.indexOf(betBalls[4]) != -1 && arrayWheel.indexOf(betBalls[5]) != -1) { // `UBACITI OVO U IF CONDITION ""
+      /*if (arrayWheel.indexOf(betBalls[0]) != -1 && arrayWheel.indexOf(betBalls[1]) != -1 && arrayWheel.indexOf(betBalls[2]) != -1 && arrayWheel.indexOf(betBalls[3]) != -1 && arrayWheel.indexOf(betBalls[4]) != -1 && arrayWheel.indexOf(betBalls[5]) != -1) { // `UBACITI OVO U IF CONDITION ""
         let givenBall = [];
         givenBall.push(arrayWheel.indexOf(betBalls[0]),arrayWheel.indexOf(betBalls[1]),arrayWheel.indexOf(betBalls[2]),arrayWheel.indexOf(betBalls[3]),arrayWheel.indexOf(betBalls[4]),arrayWheel.indexOf(betBalls[5])); // UBACITI OVO U GIVENBALL.PUSH ""
         let kvota = Math.max.apply(null, givenBall); // OVO SAM GUGLAO DA BIH VIDEO KAKO DA UZMEM NAJVECI BROJ IZ AREJA DA BIH ZNAO SA CIME DA POMNOZIM.
@@ -271,7 +307,7 @@ function startWheel(izvuceni_brojevi) {
         }
 
         if (stringKvota == 34) {
-          info.innerHTML = `Povratili ste novac koji ste ulozili!`;
+          info.innerHTML = `Cestitamo, osvojili ste  dinara`;
         } else if (stringKvota == 33) {
           info.innerHTML = `Cestitamo, osvojili ste ${uplataVal * 2} dinara`;
         } else if (stringKvota == 32) {
@@ -336,7 +372,23 @@ function startWheel(izvuceni_brojevi) {
         info.style.background = 'tomato';
         info.style.color = '#fff';
         info.style.display = 'block';
+      }*/
+          
+          
+       if(dobitak > 0){
+            info.innerHTML = 'Cestitamo! Pogodili ste kombinaciju i osvojili ' +dobitak + ' tokena';
+            info.style.background = '#1CC31C';
+            info.style.color = '#DDDDDD';
+            info.style.display = 'block';
       }
+      else{
+            info.innerHTML = 'Niste pogodili izabrane loptice';
+            info.style.background = 'tomato';
+            info.style.color = '#fff';
+            info.style.display = 'block';
+      }
+
+
       
       
       
@@ -350,7 +402,7 @@ function checkRed() {
       return
   let redColumn = [ball[0], ball[8], ball[16], ball[24], ball[32], ball[40]];
   betBalls.push(ball[0].innerHTML, ball[8].innerHTML, ball[16].innerHTML, ball[24].innerHTML, ball[32].innerHTML, ball[40].innerHTML);
-  allRed.style.background = '#DD1F1F';
+  //allRed.style.background = '#DD1F1F';
   colorBalls(redColumn, '#DD1F1F', '#DDDDDD');
   howMuchBalls = 6;
 }
@@ -360,7 +412,7 @@ function checkGreen() {
     return;
   let greenColumn = [ball[1], ball[9], ball[17], ball[25], ball[33], ball[41]];
   betBalls.push(ball[1].innerHTML, ball[9].innerHTML, ball[17].innerHTML, ball[25].innerHTML, ball[33].innerHTML, ball[41].innerHTML);
-  allGreen.style.background = '#1CC31C';
+  //allGreen.style.background = '#1CC31C';
   colorBalls(greenColumn, '#1CC31C', '#DDDDDD');
   howMuchBalls = 6;
 }
@@ -370,7 +422,7 @@ function checkBlue() {
     return;
   let blueColumn = [ball[2], ball[10], ball[18], ball[26], ball[34], ball[42]];
   betBalls.push(ball[2].innerHTML, ball[10].innerHTML, ball[18].innerHTML, ball[26].innerHTML, ball[34].innerHTML, ball[42].innerHTML);
-  allBlue.style.background = '#0087FF';
+  //allBlue.style.background = '#0087FF';
   colorBalls(blueColumn, '#0087FF', '#DDDDDD');
   howMuchBalls = 6;
 }
@@ -380,7 +432,7 @@ function checkPurple() {
     return;
   let purpleColumn = [ball[3], ball[11], ball[19], ball[27], ball[35], ball[43]];
   betBalls.push(ball[3].innerHTML, ball[11].innerHTML, ball[19].innerHTML, ball[27].innerHTML, ball[35].innerHTML, ball[43].innerHTML);
-  allPurple.style.background = '#A82DEF';
+  //allPurple.style.background = '#A82DEF';
   colorBalls(purpleColumn, '#A82DEF', '#DDDDDD');
   howMuchBalls = 6;
 }
@@ -390,7 +442,7 @@ function checkBrown() {
     return;
   let brownColumn = [ball[4], ball[12], ball[20], ball[28], ball[36], ball[44]];
   betBalls.push(ball[4].innerHTML, ball[12].innerHTML, ball[20].innerHTML, ball[28].innerHTML, ball[36].innerHTML, ball[44].innerHTML);
-  allBrown.style.background = '#844E14';
+  //allBrown.style.background = '#844E14';
   colorBalls(brownColumn, '#844E14', '#DDDDDD');
   howMuchBalls = 6;
 }
@@ -400,7 +452,7 @@ function checkYellow() {
     return;
   let yellowColumn = [ball[5], ball[13], ball[21], ball[29], ball[37], ball[45]];
   betBalls.push(ball[5].innerHTML, ball[13].innerHTML, ball[21].innerHTML, ball[29].innerHTML, ball[37].innerHTML, ball[45].innerHTML);
-  allYellow.style.background = '#EFC82D';
+  //allYellow.style.background = '#EFC82D';
   colorBalls(yellowColumn, '#EFC82D', '#DDDDDD');
   howMuchBalls = 6;
 }
@@ -410,7 +462,7 @@ function checkOrange() {
     return;
   let orangeColumn = [ball[6], ball[14], ball[22], ball[30], ball[38], ball[46]];
   betBalls.push(ball[6].innerHTML, ball[14].innerHTML, ball[22].innerHTML, ball[30].innerHTML, ball[38].innerHTML, ball[46].innerHTML);
-  allOrange.style.background = '#CB5B00';
+  //allOrange.style.background = '#CB5B00';
   colorBalls(orangeColumn, '#CB5B00', '#DDDDDD');
   howMuchBalls = 6;
 }
@@ -420,7 +472,7 @@ function checkGray() {
     return;
   let grayColumn = [ball[7], ball[15], ball[23], ball[31], ball[39], ball[47]];
   betBalls.push(ball[7].innerHTML, ball[15].innerHTML, ball[23].innerHTML, ball[31].innerHTML, ball[39].innerHTML, ball[47].innerHTML);
-  allGray.style.background = '#8C8C8C';
+  //allGray.style.background = '#8C8C8C';
   colorBalls(grayColumn, '#8C8C8C', '#DDDDDD');
   howMuchBalls = 6;
 }

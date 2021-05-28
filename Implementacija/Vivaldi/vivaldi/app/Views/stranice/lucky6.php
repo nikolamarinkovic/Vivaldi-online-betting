@@ -2,6 +2,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href=<?php echo base_url("lucky6.css")?>>
+  <link rel="stylesheet" href=<?php echo base_url("style.css")?>>
 
   <div class="container firstView">
     <div class="row" style="justify-content: center;" style="margin: 0 auto; text-align: center;">
@@ -198,7 +199,6 @@
     <div class="row">
       <div class="add-bet">
           <input id="ulozeno_tokena" type="text" placeholder="Uplate molim.." data-id="uplata">
-        <button>DODAJ OPKLADU</button>
       </div>
     </div>
   </div>
@@ -208,47 +208,47 @@
       <div class="col-5">
         <div class="bubanj"></div>
         <div class="loptice-u">
-          <div class="bubanj-balls"></div>
-          <div class="bubanj-balls"></div>
-          <div class="bubanj-balls"></div>
-          <div class="bubanj-balls"></div>
-          <div class="bubanj-balls"></div>
+          <div class="bubanj-balls">X</div>
+          <div class="bubanj-balls">X</div>
+          <div class="bubanj-balls">X</div>
+          <div class="bubanj-balls">X</div>
+          <div class="bubanj-balls">X</div>
         </div>
       </div>
       <div class="col-1">
-        <div class="bubanj-balls">10000</div>
+        <div class="bubanj-balls">25000</div>
+        <div class="bubanj-balls">15000</div>
         <div class="bubanj-balls">7500</div>
-        <div class="bubanj-balls">5000</div>
-        <div class="bubanj-balls">2500</div>
-        <div class="bubanj-balls">1000</div>
+        <div class="bubanj-balls">3000</div>
+        <div class="bubanj-balls">1250</div>
       </div>
       <div class="col-1">
-        <div class="bubanj-balls">500</div>
-        <div class="bubanj-balls">300</div>
-        <div class="bubanj-balls">200</div>
-        <div class="bubanj-balls">150</div>
-        <div class="bubanj-balls">100</div>
+        <div class="bubanj-balls">700</div>
+        <div class="bubanj-balls">350</div>
+        <div class="bubanj-balls">250</div>
+        <div class="bubanj-balls">1750</div>
+        <div class="bubanj-balls">125</div>
       </div>
 
       <div class="col-1">
+        <div class="bubanj-balls">100</div>
         <div class="bubanj-balls">90</div>
         <div class="bubanj-balls">80</div>
         <div class="bubanj-balls">70</div>
         <div class="bubanj-balls">60</div>
-        <div class="bubanj-balls">50</div>
       </div>
 
       <div class="col-1">
-        <div class="bubanj-balls">40</div>
-        <div class="bubanj-balls">30</div>
+        <div class="bubanj-balls">50</div>
+        <div class="bubanj-balls">35</div>
         <div class="bubanj-balls">25</div>
         <div class="bubanj-balls">20</div>
         <div class="bubanj-balls">15</div>
 
       </div>
       <div class="col-1">
+        <div class="bubanj-balls">12</div>
         <div class="bubanj-balls">10</div>
-        <div class="bubanj-balls">9</div>
         <div class="bubanj-balls">8</div>
         <div class="bubanj-balls">7</div>
         <div class="bubanj-balls">6</div>

@@ -1,4 +1,5 @@
 <script src="<?php echo base_url("skripta_lucky6.js")?>"></script>
+
 <div class="body">
             <h1 class="naslov">Lucky 6</h1>
             <hr>
@@ -6,7 +7,7 @@
             
             <p style="text-align: center">Preostalo vreme: <var id="vreme">50</var> s</p>
             <div class="polja2">
-                <p>Ukupni tokeni: <var id="ukupno_tokena">1089</var> </p>
+                <p>Ukupni tokeni:<var id="ukupno_tokena"> <?php if(!empty($Tokeni)) echo $Tokeni?> </var> </p>
             </div>
             <?php include_once 'lucky6.php';?>
             

@@ -389,7 +389,12 @@ class Korisnik extends BaseController{
     }
     
     public function lucky6(){
-        $this->prikaz('lucky6Korisnik',[]);
+        $km = new KorisnikModel();
+        $korIme = $this->session->get('korisnik')->KorisnickoIme;
+        $Korisnik = $km
+                    ->where('KorisnickoIme', $korIme)
+                    ->first();
+        $this->prikaz('lucky6Korisnik',['Tokeni'=>$Korisnik->Tokeni]);
     }
     
     public function lucky6_drawing(){
@@ -454,7 +459,7 @@ class Korisnik extends BaseController{
         $ulozeni_tokeni = intval($niz[6]);
         
         $km = new KorisnikModel();
-        $korIme = "KELE";//$this->session->get('korisnik')->KorisnickoIme;
+        $korIme =$this->session->get('korisnik')->KorisnickoIme;
         $Korisnik = $km
                     ->where('KorisnickoIme', $korIme)
                     ->first();
@@ -487,6 +492,8 @@ class Korisnik extends BaseController{
             $coef = $kvote[$izvucnen];
             $dobitak = $coef * $ulozeni_tokeni;
             
+            $izvuceni_brojevi .= $dobitak .",";
+            
             $Korisnik->Tokeni += $dobitak;
             $km->set("Tokeni",$Korisnik->Tokeni)
                         ->where('KorisnickoIme', $Korisnik->KorisnickoIme)
@@ -512,7 +519,7 @@ class Korisnik extends BaseController{
   
         }
         //end trans
-        echo $izvuceni_brojevi . $Korisnik->Tokeni;
+        echo $izvuceni_brojevi . $Korisnik->Tokeni . ',';
     }
     
     public function sport(){

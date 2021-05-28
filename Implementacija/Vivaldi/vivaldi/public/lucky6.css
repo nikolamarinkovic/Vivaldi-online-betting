@@ -42,13 +42,14 @@ cursor: pointer;
 }
 
 .info {
+  width: 250px;
   margin-top: 30px;
   border-radius: 2px;
   padding: 6px;
   background: #DDDDDD;
   color: #000;
   text-align: center;
-  font-size: 28px;
+  font-size: 20px;
   display: none;
   border: 2px solid #DDDDDD;
   text-shadow: 2px 2px solid #000;
@@ -80,6 +81,7 @@ cursor: pointer;
 }
 .add-bet {
   margin: 0 auto;
+  margin-top: 20px
 }
 
 .add-bet button {

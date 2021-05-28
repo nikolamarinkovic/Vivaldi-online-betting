@@ -323,7 +323,7 @@ class Korisnik extends BaseController{
                     ->where('KorisnickoIme', $korIme)
                     ->first();
         
-        if($tokeni != 0 && $Korisnik->Tokeni > $tokeni){
+        if($tokeni != 0 && $Korisnik->Tokeni >= $tokeni){
             $Korisnik->Tokeni -= $tokeni;
             $dobitak = 0;
             

@@ -351,7 +351,8 @@ table{
 }
 
 .sport_tiketi table{
-    width: 550px;
+    width: 583px;
+    margin-top: 50px
 }
 
 th, td{

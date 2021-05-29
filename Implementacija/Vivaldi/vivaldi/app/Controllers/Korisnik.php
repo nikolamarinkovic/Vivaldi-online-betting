@@ -526,8 +526,49 @@ class Korisnik extends BaseController{
             $tm = new TimModel();        
             $timovi = $tm->findAll();
             $um = new UtakmicaModel();        
-            $utakmice = $um->findAll();
-        $this->prikaz('sportKorisnik',['timovi'=>$timovi, 'utakmice'=>$utakmice]);
+            $utakmice = $um->where('Rezultat',0)->findAll();
+            $km = new KorisnikModel();
+            $korIme = $this->session->get('korisnik')->KorisnickoIme;
+            $korisnik = $km
+                    ->where('KorisnickoIme', $korIme)
+                    ->first();
+        $this->prikaz('sportKorisnik',['timovi'=>$timovi, 'utakmice'=>$utakmice,'tokeni'=>$korisnik->Tokeni]);
+    }
+    
+    public function sportSubmit(){
+        $tm = new TimModel();        
+        $timovi = $tm->findAll();
+        $um = new UtakmicaModel();        
+        $utakmice = $um->where('Rezultat',0)->findAll();
+        $km = new KorisnikModel();
+        $korIme = $this->session->get('korisnik')->KorisnickoIme;
+        $korisnik = $km
+                    ->where('KorisnickoIme', $korIme)
+                    ->first();
+        
+            if(!$this->validate(['uplata'=>'required', ])){
+            if(!empty($this->validator->getErrors()['uplata']))
+                $errors['uplata'] = 'Unesite iznos za kladjenje';       
+            return $this->prikaz('sportKorisnik',['errors'=>$errors, 'timovi'=>$timovi, 'utakmice'=>$utakmice,'tokeni'=>$korisnik->Tokeni]);
+        }
+        
+        // pravi kod za logiku pocinje ovde
+        
+        $uplata = $this->request->getVar('uplata');
+        $uplata = intval($uplata);
+        if($uplata < 0){
+            $errors['uplata'] = 'Unesite iznos za kladjenje veci od 0';
+            return $this->prikaz('sportKorisnik',['errors'=>$errors, 'timovi'=>$timovi, 'utakmice'=>$utakmice,'tokeni'=>$korisnik->Tokeni]);
+        }
+        
+        $brojUtakmica = $this->request->getVar('numOfGames');
+        $nizUtakmica = explode(".", $this->request->getVar('nizUtakmica'));
+        for($i = 0; $i<$brojUtakmica;$i++){
+            $checkBox = $this->request->getVar('checkBoxRed'.$nizUtakmica[$i]);
+            $radioButton = $this->request->getVar('radioRed'.$nizUtakmica[$i]);
+            $ulog = $this->request->getVar('ulogRed'.$nizUtakmica[$i]);
+        }
+        
     }
     
     public function profil(){

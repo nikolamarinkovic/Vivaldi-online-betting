@@ -16,6 +16,10 @@ use App\Models\TimModel;
 use App\Models\UtakmicaModel;
 use \App\Models\Lucky6Model;
 use \App\Models\TiketLucky6Model;
+use \App\Models\StavkaTiketModel;
+use App\Models\TiketKladjenjeModel;
+
+
 /**
  * Description of Korisnik
  *
@@ -536,7 +540,12 @@ class Korisnik extends BaseController{
     }
     
     public function sportSubmit(){
-        $tm = new TimModel();        
+
+        
+        $tm = new TimModel();   
+        
+        $tm->db->transBegin();
+
         $timovi = $tm->findAll();
         $um = new UtakmicaModel();        
         $utakmice = $um->where('Rezultat',0)->findAll();
@@ -556,6 +565,14 @@ class Korisnik extends BaseController{
         
         $uplata = $this->request->getVar('uplata');
         $uplata = intval($uplata);
+        
+        if($uplata > $korisnik->Tokeni){
+            $tm->db->transRollback();
+            $errors['uplata'] = "Nemate dovoljan broj tokena";
+            return $this->prikaz('sportKorisnik',['errors'=>$errors, 'timovi'=>$timovi, 'utakmice'=>$utakmice,'tokeni'=>$korisnik->Tokeni]);
+        }
+        
+        
         if($uplata < 0){
             $errors['uplata'] = 'Unesite iznos za kladjenje veci od 0';
             return $this->prikaz('sportKorisnik',['errors'=>$errors, 'timovi'=>$timovi, 'utakmice'=>$utakmice,'tokeni'=>$korisnik->Tokeni]);
@@ -563,11 +580,62 @@ class Korisnik extends BaseController{
         
         $brojUtakmica = $this->request->getVar('numOfGames');
         $nizUtakmica = explode(".", $this->request->getVar('nizUtakmica'));
+        
+        $ukupna_kvota = 1;
+        
+        
+        $tkm = new TiketKladjenjeModel();
+        $tkm->save(['IdKor'=> $korisnik->IdKorisnik, 
+                   'Ulog' => $uplata, 
+                   'Dobitak' =>0, 
+                    'Status' => 0
+            ]);
+        $idTiketa = $tkm->getInsertID();
+        $flag_izabrana_bar_jedna_utakmica = false;
         for($i = 0; $i<$brojUtakmica;$i++){
             $checkBox = $this->request->getVar('checkBoxRed'.$nizUtakmica[$i]);
             $radioButton = $this->request->getVar('radioRed'.$nizUtakmica[$i]);
-            $ulog = $this->request->getVar('ulogRed'.$nizUtakmica[$i]);
+            if($checkBox!= null && $checkBox == "on" && $radioButton!=null){
+                $stm = new StavkaTiketModel();
+                $ishod = $radioButton;
+                
+                //proveravamo dal se tekma i dalje igra
+                
+                $utakmica = $um->where('Rezultat',0)->where('IdUtakmica',$nizUtakmica[$i])->first();
+                if($utakmica == null){
+                    $tm->db->transRollback();
+                    return;
+                }
+                
+                $flag_izabrana_bar_jedna_utakmica = true;
+                
+                $stm->save([
+                    'IdTiketKladjenje'=>$idTiketa,
+                    'IdUtakmica'=>$nizUtakmica[$i], 
+                    'Iznos'=>0, 
+                    'KonacanIshod'=>$ishod, 
+                    'Status'=>0
+                ]);
+                
+                $imeKvote = "Kvota".$radioButton;
+                $ukupna_kvota *= $utakmica->$imeKvote;
+                
+            }
         }
+        
+        if($flag_izabrana_bar_jedna_utakmica == false){
+            $tm->db->transRollback();
+            $errors['izbranaBarJednaUtakmica'] = "Nijedna utakmica nije izabrana";
+            return $this->prikaz('sportKorisnik',['errors'=>$errors, 'timovi'=>$timovi, 'utakmice'=>$utakmice,'tokeni'=>$korisnik->Tokeni]);
+        }
+        $korisnik->Tokeni -= $uplata;
+        $km->set("Tokeni",$korisnik->Tokeni)
+                        ->where('KorisnickoIme', $korisnik->KorisnickoIme)
+                        ->update();
+        
+         $tm->db->transCommit();
+        return $this->prikaz('sportKorisnik',['timovi'=>$timovi, 'utakmice'=>$utakmice,'tokeni'=>$korisnik->Tokeni]);
+        
         
     }
     

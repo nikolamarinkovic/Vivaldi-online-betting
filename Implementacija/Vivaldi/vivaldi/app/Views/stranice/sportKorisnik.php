@@ -6,6 +6,7 @@
             <div class="sport_tiketi">
                 <div>
                     <input type="text" placeholder="Pretraga">
+                    <p style="color:red"><?php if(!empty($errors['izbranaBarJednaUtakmica'])) echo $errors['izbranaBarJednaUtakmica']?></p>
                     <table>
                         <tr>
                             <th></th>
@@ -14,9 +15,8 @@
                             <th>X</th>
                             <th>2</th>
                             <th>Datum vreme</th>
-                            <th>Ulog</th>
                         </tr>  
-                    <form action="<?php echo base_url("Korisnik/sportSubmit")?>" method="POST">
+                    <form action="<?php echo base_url("Korisnik/sportSubmit")?>" method="GET">
                 <?php if(!empty($utakmice)){        
                     $tm = new TimModel();        
             $numOfGames=0; //kolko redova ima tabela, tj kolko utakmica ima
@@ -37,7 +37,7 @@
                         echo"<td style='width: 50px;'>". number_format($utakmica->KvotaX, 1)."<input type='radio' value = 'X' name='radioRed$utakmica->IdUtakmica'></td>";
                         echo"<td style='width: 50px;'>". number_format($utakmica->Kvota2, 1)."<input type='radio' value = '2' name='radioRed$utakmica->IdUtakmica'></td>";
                         echo"<td>".$utakmica->Vreme."</td>"; 
-                        echo"<td style='width: 50px;'><input type='number' placeholder ='Unesite ulog..' name='ulogRed$utakmica->IdUtakmica'></td>";
+                 
                         $numOfGames++;
                         echo "</tr>";                     
                  }
@@ -47,19 +47,21 @@
                 <?php } 
                 ?>
                     </table>
+                
                 </div>
                 
-    
+                <div style = "margin-left: 220px">
 
                     <p>Preostali tokeni: </p>
                     <p><var id="preostali_tokeni"> <?php if(!empty($tokeni)) echo $tokeni; else echo 0; ?> </var></p>
                     <p>Uplata: </p>
                     <input type="number" name = 'uplata'>
-                    <p style="color :red"> <?php if(!empty($errors['uplata'])) echo $errors['uplata'] ?></p>
+                    <p style="color :red; text-align: left"> <?php if(!empty($errors['uplata'])) echo $errors['uplata'] ?></p>
                     <p>Potencijalni dobitak: </p>
                     <p><var name = "potencijalni_dobitak">0</var></p>
                     <input type="submit">
                     </form>
+                </div>
  
             </div>
         </div>

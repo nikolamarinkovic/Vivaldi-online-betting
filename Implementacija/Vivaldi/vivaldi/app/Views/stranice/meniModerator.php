@@ -10,4 +10,5 @@
             <li><a href=<?php echo base_url('Moderator/utakmica');?>>Dodavanje utakmice</a></li>
             <li><a href=<?php echo base_url('Moderator/kvote');?>>Azuriranje kvota</a></li>
             <li><a href=<?php echo base_url('Moderator/tim');?>>Dodavanje tima</a></li>
+            <li><a href=<?php echo base_url('Moderator/dodajRezultat');?>>Upis rezultata utakmice</a></li>
         </ul>

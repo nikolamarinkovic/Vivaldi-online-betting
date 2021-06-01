@@ -1,0 +1,13 @@
+sortirano po prioritetu:
+2.Azuriranje kvota zavrsenih utakmica i kod adm i kod mod
+1.Filteri
+2.Srediti UI za adm i mod
+3. Za sve igre postaviti vreme
+4. profil admin/mod srediti
+Labela kod dodavanja adm/mod
+upis rezultata utakmice link ne postoji u moderatoru
+Treba prepraviti neke ssu, videcemo kasnije koje
+Treba dodati novi SSU upisa rezultata utakmice
+Rulet animacije (ili ako ne stignemo, da uleplsamo ovo trenutno)
+dodavanje tokena za slot
+dodavanje tokena za rulet

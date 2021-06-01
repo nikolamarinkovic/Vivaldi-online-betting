@@ -1,0 +1,4 @@
+zaposleni: 1 znaci admin, 0 znaci mod
+stavkaTiket: 0-igra se, 1-pala stavka, 2-prosla stavka
+TiketKladjenje:0-igra se, 1-pala stavka, 2-prosla stavka, na pocetku ce polje Dobitak da sadrzi koeficijent
+Utakmica: 0-igra se, 1-1, 2-2,X-X

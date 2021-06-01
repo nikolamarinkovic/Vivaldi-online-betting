@@ -10,6 +10,7 @@
             <li><a href=<?php echo base_url('Administrator/utakmica');?>>Dodavanje utakmice</a></li>
             <li><a href=<?php echo base_url('Administrator/kvote');?>>Azuriranje kvota</a></li>
             <li><a href=<?php echo base_url('Administrator/tim');?>>Dodavanje tima</a></li>
+            <li><a href=<?php echo base_url('Administrator/dodajRezultat');?>>Upis rezultata utakmice</a></li>
         </ul>
         <ul class="menu">
             <li><a href=<?php echo base_url('Administrator/modadm');?>>Dodavanje moderatora/administratora</a></li>

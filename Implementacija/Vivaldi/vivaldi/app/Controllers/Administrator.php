@@ -11,6 +11,14 @@ use \App\Models\KorisnikModel;
 use \App\Models\ZaposleniModel;
 use \App\Models\TimModel;
 use \App\Models\UtakmicaModel;
+use \App\Models\StavkaTiketModel;
+use App\Models\TiketKladjenjeModel;
+use App\Models\TiketLucky6Model;
+use App\Models\Lucky6Model;
+use App\Models\TiketRuletModel;
+use App\Models\RuletModel;
+use App\Models\StavkaRuletModel;
+use App\Models\TiketSlotModel;
 /**
  * Description of Administrator
  *
@@ -263,6 +271,139 @@ class Administrator extends BaseController {
         
     }
     
+    public function istorijaKorisnikSubmit(){
+        
+        $idKor = $this->request->getVar("idKor");
+        $km = new KorisnikModel();
+        $korisnik = $km->where("IdKorisnik",$idKor)->first();
+
+        
+        $rulet = $this->request->getVar("Rulet");
+        $ruletNiz = [];
+        $brojac = 0;
+        if($rulet != null){
+            $trm = new TiketRuletModel();
+            $tiketiRuleta = $trm->where("IdKorisnik",$korisnik->IdKorisnik)->findAll();
+            foreach($tiketiRuleta as $tiket){
+                $idRul = $tiket->IdRulet;
+                $ruletNiz[$brojac]['ulozeno'] = $tiket->Ulog;
+                $ruletNiz[$brojac]['osvojeno'] = $tiket->Dobitak;
+                
+                $rm = new RuletModel();
+                $ruletIgra = $rm->where("IdRulet",$tiket->IdRulet)->first();
+                $ruletNiz[$brojac]['ishod'] = $ruletIgra->IzvucenBroj;
+                
+                $nizOpklada = [];
+                
+                $srm = new StavkaRuletModel();
+                $stavkeTiketa = $srm->where("IdRulet",$tiket->IdRulet)
+                        ->where("IdKorisnik",$korisnik->IdKorisnik)
+                        ->findAll();
+                foreach($stavkeTiketa as $stavka){
+                   $ulog = $stavka->Ulog;
+                   $tip = $stavka->Tip;
+                   
+                   $nizOpklada[] = "".$tip.": ".$ulog;
+                }
+                $ruletNiz[$brojac]['opklada'] = $nizOpklada;
+                
+                $brojac++;
+            }
+        }
+        
+        $slot = $this->request->getVar("Slot");
+        $brojac = 0;
+        $slotNiz = [];
+        if($slot != null){
+            $nizVockica = ["Pomomrandza","2 Bar","Zvono","Sljiva","3 Bar","Tresnja","7","1 Bar"];
+            
+            $tsm = new TiketSlotModel();
+            $tiketiSlota = $tsm->where("IdKorisnik",$korisnik->IdKorisnik)->findAll();
+            foreach($tiketiSlota as $tiket){
+                $slotNiz[$brojac]['ulozeno'] = $tiket->Ulog;
+                $slotNiz[$brojac]['osvojeno'] = $tiket->Dobitak;
+
+                $brojevi = explode(",", $tiket->Rezultat);
+                $slotNiz[$brojac]['ishod'] = $nizVockica[intval($brojevi[0])];
+                $slotNiz[$brojac]['ishod'] .= ", ".$nizVockica[intval($brojevi[1])];
+                $slotNiz[$brojac]['ishod'] .= ", ".$nizVockica[intval($brojevi[2])];
+                $slotNiz[$brojac]['opklada'] = "---";
+                
+                $brojac++;
+            }
+        }
+        
+        $lucky = $this->request->getVar("Lucky_6");
+        $brojac = 0;
+        $luckyNiz = [];
+        if($lucky != null){
+            
+            $tlsm = new TiketLucky6Model();
+            $tiketiLucky = $tlsm->where("IdKorisnik",$korisnik->IdKorisnik)->findAll();
+            foreach($tiketiLucky as $tiket){
+                $luckyNiz[$brojac]['ulozeno'] = $tiket->Ulog;
+                $luckyNiz[$brojac]['osvojeno'] = $tiket->Dobitak;
+                $luckyNiz[$brojac]['opklada'] = $tiket->Kombinacija;
+                
+                $lsm = new Lucky6Model();
+                $luckyIgra = $lsm->where("IdLucky6",$tiket->IdLucky6)->first();
+                $luckyNiz[$brojac]['ishod'] = $luckyIgra->IzvuceniBrojevi;
+
+                $brojac++;
+            }
+        }
+        
+        $sport = $this->request->getVar("Sport");
+        $brojac = 0;
+        $sportNiz = [];
+        if($sport != null){
+            
+            $tkm = new TiketKladjenjeModel();
+            $tiketiKladjenja = $tkm->where("IdKor",$korisnik->IdKorisnik)->findAll();
+            foreach($tiketiKladjenja as $tiket){
+                $idTiket = $tiket->IdTiketKladjenje;
+                $sportNiz[$brojac]['ulozeno'] = $tiket->Ulog;
+                if($tiket->Status == 0){
+                    $sportNiz[$brojac]['osvojeno'] = "-";
+                }
+                else
+                    $sportNiz[$brojac]['osvojeno'] = $tiket->Dobitak;
+                
+                $nizOpklada = [];
+                $nizIshoda = [];
+                
+                $stm = new StavkaTiketModel();
+                $stavkeTiketa = $stm->where("IdTiketKladjenje",$tiket->IdTiketKladjenje)
+                        ->findAll();
+                foreach($stavkeTiketa as $stavka){
+                   $um = new UtakmicaModel();
+                   $utakmica = $um->where("IdUtakmica",$stavka->IdUtakmica)->first();
+                   
+                   $domacinID = $utakmica->IdDomacin;
+                   $gostID = $utakmica->IdGost;
+                   
+                   $tm = new TimModel();
+                   $domacin = $tm->where("IdTim",$domacinID)->first();
+                   $gost = $tm->where("IdTim",$gostID)->first();
+                   
+                   $nizOpklada[] = $domacin->Ime." - ".$gost->Ime.": ".$stavka->KonacanIshod;
+                   $nizIshoda[] = $domacin->Ime." - ".$gost->Ime.": ".$utakmica->Rezultat;
+                   
+                   
+                }
+                $sportNiz[$brojac]['opklada'] = $nizOpklada;
+                $sportNiz[$brojac]['ishod'] = $nizIshoda;
+                
+                $brojac++;
+            }
+        }
+        
+        return $this->prikaz('uvidIstorijeKorisnika',['korisnik'=>$korisnik,'ruletNiz'=>$ruletNiz,'slotNiz'=>$slotNiz,'luckyNiz'=>$luckyNiz,'sportNiz'=>$sportNiz]);
+        
+        
+        //return $this->prikaz('uvidIstorijeKorisnika',['korisnik'=>$korisnik]);
+    }
+    
     
     public function azurirajKvotu(){
         $um=new UtakmicaModel();
@@ -289,6 +430,140 @@ class Administrator extends BaseController {
         $kele++;    
         }   
         $this->prikaz('kvoteAdmin',[]);
+    }
+    
+    public function dodajRezultat(){
+         $tm = new TimModel();        
+            $timovi = $tm->findAll();
+            $um = new UtakmicaModel();        
+            $utakmice = $um->where('Rezultat',"0")->findAll();
+        
+        $this->prikaz('upisRezultataAdmin',['utakmice'=>$utakmice]);
+    }
+    
+    public function submitRezultat(){
+        
+        $tiketiZaAzuriranje = [];
+        
+        $tm = new TimModel();   
+        
+        $tkm = new TiketKladjenjeModel();
+        $tkm->db->transBegin();
+        
+        $um = new UtakmicaModel();        
+        $utakmice = $um->where('Rezultat',"0")->findAll();
+        
+        // pravi kod za logiku pocinje ovde
+        
+        $brojUtakmica = $this->request->getVar('numOfGames');
+        $nizUtakmica = explode(".", $this->request->getVar('nizUtakmica'));
+        
+
+        
+        
+        $flag_izabrana_bar_jedna_utakmica = false;
+        for($i = 0; $i<$brojUtakmica;$i++){
+            $checkBox = $this->request->getVar('checkBoxRed'.$nizUtakmica[$i]);
+            $radioButton = $this->request->getVar('radioRed'.$nizUtakmica[$i]);
+            if($checkBox!= null && $checkBox == "on" && $radioButton!=null){
+                $stm = new StavkaTiketModel();
+                $ishod = $radioButton;
+                
+                //proveravamo dal se tekma i dalje igra
+                
+                $utakmica = $um->where('Rezultat',"0")->where('IdUtakmica',$nizUtakmica[$i])->first();
+                if($utakmica == null){
+                    $tkm->db->transRollback();
+                    return;
+                }
+                
+                $flag_izabrana_bar_jedna_utakmica = true;
+                
+                $um->set("Rezultat",$ishod)
+                        ->where('IdUtakmica', $nizUtakmica[$i])
+                        ->update();
+                $stavke = $stm->where("IdUtakmica",$nizUtakmica[$i])->findAll();
+                foreach($stavke as $stavka){
+                    $kladjenje = $stavka->KonacanIshod;
+                    $status = 0;
+                    if($kladjenje == $ishod){
+                        $status = 2;
+                    }
+                    else
+                        $status = 1;
+                    
+                    $stm->set("Status",$status)
+                        ->where('IdUtakmica', $stavka->IdUtakmica)
+                        ->where("IdTiketKladjenje",$stavka->IdTiketKladjenje)
+                        ->update();
+                    
+                    $tiketiZaAzuriranje["id#".$stavka->IdTiketKladjenje] = 1;
+                    
+                    
+                }
+                
+            }
+        }
+        
+        if($flag_izabrana_bar_jedna_utakmica == false){
+            $tkm->db->transRollback();
+            $errors['izbranaBarJednaUtakmica'] = "Nijedna utakmica nije izabrana";
+            return $this->prikaz('upisRezultataAdmin',['errors'=>$errors, 'utakmice'=>$utakmice]);
+        }
+        $dobitak = -1;
+        foreach ($tiketiZaAzuriranje as $id => $value){
+            $idTiketaCeo = explode("#",$id);
+            $idTiketa = $idTiketaCeo[1];
+            $tiket = $tkm->where("IdTiketKladjenje",$idTiketa)->first();
+            if($tiket == null || $tiket->Status == 1){
+                continue;
+            }
+            $stavkeNove = $stm->where("IdTiketKladjenje",$idTiketa)->findAll();
+            if($stavkeNove == null){
+                continue;
+            }
+            $nasao = [];
+            $nasao["st0"] = false;
+            $nasao["st1"] = false;
+            $nasao["st2"] = false;
+            foreach($stavkeNove as $stavka){
+                $statusStavke = $stavka->Status;
+                $nasao["st".$statusStavke] = true;
+            }
+            if($nasao["st1"] == true){
+                $tkm->set("Status",1)
+                        ->set("Dobitak",0)
+                        ->where("IdTiketKladjenje",$idTiketa)
+                        ->update();
+                
+            }
+            else if($nasao["st0"] == false && $nasao["st2"] == true){
+                $dobitak = $tiket->Ulog * $tiket->Dobitak;
+                $tkm->set("Status",2)
+                        ->set("Dobitak",$dobitak)
+                        ->where("IdTiketKladjenje",$idTiketa)
+                        ->update();
+                
+                $idKor = $tiket->IdKor;
+                $km = new KorisnikModel();
+                $korisnik = $km->where("IdKorisnik",$idKor)->first();
+                if($korisnik == null){
+                    continue;
+                }
+                
+                $tokeni = $korisnik->Tokeni;
+                $km->set("Tokeni",$tokeni + $dobitak)
+                        ->where("IdKorisnik",$idKor)
+                        ->update();
+            }
+            
+            
+        }
+        
+        $utakmice = $um->where('Rezultat',"0")->findAll();
+         $tkm->db->transCommit();
+        return $this->prikaz('upisRezultataAdmin',['utakmice'=>$utakmice]);
+        
     }
     
 }

@@ -122,7 +122,7 @@ class Moderator extends BaseController{
             return $this->prikaz('profilModerator',['errors'=>$errors, 'zaposlen'=>$zaposlen]);
         $lozinka['Lozinka']=$nova;
         $zm->update($zaposlen->IdZaposleni, $lozinka);
-        $this->prikaz('profilModerator',['zaposlen'=>$zaposlen]);
+        $this->prikaz('profilModerator',['zaposlen'=>$zaposlen,"uspesno"=>1]);
     }
     
     public function utakmica(){
@@ -134,7 +134,8 @@ class Moderator extends BaseController{
     }
     
     public function tim(){
-        $this->prikaz('timModerator',[]);
+        $uspeh = $this->session->getFlashdata('uspesno');
+        $this->prikaz('timModerator',["uspeh"=>$uspeh]);
     }
     public function dodajTim(){  
         if(!$this->validate(['tim_ime'=>'required'])){
@@ -152,7 +153,8 @@ class Moderator extends BaseController{
             return $this->prikaz('timModerator',['errors'=>$errors]);
         }
         $tm->save(['Ime' => $this->request->getVar('tim_ime')]);
-        return redirect()->to(base_url('Moderator/rulet'));     
+        $this->session->setFlashdata('uspesno',"Tim uspesno postavljen!");
+        return redirect()->to(base_url('Moderator/tim'));     
     }
     
     public function dodajUtakmicu(){
@@ -196,7 +198,7 @@ class Moderator extends BaseController{
                 'KvotaX' => $kvotaX,
                 'Kvota1' => $kvota1,
                 'Kvota2' => $kvota2]);
-        return $this->prikaz('utakmicaModerator',[]);
+        return $this->prikaz('utakmicaModerator',["uspesno"=>1]);
     }
 
     public function azurirajKvotu(){
@@ -223,7 +225,7 @@ class Moderator extends BaseController{
             }
         $kele++;    
         }   
-        $this->prikaz('kvoteModerator',[]);
+        $this->prikaz('kvoteModerator',["uspesno"=>1]);
     }
     
     public function dodajRezultat(){
@@ -356,7 +358,7 @@ class Moderator extends BaseController{
         
         $utakmice = $um->where('Rezultat',"0")->findAll();
          $tkm->db->transCommit();
-        return $this->prikaz('upisRezultataModerator',['utakmice'=>$utakmice]);
+        return $this->prikaz('upisRezultataModerator',['utakmice'=>$utakmice,"uspesno"=>"Rezultat uspesno upisan!"]);
         
     }
 }

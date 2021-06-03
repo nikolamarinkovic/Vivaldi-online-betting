@@ -151,7 +151,7 @@ class Gost extends BaseController{
                 $errors['BrojKartice'] = 'Unesite broj kartice';
             
             
-        
+            
             return $this->prikaz('registracija',['errors'=>$errors]);
         }
         
@@ -168,6 +168,7 @@ class Gost extends BaseController{
 
             $this->session->setFlashdata('info',$info);
             //redirect("home/index");
+
             return redirect()->to(base_url('Gost/prijava'));
 
     }

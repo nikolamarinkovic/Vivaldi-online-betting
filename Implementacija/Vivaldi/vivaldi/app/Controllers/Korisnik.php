@@ -307,7 +307,7 @@ class Korisnik extends BaseController{
             
         }
         //end trans
-        echo $num . "," . $Korisnik->Tokeni;
+        echo $num . "," . $Korisnik->Tokeni .','. $dobitak;
         
        
     }
@@ -377,7 +377,7 @@ class Korisnik extends BaseController{
             ]);
         }
         //end trans
-        echo $num1 . "," . $num2 . "," . $num3 . "," . $Korisnik->Tokeni;
+        echo $num1 . "," . $num2 . "," . $num3 . "," . $Korisnik->Tokeni.",".$dobitak;
         
         
     }
@@ -839,7 +839,7 @@ class Korisnik extends BaseController{
             var_dump($potvrda);
         $lozinka['Lozinka']=$nova;
         $km->update($korisnik->IdKorisnik, $lozinka);
-        $this->prikaz('profilKorisnik',['korisnik'=>$korisnik]);
+        $this->prikaz('profilKorisnik',['korisnik'=>$korisnik,'uspesno'=>1]);
     }
     
     public function kupovinaTokena(){
@@ -863,7 +863,7 @@ class Korisnik extends BaseController{
         $noviTokeni['Tokeni']=$korisnik->Tokeni+$tokeni;
         $korisnik->Tokeni+=$tokeni;
         $km->update($korisnik->IdKorisnik, $noviTokeni);
-        $this->prikaz('profilKorisnik',['korisnik'=>$korisnik]);
+        $this->prikaz('profilKorisnik',['korisnik'=>$korisnik,"uplata"=>1]);
     }
     
     public function prodajaTokena(){
@@ -894,7 +894,7 @@ class Korisnik extends BaseController{
         $noviTokeni['Tokeni']=$korisnik->Tokeni-$tokeni;
         $korisnik->Tokeni-=$tokeni;
         $km->update($korisnik->IdKorisnik, $noviTokeni);
-        $this->prikaz('profilKorisnik',['korisnik'=>$korisnik]);
+        $this->prikaz('profilKorisnik',['korisnik'=>$korisnik,"isplata"=>1]);
     }
     
     

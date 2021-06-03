@@ -1,5 +1,7 @@
 vreme = 30;
+
 $(document).ready(function(){
+    let info = document.querySelector('.info');
     //("#ulozeno_tokena").text(0)
     vreme = 30;
     $("#vreme").text(vreme);
@@ -69,6 +71,24 @@ $(document).ready(function(){
                 $("#vreme").text(vreme);
                 
                 $("#tabla button").next().text("")
+                
+                dobitak = parseInt(niz[2]);
+                if(dobitak > 0){
+                    info.innerHTML = 'Cestitamo! Pao je broj ' + broj + '! Pogodili ste i osvojili ' + dobitak + ' tokena';
+                    info.style.background = '#1CC31C';
+                    info.style.color = '#DDDDDD';
+                    info.style.display = 'block';
+                }
+                else{
+                    info.innerHTML = 'Pao je broj ' +broj + '. Niste pogodili.';
+                    info.style.background = 'tomato';
+                    info.style.color = '#fff';
+                    info.style.display = 'block';
+                }
+                
+                setTimeout(function(){
+                    info.style.display = 'none'
+                },5000)
                
                 
             }

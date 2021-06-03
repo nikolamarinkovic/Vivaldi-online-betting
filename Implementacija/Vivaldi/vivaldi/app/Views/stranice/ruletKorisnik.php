@@ -88,5 +88,7 @@
                         </div>
                     </div>-->
                 </div>
+                    
             </div>
+                <div class = "info" style="width: 200px; text-align: center; padding-top: 2opx; font-size: 20px;"></div>
         </div>

@@ -68,15 +68,35 @@
 
                             setTimeout(function(){
                                 stopSpin(1);
-                            }, 1500 + parseInt(1500 * Math.random()));
+                            }, 1500 );
 
                             setTimeout(function(){
                                 stopSpin(2);
-                            }, 1500 + parseInt(1500 * Math.random()));
+                            }, 2000 );
 
                             setTimeout(function(){
                                 stopSpin(3);
-                            }, 1500 + parseInt(1500 * Math.random()));
+                            }, 2500);
+                            
+                            setTimeout(function(){
+                                let info = document.querySelector('.info');
+                            var dobitak = parseInt(res[4]);
+                            if(dobitak > 0){
+                                        info.innerHTML = 'Cestitamo! Osvojili ste ' + dobitak + ' tokena';
+                                        info.style.background = '#1CC31C';
+                                        info.style.color = '#DDDDDD';
+                                        info.style.display = 'block';
+                                    }
+                                    else{
+                                        info.innerHTML = 'Nazalost, niste dobili.';
+                                        info.style.background = 'tomato';
+                                        info.style.color = '#fff';
+                                        info.style.display = 'block';
+                                    }
+                                    setTimeout(function(){
+                                        info.style.display = 'none'
+                                    },5000)
+                            },2500)
 
 
 

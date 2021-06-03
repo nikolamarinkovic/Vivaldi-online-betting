@@ -21,6 +21,7 @@
                     <tr>
                         <td colspan="2" class = "submit_tim">
                             <input type="submit">
+                            <p style="color: green; margin-left: 100px"> <?php if(!empty($uspeh)) echo $uspeh?></p>
                         </td>
                     </tr>
                 </table>

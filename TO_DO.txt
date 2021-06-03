@@ -7,7 +7,7 @@ provera ispravnosti datuma za utakmice,svuda
 
 
 za njih:
-pravila igara
+pravila igara da se ispisu
 ulepsati izgled u ruletu, bez menjanja htmla
 promeniti kvote u ruletu
 dodati novi SSU upisa rezultata utakmice

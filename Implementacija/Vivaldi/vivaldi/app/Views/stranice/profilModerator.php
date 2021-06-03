@@ -35,7 +35,8 @@
                             <?php echo $errors['poklapanje']; ?>                     
                        </p>
                     <?php } ?>
-                    <input type="submit">
+                    <input type="submit" style="margin-top: 5px; margin-left: 50px">
+                       <p style="color: green"><var> <?php if(!empty($uspesno)) echo "Sifra uspesno promenjena!" ?></var></p>
                 </form>
             </div>
         </div>

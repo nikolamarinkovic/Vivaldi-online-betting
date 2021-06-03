@@ -36,7 +36,8 @@
                             <?php echo $errors['poklapanje']; ?>                     
                        </p>
                     <?php } ?>
-                    <input type="submit">
+                       <input type="submit" style="margin-top: 5px; margin-left: 50px">
+                       <p style="color: green"><var> <?php if(!empty($uspesno)) echo "Sifra uspesno promenjena!" ?></var></p>
                 </form>
                 <p>Trenutni tokeni: <var><?php echo $korisnik->Tokeni?></var></p>
                 <form action="<?php echo base_url("Korisnik/kupovinaTokena")?>">
@@ -53,11 +54,13 @@
                        </p>
                     <?php } ?>
                     <input type="submit">
+                    <p style="color: green"><var> <?php if(!empty($uplata)) echo "Tokeni uspesno uplaceni!" ?></var></p>
                 </form>
                 <form action="<?php echo base_url("Korisnik/prodajaTokena")?>">
                     <p class="unos"> Prodaja tokena: </p>
                     <input type="number" value="100" min="1" name="tokeniProdaja">
                     <input type="submit">
+                    <p style="color: green"><var> <?php if(!empty($isplata)) echo "Tokeni uspesno prodati!" ?></var></p>
                 <?php if(!empty($errors['minus'])){ ?> 
                     <p style="text-align: left; color: red; margin-top: 0;">
                     <?php echo $errors['minus']; ?>                     

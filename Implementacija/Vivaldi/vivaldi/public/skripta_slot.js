@@ -11,7 +11,6 @@ function resetuj(){
 }
 
 function dodaj(broj){
-    console.log("test2");
     tokeni = parseInt(document.getElementById("ulozeni_tokeni").innerHTML);
     delta = broj;
     max = parseInt(document.getElementById("ukupno_tokena").innerHTML);
@@ -28,8 +27,11 @@ function zavrtiMe(){
     if (this.readyState == 4 && this.status == 200) {
         res = this.responseText.split(",");
         document.getElementById("ukupno_tokena").innerHTML = res[3];
+        
+        
         //document.getElementById("brojevi").innerHTML =res[0] + " " + res[1] + " " + res[2];
         this.responseText;
+        
     }
     };
     xhttp.open("POST", "http://localhost:8080/Korisnik/spin" , true);

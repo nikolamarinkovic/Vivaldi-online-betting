@@ -60,11 +60,58 @@ class Administrator extends BaseController {
     }
     
     public function sport(){
-        $this->prikaz('sportAdmin',[]);
+            $tm = new TimModel();        
+            $timovi = $tm->findAll();
+            $um = new UtakmicaModel();        
+            $utakmice = $um->where('Rezultat',"0")->findAll();
+        $this->prikaz('sportAdmin',['timovi'=>$timovi, 'utakmice'=>$utakmice]);
     }
     
     public function profil(){
-        $this->prikaz('profilAdmin',[]);
+        $zm = new ZaposleniModel();
+        $korIme = $this->session->get('administrator')->KorisnickoIme;
+        $zaposleni = $zm
+                    ->where('KorisnickoIme', $korIme)
+                    ->first();
+        $this->prikaz('profilAdmin',["zaposlen"=>$zaposleni]);
+    }
+    
+    public function promenaLozinke(){
+        $errors=[];
+        $zm = new ZaposleniModel();
+        $korIme = $this->session->get('administrator')->KorisnickoIme;
+        $zaposlen = $zm
+                    ->where('KorisnickoIme', $korIme)
+                    ->first();
+        $stara=$this->request->getVar('stara');
+        $nova=$this->request->getVar('nova');
+        $potvrda=$this->request->getVar('potvrda');
+        
+        if(!$this->validate(['stara'=>'required', 
+                                'nova'=>'required',
+                                'potvrda'=>'required'])){
+            if(!empty($this->validator->getErrors()['stara']))
+                $errors['stara'] = 'Unesite staru lozinku';
+            if(!empty($this->validator->getErrors()['nova']))
+                $errors['nova'] = 'Unesite novu lozinku';
+            if(!empty($this->validator->getErrors()['potvrda']))
+                $errors['potvrda'] = 'Potvrdite lozinku';        
+            return $this->prikaz('profilAdmin',['errors'=>$errors, 'zaposlen'=>$zaposlen]);
+        }
+        $greska=0;
+        if($nova!=$potvrda){
+            $errors['poklapanje'] = 'Lozinke se ne poklapaju';
+            $greska++;
+        }
+        if($stara!=$zaposlen->Lozinka){
+            $errors['losaLozinka'] = 'Stara lozinka je netacna';
+            $greska++;
+        }
+        if($greska)
+            return $this->prikaz('profilAdmin',['errors'=>$errors, 'zaposlen'=>$zaposlen]);
+        $lozinka['Lozinka']=$nova;
+        $zm->update($zaposlen->IdZaposleni, $lozinka);
+        $this->prikaz('profilAdmin',['zaposlen'=>$zaposlen]);
     }
     
     public function utakmica(){
@@ -407,7 +454,7 @@ class Administrator extends BaseController {
     
     public function azurirajKvotu(){
         $um=new UtakmicaModel();
-        $utakmice = $um->findAll();
+        $utakmice = $um->where("Rezultat","0")->findAll();
         $kele=1;
         foreach ($utakmice as $utakmica){
         $kvota1=$this->request->getVar('jedan'.$kele); 

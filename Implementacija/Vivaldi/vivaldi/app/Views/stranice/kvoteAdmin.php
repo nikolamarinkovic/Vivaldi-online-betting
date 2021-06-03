@@ -7,7 +7,7 @@
             $tm = new TimModel();        
             $timovi = $tm->findAll();
             $um = new UtakmicaModel();        
-            $utakmice = $um->findAll();
+            $utakmice = $um->where("Rezultat","0")->findAll();
             if(empty($utakmice)){ ?> 
                 <p style="text-align: center; color: red; margin-top: 0;">Ne postoji nijedna utakmica</p>
             <?php } ?>

@@ -1,6 +1,7 @@
 <script src="<?php echo base_url("jquery-3.6.0.min.js")?>"></script>
 <link rel="stylesheet" href="<?php echo base_url("slot.css")?>">
 <script src="<?php echo base_url("slot.js")?>"></script>
+<script src="<?php echo base_url("skripta_slot.js")?>"></script>
 <div class="body">
             <h1 class="naslov">Slot masine</h1>
             <hr>
@@ -35,15 +36,10 @@
 
                             </tr>
                             <tr>
-                                <td><input type="radio" name = "slot_token" value="1" id = "1_token_slot" checked> <label for="1_token_slot">1</label></td>
-                                <td><input type="radio" name = "slot_token" value="2" id = "2_token_slot"> <label for="2_token_slot">2</label></td>
-                                <td><input type="radio" name = "slot_token" value="5" id = "5_token_slot"> <label for="5_token_slot">5</label></td>
-                                <td><input type="radio" name = "slot_token" value="10" id = "10_token_slot"> <label for="10_token_slot">10</label></td>
-                            </tr>
-                            <tr>
-                                <td colspan="4" class = "poslednji_red_slot_ulog">
-                                    <input type="button" value="Add" onclick="dodaj()">
-                                </td>
+                                <td><input type="button" name = "slot_token" value="1" id = "1_token_slot" onclick="dodaj(1)" style = "width:40px;"></td>
+                                <td><input type="button" name = "slot_token" value="2" id = "2_token_slot" onclick="dodaj(2)" style = "width:40px;"></td>
+                                <td><input type="button" name = "slot_token" value="5" id = "5_token_slot" onclick="dodaj(5)" style = "width:40px;"></td>
+                                <td><input type="button" name = "slot_token" value="10" id = "10_token_slot" onclick="dodaj(10)" style = "width:50px;"  ></td>
                             </tr>
     
                         </table>

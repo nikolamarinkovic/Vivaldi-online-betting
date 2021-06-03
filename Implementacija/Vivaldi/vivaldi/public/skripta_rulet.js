@@ -1,9 +1,9 @@
-vreme = 5;
+vreme = 30;
 $(document).ready(function(){
     //("#ulozeno_tokena").text(0)
-    vreme = 5;
+    vreme = 30;
     $("#vreme").text(vreme);
-    $("button").click(function(){
+    $("#tabla button").click(function(){
         sibling = $(this).next();
         if(sibling.text() == "")
             sibling.text(1);
@@ -20,6 +20,12 @@ $(document).ready(function(){
         }
         $("#ulozeno_tokena").text(ulozeni)
     
+    })
+    $("#ukloni").click(function(){
+        tokeni = $("#ulozeno_tokena");
+        tokeni.text("0");
+        dugmici = $("#tabla button");
+        dugmici.next().text("");
     })
     setInterval(function(){
         vreme--;
@@ -45,7 +51,7 @@ $(document).ready(function(){
             }
             s = s.substr(0, s.length - 1)
             console.log(s);
-            vreme = 5;
+            vreme = 30;
             $("#vreme").text(vreme);
             
             //ajax
@@ -59,7 +65,7 @@ $(document).ready(function(){
                 document.getElementById("ukupno_tokena").innerHTML = tokeni;
                 document.getElementById("ulozeno_tokena").innerHTML = "0";
                 console.log(this.responseText);
-                vreme = 5;
+                vreme = 30;
                 $("#vreme").text(vreme);
                 
                 $("#tabla button").next().text("")

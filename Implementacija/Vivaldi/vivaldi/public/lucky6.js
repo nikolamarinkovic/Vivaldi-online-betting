@@ -2,6 +2,7 @@
 let ball = document.querySelectorAll('.ball'); // ARRAY
 let info = document.querySelector('.info');
 let uplata = document.querySelector('[data-id="uplata"]');
+let bubanj = document.querySelector('.bubanj')
 let uplataVal;
 let howMuchBalls = 0;
 let betBalls = [];
@@ -36,11 +37,11 @@ allGray.addEventListener('click', checkGray);
 
 
 flag = true
-vreme = 10;
+vreme = 20;
 $(document).ready(function(){
     //("#ulozeno_tokena").text(0)
     flag = true;
-    vreme = 10;
+    vreme = 20;
     $("#vreme").text(vreme);
     
     
@@ -58,6 +59,8 @@ $(document).ready(function(){
                 brojevi += betBalls[i] + ","
             }
             brojevi += $("#ulozeno_tokena").val()
+            
+            
             //ajax
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
@@ -72,8 +75,6 @@ $(document).ready(function(){
                 dobitak = parseInt(niz[35])
                 
                 document.getElementById("ulozeno_tokena").val = "0";
-                
-                
                 availableBetClick(izvuceni_brojevi,dobitak,tokeni)
                 flag = false;
                 //while(!flag);
@@ -91,7 +92,7 @@ $(document).ready(function(){
             
         }
         else if(vreme == 0) {
-            vreme = 10;
+            vreme = 20;
             $("#vreme").text(vreme);
         }
         
@@ -157,6 +158,46 @@ function pickBall() {
 
 // KADA SE KLIKNE NA DUGME DA NESTAME CEO PRVI DEO I POJAVI SE DRUGI
 function availableBetClick(izvuceni_brojevi,dobitak,tokeni) {
+    
+    for(i = 0; i <6;i++){
+        k = i+1;
+        kruzic = document.querySelector("#LopticaKombinacija-" + k);
+        kruzic.innerHTML = betBalls[i];
+        if (betBalls[i] == 1 || betBalls[i] == 9 || betBalls[i] == 17 || betBalls[i] == 25 || betBalls[i] == 33 || betBalls[i] == 41) {
+            kruzic.style.border = '3px solid #DD1F1F';
+            kruzic.style.color = '#DDDDDD';
+      
+        } else if (betBalls[i] == 2 || betBalls[i] == 10 || betBalls[i] == 18 || betBalls[i] == 26 || betBalls[i] == 34 || betBalls[i] == 42) {
+            kruzic.style.border = "3px solid #1CC31C";
+            kruzic.style.color = '#DDDDDD';
+
+        } else if (betBalls[i] == 3 || betBalls[i] == 11 || betBalls[i] == 19 || betBalls[i] == 27 || betBalls[i] == 35 || betBalls[i] == 43) {
+            kruzic.style.border = "3px solid #0087FF";
+            kruzic.style.color = '#DDDDDD';
+
+        } else if (betBalls[i] == 4 || betBalls[i] == 12 || betBalls[i] == 20 || betBalls[i] == 28 || betBalls[i] == 36 || betBalls[i] == 44) {
+            kruzic.style.border = "3px solid #A82DEF";
+            kruzic.style.color = '#DDDDDD';
+
+        } else if (betBalls[i] == 5 || betBalls[i] == 13 || betBalls[i] == 21 || betBalls[i] == 29 || betBalls[i] == 37 || betBalls[i] == 45) {
+            kruzic.style.border = "3px solid #844E14";
+            kruzic.style.color = '#DDDDDD';
+
+        } else if (betBalls[i] == 6 || betBalls[i] == 14 || betBalls[i] == 22 || betBalls[i] == 30 || betBalls[i] == 38 || betBalls[i] == 46) {
+            kruzic.style.border = "3px solid #EFC82D";
+            kruzic.style.color = '#DDDDDD';
+
+        } else if (betBalls[i] == 7 || betBalls[i] == 15 || betBalls[i] == 23 || betBalls[i] == 31 || betBalls[i] == 39 || betBalls[i] == 47) {
+            kruzic.style.border = "3px solid #CB5B00";
+            kruzic.style.color = '#DDDDDD';
+
+        } else if (betBalls[i] == 8 || betBalls[i] == 16 || betBalls[i] == 24 || betBalls[i] == 32 || betBalls[i] == 40 || betBalls[i] == 48) {
+            kruzic.style.border = "3px solid #8C8C8C";
+            kruzic.style.color = '#DDDDDD';
+
+        }
+    }
+    
     firstView.style.display = 'none';
     secondView.style.display = 'block';
     startWheel(izvuceni_brojevi,dobitak,tokeni);
@@ -166,6 +207,19 @@ function availableBetClick(izvuceni_brojevi,dobitak,tokeni) {
 }
 
 function resetWheel(){
+    
+    bubanj.style.border = '10px solid #646464';
+    bubanj.style.color = '#646464';
+    bubanj.innerHTML = "";
+    
+    for(i = 0; i<6;i++){
+        k = i+1;
+        kruzic = document.querySelector("#LopticaKombinacija-" + k);
+        kruzic.innerHTML = "";
+        kruzic.style.border = '3px solid #646464';
+        kruzic.style.color = '#646464';
+    }
+    
     let bubanjBalls = document.querySelectorAll('.bubanj-balls');
     kvote = [25000,
             15000,
@@ -200,6 +254,7 @@ function resetWheel(){
     for(let i = 0 ; i < 5;i++){
         bubanjBalls[i].innerHTML = "X";
     }
+
     for(let i = 0 ; i < 35;i++){
       bubanjBalls[i].style.border = '3px solid #646464';
       bubanjBalls[i].style.color = '#646464';
@@ -226,6 +281,7 @@ function startWheel(izvuceni_brojevi,dobitak,tokeni) {
     
     randomBall = izvuceni_brojevi[i] - 1//Math.floor(Math.random() * newBalls.length);
     bubanjBalls[i].innerHTML = newBalls[randomBall];
+    bubanj.innerHTML = newBalls[randomBall];
     bubanjBalls[i].border = "50px";
     arrayWheel.push(bubanjBalls[i].innerHTML);
     //newBalls.splice(randomBall, 1);
@@ -235,27 +291,51 @@ function startWheel(izvuceni_brojevi,dobitak,tokeni) {
     if (bubanjBalls[i].innerHTML == 1 || bubanjBalls[i].innerHTML == 9 || bubanjBalls[i].innerHTML == 17 || bubanjBalls[i].innerHTML == 25 || bubanjBalls[i].innerHTML == 33 || bubanjBalls[i].innerHTML == 41) {
       bubanjBalls[i].style.border = '3px solid #DD1F1F';
       bubanjBalls[i].style.color = '#DDDDDD';
+      bubanj.style.border = '10px solid #DD1F1F';
+      bubanj.style.color = '#DDDDDD';
+      
     } else if (bubanjBalls[i].innerHTML == 2 || bubanjBalls[i].innerHTML == 10 || bubanjBalls[i].innerHTML == 18 || bubanjBalls[i].innerHTML == 26 || bubanjBalls[i].innerHTML == 34 || bubanjBalls[i].innerHTML == 42) {
       bubanjBalls[i].style.border = '3px solid #1CC31C';
       bubanjBalls[i].style.color = '#DDDDDD';
+      bubanj.style.border = '10px solid #1CC31C';
+      bubanj.style.color = '#DDDDDD';
+      
     } else if (bubanjBalls[i].innerHTML == 3 || bubanjBalls[i].innerHTML == 11 || bubanjBalls[i].innerHTML == 19 || bubanjBalls[i].innerHTML == 27 || bubanjBalls[i].innerHTML == 35 || bubanjBalls[i].innerHTML == 43) {
       bubanjBalls[i].style.border = '3px solid #0087FF';
       bubanjBalls[i].style.color = '#DDDDDD';
+      bubanj.style.border = '10px solid #0087FF';
+      bubanj.style.color = '#DDDDDD';
+      
     } else if (bubanjBalls[i].innerHTML == 4 || bubanjBalls[i].innerHTML == 12 || bubanjBalls[i].innerHTML == 20 || bubanjBalls[i].innerHTML == 28 || bubanjBalls[i].innerHTML == 36 || bubanjBalls[i].innerHTML == 44) {
       bubanjBalls[i].style.border = '3px solid #A82DEF';
       bubanjBalls[i].style.color = '#DDDDDD';
+      bubanj.style.border = '10px solid #A82DEF';
+      bubanj.style.color = '#DDDDDD';
+      
     } else if (bubanjBalls[i].innerHTML == 5 || bubanjBalls[i].innerHTML == 13 || bubanjBalls[i].innerHTML == 21 || bubanjBalls[i].innerHTML == 29 || bubanjBalls[i].innerHTML == 37 || bubanjBalls[i].innerHTML == 45) {
       bubanjBalls[i].style.border = '3px solid #844E14';
       bubanjBalls[i].style.color = '#DDDDDD';
+      bubanj.style.border = '10px solid #844E14';
+      bubanj.style.color = '#DDDDDD';
+      
     } else if (bubanjBalls[i].innerHTML == 6 || bubanjBalls[i].innerHTML == 14 || bubanjBalls[i].innerHTML == 22 || bubanjBalls[i].innerHTML == 30 || bubanjBalls[i].innerHTML == 38 || bubanjBalls[i].innerHTML == 46) {
       bubanjBalls[i].style.border = '3px solid #EFC82D';
       bubanjBalls[i].style.color = '#DDDDDD';
+      bubanj.style.border = '10px solid #EFC82D';
+      bubanj.style.color = '#DDDDDD';
+      
     } else if (bubanjBalls[i].innerHTML == 7 || bubanjBalls[i].innerHTML == 15 || bubanjBalls[i].innerHTML == 23 || bubanjBalls[i].innerHTML == 31 || bubanjBalls[i].innerHTML == 39 || bubanjBalls[i].innerHTML == 47) {
       bubanjBalls[i].style.border = '3px solid #CB5B00';
       bubanjBalls[i].style.color = '#DDDDDD';
+      bubanj.style.border = '10px solid #CB5B00';
+      bubanj.style.color = '#DDDDDD';
+      
     } else if (bubanjBalls[i].innerHTML == 8 || bubanjBalls[i].innerHTML == 16 || bubanjBalls[i].innerHTML == 24 || bubanjBalls[i].innerHTML == 32 || bubanjBalls[i].innerHTML == 40 || bubanjBalls[i].innerHTML == 48) {
       bubanjBalls[i].style.border = '3px solid #8C8C8C';
       bubanjBalls[i].style.color = '#DDDDDD';
+      bubanj.style.border = '10px solid #8C8C8C';
+      bubanj.style.color = '#DDDDDD';
+      
     }
 
     i++; // SVAKI PUT POVECAVAMO ZA 1, LUPUJEMO KROZ LOPTICE
@@ -276,7 +356,7 @@ function startWheel(izvuceni_brojevi,dobitak,tokeni) {
       setTimeout(function(){
         firstView.style.display = 'block';
         secondView.style.display = 'none';
-        vreme=10;
+        vreme = 20;
         document.getElementById("ukupno_tokena").innerHTML = tokeni;
         $("#vreme").text(vreme);
         flag = true
@@ -394,7 +474,7 @@ function startWheel(izvuceni_brojevi,dobitak,tokeni) {
       
     }
     
-  }, 100); // POVECATI BRZINU KOJOM CE LOPTICE BITI IZABRANE NA 1000 NPR.
+  }, 1500); // POVECATI BRZINU KOJOM CE LOPTICE BITI IZABRANE NA 1000 NPR.
 }
 
 function checkRed() {

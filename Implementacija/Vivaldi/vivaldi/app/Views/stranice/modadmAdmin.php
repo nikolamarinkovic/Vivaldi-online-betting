@@ -90,8 +90,8 @@
                     <tr>
                         <td class = "leva_kolona"><p>Tip:</p></td>
                         <td class = "desna_kolona">
-                            <input name="type" type="radio" value="Moderator">Moderator
-                            <input name="type" type="radio" value="Administrator">Administrator
+                            <input name="type" type="radio" value="Moderator" id="radioMod"> <label for="radioMod">Moderator</label> 
+                            <input name="type" type="radio" value="Administrator" id="radioAdm"><label for="radioAdm">Administrator</label> 
                         </td>
                     </tr>
                     <?php if(!empty($errors['Tip'])){ ?> 

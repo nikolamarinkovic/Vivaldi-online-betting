@@ -44,7 +44,7 @@
                                 document.getElementById("ukupno_tokena").innerHTML = res[3];
                             }, 3000);
                             //document.getElementById("ukupno_tokena").innerHTML = res[3];
-                            document.getElementById("brojevi").innerHTML =res[0] + " " + res[1] + " " + res[2];
+                            //document.getElementById("brojevi").innerHTML =res[0] + " " + res[1] + " " + res[2];
                             this.responseText;
 
                             spin[0] = parseInt(res[0]);

@@ -10,7 +10,15 @@ namespace App\Controllers;
 use \App\Models\KorisnikModel;
 use \App\Models\ZaposleniModel;
 use \App\Models\TimModel;
-use App\Models\UtakmicaModel;
+use \App\Models\UtakmicaModel;
+use \App\Models\StavkaTiketModel;
+use App\Models\TiketKladjenjeModel;
+use App\Models\TiketLucky6Model;
+use App\Models\Lucky6Model;
+use App\Models\TiketRuletModel;
+use App\Models\RuletModel;
+use App\Models\StavkaRuletModel;
+use App\Models\TiketSlotModel;
 /**
  * Description of Moderator
  *
@@ -52,11 +60,69 @@ class Moderator extends BaseController{
     }
     
     public function sport(){
-        $this->prikaz('sportModerator',[]);
+            $tm = new TimModel();        
+            $timovi = $tm->findAll();
+            $um = new UtakmicaModel();        
+            $utakmice = $um->where('Rezultat',"0")->findAll();
+        $this->prikaz('sportModerator',['timovi'=>$timovi, 'utakmice'=>$utakmice]);
     }
     
+//    public function profil(){
+//        $km = new KorisnikModel();
+//        $korIme = $this->session->get('korisnik')->KorisnickoIme;
+//        $korisnik = $km
+//                    ->where('KorisnickoIme', $korIme)
+//                    ->first();
+//        //var_dump($korIme);
+//  
+//        $this->prikaz('profilKorisnik',['korisnik'=>$korisnik]);
+//    }
+    
     public function profil(){
-        $this->prikaz('profilModerator',[]);
+        $zm = new ZaposleniModel();
+        $korIme = $this->session->get('moderator')->KorisnickoIme;
+        $zaposleni = $zm
+                    ->where('KorisnickoIme', $korIme)
+                    ->first();
+        $this->prikaz('profilModerator',["zaposlen"=>$zaposleni]);
+    }
+    
+    public function promenaLozinke(){
+        $errors=[];
+        $zm = new ZaposleniModel();
+        $korIme = $this->session->get('moderator')->KorisnickoIme;
+        $zaposlen = $zm
+                    ->where('KorisnickoIme', $korIme)
+                    ->first();
+        $stara=$this->request->getVar('stara');
+        $nova=$this->request->getVar('nova');
+        $potvrda=$this->request->getVar('potvrda');
+        
+        if(!$this->validate(['stara'=>'required', 
+                                'nova'=>'required',
+                                'potvrda'=>'required'])){
+            if(!empty($this->validator->getErrors()['stara']))
+                $errors['stara'] = 'Unesite staru lozinku';
+            if(!empty($this->validator->getErrors()['nova']))
+                $errors['nova'] = 'Unesite novu lozinku';
+            if(!empty($this->validator->getErrors()['potvrda']))
+                $errors['potvrda'] = 'Potvrdite lozinku';        
+            return $this->prikaz('profilModerator',['errors'=>$errors, 'zaposlen'=>$zaposlen]);
+        }
+        $greska=0;
+        if($nova!=$potvrda){
+            $errors['poklapanje'] = 'Lozinke se ne poklapaju';
+            $greska++;
+        }
+        if($stara!=$zaposlen->Lozinka){
+            $errors['losaLozinka'] = 'Stara lozinka je netacna';
+            $greska++;
+        }
+        if($greska)
+            return $this->prikaz('profilModerator',['errors'=>$errors, 'zaposlen'=>$zaposlen]);
+        $lozinka['Lozinka']=$nova;
+        $zm->update($zaposlen->IdZaposleni, $lozinka);
+        $this->prikaz('profilModerator',['zaposlen'=>$zaposlen]);
     }
     
     public function utakmica(){
@@ -135,7 +201,7 @@ class Moderator extends BaseController{
 
     public function azurirajKvotu(){
         $um=new UtakmicaModel();
-        $utakmice = $um->findAll();
+        $utakmice = $um->where("Rezultat","0")->findAll();
         $kele=1;
         foreach ($utakmice as $utakmica){
         $kvota1=$this->request->getVar('jedan'.$kele); 
@@ -158,5 +224,139 @@ class Moderator extends BaseController{
         $kele++;    
         }   
         $this->prikaz('kvoteModerator',[]);
+    }
+    
+    public function dodajRezultat(){
+         $tm = new TimModel();       
+            $timovi = $tm->findAll();
+            $um = new UtakmicaModel();        
+            $utakmice = $um->where('Rezultat',"0")->findAll();
+        
+        $this->prikaz('upisRezultataModerator',['utakmice'=>$utakmice]);
+    }
+    
+    public function submitRezultat(){
+        
+        $tiketiZaAzuriranje = [];
+        
+        $tm = new TimModel();   
+        
+        $tkm = new TiketKladjenjeModel();
+        $tkm->db->transBegin();
+        
+        $um = new UtakmicaModel();        
+        $utakmice = $um->where('Rezultat',"0")->findAll();
+        
+        // pravi kod za logiku pocinje ovde
+        
+        $brojUtakmica = $this->request->getVar('numOfGames');
+        $nizUtakmica = explode(".", $this->request->getVar('nizUtakmica'));
+        
+
+        
+        
+        $flag_izabrana_bar_jedna_utakmica = false;
+        for($i = 0; $i<$brojUtakmica;$i++){
+            $checkBox = $this->request->getVar('checkBoxRed'.$nizUtakmica[$i]);
+            $radioButton = $this->request->getVar('radioRed'.$nizUtakmica[$i]);
+            if($checkBox!= null && $checkBox == "on" && $radioButton!=null){
+                $stm = new StavkaTiketModel();
+                $ishod = $radioButton;
+                
+                //proveravamo dal se tekma i dalje igra
+                
+                $utakmica = $um->where('Rezultat',"0")->where('IdUtakmica',$nizUtakmica[$i])->first();
+                if($utakmica == null){
+                    $tkm->db->transRollback();
+                    return;
+                }
+                
+                $flag_izabrana_bar_jedna_utakmica = true;
+                
+                $um->set("Rezultat",$ishod)
+                        ->where('IdUtakmica', $nizUtakmica[$i])
+                        ->update();
+                $stavke = $stm->where("IdUtakmica",$nizUtakmica[$i])->findAll();
+                foreach($stavke as $stavka){
+                    $kladjenje = $stavka->KonacanIshod;
+                    $status = 0;
+                    if($kladjenje == $ishod){
+                        $status = 2;
+                    }
+                    else
+                        $status = 1;
+                    
+                    $stm->set("Status",$status)
+                        ->where('IdUtakmica', $stavka->IdUtakmica)
+                        ->where("IdTiketKladjenje",$stavka->IdTiketKladjenje)
+                        ->update();
+                    
+                    $tiketiZaAzuriranje["id#".$stavka->IdTiketKladjenje] = 1;
+                    
+                    
+                }
+                
+            }
+        }
+        
+        if($flag_izabrana_bar_jedna_utakmica == false){
+            $tkm->db->transRollback();
+            $errors['izbranaBarJednaUtakmica'] = "Nijedna utakmica nije izabrana";
+            return $this->prikaz('upisRezultataModerator',['errors'=>$errors, 'utakmice'=>$utakmice]);
+        }
+        $dobitak = -1;
+        foreach ($tiketiZaAzuriranje as $id => $value){
+            $idTiketaCeo = explode("#",$id);
+            $idTiketa = $idTiketaCeo[1];
+            $tiket = $tkm->where("IdTiketKladjenje",$idTiketa)->first();
+            if($tiket == null || $tiket->Status == 1){
+                continue;
+            }
+            $stavkeNove = $stm->where("IdTiketKladjenje",$idTiketa)->findAll();
+            if($stavkeNove == null){
+                continue;
+            }
+            $nasao = [];
+            $nasao["st0"] = false;
+            $nasao["st1"] = false;
+            $nasao["st2"] = false;
+            foreach($stavkeNove as $stavka){
+                $statusStavke = $stavka->Status;
+                $nasao["st".$statusStavke] = true;
+            }
+            if($nasao["st1"] == true){
+                $tkm->set("Status",1)
+                        ->set("Dobitak",0)
+                        ->where("IdTiketKladjenje",$idTiketa)
+                        ->update();
+                
+            }
+            else if($nasao["st0"] == false && $nasao["st2"] == true){
+                $dobitak = $tiket->Ulog * $tiket->Dobitak;
+                $tkm->set("Status",2)
+                        ->set("Dobitak",$dobitak)
+                        ->where("IdTiketKladjenje",$idTiketa)
+                        ->update();
+                
+                $idKor = $tiket->IdKor;
+                $km = new KorisnikModel();
+                $korisnik = $km->where("IdKorisnik",$idKor)->first();
+                if($korisnik == null){
+                    continue;
+                }
+                
+                $tokeni = $korisnik->Tokeni;
+                $km->set("Tokeni",$tokeni + $dobitak)
+                        ->where("IdKorisnik",$idKor)
+                        ->update();
+            }
+            
+            
+        }
+        
+        $utakmice = $um->where('Rezultat',"0")->findAll();
+         $tkm->db->transCommit();
+        return $this->prikaz('upisRezultataModerator',['utakmice'=>$utakmice]);
+        
     }
 }

@@ -10,10 +10,10 @@ function resetuj(){
     document.getElementById("ulozeni_tokeni").innerHTML = 0;
 }
 
-function dodaj(){
+function dodaj(broj){
     console.log("test2");
     tokeni = parseInt(document.getElementById("ulozeni_tokeni").innerHTML);
-    delta = parseInt(document.querySelector('input[name="slot_token"]:checked').value);
+    delta = broj;
     max = parseInt(document.getElementById("ukupno_tokena").innerHTML);
     if(tokeni + delta > max)
         tokeni = max
@@ -28,7 +28,7 @@ function zavrtiMe(){
     if (this.readyState == 4 && this.status == 200) {
         res = this.responseText.split(",");
         document.getElementById("ukupno_tokena").innerHTML = res[3];
-        document.getElementById("brojevi").innerHTML =res[0] + " " + res[1] + " " + res[2];
+        //document.getElementById("brojevi").innerHTML =res[0] + " " + res[1] + " " + res[2];
         this.responseText;
     }
     };

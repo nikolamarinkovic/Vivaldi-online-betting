@@ -9,6 +9,8 @@
 namespace App\Controllers;
 use \App\Models\KorisnikModel;
 use \App\Models\ZaposleniModel;
+use App\Models\TimModel;
+use App\Models\UtakmicaModel;
 /**
  * Description of Gost
  *
@@ -72,7 +74,7 @@ class Gost extends BaseController{
             return 2;
         }
         
-        $this->session->set('korisnik', $korisnik);
+        //$this->session->set('korisnik', $korisnik);
         
         if($korisnik->Tip == 0){
             $this->session->set('moderator', $korisnik);
@@ -187,7 +189,11 @@ class Gost extends BaseController{
     }
     
     public function sport(){
-        $this->prikaz('sportGost',[]);
+            $tm = new TimModel();        
+            $timovi = $tm->findAll();
+            $um = new UtakmicaModel();        
+            $utakmice = $um->where('Rezultat',"0")->findAll();
+        $this->prikaz('sportGost',['timovi'=>$timovi, 'utakmice'=>$utakmice]);
     }
     
     public function profil(){

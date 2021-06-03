@@ -262,7 +262,21 @@
       </div>
     </div><!-- row -->
     <div class="row">
-      <div class="col-3 offset-4">
+        <div class="col-8 offset-2" style="margin-top:20px;">
+            <div class="loptice-kombinacija">
+                
+                <div class="bubanj-balls" id="LopticaKombinacija-1">X</div>
+                <div class="bubanj-balls" id="LopticaKombinacija-2">X</div>
+                <div class="bubanj-balls" id="LopticaKombinacija-3">X</div>
+                <div class="bubanj-balls" id="LopticaKombinacija-4">X</div>
+                <div class="bubanj-balls" id="LopticaKombinacija-5">X</div>
+                <div class="bubanj-balls" id="LopticaKombinacija-6">X</div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-1 offset-4">
         <div class="info">NAPISI NESTO</div>
       </div>
     </div>

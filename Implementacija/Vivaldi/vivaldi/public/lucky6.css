@@ -105,7 +105,12 @@ cursor: pointer;
   border-radius: 50%;
   width: 150px;
   height: 150px;
-  border: 8px solid gray;
+  border: 10px solid gray;
+  font-size: 60px;
+  padding: 30px;
+  padding-top: 35px;
+  text-align: center;
+  
 }
 
 .loptice-u {

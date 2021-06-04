@@ -527,20 +527,24 @@ class Korisnik extends BaseController{
     }
     
     public function sport(){
-            $tm = new TimModel();        
-            $timovi = $tm->findAll();
-            $um = new UtakmicaModel();        
-            $utakmice = $um->where('Rezultat',"0")->findAll();
-            $km = new KorisnikModel();
-            $korIme = $this->session->get('korisnik')->KorisnickoIme;
-            $korisnik = $km
-                    ->where('KorisnickoIme', $korIme)
-                    ->first();
+        date_default_timezone_set('Europe/Belgrade');
+        $vremeTrenutno = strtotime(date("Y-m-d\TH:i"));
+        
+        $tm = new TimModel();        
+        $timovi = $tm->findAll();
+        $um = new UtakmicaModel();        
+        $utakmice = $um->where('Rezultat',"0")->where('UNIX_TIMESTAMP(Vreme) > ', $vremeTrenutno - 60*90)->findAll();
+        $km = new KorisnikModel();
+        $korIme = $this->session->get('korisnik')->KorisnickoIme;
+        $korisnik = $km
+                ->where('KorisnickoIme', $korIme)
+                ->first();
         $this->prikaz('sportKorisnik',['timovi'=>$timovi, 'utakmice'=>$utakmice,'tokeni'=>$korisnik->Tokeni]);
     }
     
     public function sportSubmit(){
-
+        date_default_timezone_set('Europe/Belgrade');
+        $vremeTrenutno = strtotime(date("Y-m-d\TH:i"));
         
         $tm = new TimModel();   
         
@@ -548,16 +552,16 @@ class Korisnik extends BaseController{
 
         $timovi = $tm->findAll();
         $um = new UtakmicaModel();        
-        $utakmice = $um->where('Rezultat',"0")->findAll();
+        $utakmice = $um->where('Rezultat',"0")->where('UNIX_TIMESTAMP(Vreme) > ', $vremeTrenutno - 60*90)->findAll();
         $km = new KorisnikModel();
         $korIme = $this->session->get('korisnik')->KorisnickoIme;
         $korisnik = $km
                     ->where('KorisnickoIme', $korIme)
                     ->first();
         
-            if(!$this->validate(['uplata'=>'required', ])){
-            if(!empty($this->validator->getErrors()['uplata']))
-                $errors['uplata'] = 'Unesite iznos za kladjenje';       
+        if(!$this->validate(['uplata'=>'required', ])){
+        if(!empty($this->validator->getErrors()['uplata']))
+            $errors['uplata'] = 'Unesite iznos za kladjenje';       
             return $this->prikaz('sportKorisnik',['errors'=>$errors, 'timovi'=>$timovi, 'utakmice'=>$utakmice,'tokeni'=>$korisnik->Tokeni]);
         }
         

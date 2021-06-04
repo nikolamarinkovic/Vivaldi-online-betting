@@ -109,7 +109,7 @@ class Administrator extends BaseController {
     }
     
     public function utakmica(){
-                $this->prikaz('utakmicaAdmin',[]);
+        $this->prikaz('utakmicaAdmin',[]);
     }
     
     public function kvote(){            
@@ -156,6 +156,7 @@ class Administrator extends BaseController {
             
             return $this->prikaz('utakmicaAdmin',['errors'=>$errors]);
         }       
+        date_default_timezone_set('Europe/Belgrade');
      
         $um = new UtakmicaModel();   
         $kvota1=$this->request->getVar('kvota1');
@@ -163,6 +164,9 @@ class Administrator extends BaseController {
         $kvotaX=$this->request->getVar('kvotaX');
         $idDomacin=$this->request->getVar('domacin');
         $idGost=$this->request->getVar('gost');
+        $vreme = $this->request->getVar('vreme');        
+        $vremeTrenutno = date("Y-m-d\TH:i");
+        
         if($idDomacin==$idGost)
              $errors['Teams='] = 'Timovi moraju biti razliciti';
         if($kvota1<1)
@@ -171,6 +175,8 @@ class Administrator extends BaseController {
              $errors['KvotaX-'] = 'Kvota mora biti veca od 1';
         if($kvota2<1)
              $errors['Kvota2-'] = 'Kvota mora biti veca od 1';
+        if($vreme<$vremeTrenutno)
+             $errors['Vreme'] = 'Vreme utakmice nevalidno!';
         if(!empty($errors))
             return $this->prikaz('utakmicaAdmin',['errors'=>$errors]);
         $um->save([ 'Rezultat' => "0",
@@ -478,11 +484,12 @@ class Administrator extends BaseController {
     }
     
     public function dodajRezultat(){
-         $tm = new TimModel();        
-            $timovi = $tm->findAll();
-            $um = new UtakmicaModel();        
-            $utakmice = $um->where('Rezultat',"0")->findAll();
-        
+        date_default_timezone_set('Europe/Belgrade');
+        $vremeTrenutno = strtotime(date("Y-m-d\TH:i"));
+        $tm = new TimModel();        
+        $timovi = $tm->findAll();
+        $um = new UtakmicaModel();        
+        $utakmice = $um->where('Rezultat',"0")->where('UNIX_TIMESTAMP(Vreme) < ', $vremeTrenutno - 60*90)->findAll();
         $this->prikaz('upisRezultataAdmin',['utakmice'=>$utakmice]);
     }
     

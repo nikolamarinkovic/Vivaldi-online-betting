@@ -190,10 +190,13 @@ class Gost extends BaseController{
     }
     
     public function sport(){
-            $tm = new TimModel();        
-            $timovi = $tm->findAll();
-            $um = new UtakmicaModel();        
-            $utakmice = $um->where('Rezultat',"0")->findAll();
+        date_default_timezone_set('Europe/Belgrade');
+        $vremeTrenutno = strtotime(date("Y-m-d\TH:i"));
+        
+        $tm = new TimModel();        
+        $timovi = $tm->findAll();
+        $um = new UtakmicaModel();        
+        $utakmice = $um->where('Rezultat',"0")->where('UNIX_TIMESTAMP(Vreme) > ', $vremeTrenutno - 60*90)->findAll();
         $this->prikaz('sportGost',['timovi'=>$timovi, 'utakmice'=>$utakmice]);
     }
     

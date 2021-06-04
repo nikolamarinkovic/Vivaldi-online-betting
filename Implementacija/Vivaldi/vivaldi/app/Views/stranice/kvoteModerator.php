@@ -28,7 +28,13 @@
                     $tm = new TimModel();        
             $timovi = $tm->findAll();
             $kele=1;
-                    foreach($utakmice as $utakmica){       
+            date_default_timezone_set('Europe/Belgrade');
+            $vremeTrenutno = date("Y-m-d\TH:i");
+                    foreach($utakmice as $utakmica){
+                        $vreme = $utakmica->Vreme; 
+                        if(strtotime($vreme) + 60*90 < strtotime($vremeTrenutno))
+                            continue;
+                        
                         $kele=strval($kele);
                         $domacin = $tm
                             ->where('IdTim', $utakmica->IdDomacin)

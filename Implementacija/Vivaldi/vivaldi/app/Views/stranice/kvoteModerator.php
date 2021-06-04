@@ -14,7 +14,7 @@
             <div class="kvote">
                 <form action="<?php echo base_url("Moderator/azurirajKvotu")?>" method="POST">
                     <input type="submit">
-                    <p style="color: green"><var> <?php if(!empty($uspesno)) echo "Kvote uspesno promenjene!" ?></var></p>
+                    <p style="color: green"><var> <?php if(!empty($uspesno)) echo $uspesno ?></var></p>
                     <div class="azuriranje_kvota">
                     <table>
                         <tr>

@@ -36,7 +36,7 @@
                        </p>
                     <?php } ?>
                     <input type="submit" style="margin-top: 5px; margin-left: 50px">
-                       <p style="color: green"><var> <?php if(!empty($uspesno)) echo "Sifra uspesno promenjena!" ?></var></p>
+                       <p style="color: green"><var> <?php if(!empty($uspesno)) echo $uspesno ?></var></p>
                 </form>
             </div>
         </div>

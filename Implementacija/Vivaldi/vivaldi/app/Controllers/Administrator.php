@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace App\Controllers;
 use \App\Models\KorisnikModel;
 use \App\Models\ZaposleniModel;
@@ -111,7 +105,7 @@ class Administrator extends BaseController {
             return $this->prikaz('profilAdmin',['errors'=>$errors, 'zaposlen'=>$zaposlen]);
         $lozinka['Lozinka']=$nova;
         $zm->update($zaposlen->IdZaposleni, $lozinka);
-        $this->prikaz('profilAdmin',['zaposlen'=>$zaposlen]);
+        $this->prikaz('profilAdmin',['zaposlen'=>$zaposlen,"uspesno"=>"Sifra uspesno promenjena!"]);
     }
     
     public function utakmica(){
@@ -123,7 +117,8 @@ class Administrator extends BaseController {
     }
     
     public function tim(){
-        $this->prikaz('timAdmin',[]);
+        $uspeh = $this->session->getFlashdata('uspesno');
+        $this->prikaz('timAdmin',["uspeh"=>$uspeh]);
     }
     public function dodajTim(){
         if(!$this->validate(['tim_ime'=>'required'])){
@@ -140,6 +135,7 @@ class Administrator extends BaseController {
             return $this->prikaz('timAdmin',['errors'=>$errors]);
         }
         $tm->save(['Ime' => $this->request->getVar('tim_ime')]);
+        $this->session->setFlashdata('uspesno',"Tim uspesno postavljen!");
         return redirect()->to(base_url('Administrator/tim'));     
     }
     
@@ -184,10 +180,11 @@ class Administrator extends BaseController {
                 'KvotaX' => $kvotaX,
                 'Kvota1' => $kvota1,
                 'Kvota2' => $kvota2]);
-        return $this->prikaz('utakmicaAdmin',[]);
+        return $this->prikaz('utakmicaAdmin',["uspesno"=>"Uspesno ste dodali utakmicu!"]);
     }
     public function modadm(){
-        $this->prikaz('modadmAdmin',[]);
+        $uspesno = $this->session->getFlashdata("uspesno");
+        $this->prikaz('modadmAdmin',['uspesno'=>$uspesno]);
     }
     
     public function dodavanjeZaposlenog() {
@@ -247,7 +244,8 @@ class Administrator extends BaseController {
             'JMBG' => $this->request->getVar('id_registration'),
             'Tip' => $this->request->getVar('type') == "Moderator" ? 0 : 1]);
 
-        return redirect()->to(base_url('Administrator/modadmAdmin'));
+        $this->session->setFlashdata("uspesno","Zaposleni uspesno dodat!");
+        return redirect()->to(base_url('Administrator/modadm'));
     }
     
     
@@ -476,7 +474,7 @@ class Administrator extends BaseController {
             }
         $kele++;    
         }   
-        $this->prikaz('kvoteAdmin',[]);
+        $this->prikaz('kvoteAdmin',["uspesno"=>"Kvote uspesno promenjene!"]);
     }
     
     public function dodajRezultat(){
@@ -609,9 +607,7 @@ class Administrator extends BaseController {
         
         $utakmice = $um->where('Rezultat',"0")->findAll();
          $tkm->db->transCommit();
-        return $this->prikaz('upisRezultataAdmin',['utakmice'=>$utakmice]);
+        return $this->prikaz('upisRezultataAdmin',['utakmice'=>$utakmice,"uspesno"=>"Rezultat uspesno upisan!"]);
         
-    }
-    
+    }   
 }
-

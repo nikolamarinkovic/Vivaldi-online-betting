@@ -626,7 +626,7 @@ class Korisnik extends BaseController{
         if($flag_izabrana_bar_jedna_utakmica == false){
             $tm->db->transRollback();
             $errors['izbranaBarJednaUtakmica'] = "Nijedna utakmica nije izabrana";
-            return $this->prikaz('sportKorisnik',['errors'=>$errors, 'timovi'=>$timovi, 'utakmice'=>$utakmice,'tokeni'=>$korisnik->Tokeni]);
+            return $this->prikaz('sportKorisnik',['errors'=>$errors, 'timovi'=>$timovi, 'utakmice'=>$utakmice,'tokeni'=>$korisnik->Tokeni,]);
         }
         
         
@@ -640,7 +640,7 @@ class Korisnik extends BaseController{
                         ->update();
         
          $tm->db->transCommit();
-        return $this->prikaz('sportKorisnik',['timovi'=>$timovi, 'utakmice'=>$utakmice,'tokeni'=>$korisnik->Tokeni]);
+        return $this->prikaz('sportKorisnik',['timovi'=>$timovi, 'utakmice'=>$utakmice,'tokeni'=>$korisnik->Tokeni,'uspesno'=>"Uspesno ste uplatili tiket!"]);
         
         
     }

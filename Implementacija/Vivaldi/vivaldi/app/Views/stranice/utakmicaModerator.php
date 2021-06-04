@@ -87,7 +87,7 @@
                 <?php } ?>
                
                 <input type="submit">
-                <p style="color: green"><var> <?php if(!empty($uspesno)) echo "Utakmica uspesno dodata!" ?></var></p>
+                <p style="color: green"><var> <?php if(!empty($uspesno)) echo $uspesno ?></var></p>
                 
             </form>
         </div>

@@ -58,6 +58,7 @@
                     <input type="number" name = 'uplata'>
                     <p style="color :red; text-align: left"> <?php if(!empty($errors['uplata'])) echo $errors['uplata'] ?></p>
                     <input type="submit" style="margin-top: 10px; margin-left: 50px">
+                    <p style="color: green; text-align: center"><var> <?php if(!empty($uspesno)) echo $uspesno ?></var></p>
                     </form>
                 </div>
  

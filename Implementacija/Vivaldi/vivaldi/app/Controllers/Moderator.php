@@ -122,7 +122,7 @@ class Moderator extends BaseController{
             return $this->prikaz('profilModerator',['errors'=>$errors, 'zaposlen'=>$zaposlen]);
         $lozinka['Lozinka']=$nova;
         $zm->update($zaposlen->IdZaposleni, $lozinka);
-        $this->prikaz('profilModerator',['zaposlen'=>$zaposlen,"uspesno"=>1]);
+        $this->prikaz('profilModerator',['zaposlen'=>$zaposlen,"uspesno"=>"Sifra uspesno promenjena!"]);
     }
     
     public function utakmica(){
@@ -174,13 +174,17 @@ class Moderator extends BaseController{
             
             return $this->prikaz('utakmicaModerator',['errors'=>$errors]);
         }       
-     
+        date_default_timezone_set('Europe/Belgrade');
+        
         $um = new UtakmicaModel();   
         $kvota1=$this->request->getVar('kvota1');
         $kvota2=$this->request->getVar('kvota2');
         $kvotaX=$this->request->getVar('kvotaX');
         $idDomacin=$this->request->getVar('domacin');
         $idGost=$this->request->getVar('gost');
+        $vreme = $this->request->getVar('vreme');        
+        $vremeTest = date("Y-m-d\Th:i");
+
         if($idDomacin==$idGost)
              $errors['Teams='] = 'Timovi moraju biti razliciti';
         if($kvota1<1)
@@ -189,8 +193,11 @@ class Moderator extends BaseController{
              $errors['KvotaX-'] = 'Kvota mora biti veca od 1';
         if($kvota2<1)
              $errors['Kvota2-'] = 'Kvota mora biti veca od 1';
+        if($vreme<$vremeTest)
+             $errors['Vreme'] = 'Vreme utakmice nevalidno!';
         if(!empty($errors))
             return $this->prikaz('utakmicaModerator',['errors'=>$errors]);
+        
         $um->save([ 'Rezultat' => "0",
                 'Vreme'=> $this->request->getVar('vreme'),
                 'IdDomacin' => $idDomacin,
@@ -198,7 +205,7 @@ class Moderator extends BaseController{
                 'KvotaX' => $kvotaX,
                 'Kvota1' => $kvota1,
                 'Kvota2' => $kvota2]);
-        return $this->prikaz('utakmicaModerator',["uspesno"=>1]);
+        return $this->prikaz('utakmicaModerator',["uspesno"=>"Utakmica uspesno dodata!"]);
     }
 
     public function azurirajKvotu(){
@@ -225,7 +232,7 @@ class Moderator extends BaseController{
             }
         $kele++;    
         }   
-        $this->prikaz('kvoteModerator',["uspesno"=>1]);
+        $this->prikaz('kvoteModerator',["uspesno"=>"Kvote uspesno promenjene!"]);
     }
     
     public function dodajRezultat(){

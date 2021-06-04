@@ -6,6 +6,7 @@
                 <div class="sport_tiketi">
                 <div>
                     <p style="color:red"><?php if(!empty($errors['izbranaBarJednaUtakmica'])) echo $errors['izbranaBarJednaUtakmica']?></p>
+                    <p style="color: green"><var> <?php if(!empty($uspesno)) echo $uspesno ?></var></p>
                     <table>
                         <tr>
                             <th></th>

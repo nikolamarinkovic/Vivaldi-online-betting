@@ -1,7 +1,5 @@
 Filteri
-ispis uspeha za sve(promena lozinke...)
-provera ispravnosti datuma za utakmice,svuda
-
+provera ispravnosti datuma za utakmice
 //Rulet animacije (ili ako ne stignemo, da uleplsamo ovo trenutno)
 
 

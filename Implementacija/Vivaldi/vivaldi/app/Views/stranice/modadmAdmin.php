@@ -104,6 +104,7 @@
                     <tr>
                         <td colspan="2" class="submit_registracija"> <input type="submit"> </td>
                     </tr>
+                    <p style="color: green"><var> <?php if(!empty($uspesno)) echo $uspesno ?></var></p>
 
                 </table>
             </form>

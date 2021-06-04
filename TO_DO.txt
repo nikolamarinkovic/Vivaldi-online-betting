@@ -1,6 +1,3 @@
-Filteri
-provera ispravnosti datuma za utakmice
-//Rulet animacije (ili ako ne stignemo, da uleplsamo ovo trenutno)
 
 
 

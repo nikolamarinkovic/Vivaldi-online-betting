@@ -220,6 +220,24 @@ class Administrator extends BaseController {
             return $this->prikaz('modadmAdmin',['errors'=>$errors]);
         }
         
+        //ddmmggg.......
+        $JMBG = $this->request->getVar('id_registration');
+        $day = intval(substr($JMBG, 0, 2));
+        $month = intval(substr($JMBG, 2, 2));
+        $year = substr($JMBG, 4, 3);
+        if($year[0]=="9")
+            $year = intval($year) + 1000;
+        else
+            $year = intval($year) + 2000;
+        $date1 = mktime (0, 0, 0, $month, $day, $year) ;
+        $date2 = strtotime(date("Y-m-d\TH:i")); 
+        $diff = $date2 - $date1; 
+        $years = floor($diff / (365*60*60*24));        
+        if($years < 18){
+            $errors['JMBG'] = 'Niste punoletni';
+            return $this->prikaz('modadmAdmin',['errors'=>$errors]);
+        }    
+        
         $km = new KorisnikModel;
         
         $korisnik = $km

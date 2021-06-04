@@ -6,7 +6,10 @@ use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
-
+use App\Filters\GostFilter;
+use App\Filters\KorisnikFilter;
+use App\Filters\ModeratorFilter;
+use App\Filters\AdministratorFilter;
 class Filters extends BaseConfig
 {
 	/**
@@ -19,6 +22,10 @@ class Filters extends BaseConfig
 		'csrf'     => CSRF::class,
 		'toolbar'  => DebugToolbar::class,
 		'honeypot' => Honeypot::class,
+                'Gost' => GostFilter::class,
+                'Korisnik' => KorisnikFilter::class,
+                'Moderator' => ModeratorFilter::class,
+                'Administrator' => AdministratorFilter::class
 	];
 
 	/**
@@ -58,5 +65,10 @@ class Filters extends BaseConfig
 	 *
 	 * @var array
 	 */
-	public $filters = [];
+	public $filters = [
+            'Gost' =>           ['before' => ['Gost/*', 'Gost', '/']],
+            'Korisnik' =>       ['before' => ['Korisnik/*', 'Korisnik', '/']],
+            'Moderator' =>      ['before' => ['Moderator/*', 'Moderator', '/']],
+            'Administrator' =>  ['before' => ['Administrator/*', 'Administrator', '/']]
+        ];
 }

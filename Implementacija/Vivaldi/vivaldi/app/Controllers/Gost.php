@@ -154,22 +154,37 @@ class Gost extends BaseController{
             
             return $this->prikaz('registracija',['errors'=>$errors]);
         }
-        
-        
-       
-            $km = new KorisnikModel();
-            $km->save([ 'KorisnickoIme' => $this->request->getVar('username_registration'),
-                'Lozinka'=> $this->request->getVar('password_registration'),
-                'Ime' => $this->request->getVar('name_registration'),
-                'Prezime' => $this->request->getVar('surname_registration'),
-                'JMBG' => $this->request->getVar('id_registration'),
-                'BrojKartice' => $this->request->getVar('card_registration'),
-                'Tokeni' => '0']);
+        //ddmmggg.......
+        $JMBG = $this->request->getVar('id_registration');
+        $day = intval(substr($JMBG, 0, 2));
+        $month = intval(substr($JMBG, 2, 2));
+        $year = substr($JMBG, 4, 3);
+        if($year[0]=="9")
+            $year = intval($year) + 1000;
+        else
+            $year = intval($year) + 2000;
+        $date1 = mktime (0, 0, 0, $month, $day, $year) ;
+        $date2 = strtotime(date("Y-m-d\TH:i")); 
+        $diff = $date2 - $date1; 
+        $years = floor($diff / (365*60*60*24));        
+        if($years < 18){
+            $errors['JMBG'] = 'Niste punoletni';
+            return $this->prikaz('registracija',['errors'=>$errors]);
+        }    
+                
+        $km = new KorisnikModel();
+        $km->save([ 'KorisnickoIme' => $this->request->getVar('username_registration'),
+            'Lozinka'=> $this->request->getVar('password_registration'),
+            'Ime' => $this->request->getVar('name_registration'),
+            'Prezime' => $this->request->getVar('surname_registration'),
+            'JMBG' => $this->request->getVar('id_registration'),
+            'BrojKartice' => $this->request->getVar('card_registration'),
+            'Tokeni' => '0']);
 
-            $this->session->setFlashdata('info',$info);
-            //redirect("home/index");
+        $this->session->setFlashdata('info',$info);
+        //redirect("home/index");
 
-            return redirect()->to(base_url('Gost/prijava'));
+        return redirect()->to(base_url('Gost/prijava'));
 
     }
     

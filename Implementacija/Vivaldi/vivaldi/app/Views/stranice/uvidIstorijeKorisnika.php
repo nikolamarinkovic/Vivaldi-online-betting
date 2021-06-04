@@ -25,6 +25,11 @@
                     <label for="Sport">Sport</label><br>
                     <input type="submit" style="margin-top: 10px; margin-left: 10px;">
                 </form>
+                <p style="text-align: center; color: red">
+                    <?php if(!empty($errors['nepostojeci'])){
+                       echo $errors['nepostojeci'];
+                    } ?>
+                </p>
                 <table>
                     <tr>
                         <th>Tip</th>

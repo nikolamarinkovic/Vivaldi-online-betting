@@ -6,6 +6,9 @@ $(document).ready(function(){
     vreme = 30;
     $("#vreme").text(vreme);
     $("#tabla button").click(function(){
+        if($("#ulozeno_tokena").text() === $("#ukupno_tokena").text()){
+            return
+        }
         sibling = $(this).next();
         if(sibling.text() == "")
             sibling.text(1);

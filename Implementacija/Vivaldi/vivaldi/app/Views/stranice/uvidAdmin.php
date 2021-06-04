@@ -54,7 +54,7 @@
                     foreach($users as $korisnik){
                         echo "<tr>";
                         if($uloga == "korisnik")
-                            echo"<td><a href = ".base_url("Administrator/istorijaKorisnikSubmit?idKor=".$korisnik->IdKorisnik).">".$korisnik->KorisnickoIme."</a></td>";
+                            echo"<td><a href = ".base_url("Administrator/istorijaKorisnikSubmit?idKor=".$korisnik->IdKorisnik."&prviPut=1").">".$korisnik->KorisnickoIme."</a></td>";
                         else
                             echo"<td>".$korisnik->KorisnickoIme."</td>";
                         echo"<td>".$korisnik->Ime."</td>";

@@ -35,7 +35,7 @@
                     $('#slot-machine .ring1 .shadow, #slot-machine .ring2 .shadow').animate({ top: '50%', opacity: 1 });
 
                     spinning = 3;
-
+                    ulog = parseInt(document.getElementById("ulozeni_tokeni").innerHTML)
                     var xhttp = new XMLHttpRequest();
                     xhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
@@ -80,22 +80,28 @@
                             
                             setTimeout(function(){
                                 let info = document.querySelector('.info');
-                            var dobitak = parseInt(res[4]);
-                            if(dobitak > 0){
+                                var dobitak = parseInt(res[4]);
+                                if(ulog == 0){
+                                        info.innerHTML = 'Niste uneli tokene';
+                                        info.style.background = 'tomato';
+                                        info.style.color = '#fff';
+                                        info.style.display = 'block';
+                                }
+                                else if(dobitak > 0){
                                         info.innerHTML = 'Cestitamo! Osvojili ste ' + dobitak + ' tokena';
                                         info.style.background = '#1CC31C';
                                         info.style.color = '#DDDDDD';
                                         info.style.display = 'block';
                                     }
-                                    else{
+                                else{
                                         info.innerHTML = 'Nazalost, niste dobili.';
                                         info.style.background = 'tomato';
                                         info.style.color = '#fff';
                                         info.style.display = 'block';
                                     }
-                                    setTimeout(function(){
-                                        info.style.display = 'none'
-                                    },5000)
+                                setTimeout(function(){
+                                    info.style.display = 'none'
+                                },5000)
                             },2500)
 
 

@@ -246,7 +246,7 @@ class Korisnik extends BaseController{
         
         $num = rand(0,36);
         
-        if($ulog > 0 && $ulog < $Korisnik->Tokeni){
+        if($ulog > 0 && $ulog <= $Korisnik->Tokeni){
 
             $Korisnik->Tokeni -= $ulog;
 
@@ -317,6 +317,7 @@ class Korisnik extends BaseController{
         $coef = 0;
         
         $tokeni = intval($this->request->getVar('Tokeni'));
+        
         $num1 = rand(0,7);
         $num2 = rand(0,7);
         $num3 = rand(0,7);
@@ -326,7 +327,7 @@ class Korisnik extends BaseController{
         $Korisnik = $km
                     ->where('KorisnickoIme', $korIme)
                     ->first();
-        
+        $dobitak = 0;
         if($tokeni != 0 && $Korisnik->Tokeni >= $tokeni){
             $Korisnik->Tokeni -= $tokeni;
             $dobitak = 0;

@@ -294,13 +294,16 @@ class Administrator extends BaseController {
         $uloga = $this->request->getVar('tipKorisnika');
         $sort = $this->request->getVar('sortiranje');
         $username = $this->request->getVar('username_uvid');
+        $sortiranje = $this->request->getVar('sortiranje');
+        $order = $sortiranje == "navise" ? 'ASC': 'DESC';
         
         if($uloga == "korisnik"){
                 $km = new KorisnikModel();
                 if($sviKorisnici == false)
-                    $korisnici = $km->like('KorisnickoIme', "%".$username."%")->findAll();
+                    $korisnici = $km->like('KorisnickoIme', "%".$username."%")->orderBy('KorisnickoIme',$order)->findAll();
                 else
-                    $korisnici = $km->findAll();
+                    $korisnici = $km->orderBy('KorisnickoIme',$order)->findAll();
+                
                 
                 if($korisnici==null || count($korisnici) == 0){
                     $errors['noUser'] = "Ne postoji korisnik sa tim korisnickim imenom";
@@ -311,9 +314,9 @@ class Administrator extends BaseController {
         else if($uloga == "moderator"){
             $zm = new ZaposleniModel();
                 if($sviKorisnici == false)
-                    $korisnici = $zm->like('KorisnickoIme', "%".$username."%")->where("Tip",0)->findAll();
+                    $korisnici = $zm->like('KorisnickoIme', "%".$username."%")->where("Tip",0)->orderBy('KorisnickoIme',$order)->findAll();
                 else
-                    $korisnici = $zm->where("Tip",0)->findAll();;
+                    $korisnici = $zm->where("Tip",0)->orderBy('KorisnickoIme',$order)->findAll();;
                 
                 if($korisnici==null || count($korisnici) == 0){
                     $errors['noUser'] = "Ne postoji ".$uloga." sa tim korisnickim imenom";
@@ -325,9 +328,9 @@ class Administrator extends BaseController {
         else if($uloga == "administrator"){
            $zm = new ZaposleniModel();
                 if($sviKorisnici == false)
-                    $korisnici = $zm->like('KorisnickoIme', "%".$username."%")->where("Tip",1)->findAll();
+                    $korisnici = $zm->like('KorisnickoIme', "%".$username."%")->where("Tip",1)->orderBy('KorisnickoIme',$order)->findAll();
                 else
-                    $korisnici = $zm->where("Tip",1)->findAll();
+                    $korisnici = $zm->where("Tip",1)->orderBy('KorisnickoIme',$order)->findAll();
                 
                 if($korisnici==null || count($korisnici) == 0){
                     $errors['noUser'] = "Ne postoji ".$uloga." sa tim korisnickim imenom";
@@ -466,8 +469,14 @@ class Administrator extends BaseController {
                 $brojac++;
             }
         }
-        
-        return $this->prikaz('uvidIstorijeKorisnika',['korisnik'=>$korisnik,'ruletNiz'=>$ruletNiz,'slotNiz'=>$slotNiz,'luckyNiz'=>$luckyNiz,'sportNiz'=>$sportNiz]);
+        $errors = [];
+        if($this->request->getVar("prviPut")==null && 
+                count($ruletNiz) == 0 &&
+                count($slotNiz) == 0 &&
+                count($luckyNiz) == 0 &&
+                count($sportNiz) == 0)
+            $errors['nepostojeci'] = "Ne postoje podaci za odabrane filtere";
+        return $this->prikaz('uvidIstorijeKorisnika',['korisnik'=>$korisnik,'ruletNiz'=>$ruletNiz,'slotNiz'=>$slotNiz,'luckyNiz'=>$luckyNiz,'sportNiz'=>$sportNiz, 'errors'=>$errors]);
         
         
         //return $this->prikaz('uvidIstorijeKorisnika',['korisnik'=>$korisnik]);

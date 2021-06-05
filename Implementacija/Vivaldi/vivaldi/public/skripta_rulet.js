@@ -82,12 +82,18 @@ $(document).ready(function(){
                     info.style.color = '#DDDDDD';
                     info.style.display = 'block';
                 }
-                else{
+                else if(dobitak == 0){
                     info.innerHTML = 'Pao je broj ' +broj + '. Niste pogodili.';
                     info.style.background = 'tomato';
                     info.style.color = '#fff';
                     info.style.display = 'block';
                 }
+                else if(dobitak == -1){
+                    info.innerHTML = 'Ulozite tokene da biste poceli igru.';
+                    info.style.background = 'tomato';
+                    info.style.color = '#fff';
+                    info.style.display = 'block';
+                    }
                 
                 setTimeout(function(){
                     info.style.display = 'none'

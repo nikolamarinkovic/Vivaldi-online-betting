@@ -93,12 +93,17 @@ class Administrator extends BaseController {
             return $this->prikaz('profilAdmin',['errors'=>$errors, 'zaposlen'=>$zaposlen]);
         }
         $greska=0;
+        
+        if($stara!=$zaposlen->Lozinka){
+            $errors['losaLozinka'] = 'Stara lozinka je netacna';
+            $greska++;
+        }
         if($nova!=$potvrda){
             $errors['poklapanje'] = 'Lozinke se ne poklapaju';
             $greska++;
         }
-        if($stara!=$zaposlen->Lozinka){
-            $errors['losaLozinka'] = 'Stara lozinka je netacna';
+        else if($stara==$nova){
+            $errors['ista'] = 'Nova lozinka je ista kao i stara';
             $greska++;
         }
         if($greska)
@@ -196,7 +201,7 @@ class Administrator extends BaseController {
     public function dodavanjeZaposlenog() {
         $errors = [];
         if(!$this->validate(['username_registration'=>'required', 
-                                'password_registration'=>'required',
+                                'password_registration'=>'required|min_length[13]',
                                 'passconfirm_registration'=>'required|matches[password_registration]',
                                 'name_registration'=>'required',
                                 'surname_registration'=>'required',
@@ -205,7 +210,7 @@ class Administrator extends BaseController {
             if(!empty($this->validator->getErrors()['username_registration']))
                 $errors['KorisnickoIme'] = 'Unesite korisnicko ime';
             if(!empty($this->validator->getErrors()['password_registration']))
-                $errors['Lozinka'] = 'Unesite lozinku';
+                $errors['Lozinka'] = 'Unesite lozinku od barem 8 karaktera';
             if(!empty($this->validator->getErrors()['passconfirm_registration']))
                 $errors['PotvrdaLozinke'] = 'Lozinke se ne poklapaju';
             if(!empty($this->validator->getErrors()['name_registration']))
@@ -484,14 +489,26 @@ class Administrator extends BaseController {
     
     
     public function azurirajKvotu(){
-        $um=new UtakmicaModel();
-        $utakmice = $um->where("Rezultat","0")->findAll();
-        $kele=1;
-        foreach ($utakmice as $utakmica){
-        $kvota1=$this->request->getVar('jedan'.$kele); 
-        $kvotaX=$this->request->getVar('iks'.$kele);
-        $kvota2=$this->request->getVar('dva'.$kele);        
-        $kvote=[];
+        $ukupno = $this->request->getVar('ukupno');
+        $um = new UtakmicaModel();
+        $um->db->transBegin();
+        
+        for($i = 0; $i < $ukupno; $i++){
+            $utakmica = $um->where('IdUtakmica',$this->request->getVar('utk'.($i + 1)))->first();
+            $kvota1=$this->request->getVar('jedan'.($i + 1)); 
+            $kvotaX=$this->request->getVar('iks'.($i + 1));
+            $kvota2=$this->request->getVar('dva'.($i + 1));        
+            $kvote=[];
+            
+            if(!$this->validate([
+                    'jedan'.($i + 1)=>'required|numeric|greater_than[1.00]', 
+                    'iks'.($i + 1)=>'required|numeric|greater_than[1.00]',
+                    'dva'.($i + 1)=>'required|numeric|greater_than[1.00]'
+                    ])){
+            $um->db->transRollback();
+            $errors['neispravna_kvota'] = "Unesite ispravne kvote";
+            return $this->prikaz('kvoteAdmin',['errors'=>$errors]);
+        }
         
             if(!empty($kvota1)&&($kvota1!=$utakmica->Kvota1)){
                 $kvote['Kvota1']=$kvota1;                
@@ -505,8 +522,8 @@ class Administrator extends BaseController {
             if(!empty($kvote)){
                 $um->update($utakmica->IdUtakmica, $kvote);
             }
-        $kele++;    
-        }   
+        }
+        $um->db->transCommit();
         $this->prikaz('kvoteAdmin',["uspesno"=>"Kvote uspesno promenjene!"]);
     }
     

@@ -248,6 +248,7 @@ class Korisnik extends BaseController{
                     ->first();
         
         $num = rand(0,36);
+        $dobitak = -1;
         
         if($ulog > 0 && $ulog <= $Korisnik->Tokeni){
 
@@ -388,7 +389,7 @@ class Korisnik extends BaseController{
     
     public function slot(){
         $km = new KorisnikModel();
-        $korIme = $this->session->get('korisnik')->KorisnickoIme;
+        $korIme =$this->session->get('korisnik')->KorisnickoIme;
         $Korisnik = $km
                     ->where('KorisnickoIme', $korIme)
                     ->first();
@@ -471,7 +472,7 @@ class Korisnik extends BaseController{
         $Korisnik = $km
                     ->where('KorisnickoIme', $korIme)
                     ->first();
-        if($ulozeni_tokeni != 0 && $Korisnik->Tokeni > $ulozeni_tokeni){
+        if($ulozeni_tokeni != 0 && $Korisnik->Tokeni >= $ulozeni_tokeni){
             $Korisnik->Tokeni -= $ulozeni_tokeni;
             $dobitak = 0;
             $brojevi = [];
@@ -832,19 +833,21 @@ class Korisnik extends BaseController{
             return $this->prikaz('profilKorisnik',['errors'=>$errors, 'korisnik'=>$korisnik]);
         }
         $greska=0;
-        if($nova!=$potvrda){
-            $errors['poklapanje'] = 'Lozinke se ne poklapaju';
-            $greska++;
-        }
+        
         if($stara!=$korisnik->Lozinka){
             $errors['losaLozinka'] = 'Stara lozinka je netacna';
             $greska++;
         }
+        if($nova!=$potvrda){
+            $errors['poklapanje'] = 'Lozinke se ne poklapaju';
+            $greska++;
+        }
+        else if($stara==$nova){
+            $errors['ista'] = 'Nova lozinka je ista kao i stara';
+            $greska++;
+        }
         if($greska)
             return $this->prikaz('profilKorisnik',['errors'=>$errors, 'korisnik'=>$korisnik]);
-        var_dump($stara);
-            var_dump($nova);
-            var_dump($potvrda);
         $lozinka['Lozinka']=$nova;
         $km->update($korisnik->IdKorisnik, $lozinka);
         $this->prikaz('profilKorisnik',['korisnik'=>$korisnik,'uspesno'=>1]);
@@ -857,15 +860,16 @@ class Korisnik extends BaseController{
         $korisnik = $km
                     ->where('KorisnickoIme', $korIme)
                     ->first();
-        $tokeni=$this->request->getVar('tokeniKupovina');
+        
                 
         if(!$this->validate(['tokeniKupovina'=>'required'])){
-            if(!empty($this->validator->getErrors()['tokeni']))
-                $errors['tokeni'] = 'Unesite kolicinu tokena';
+            if(!empty($this->validator->getErrors()['tokeniKupovina']))
+                $errors['tokeniK'] = 'Unesite kolicinu tokena';
             return $this->prikaz('profilKorisnik',['errors'=>$errors, 'korisnik'=>$korisnik]);
-        }        
+        } 
+        $tokeni=$this->request->getVar('tokeniKupovina');
         if($tokeni<1){
-            $errors['kolicina'] = 'Kolicina tokena mora biti veca od 0';
+            $errors['kolicinaK'] = 'Kolicina tokena mora biti veca od 0';
             return $this->prikaz('profilKorisnik',['errors'=>$errors, 'korisnik'=>$korisnik]);
         }
         $noviTokeni['Tokeni']=$korisnik->Tokeni+$tokeni;
@@ -884,13 +888,13 @@ class Korisnik extends BaseController{
         $tokeni=$this->request->getVar('tokeniProdaja');
                 
         if(!$this->validate(['tokeniProdaja'=>'required'])){
-            if(!empty($this->validator->getErrors()['tokeni']))
-                $errors['tokeni'] = 'Unesite kolicinu tokena';
+            if(!empty($this->validator->getErrors()['tokeniProdaja']))
+                $errors['tokeniP'] = 'Unesite kolicinu tokena';
             return $this->prikaz('profilKorisnik',['errors'=>$errors, 'korisnik'=>$korisnik]);
         }
         $greska=0;
         if($tokeni<1){
-            $errors['kolicina'] = 'Kolicina tokena mora biti veca od 0';
+            $errors['kolicinaP'] = 'Kolicina tokena mora biti veca od 0';
            $greska++;
         }
         if($tokeni>$korisnik->Tokeni){

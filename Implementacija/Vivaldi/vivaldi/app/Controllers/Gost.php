@@ -129,7 +129,7 @@ class Gost extends BaseController{
         $errors = [];
         $info = "Uspesna registracija";
         if(!$this->validate(['username_registration'=>'required', 
-                                'password_registration'=>'required',
+                                'password_registration'=>'required|min_length[8]',
                                 'passconfirm_registration'=>'required|matches[password_registration]',
                                 'name_registration'=>'required',
                                 'surname_registration'=>'required',
@@ -138,7 +138,7 @@ class Gost extends BaseController{
             if(!empty($this->validator->getErrors()['username_registration']))
                 $errors['KorisnickoIme'] = 'Unesite korisnicko ime';
             if(!empty($this->validator->getErrors()['password_registration']))
-                $errors['Lozinka'] = 'Unesite lozinku';
+                $errors['Lozinka'] = 'Unesite lozinku od barem 8 karaktera';
             if(!empty($this->validator->getErrors()['passconfirm_registration']))
                 $errors['PotvrdaLozinke'] = 'Lozinke se ne poklapaju';
             if(!empty($this->validator->getErrors()['name_registration']))
@@ -150,10 +150,9 @@ class Gost extends BaseController{
             if(!empty($this->validator->getErrors()['card_registration']))
                 $errors['BrojKartice'] = 'Unesite broj kartice';
             
-            
-            
             return $this->prikaz('registracija',['errors'=>$errors]);
         }
+        
         //ddmmggg.......
         $JMBG = $this->request->getVar('id_registration');
         $day = intval(substr($JMBG, 0, 2));
@@ -171,6 +170,8 @@ class Gost extends BaseController{
             $errors['JMBG'] = 'Niste punoletni';
             return $this->prikaz('registracija',['errors'=>$errors]);
         }    
+        
+        
                 
         $km = new KorisnikModel();
         $km->save([ 'KorisnickoIme' => $this->request->getVar('username_registration'),

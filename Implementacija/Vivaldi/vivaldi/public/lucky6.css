@@ -41,7 +41,11 @@ cursor: pointer;
   cursor: pointer;
 }
 
-.info {
+.infoTokeni {
+    margin: auto;
+}
+
+.info, .infoTokeni {
   width: 250px;
   margin-top: 30px;
   border-radius: 2px;

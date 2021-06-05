@@ -8,6 +8,8 @@ let howMuchBalls = 0;
 let betBalls = [];
 let pickedBall;
 
+let infoTokeni = document.querySelector('.infoTokeni');
+
 // ALL BALLS SELECTED
 let allRed = document.querySelector('.allRed');
 let allGreen = document.querySelector('.allGreen');
@@ -54,7 +56,7 @@ $(document).ready(function(){
         ulozeno = parseInt($("#ulozeno_tokena").val());
         ukupno = parseInt($("#ukupno_tokena").text());
         
-        if(vreme == 0 && betBalls.length == 6 && ulozeno != NaN && ulozeno > 0 && ukupno>=ulozeno){
+        if(vreme == 0 && betBalls.length == 6 && ulozeno != NaN && ulozeno > 0){
             
             brojevi = ""
             for(i = 0; i < betBalls.length; i++){
@@ -69,6 +71,24 @@ $(document).ready(function(){
             if (this.readyState == 4 && this.status == 200) {
                 console.log(this.responseText);
                 niz = this.responseText.split(",");
+                
+                if(niz[0] == -1){
+                    vreme = 20;
+                    $("#vreme").text(vreme);
+                    infoTokeni.innerHTML = 'Nemate dovoljno tokena';
+                    infoTokeni.style.background = 'tomato';
+                    infoTokeni.style.color = '#fff';
+                    infoTokeni.style.display = 'block';
+                    
+                    setTimeout(function (){
+                        $("#ulozeno_tokena").val("");
+                        infoTokeni.style.background = '##DDDDDD';
+                        infoTokeni.style.color = '##000';
+                        infoTokeni.style.display = 'none';
+                    }, 5000)
+                    return;
+                }
+                
                 izvuceni_brojevi = []
                 for(i = 0; i < 35; i++){
                     izvuceni_brojevi[i] = parseInt(niz[i])
@@ -80,10 +100,6 @@ $(document).ready(function(){
                 availableBetClick(izvuceni_brojevi,dobitak,tokeni)
                 flag = false;
                 //while(!flag);
-               
-
-                
-                
             }
             };
             xhttp.open("POST", "http://localhost:8080/Korisnik/lucky6_drawing" , true);

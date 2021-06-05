@@ -61,142 +61,145 @@ class Korisnik extends BaseController{
     public function rulet_spin(){
         $handlers = [
             '0' => function($num){
-                return  $num == 0 ? 35 : 0;
+                return  $num == 0 ? 36 : 0;
             },
             '1' => function($num){
-                return  $num == 1 ? 35 : 0;
+                return  $num == 1 ? 36 : 0;
             },
             '2' => function($num){
-                return  $num == 2 ? 35 : 0;
+                return  $num == 2 ? 36 : 0;
             },
             '3' => function($num){
-                return  $num == 3 ? 35 : 0;
+                return  $num == 3 ? 36 : 0;
             },
             '4' => function($num){
-                return  $num == 4 ? 35 : 0;
+                return  $num == 4 ? 36 : 0;
             },
             '5' => function($num){
-                return  $num == 5 ? 35 : 0;
+                return  $num == 5 ? 36 : 0;
             },
             '6' => function($num){
-                return  $num == 6 ? 35 : 0;
+                return  $num == 6 ? 36 : 0;
             },
             '7' => function($num){
-                return  $num == 7 ? 35 : 0;
+                return  $num == 7 ? 36 : 0;
             },
             '8' => function($num){
-                return  $num == 8 ? 35 : 0;
+                return  $num == 8 ? 36 : 0;
             },
             '9' => function($num){
-                return  $num == 9 ? 35 : 0;
+                return  $num == 9 ? 36 : 0;
             },
             '10' => function($num){
-                return  $num == 10 ? 35 : 0;
+                return  $num == 10 ? 36 : 0;
             },
             '11' => function($num){
-                return  $num == 11 ? 35 : 0;
+                return  $num == 11 ? 36 : 0;
             },
             '12' => function($num){
-                return  $num == 12 ? 35 : 0;
+                return  $num == 12 ? 36 : 0;
             },
             '13' => function($num){
-                return  $num == 13 ? 35 : 0;
+                return  $num == 13 ? 36 : 0;
             },
             '14' => function($num){
-                return  $num == 14 ? 35 : 0;
+                return  $num == 14 ? 36 : 0;
             },
             '15' => function($num){
-                return  $num == 15 ? 35 : 0;
+                return  $num == 15 ? 36 : 0;
             },
             '16' => function($num){
-                return  $num == 16 ? 35 : 0;
+                return  $num == 16 ? 36 : 0;
             },
             '17' => function($num){
-                return  $num == 17 ? 35 : 0;
+                return  $num == 17 ? 36 : 0;
             },
             '18' => function($num){
-                return  $num == 18 ? 35 : 0;
+                return  $num == 18 ? 36 : 0;
             },
             '19' => function($num){
-                return  $num == 19 ? 35 : 0;
+                return  $num == 19 ? 36 : 0;
             },
             '20' => function($num){
-                return  $num == 20 ? 35 : 0;
+                return  $num == 20 ? 36 : 0;
             },
             '21' => function($num){
-                return  $num == 21 ? 35 : 0;
+                return  $num == 21 ? 36 : 0;
             },
             '22' => function($num){
-                return  $num == 22 ? 35 : 0;
+                return  $num == 22 ? 36 : 0;
             },
             '23' => function($num){
-                return  $num == 23 ? 35 : 0;
+                return  $num == 23 ? 36 : 0;
             },
             '24' => function($num){
-                return  $num == 24 ? 35 : 0;
+                return  $num == 24 ? 36 : 0;
             },
             '25' => function($num){
-                return  $num == 25 ? 35 : 0;
+                return  $num == 25 ? 36 : 0;
             },
             '26' => function($num){
-                return  $num == 26 ? 35 : 0;
+                return  $num == 26 ? 36 : 0;
             },
             '27' => function($num){
-                return  $num == 27 ? 35 : 0;
+                return  $num == 27 ? 36 : 0;
             },
             '28' => function($num){
-                return  $num == 28 ? 35 : 0;
+                return  $num == 28 ? 36 : 0;
             },
             '29' => function($num){
-                return  $num == 29 ? 35 : 0;
+                return  $num == 29 ? 36 : 0;
             },
             '30' => function($num){
-                return  $num == 30 ? 35 : 0;
+                return  $num == 30 ? 36 : 0;
             },
             '31' => function($num){
-                return  $num == 31 ? 35 : 0;
+                return  $num == 31 ? 36 : 0;
             },
             '32' => function($num){
-                return  $num == 32 ? 35 : 0;
+                return  $num == 32 ? 36 : 0;
             },
             '33' => function($num){
-                return  $num == 33 ? 35 : 0;
+                return  $num == 33 ? 36 : 0;
             },
             '34' => function($num){
-                return  $num == 34 ? 35 : 0;
+                return  $num == 34 ? 36 : 0;
             },
             '35' => function($num){
-                return  $num == 35 ? 35 : 0;
+                return  $num == 35 ? 36 : 0;
             },
             '36' => function($num){
-                return  $num == 36 ? 35 : 0;
+                return  $num == 36 ? 36 : 0;
             },
             '2 to 1 a' => function($num){
                 return in_array($num, [3 , 6 , 9 , 12,
                                        15, 18, 21, 24,
-                                       27, 30, 33, 36]) ? 35 : 0;
+                                       27, 30, 33, 36]) ? 3 : 0;
             },
             '2 to 1 b' => function($num){
                 return in_array($num, [2 , 5 , 8 , 11,
                                        14, 17, 20, 23,
-                                       26, 29, 32, 35]) ? 35 : 0;
+                                       26, 29, 32, 35]) ? 3 : 0;
             },
             '2 to 1 c' => function($num){
                 return in_array($num, [1 , 4 , 7 , 10,
                                        13, 16, 19, 22,
-                                       25, 28, 31, 34]) ? 35 : 0;
+                                       25, 28, 31, 34]) ? 3 : 0;
             },
             '1st12' => function($num){
-                return  (1 <= $num && $num <=12) ? 35 : 0;
+                return  (1 <= $num && $num <=12) ? 3 : 0;
             },
             '2nd12' => function($num){
-                return  (13 <= $num && $num <=24) ? 35 : 0;
+                return  (13 <= $num && $num <=24) ? 3 : 0;
             },
             '3rd12' => function($num){
-                return  (25 <= $num && $num <=36) ? 35 : 0;
+                return  (25 <= $num && $num <=36) ? 3 : 0;
             },
             '1 to 18' => function($num){
-                return  (1 <= $num && $num <=18) ? 35 : 0;
+                return  (1 <= $num && $num <=18) ? 2 : 0;
+            },
+            '19 to 36' => function($num){
+                return  (19 <= $num && $num <=36) ? 2 : 0;
             },
             'Even' => function($num){
                 return  ($num % 2 == 0 && $num!=0) ? 2 : 0;
@@ -465,7 +468,7 @@ class Korisnik extends BaseController{
         $ulozeni_tokeni = intval($niz[6]);
         
         $km = new KorisnikModel();
-        $korIme =$this->session->get('korisnik')->KorisnickoIme;
+        $korIme = $this->session->get('korisnik')->KorisnickoIme;
         $Korisnik = $km
                     ->where('KorisnickoIme', $korIme)
                     ->first();
@@ -525,6 +528,8 @@ class Korisnik extends BaseController{
   
         }
         //end trans
+        if(empty($izvuceni_brojevi))
+            $izvuceni_brojevi = '-1,';
         echo $izvuceni_brojevi . $Korisnik->Tokeni . ',';
     }
     

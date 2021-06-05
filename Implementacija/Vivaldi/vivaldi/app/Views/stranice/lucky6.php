@@ -282,4 +282,4 @@
     </div>
   </div>
 
-  <script src=<?php echo base_url("lucky6.js")?>></script>
+

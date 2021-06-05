@@ -47,30 +47,41 @@
                 <p>Trenutni tokeni: <var><?php echo $korisnik->Tokeni?></var></p>
                 <form action="<?php echo base_url("Korisnik/kupovinaTokena")?>">
                     <p class="unos"> Kupovina tokena: </p>
-                    <input type="number" value="100" min="1" name="tokeniKupovina">
-                    <?php $flag=0;if(!empty($errors['tokeni'])){ ?> 
-                       <p style="text-align: left; color: red; margin-top: 0;">
-                            <?php $flag=1;echo $errors['tokeni']; ?>                     
-                       </p>
-                    <?php } ?>
-                      <?php if((!empty($errors['kolicina']))&&$flag){ ?> 
-                       <p style="text-align: left; color: red; margin-top: 0;">
-                            <?php echo $errors['kolicina']; ?>                     
-                       </p>
-                    <?php } ?>
+                    <input type="number" value="100"  name="tokeniKupovina">
                     <input type="submit">
+                    <?php $flag=0;if(!empty($errors['tokeniK'])){ ?> 
+                       <p style="text-align: left; color: red; margin-top: 0;">
+                            <?php $flag=1;echo $errors['tokeniK']; ?>                     
+                       </p>
+                    <?php } ?>
+                      <?php if((!empty($errors['kolicinaK']))){ ?> 
+                       <p style="text-align: left; color: red; margin-top: 0;">
+                            <?php echo $errors['kolicinaK']; ?>                     
+                       </p>
+                    <?php } ?>
                     <p style="color: green"><var> <?php if(!empty($uplata)) echo "Tokeni uspesno uplaceni!" ?></var></p>
                 </form>
                 <form action="<?php echo base_url("Korisnik/prodajaTokena")?>">
                     <p class="unos"> Prodaja tokena: </p>
-                    <input type="number" value="100" min="1" name="tokeniProdaja">
+                    <input type="number" value="100" name="tokeniProdaja">
                     <input type="submit">
                     <p style="color: green"><var> <?php if(!empty($isplata)) echo "Tokeni uspesno prodati!" ?></var></p>
-                <?php if(!empty($errors['minus'])){ ?> 
-                    <p style="text-align: left; color: red; margin-top: 0;">
-                    <?php echo $errors['minus']; ?>                     
-                    </p>
-                <?php } ?>
+                    
+                    <?php $flag=0;if(!empty($errors['tokeniP'])){ ?> 
+                       <p style="text-align: left; color: red; margin-top: 0;">
+                            <?php $flag=1;echo $errors['tokeniP']; ?>                     
+                       </p>
+                    <?php } ?>
+                      <?php if((!empty($errors['kolicinaP']))){ ?> 
+                       <p style="text-align: left; color: red; margin-top: 0;">
+                            <?php echo $errors['kolicinaP']; ?>                     
+                       </p>
+                    <?php } ?>
+                    <?php if(!empty($errors['minus'])){ ?> 
+                        <p style="text-align: left; color: red; margin-top: 0;">
+                        <?php echo $errors['minus']; ?>                     
+                        </p>
+                    <?php } ?>
                 </form>
                 <p>Filter:</p>
                 <form class="filter" action="<?php echo base_url("Korisnik/istorijaSubmit")?>" method="GET" style="color: white; font-family: helvetica;">

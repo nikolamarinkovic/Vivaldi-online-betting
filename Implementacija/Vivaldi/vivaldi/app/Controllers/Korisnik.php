@@ -856,15 +856,16 @@ class Korisnik extends BaseController{
         $korisnik = $km
                     ->where('KorisnickoIme', $korIme)
                     ->first();
-        $tokeni=$this->request->getVar('tokeniKupovina');
+        
                 
         if(!$this->validate(['tokeniKupovina'=>'required'])){
-            if(!empty($this->validator->getErrors()['tokeni']))
-                $errors['tokeni'] = 'Unesite kolicinu tokena';
+            if(!empty($this->validator->getErrors()['tokeniKupovina']))
+                $errors['tokeniK'] = 'Unesite kolicinu tokena';
             return $this->prikaz('profilKorisnik',['errors'=>$errors, 'korisnik'=>$korisnik]);
-        }        
+        } 
+        $tokeni=$this->request->getVar('tokeniKupovina');
         if($tokeni<1){
-            $errors['kolicina'] = 'Kolicina tokena mora biti veca od 0';
+            $errors['kolicinaK'] = 'Kolicina tokena mora biti veca od 0';
             return $this->prikaz('profilKorisnik',['errors'=>$errors, 'korisnik'=>$korisnik]);
         }
         $noviTokeni['Tokeni']=$korisnik->Tokeni+$tokeni;
@@ -883,13 +884,13 @@ class Korisnik extends BaseController{
         $tokeni=$this->request->getVar('tokeniProdaja');
                 
         if(!$this->validate(['tokeniProdaja'=>'required'])){
-            if(!empty($this->validator->getErrors()['tokeni']))
-                $errors['tokeni'] = 'Unesite kolicinu tokena';
+            if(!empty($this->validator->getErrors()['tokeniProdaja']))
+                $errors['tokeniP'] = 'Unesite kolicinu tokena';
             return $this->prikaz('profilKorisnik',['errors'=>$errors, 'korisnik'=>$korisnik]);
         }
         $greska=0;
         if($tokeni<1){
-            $errors['kolicina'] = 'Kolicina tokena mora biti veca od 0';
+            $errors['kolicinaP'] = 'Kolicina tokena mora biti veca od 0';
            $greska++;
         }
         if($tokeni>$korisnik->Tokeni){

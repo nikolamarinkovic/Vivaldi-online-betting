@@ -1,7 +1,8 @@
 <div class="body">
             <h1 class="naslov">Rulet</h1>
             <hr>
-            <p style="text-align:center;">Pravila o ruletu i upustva za koriscenje: Pritisnite polje da biste dodali po 1 token na dato polje.Nakon 50 sekundi pocinje igra sa Vasim ulogom.</p>
+            <p style="text-align: center; margin-top: 0px;">Pritisnite polje da biste dodali po 1 token na dato polje.Nakon 30 sekundi pocinje igra sa Vasim ulogom.</p>
+            <hr>
             <div class="rulet">
                 <p >Preostalo vreme: <var id = "vreme"></var>0s</p>
                 <div  class="rulet_tocak">
@@ -15,65 +16,65 @@
                     </div>
                     <div class="rulet_tabla" id="tabla">
                         <!--   <img src=<?php //echo base_url("slike/rulet_tabla.png");?> alt="rulet tabla"> -->
-                        <table style="width: 400px; height: 200px">
+                        <table id="ruletBoja" style="width: 400px; height: 200px; background-color : green;">
                             <tr>
-                                <td rowspan="5"> <button>0</button> <p></p> </td>
-                                <td> <button>3</button> <p></p> </td>
-                                <td> <button>6</button> <p></p> </td>
-                                <td> <button>9</button> <p></p> </td>
-                                <td> <button>12</button> <p></p> </td>
-                                <td> <button>15</button> <p></p></td>
-                                <td> <button>18</button> <p></p> </td>
-                                <td> <button>21</button> <p></p> </td>
-                                <td> <button>24</button> <p></p> </td>
-                                <td> <button>27</button> <p></p> </td>
-                                <td> <button>30</button> <p></p></td>
-                                <td> <button>33</button> <p></p> </td>
-                                <td> <button>36</button> <p></p> </td>
-                                <td > <button style="width:55px">2 to 1 a</button> <p></p> </td>
+                                <td rowspan="5"> <button class="green">0</button> <p></p> </td>
+                                <td> <button class="red">3</button> <p></p> </td>
+                                <td> <button class="black">6</button> <p></p> </td>
+                                <td> <button class="red">9</button> <p></p> </td>
+                                <td> <button class="red">12</button> <p></p> </td>
+                                <td> <button class="black">15</button> <p></p></td>
+                                <td> <button class="red">18</button> <p></p> </td>
+                                <td> <button class="red">21</button> <p></p> </td>
+                                <td> <button class="black">24</button> <p></p> </td>
+                                <td> <button class="red">27</button> <p></p> </td>
+                                <td> <button class="red">30</button> <p></p></td>
+                                <td> <button class="black">33</button> <p></p> </td>
+                                <td> <button class="red">36</button> <p></p> </td>
+                                <td > <button style="width:55px" class="green">2 to 1 a</button> <p></p> </td>
                             </tr>
                             <tr>
-                                <td> <button>2</button> <p></p> </td>
-                                <td> <button>5</button> <p></p> </td>
-                                <td> <button>8</button> <p></p> </td>
-                                <td> <button>11</button> <p></p> </td>
-                                <td> <button>14</button> <p></p> </td>
-                                <td> <button>17</button> <p></p> </td>
-                                <td> <button>20</button> <p></p> </td>
-                                <td> <button>23</button> <p></p> </td>
-                                <td> <button>26</button> <p></p> </td>
-                                <td> <button>29</button> <p></p> </td>
-                                <td> <button>32</button> <p></p> </td>
-                                <td> <button>35</button> <p></p> </td>
-                                <td > <button style="width:55px">2 to 1 b</button> <p></p> </td>
+                                <td> <button class="black">2</button> <p></p> </td>
+                                <td> <button class="red">5</button> <p></p> </td>
+                                <td> <button class="black">8</button> <p></p> </td>
+                                <td> <button class="black">11</button> <p></p> </td>
+                                <td> <button class="red">14</button> <p></p> </td>
+                                <td> <button class="black">17</button> <p></p> </td>
+                                <td> <button class="black">20</button> <p></p> </td>
+                                <td> <button class="red">23</button> <p></p> </td>
+                                <td> <button class="black">26</button> <p></p> </td>
+                                <td> <button class="black">29</button> <p></p> </td>
+                                <td> <button class="red">32</button> <p></p> </td>
+                                <td> <button class="black">35</button> <p></p> </td>
+                                <td > <button style="width:55px" class="green">2 to 1 b</button> <p></p> </td>
                             </tr>
                             <tr>
-                                <td> <button>1</button> <p></p> </td>
-                                <td> <button>4</button> <p></p> </td>
-                                <td> <button>7</button> <p></p> </td>
-                                <td> <button>10</button> <p></p> </td>
-                                <td> <button>13</button> <p></p> </td>
-                                <td> <button>16</button> <p></p> </td>
-                                <td> <button>19</button> <p></p> </td>
-                                <td> <button>22</button> <p></p> </td>
-                                <td> <button>25</button> <p></p> </td>
-                                <td> <button>28</button> <p></p> </td>
-                                <td> <button>31</button> <p></p> </td>
-                                <td> <button>34</button> <p></p> </td>
-                                <td > <button style="width:55px">2 to 1 c</button> <p></p> </td>
+                                <td> <button class="red">1</button> <p></p> </td>
+                                <td> <button class="black">4</button> <p></p> </td>
+                                <td> <button class="red">7</button> <p></p> </td>
+                                <td> <button class="black">10</button> <p></p> </td>
+                                <td> <button class="black">13</button> <p></p> </td>
+                                <td> <button class="red">16</button> <p></p> </td>
+                                <td> <button class="red">19</button> <p></p> </td>
+                                <td> <button class="black">22</button> <p></p> </td>
+                                <td> <button class="red">25</button> <p></p> </td>
+                                <td> <button class="black">28</button> <p></p> </td>
+                                <td> <button class="black">31</button> <p></p> </td>
+                                <td> <button class="red">34</button> <p></p> </td>
+                                <td > <button style="width:55px" class="green">2 to 1 c</button> <p></p> </td>
                             </tr>
                             <tr>
-                                <td colspan="4"><button>1st12</button> <p></p> </td>
-                                <td colspan="4"><button>2nd12</button> <p></p> </td>
-                                <td colspan="4"><button>3rd12</button> <p></p> </td>
+                                <td colspan="4"><button class="green">1st12</button> <p></p> </td>
+                                <td colspan="4"><button class="green">2nd12</button> <p></p> </td>
+                                <td colspan="4"><button class="green">3rd12</button> <p></p> </td>
                             </tr>
                             <tr>
-                                <td colspan="2"><button>1 to 18</button> <p></p> </td>
-                                <td colspan="2"><button>Even</button> <p></p> </td>
-                                <td colspan="2"><button>Red</button> <p></p> </td>
-                                <td colspan="2"><button>Black</button> <p></p> </td>
-                                <td colspan="2"><button>Odd</button> <p></p> </td>
-                                <td colspan="2"><button>19 to 36</button> <p></p> </td>
+                                <td colspan="2"><button class="green">1 to 18</button> <p></p> </td>
+                                <td colspan="2"><button class="green">Even</button> <p></p> </td>
+                                <td colspan="2"><button class="red">Red</button> <p></p> </td>
+                                <td colspan="2"><button class="black">Black</button> <p></p> </td>
+                                <td colspan="2"><button class="green">Odd</button> <p></p> </td>
+                                <td colspan="2"><button class="green">19 to 36</button> <p></p> </td>
                             </tr>
                         </table>
                     </div>

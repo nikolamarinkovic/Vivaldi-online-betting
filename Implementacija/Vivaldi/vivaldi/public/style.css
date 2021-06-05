@@ -516,3 +516,26 @@ td input{
 .kvote td{
     width: 100px;
 }
+
+#ruletBoja td {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+    color : white;
+}
+
+.black {
+    background-color: black;
+    color : white;
+}
+
+.green {
+    background-color: darkgreen;
+    color : white;
+}
+
+#ruletBoja button:hover{
+    filter: brightness(200%);
+}

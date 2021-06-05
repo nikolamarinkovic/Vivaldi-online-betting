@@ -26,3 +26,4 @@
             </ul>
 
         </div>
+        <?php include("meniModerator.php");?>

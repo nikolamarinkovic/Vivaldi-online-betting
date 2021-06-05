@@ -31,7 +31,7 @@ class Korisnik extends BaseController{
     protected function prikaz($page, $data) {
         $data['controller']='Korisnik';
         echo view('sablon/header_korisnik');
-        echo view ("stranice/meniKorisnik");
+        //echo view ("stranice/meniKorisnik");
         echo view ("stranice/$page", $data);
         echo view('sablon/footer');
     }

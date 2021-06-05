@@ -23,7 +23,7 @@ class Administrator extends BaseController {
     protected function prikaz($page, $data) {
         $data['controller']='Administrator';
         echo view('sablon/header_administrator');
-        echo view ("stranice/meniAdministrator");
+        //echo view ("stranice/meniAdministrator");
         echo view ("stranice/$page",$data);
         echo view('sablon/footer');
     }

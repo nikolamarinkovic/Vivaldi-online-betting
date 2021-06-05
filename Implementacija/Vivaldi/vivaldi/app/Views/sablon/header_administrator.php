@@ -26,3 +26,5 @@
             </ul>
 
         </div>
+        
+        <?php include("meniAdministrator.php");?>

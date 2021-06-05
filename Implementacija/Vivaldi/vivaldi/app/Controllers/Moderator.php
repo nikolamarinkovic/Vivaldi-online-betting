@@ -28,7 +28,7 @@ class Moderator extends BaseController{
     protected function prikaz($page, $data) {
         $data['controller']='Moderator';
         echo view('sablon/header_moderator');
-        echo view ("stranice/meniModerator");
+       //echo view ("stranice/meniModerator");
         echo view ("stranice/$page", $data);
         echo view('sablon/footer');
     }

@@ -22,7 +22,7 @@ class Gost extends BaseController{
     protected function prikaz($page, $data) {
         $data['controller']='Gost';
         echo view('sablon/header_gost');
-        echo view ("stranice/meniGost");
+        //echo view ("stranice/meniGost");
         echo view ("stranice/$page",$data);
         echo view('sablon/footer');
     }

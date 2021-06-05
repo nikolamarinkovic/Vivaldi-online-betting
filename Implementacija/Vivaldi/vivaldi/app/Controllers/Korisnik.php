@@ -465,7 +465,7 @@ class Korisnik extends BaseController{
         $ulozeni_tokeni = intval($niz[6]);
         
         $km = new KorisnikModel();
-        $korIme =$this->session->get('korisnik')->KorisnickoIme;
+        $korIme = $this->session->get('korisnik')->KorisnickoIme;
         $Korisnik = $km
                     ->where('KorisnickoIme', $korIme)
                     ->first();
@@ -525,6 +525,8 @@ class Korisnik extends BaseController{
   
         }
         //end trans
+        if(empty($izvuceni_brojevi))
+            $izvuceni_brojevi = '-1,';
         echo $izvuceni_brojevi . $Korisnik->Tokeni . ',';
     }
     

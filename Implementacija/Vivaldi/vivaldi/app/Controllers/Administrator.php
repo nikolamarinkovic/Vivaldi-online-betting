@@ -541,6 +541,8 @@ class Administrator extends BaseController {
     }
     
     public function submitRezultat(){
+        date_default_timezone_set('Europe/Belgrade');
+        $vremeTrenutno = strtotime(date("Y-m-d\TH:i"));
         
         $tiketiZaAzuriranje = [];
         
@@ -550,7 +552,7 @@ class Administrator extends BaseController {
         $tkm->db->transBegin();
         
         $um = new UtakmicaModel();        
-        $utakmice = $um->where('Rezultat',"0")->findAll();
+        $utakmice = $um->where('Rezultat',"0")->where('UNIX_TIMESTAMP(Vreme) < ', $vremeTrenutno - 60*90)->findAll();
         
         // pravi kod za logiku pocinje ovde
         
@@ -571,10 +573,10 @@ class Administrator extends BaseController {
                 //proveravamo dal se tekma i dalje igra
                 
                 $utakmica = $um->where('Rezultat',"0")->where('IdUtakmica',$nizUtakmica[$i])->first();
-                if($utakmica == null){
-                    $tkm->db->transRollback();
-                    return;
-                }
+//                if($utakmica == null){
+//                    $tkm->db->transRollback();
+//                    return;
+//                }
                 
                 $flag_izabrana_bar_jedna_utakmica = true;
                 
@@ -607,6 +609,7 @@ class Administrator extends BaseController {
         if($flag_izabrana_bar_jedna_utakmica == false){
             $tkm->db->transRollback();
             $errors['izbranaBarJednaUtakmica'] = "Nijedna utakmica nije izabrana";
+            $utakmice = $um->where('Rezultat',"0")->where('UNIX_TIMESTAMP(Vreme) < ', $vremeTrenutno - 60*90)->findAll();
             return $this->prikaz('upisRezultataAdmin',['errors'=>$errors, 'utakmice'=>$utakmice]);
         }
         $dobitak = -1;
@@ -659,8 +662,9 @@ class Administrator extends BaseController {
             
         }
         
-        $utakmice = $um->where('Rezultat',"0")->findAll();
-         $tkm->db->transCommit();
+        //$utakmice = $um->where('Rezultat',"0")->findAll();
+        $utakmice = $um->where('Rezultat',"0")->where('UNIX_TIMESTAMP(Vreme) < ', $vremeTrenutno - 60*90)->findAll();
+        $tkm->db->transCommit();
         return $this->prikaz('upisRezultataAdmin',['utakmice'=>$utakmice,"uspesno"=>"Rezultat uspesno upisan!"]);
         
     }   

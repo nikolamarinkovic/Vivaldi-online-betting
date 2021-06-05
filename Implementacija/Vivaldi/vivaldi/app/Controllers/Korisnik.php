@@ -829,19 +829,21 @@ class Korisnik extends BaseController{
             return $this->prikaz('profilKorisnik',['errors'=>$errors, 'korisnik'=>$korisnik]);
         }
         $greska=0;
-        if($nova!=$potvrda){
-            $errors['poklapanje'] = 'Lozinke se ne poklapaju';
-            $greska++;
-        }
+        
         if($stara!=$korisnik->Lozinka){
             $errors['losaLozinka'] = 'Stara lozinka je netacna';
             $greska++;
         }
+        if($nova!=$potvrda){
+            $errors['poklapanje'] = 'Lozinke se ne poklapaju';
+            $greska++;
+        }
+        else if($stara==$nova){
+            $errors['ista'] = 'Nova lozinka je ista kao i stara';
+            $greska++;
+        }
         if($greska)
             return $this->prikaz('profilKorisnik',['errors'=>$errors, 'korisnik'=>$korisnik]);
-        var_dump($stara);
-            var_dump($nova);
-            var_dump($potvrda);
         $lozinka['Lozinka']=$nova;
         $km->update($korisnik->IdKorisnik, $lozinka);
         $this->prikaz('profilKorisnik',['korisnik'=>$korisnik,'uspesno'=>1]);

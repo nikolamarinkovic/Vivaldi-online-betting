@@ -110,12 +110,17 @@ class Moderator extends BaseController{
             return $this->prikaz('profilModerator',['errors'=>$errors, 'zaposlen'=>$zaposlen]);
         }
         $greska=0;
+        
+        if($stara!=$zaposlen->Lozinka){
+            $errors['losaLozinka'] = 'Stara lozinka je netacna';
+            $greska++;
+        }
         if($nova!=$potvrda){
             $errors['poklapanje'] = 'Lozinke se ne poklapaju';
             $greska++;
         }
-        if($stara!=$zaposlen->Lozinka){
-            $errors['losaLozinka'] = 'Stara lozinka je netacna';
+        else if($stara==$nova){
+            $errors['ista'] = 'Nova lozinka je ista kao i stara';
             $greska++;
         }
         if($greska)
@@ -209,14 +214,26 @@ class Moderator extends BaseController{
     }
 
     public function azurirajKvotu(){
-        $um=new UtakmicaModel();
-        $utakmice = $um->where("Rezultat","0")->findAll();
-        $kele=1;
-        foreach ($utakmice as $utakmica){
-        $kvota1=$this->request->getVar('jedan'.$kele); 
-        $kvotaX=$this->request->getVar('iks'.$kele);
-        $kvota2=$this->request->getVar('dva'.$kele);        
-        $kvote=[];
+        $ukupno = $this->request->getVar('ukupno');
+        $um = new UtakmicaModel();
+        $um->db->transBegin();
+        
+        for($i = 0; $i < $ukupno; $i++){
+            $utakmica = $um->where('IdUtakmica',$this->request->getVar('utk'.($i + 1)))->first();
+            $kvota1=$this->request->getVar('jedan'.($i + 1)); 
+            $kvotaX=$this->request->getVar('iks'.($i + 1));
+            $kvota2=$this->request->getVar('dva'.($i + 1));        
+            $kvote=[];
+            
+            if(!$this->validate([
+                    'jedan'.($i + 1)=>'required|numeric|greater_than[1.00]', 
+                    'iks'.($i + 1)=>'required|numeric|greater_than[1.00]',
+                    'dva'.($i + 1)=>'required|numeric|greater_than[1.00]'
+                    ])){
+            $um->db->transRollback();
+            $errors['neispravna_kvota'] = "Unesite ispravne kvote";
+            return $this->prikaz('kvoteModerator',['errors'=>$errors]);
+        }
         
             if(!empty($kvota1)&&($kvota1!=$utakmica->Kvota1)){
                 $kvote['Kvota1']=$kvota1;                
@@ -230,8 +247,8 @@ class Moderator extends BaseController{
             if(!empty($kvote)){
                 $um->update($utakmica->IdUtakmica, $kvote);
             }
-        $kele++;    
-        }   
+        }
+        $um->db->transCommit();
         $this->prikaz('kvoteModerator',["uspesno"=>"Kvote uspesno promenjene!"]);
     }
     

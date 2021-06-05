@@ -5,7 +5,7 @@
                 <p>Korisnicko ime: <var><?php echo $zaposlen->KorisnickoIme?></var></p>
                 <p>Ime: <var><?php echo $zaposlen->Ime?></var></p>
                 <p>Prezime: <var><?php echo $zaposlen->Prezime?></var></p>
-                <form action="<?php echo base_url("Moderator/promenaLozinke")?>">
+                <form action="<?php echo base_url("Moderator/promenaLozinke")?>" method="POST">
                     <p class="unos"> Promena lozinke: </p><br>
                     <input type="password" placeholder="Stara lozinka" name="stara"><br>
                     <?php $greska=0; if(!empty($errors['stara'])){ ?> 
@@ -33,6 +33,11 @@
                     <?php if((!empty($errors['poklapanje']))&&($greska2==0)){ ?> 
                        <p style="text-align: left; color: red; margin-top: 0;">
                             <?php echo $errors['poklapanje']; ?>                     
+                       </p>
+                    <?php } ?>
+                    <?php if((!empty($errors['ista']))&&($greska2==0)){ ?> 
+                       <p style="text-align: left; color: red; margin-top: 0;">
+                            <?php echo $errors['ista']; ?>                     
                        </p>
                     <?php } ?>
                     <input type="submit" style="margin-top: 5px; margin-left: 50px">

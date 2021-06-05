@@ -1,3 +1,4 @@
 SSU_SportskoKlađenje - obrisati 4.c
 SSU_Slot - obrisati 2.a
 SSU_Rulet - obrisati 4.a
+SSU_PromenaKvota - treba poprait skoro scenario, jer je scenario pomesan sa dodavanjem utakmice 4a i 4c treba da ostanu

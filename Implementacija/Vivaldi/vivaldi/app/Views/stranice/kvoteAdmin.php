@@ -15,6 +15,7 @@
                 <form action="<?php echo base_url("Administrator/azurirajKvotu")?>" method="POST">
                     <input type="submit">
                      <p style="color: green"><var> <?php if(!empty($uspesno)) echo $uspesno ?></var></p>
+                     <p style="color: red"><var> <?php if(!empty($errors['neispravna_kvota'])) echo $errors['neispravna_kvota'] ?></var></p>
                     <div class="azuriranje_kvota">
                     <table>
                         <tr>
@@ -30,7 +31,7 @@
             $kele=1;
             date_default_timezone_set('Europe/Belgrade');
             $vremeTrenutno = date("Y-m-d\TH:i");
-                    foreach($utakmice as $utakmica){  
+                    foreach($utakmice as $utakmica){
                         $vreme = $utakmica->Vreme; 
                         if(strtotime($vreme) + 60*90 < strtotime($vremeTrenutno))
                             continue;
@@ -43,7 +44,12 @@
                             ->where('IdTim', $utakmica->IdGost)
                             ->first();
                         echo "<tr>";
-                        echo"<td>".$domacin->Ime." : ".$gost->Ime. "</td>";
+                        echo"<td>"
+                                .$domacin->Ime
+                                ." : "
+                                .$gost->Ime
+                                ."<input type=\"hidden\" name=\"utk$kele\" value=\"$utakmica->IdUtakmica\" style=\"width: 50px;\" min=\"1\" step=\"0.1\">"
+                                . "</td>";
                         echo"<td style=\"width: 50px;\"><input type=\"number\" name=\"jedan$kele\" value=\"$utakmica->Kvota1\" style=\"width: 50px;\" min=\"1\" step=\"0.1\"></td>";
                         echo"<td style=\"width: 50px;\"><input type=\"number\" name=\"iks$kele\"value=\"$utakmica->KvotaX\" style=\"width: 50px;\" min=\"1\" step=\"0.1\"></td>";
                         echo"<td style=\"width: 50px;\"><input type=\"number\" name=\"dva$kele\"value=\"$utakmica->Kvota2\" style=\"width: 50px;\" min=\"1\" step=\"0.1\"></td>";
@@ -55,6 +61,10 @@
                 }                
                 ?>
                     </table>
+                    <?php 
+                        $kele--;
+                        echo "<input type=\"hidden\" name=\"ukupno\" value=\"$kele\" style=\"width: 50px;\" min=\"1\" step=\"0.1\">";    
+                    ?>
                     </div>
                 </form>
             </div>

@@ -3,7 +3,7 @@
 <div class="body">
             <h1 class="naslov">Lucky 6</h1>
             <hr>
-            <p>Pravila Lucky 6 i upustva za korisnika: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, blanditiis!</p>
+            <p>Pravila Lucky 6 i upustva za korisnika: Izaberite 6 brojeva i unesite uplatu za trenutno kolo pre isteka vremena.</p>
             
             <p style="text-align: center">Preostalo vreme: <var id="vreme">0</var> s</p>
             <div class="polja2">

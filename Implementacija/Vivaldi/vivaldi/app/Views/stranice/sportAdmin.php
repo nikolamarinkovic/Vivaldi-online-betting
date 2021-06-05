@@ -2,7 +2,7 @@
 <div class="body">
             <h1 class="naslov">Sportska kladjenja</h1>
             <hr>
-            <p>Pravila Sportskih kladjenja i upustva za korisnika: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, optio?</p>
+            <p>Pravila Sportskih kladjenja i upustva za korisnika: Sastavite tiket sa izabranim utakmicama i njihovim konacnim ishodima uz unetu uplatu.</p>
             <div class="sport_tiketi">
                 <div>
                     

@@ -25,12 +25,14 @@
                             <th>2</th>
                             <th>Datum vreme</th>
                         </tr>    
-                <?php if(!empty($utakmice)){        
+                <?php 
+                $kele=1;
+                if(!empty($utakmice)){        
                     $tm = new TimModel();        
-            $timovi = $tm->findAll();
-            $kele=1;
-            date_default_timezone_set('Europe/Belgrade');
-            $vremeTrenutno = date("Y-m-d\TH:i");
+                    $timovi = $tm->findAll();
+            
+                    date_default_timezone_set('Europe/Belgrade');
+                    $vremeTrenutno = date("Y-m-d\TH:i");
                     foreach($utakmice as $utakmica){
                         $vreme = $utakmica->Vreme; 
                         if(strtotime($vreme) + 60*90 < strtotime($vremeTrenutno))

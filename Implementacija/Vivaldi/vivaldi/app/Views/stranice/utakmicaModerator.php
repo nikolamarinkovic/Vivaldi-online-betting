@@ -27,7 +27,7 @@
                 
                 <select name="gost" id="gost" <?php if($timovi==null||count($timovi)<2){ ?>disabled=""<?php } ?>>
                     <?php foreach($timovi as $tim){ ?> 
-                       <option <?php if($rang=2){ ?>selected<?php } ?> value=<?php echo $tim->IdTim?>><?php echo $tim->Ime?></option>
+                       <option <?php if($rang==2){ ?>selected<?php } ?> value=<?php echo $tim->IdTim?>><?php echo $tim->Ime?></option>
                     <?php $rang++;} ?>                        
                     </select>
                 </div>  

@@ -52,8 +52,11 @@ class Gost extends BaseController{
             $errors['KorisnickoIme'] = 'Korisnicko ime ne postoji';
             return 0;// $this->prikaz('prijava',['errors'=>$errors]);
         }
-        if($korisnik->Lozinka != $this->request->getVar('password_login')){
-            
+        
+        $sifra = $this->request->getVar('password_login');
+        
+        
+        if(!password_verify($sifra, $korisnik->Lozinka)){
             return 2; //$this->prikaz('prijava',['errors'=>$errors]);
         }
         
@@ -70,11 +73,14 @@ class Gost extends BaseController{
         if($korisnik==null){
             return 0;
         }
-        if($korisnik->Lozinka != $this->request->getVar('password_login')){
+        
+        $sifra = $this->request->getVar('password_login');
+        if(!password_verify($sifra, $korisnik->Lozinka)){
+            //$this->session->set('korisnik', $korisnik);
             return 2;
         }
         
-        //$this->session->set('korisnik', $korisnik);
+        
         
         if($korisnik->Tip == 0){
             $this->session->set('moderator', $korisnik);
@@ -171,11 +177,12 @@ class Gost extends BaseController{
             return $this->prikaz('registracija',['errors'=>$errors]);
         }    
         
-        
+        $lozinka = $this->request->getVar('password_registration');
+        $hashLozinka = password_hash($lozinka, PASSWORD_DEFAULT);
                 
         $km = new KorisnikModel();
         $km->save([ 'KorisnickoIme' => $this->request->getVar('username_registration'),
-            'Lozinka'=> $this->request->getVar('password_registration'),
+            'Lozinka'=> $hashLozinka,
             'Ime' => $this->request->getVar('name_registration'),
             'Prezime' => $this->request->getVar('surname_registration'),
             'JMBG' => $this->request->getVar('id_registration'),

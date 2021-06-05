@@ -82,19 +82,19 @@ class Administrator extends BaseController {
         $potvrda=$this->request->getVar('potvrda');
         
         if(!$this->validate(['stara'=>'required', 
-                                'nova'=>'required',
-                                'potvrda'=>'required'])){
+                                'nova'=>'required|min_length[8]',
+                                'potvrda'=>'required|matches[nova]'])){
             if(!empty($this->validator->getErrors()['stara']))
-                $errors['stara'] = 'Unesite staru lozinku';
+                $errors['stara'] = 'Unesite staru lozinku.';
             if(!empty($this->validator->getErrors()['nova']))
-                $errors['nova'] = 'Unesite novu lozinku';
+                $errors['nova'] = 'Unesite novu lozinku duzine barem 8 karaktera.';
             if(!empty($this->validator->getErrors()['potvrda']))
-                $errors['potvrda'] = 'Potvrdite lozinku';        
-            return $this->prikaz('profilAdmin',['errors'=>$errors, 'zaposlen'=>$zaposlen]);
+                $errors['potvrda'] = 'Potvrdjena lozinka se ne poklapa.';        
+            return $this->prikaz('profilModerator',['errors'=>$errors, 'zaposlen'=>$zaposlen]);
         }
         $greska=0;
         
-        if($stara!=$zaposlen->Lozinka){
+        if(!password_verify($stara, $zaposlen->Lozinka)){
             $errors['losaLozinka'] = 'Stara lozinka je netacna';
             $greska++;
         }
@@ -108,7 +108,7 @@ class Administrator extends BaseController {
         }
         if($greska)
             return $this->prikaz('profilAdmin',['errors'=>$errors, 'zaposlen'=>$zaposlen]);
-        $lozinka['Lozinka']=$nova;
+        $lozinka['Lozinka']=password_hash($nova, PASSWORD_DEFAULT);
         $zm->update($zaposlen->IdZaposleni, $lozinka);
         $this->prikaz('profilAdmin',['zaposlen'=>$zaposlen,"uspesno"=>"Sifra uspesno promenjena!"]);
     }
@@ -201,7 +201,7 @@ class Administrator extends BaseController {
     public function dodavanjeZaposlenog() {
         $errors = [];
         if(!$this->validate(['username_registration'=>'required', 
-                                'password_registration'=>'required|min_length[13]',
+                                'password_registration'=>'required|min_length[8]',
                                 'passconfirm_registration'=>'required|matches[password_registration]',
                                 'name_registration'=>'required',
                                 'surname_registration'=>'required',
@@ -266,8 +266,11 @@ class Administrator extends BaseController {
         
         //proveriti da ne postoji isti jmbg i da je stariji od 18 god
         
+        $lozinka = $this->request->getVar('password_registration');
+        $hashLozinka = password_hash($lozinka, PASSWORD_DEFAULT);
+        
         $zm->save([ 'KorisnickoIme' => $this->request->getVar('username_registration'),
-            'Lozinka'=> $this->request->getVar('password_registration'),
+            'Lozinka'=> $hashLozinka,
             'Ime' => $this->request->getVar('name_registration'),
             'Prezime' => $this->request->getVar('surname_registration'),
             'JMBG' => $this->request->getVar('id_registration'),

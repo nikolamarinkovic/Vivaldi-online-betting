@@ -819,19 +819,20 @@ class Korisnik extends BaseController{
         $potvrda=$this->request->getVar('potvrda');
         
         if(!$this->validate(['stara'=>'required', 
-                                'nova'=>'required',
-                                'potvrda'=>'required'])){
+                                'nova'=>'required|min_length[8]',
+                                'potvrda'=>'required|matches[nova]'])){
             if(!empty($this->validator->getErrors()['stara']))
-                $errors['stara'] = 'Unesite staru lozinku';
+                $errors['stara'] = 'Unesite staru lozinku.';
             if(!empty($this->validator->getErrors()['nova']))
-                $errors['nova'] = 'Unesite novu lozinku';
+                $errors['nova'] = 'Unesite novu lozinku duzine barem 8 karaktera.';
             if(!empty($this->validator->getErrors()['potvrda']))
-                $errors['potvrda'] = 'Potvrdite lozinku';        
+                $errors['potvrda'] = 'Potvrdjena lozinka se ne poklapa.';        
             return $this->prikaz('profilKorisnik',['errors'=>$errors, 'korisnik'=>$korisnik]);
         }
         $greska=0;
         
-        if($stara!=$korisnik->Lozinka){
+        
+        if(!password_verify($stara, $korisnik->Lozinka)){
             $errors['losaLozinka'] = 'Stara lozinka je netacna';
             $greska++;
         }
@@ -845,7 +846,7 @@ class Korisnik extends BaseController{
         }
         if($greska)
             return $this->prikaz('profilKorisnik',['errors'=>$errors, 'korisnik'=>$korisnik]);
-        $lozinka['Lozinka']=$nova;
+        $lozinka['Lozinka']=password_hash($nova, PASSWORD_DEFAULT);;
         $km->update($korisnik->IdKorisnik, $lozinka);
         $this->prikaz('profilKorisnik',['korisnik'=>$korisnik,'uspesno'=>1]);
     }

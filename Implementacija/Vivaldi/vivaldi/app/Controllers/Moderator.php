@@ -99,19 +99,19 @@ class Moderator extends BaseController{
         $potvrda=$this->request->getVar('potvrda');
         
         if(!$this->validate(['stara'=>'required', 
-                                'nova'=>'required',
-                                'potvrda'=>'required'])){
+                                'nova'=>'required|min_length[8]',
+                                'potvrda'=>'required|matches[nova]'])){
             if(!empty($this->validator->getErrors()['stara']))
-                $errors['stara'] = 'Unesite staru lozinku';
+                $errors['stara'] = 'Unesite staru lozinku.';
             if(!empty($this->validator->getErrors()['nova']))
-                $errors['nova'] = 'Unesite novu lozinku';
+                $errors['nova'] = 'Unesite novu lozinku duzine barem 8 karaktera.';
             if(!empty($this->validator->getErrors()['potvrda']))
-                $errors['potvrda'] = 'Potvrdite lozinku';        
+                $errors['potvrda'] = 'Potvrdjena lozinka se ne poklapa.';        
             return $this->prikaz('profilModerator',['errors'=>$errors, 'zaposlen'=>$zaposlen]);
         }
         $greska=0;
         
-        if($stara!=$zaposlen->Lozinka){
+        if(!password_verify($stara, $zaposlen->Lozinka)){
             $errors['losaLozinka'] = 'Stara lozinka je netacna';
             $greska++;
         }
@@ -125,7 +125,7 @@ class Moderator extends BaseController{
         }
         if($greska)
             return $this->prikaz('profilModerator',['errors'=>$errors, 'zaposlen'=>$zaposlen]);
-        $lozinka['Lozinka']=$nova;
+        $lozinka['Lozinka']=password_hash($nova, PASSWORD_DEFAULT);
         $zm->update($zaposlen->IdZaposleni, $lozinka);
         $this->prikaz('profilModerator',['zaposlen'=>$zaposlen,"uspesno"=>"Sifra uspesno promenjena!"]);
     }

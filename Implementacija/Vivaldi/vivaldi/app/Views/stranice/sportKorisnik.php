@@ -2,7 +2,8 @@
 <div class="body">
             <h1 class="naslov">Sportska kladjenja</h1>
             <hr>
-            <p>Pravila Sportskih kladjenja i upustva za korisnika: Sastavite tiket sa izabranim utakmicama i njihovim konacnim ishodima uz unetu uplatu.</p>
+            <p style="text-align: center; margin-top: 0px;">Sastavite tiket sa izabranim utakmicama i njihovim konacnim ishodima uz unetu uplatu.</p>
+            <hr>
             <div class="sport_tiketi">
                 <div>
                     

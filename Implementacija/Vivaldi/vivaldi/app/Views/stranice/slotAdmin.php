@@ -3,7 +3,7 @@
 <div class="body">
             <h1 class="naslov">Slot masine</h1>
             <hr>
-            <p class = "pravila_slot">Pravila o Slot masinama i upustva za koriscenje: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, eveniet? </p>
+            <p class = "pravila_slot">Pravila o Slot masinama i upustva za koriscenje: Pritisnite polja i postavite zeljeni ulog, nakon toga pritisnite rucku i pokrenite slot. </p>
             <div class="slot">
                 <div class = "upper_slot_wrapper">
                     <div class = "slot_tokeni">

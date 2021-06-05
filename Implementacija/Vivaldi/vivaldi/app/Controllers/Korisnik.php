@@ -245,6 +245,7 @@ class Korisnik extends BaseController{
                     ->first();
         
         $num = rand(0,36);
+        $dobitak = -1;
         
         if($ulog > 0 && $ulog <= $Korisnik->Tokeni){
 
@@ -385,7 +386,7 @@ class Korisnik extends BaseController{
     
     public function slot(){
         $km = new KorisnikModel();
-        $korIme = $this->session->get('korisnik')->KorisnickoIme;
+        $korIme =$this->session->get('korisnik')->KorisnickoIme;
         $Korisnik = $km
                     ->where('KorisnickoIme', $korIme)
                     ->first();
@@ -468,7 +469,7 @@ class Korisnik extends BaseController{
         $Korisnik = $km
                     ->where('KorisnickoIme', $korIme)
                     ->first();
-        if($ulozeni_tokeni != 0 && $Korisnik->Tokeni > $ulozeni_tokeni){
+        if($ulozeni_tokeni != 0 && $Korisnik->Tokeni >= $ulozeni_tokeni){
             $Korisnik->Tokeni -= $ulozeni_tokeni;
             $dobitak = 0;
             $brojevi = [];

@@ -50,9 +50,11 @@ $(document).ready(function(){
             return
         vreme--;
         $("#vreme").text(vreme);
-        
+                
         ulozeno = parseInt($("#ulozeno_tokena").val());
-        if(vreme == 0 && betBalls.length == 6 && ulozeno != NaN && ulozeno > 0){
+        ukupno = parseInt($("#ukupno_tokena").text());
+        
+        if(vreme == 0 && betBalls.length == 6 && ulozeno != NaN && ulozeno > 0 && ukupno>=ulozeno){
             
             brojevi = ""
             for(i = 0; i < betBalls.length; i++){

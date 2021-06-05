@@ -7,7 +7,7 @@
             
             <p style="text-align: center">Preostalo vreme: <var id="vreme">50</var> s</p>
             <div class="polja2">
-                <p>Ukupni tokeni:<var id="ukupno_tokena"> <?php if(!empty($Tokeni)) echo $Tokeni?> </var> </p>
+                <p>Ukupni tokeni:<var id="ukupno_tokena"> <?php if(!empty($Tokeni)) echo $Tokeni; else echo '0';?> </var> </p>
             </div>
             <?php include_once 'lucky6.php';?>
             

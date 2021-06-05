@@ -201,7 +201,7 @@ class Administrator extends BaseController {
     public function dodavanjeZaposlenog() {
         $errors = [];
         if(!$this->validate(['username_registration'=>'required', 
-                                'password_registration'=>'required',
+                                'password_registration'=>'required|min_length[13]',
                                 'passconfirm_registration'=>'required|matches[password_registration]',
                                 'name_registration'=>'required',
                                 'surname_registration'=>'required',
@@ -210,7 +210,7 @@ class Administrator extends BaseController {
             if(!empty($this->validator->getErrors()['username_registration']))
                 $errors['KorisnickoIme'] = 'Unesite korisnicko ime';
             if(!empty($this->validator->getErrors()['password_registration']))
-                $errors['Lozinka'] = 'Unesite lozinku';
+                $errors['Lozinka'] = 'Unesite lozinku od barem 8 karaktera';
             if(!empty($this->validator->getErrors()['passconfirm_registration']))
                 $errors['PotvrdaLozinke'] = 'Lozinke se ne poklapaju';
             if(!empty($this->validator->getErrors()['name_registration']))

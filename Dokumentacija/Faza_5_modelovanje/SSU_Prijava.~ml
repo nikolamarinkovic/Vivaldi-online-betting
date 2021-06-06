@@ -311,7 +311,7 @@
 <XPD:REF name="Model">VuMesXHDx0GStpy3yyBavwAA</XPD:REF>
 <XPD:REF name="ContainerView">hBmdjPBvtEy3NA350KXBGwAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="LabelView" guid="ZXFTNnP+m0yyKZiSwY4JLwAA">
-<XPD:ATTR name="Text" type="string">CombinedFragment1</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Neuspesna prijava - nepostojec korisnik</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="FrameTypeLabel" type="LabelView" guid="ii286Qye8Uu79spkNgQbegAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
@@ -1025,16 +1025,16 @@
 <XPD:REF name="Head">bVYulJD3KEChPlOrziyNzwAA</XPD:REF>
 <XPD:REF name="Tail">7h6SghMlYUO8QiS2+zd71wAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="qFWpN79WjkyijaiQbY39ggAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">0,655695997988928</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">16,4012194668567</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">12</XPD:ATTR>
 <XPD:REF name="Model">+UvEH7Qu7Ueu8nytAEF0KQAA</XPD:REF>
 <XPD:REF name="HostEdge">XAX/4nY260Cx/HbbHz7+FAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="4Q9I6igEyUeF1ibi7NN3YAAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">&lt;&lt;create&gt;&gt;</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">2,8776283444478</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">38,3275357934736</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">&lt;&lt;redirect&gt;&gt;</XPD:ATTR>
 <XPD:REF name="Model">+UvEH7Qu7Ueu8nytAEF0KQAA</XPD:REF>
 <XPD:REF name="HostEdge">XAX/4nY260Cx/HbbHz7+FAAA</XPD:REF>
 </XPD:OBJ>
@@ -1251,9 +1251,10 @@
 <XPD:REF name="Views[3]">nMUoHIoeXEupvPrHDj0I2gAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[11]" type="UMLStimulus" guid="+UvEH7Qu7Ueu8nytAEF0KQAA">
+<XPD:ATTR name="StereotypeName" type="string">redirect</XPD:ATTR>
 <XPD:REF name="Sender">xsSGFltuYU+TOUReaj4u9wAA</XPD:REF>
 <XPD:REF name="Receiver">wC94xEOBnUGAoQ7RgsJ+VAAA</XPD:REF>
-<XPD:OBJ name="Action" type="UMLCreateAction" guid="dmHi2w2ufEGLFs66CJkuRQAA">
+<XPD:OBJ name="Action" type="UMLCallAction" guid="isEBc3vaQECnB/gknIKmegAA">
 <XPD:REF name="Stimulus">+UvEH7Qu7Ueu8nytAEF0KQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:REF name="InteractionInstanceSet">4ZIZei5Pb0idHblBIArmgAAA</XPD:REF>
@@ -1307,7 +1308,7 @@
 <XPD:REF name="Views[0]">hBmdjPBvtEy3NA350KXBGwAA</XPD:REF>
 <XPD:ATTR name="#Fragments" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Fragments[0]" type="UMLCombinedFragment" guid="VuMesXHDx0GStpy3yyBavwAA">
-<XPD:ATTR name="Name" type="string">CombinedFragment1</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Neuspesna prijava - nepostojec korisnik</XPD:ATTR>
 <XPD:ATTR name="InteractionOperator" type="UMLInteractionOperatorKind">iokAlt</XPD:ATTR>
 <XPD:REF name="EnclosingOperand">1/wUDKguLkmKzyaG3my/lAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>

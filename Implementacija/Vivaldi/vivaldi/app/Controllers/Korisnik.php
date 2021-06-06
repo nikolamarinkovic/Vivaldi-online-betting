@@ -808,8 +808,15 @@ class Korisnik extends BaseController{
                 $brojac++;
             }
         }
+        $errors = [];
+        if($this->request->getVar("prviPut")==null && 
+                count($ruletNiz) == 0 &&
+                count($slotNiz) == 0 &&
+                count($luckyNiz) == 0 &&
+                count($sportNiz) == 0)
+            $errors['nepostojeci'] = "Ne postoje podaci za odabrane filtere";
         
-        $this->prikaz('profilKorisnik',['korisnik'=>$korisnik,'ruletNiz'=>$ruletNiz,'slotNiz'=>$slotNiz,'luckyNiz'=>$luckyNiz,'sportNiz'=>$sportNiz]);
+        $this->prikaz('profilKorisnik',['korisnik'=>$korisnik,'ruletNiz'=>$ruletNiz,'slotNiz'=>$slotNiz,'luckyNiz'=>$luckyNiz,'sportNiz'=>$sportNiz,'filter'=>$errors]);
     }
     
     public function promenaLozinke(){

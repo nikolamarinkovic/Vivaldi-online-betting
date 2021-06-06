@@ -84,7 +84,7 @@
                     <?php } ?>
                 </form>
                 <p>Filter:</p>
-                <form class="filter" action="<?php echo base_url("Korisnik/istorijaSubmit")?>" method="GET" style="color: white; font-family: helvetica;">
+                <form class="filter" action="<?php echo base_url("Korisnik/istorijaSubmit?prviPut=1")?>" method="GET" style="color: white; font-family: helvetica;">
                     <input type="checkbox" name="Rulet" value="1" id="Rulet">
                     <label for="Rulet">Rulet</label><br>
                     <input type="checkbox" name="Slot" value="1" id="Slot">
@@ -94,6 +94,10 @@
                     <input type="checkbox" name="Sport" value="1" id="Sport">
                     <label for="Sport">Sport</label><br>
                     <input type="submit" style="margin-top: 10px; margin-left: 10px;">
+                    <p style="color:red">
+                       <?php if(!empty($filter)) echo $filter['nepostojeci'];?> 
+                    </p>
+                        
                 </form>
                 <table>
                     <tr>

@@ -7,3 +7,4 @@ SSU prodaja i kupovina tokena - mozda ukloniti altrenativu da je banka odbila tr
 
 //NOVE ISPRAVKE:
 rulet:dodati korak 5 ako je broj tokena 0
+uvid u istoriju kladjenja: preduslov za admina: vec je kliknuo na link korisnika

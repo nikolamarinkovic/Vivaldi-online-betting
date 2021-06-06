@@ -1020,21 +1020,21 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">519,884;319,884</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">519,884;325,884</XPD:ATTR>
 <XPD:REF name="Model">+UvEH7Qu7Ueu8nytAEF0KQAA</XPD:REF>
 <XPD:REF name="Head">bVYulJD3KEChPlOrziyNzwAA</XPD:REF>
 <XPD:REF name="Tail">7h6SghMlYUO8QiS2+zd71wAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="qFWpN79WjkyijaiQbY39ggAA">
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">12 : Greska kredencijali</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">0,655695997988928</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">16,4012194668567</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">12</XPD:ATTR>
 <XPD:REF name="Model">+UvEH7Qu7Ueu8nytAEF0KQAA</XPD:REF>
 <XPD:REF name="HostEdge">XAX/4nY260Cx/HbbHz7+FAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="4Q9I6igEyUeF1ibi7NN3YAAA">
-<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">2,8776283444478</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">38,3275357934736</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">&lt;&lt;redirect&gt;&gt;</XPD:ATTR>
 <XPD:REF name="Model">+UvEH7Qu7Ueu8nytAEF0KQAA</XPD:REF>
 <XPD:REF name="HostEdge">XAX/4nY260Cx/HbbHz7+FAAA</XPD:REF>
 </XPD:OBJ>
@@ -1046,18 +1046,17 @@
 <XPD:REF name="HostEdge">XAX/4nY260Cx/HbbHz7+FAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="HDpTTzrLk0OmkucgzXsMMAAA">
-<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">319</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">312</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">884</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">49</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[23]" type="UMLSeqStimulusView" guid="vbzvLOrTk02tGYkReY80cAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">319,920;159,920</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">312,920;159,920</XPD:ATTR>
 <XPD:REF name="Model">Oi+dPu1kZ0Cv8oA52eWbOgAA</XPD:REF>
 <XPD:REF name="Head">oF2wyf9xdU+pzO1ZbEjeCAAA</XPD:REF>
 <XPD:REF name="Tail">bVYulJD3KEChPlOrziyNzwAA</XPD:REF>
@@ -1252,10 +1251,10 @@
 <XPD:REF name="Views[3]">nMUoHIoeXEupvPrHDj0I2gAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[11]" type="UMLStimulus" guid="+UvEH7Qu7Ueu8nytAEF0KQAA">
-<XPD:ATTR name="Name" type="string">Greska kredencijali</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">redirect</XPD:ATTR>
 <XPD:REF name="Sender">xsSGFltuYU+TOUReaj4u9wAA</XPD:REF>
 <XPD:REF name="Receiver">wC94xEOBnUGAoQ7RgsJ+VAAA</XPD:REF>
-<XPD:OBJ name="Action" type="UMLReturnAction" guid="JtdacGQTHU6V+8EV0CuP5QAA">
+<XPD:OBJ name="Action" type="UMLCallAction" guid="isEBc3vaQECnB/gknIKmegAA">
 <XPD:REF name="Stimulus">+UvEH7Qu7Ueu8nytAEF0KQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:REF name="InteractionInstanceSet">4ZIZei5Pb0idHblBIArmgAAA</XPD:REF>

@@ -430,7 +430,7 @@
 <XPD:ATTR name="Left" type="integer">424</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">200</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">309</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">457</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[7]" type="UMLSeqStimulusView" guid="1e9kyjeCwE2EzG5P8xh/VQAA">
@@ -466,7 +466,7 @@
 <XPD:ATTR name="Left" type="integer">632</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">229</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">212</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">416</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[8]" type="UMLSeqStimulusView" guid="p7F3FJi+cU+R1gX3N9kgqQAA">
@@ -589,7 +589,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="MHLwkz31SUyRCZvah3V+QgAA">
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">6 : update()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">6 : set()</XPD:ATTR>
 <XPD:REF name="Model">EMLRa/7LJk6lCpq31xpzNgAA</XPD:REF>
 <XPD:REF name="HostEdge">Q2VB/n0XcEmvZF9ejEMnLgAA</XPD:REF>
 </XPD:OBJ>
@@ -728,7 +728,7 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">639,560;437,560</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">632,560;444,560</XPD:ATTR>
 <XPD:REF name="Model">CqV9fBi7s0+zIJnScRXLOgAA</XPD:REF>
 <XPD:REF name="Head">4PC3KcRunUu8+m7jXkRk9gAA</XPD:REF>
 <XPD:REF name="Tail">qa12Po6wJE+IMc7vYlMgQAAA</XPD:REF>
@@ -754,7 +754,7 @@
 <XPD:REF name="HostEdge">LWyi8h6t8kKnU2XMJEvzBwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="RUBcQNXWu0qxwoXVembPMwAA">
-<XPD:ATTR name="Left" type="integer">424</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">431</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">560</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
@@ -764,7 +764,7 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">431,616;222,616</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">424,616;222,616</XPD:ATTR>
 <XPD:REF name="Model">yJOXZL4iXEixu/7T4bA/fAAA</XPD:REF>
 <XPD:REF name="Head">eake8Tjuq0qTusfChIDKuAAA</XPD:REF>
 <XPD:REF name="Tail">4PC3KcRunUu8+m7jXkRk9gAA</XPD:REF>
@@ -872,7 +872,7 @@
 <XPD:REF name="Views[3]">UxbQubKBTUytmFHbUj3/twAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[5]" type="UMLStimulus" guid="EMLRa/7LJk6lCpq31xpzNgAA">
-<XPD:ATTR name="Name" type="string">update</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">set</XPD:ATTR>
 <XPD:ATTR name="Arguments" type="string">idKorisnik, Tokeni</XPD:ATTR>
 <XPD:REF name="Sender">swKY7oQmHkqP3KeslO0gfwAA</XPD:REF>
 <XPD:REF name="Receiver">59jjVlxWbEKaQL3w2u09VwAA</XPD:REF>

@@ -456,8 +456,8 @@
 <XPD:REF name="Participant">t5d8Ex5ck02kZFx8gm0pAQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">txw7j5z3YkK3jN9GUy++GgAA</XPD:REF>
-<XPD:REF name="Views[1]">9SYVRZUJ9UuoT0IF0Q8d3AAA</XPD:REF>
-<XPD:REF name="Views[2]">qbWJchlqFkevbEPOdy9VSgAA</XPD:REF>
+<XPD:REF name="Views[1]">qbWJchlqFkevbEPOdy9VSgAA</XPD:REF>
+<XPD:REF name="Views[2]">9SYVRZUJ9UuoT0IF0Q8d3AAA</XPD:REF>
 <XPD:REF name="Views[3]">u6+apq+pkUap5SH7vf688AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="0whYoMI4YUG7v9YzXBkrkwAA">
@@ -465,8 +465,8 @@
 <XPD:REF name="Participant">Yx/bRoRHQE6tDR+Kl5OSZwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">Wisj0w6MGk2i4WsUkfLmFAAA</XPD:REF>
-<XPD:REF name="Views[1]">1JC+l8JBWEGJ0k5sKmdRYwAA</XPD:REF>
-<XPD:REF name="Views[2]">D+sCHNG0UU28DKNM0sJhIgAA</XPD:REF>
+<XPD:REF name="Views[1]">D+sCHNG0UU28DKNM0sJhIgAA</XPD:REF>
+<XPD:REF name="Views[2]">1JC+l8JBWEGJ0k5sKmdRYwAA</XPD:REF>
 <XPD:REF name="Views[3]">6bVg/XT1lkWJ2rW9i9KLTAAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -483,8 +483,8 @@
 <XPD:REF name="Participant">VKF1rgMwgESt+NXy8m7uYwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">HqL8giuvXkGyWJbdYug5qgAA</XPD:REF>
-<XPD:REF name="Views[1]">G3p1isUkMEWV7AelixEl+gAA</XPD:REF>
-<XPD:REF name="Views[2]">Cp5AdtYM7keGys8AM/IATgAA</XPD:REF>
+<XPD:REF name="Views[1]">Cp5AdtYM7keGys8AM/IATgAA</XPD:REF>
+<XPD:REF name="Views[2]">G3p1isUkMEWV7AelixEl+gAA</XPD:REF>
 <XPD:REF name="Views[3]">rxtAp1XD0kag6H2Leqc9SAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="vUMurMKm0kSnR3ZYUg3whQAA">
@@ -492,8 +492,8 @@
 <XPD:REF name="Participant">Yx/bRoRHQE6tDR+Kl5OSZwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">CgamAP+3h02JbD8nkhupqgAA</XPD:REF>
-<XPD:REF name="Views[1]">1OrRlqhm/UCtJ4kG3BjvjAAA</XPD:REF>
-<XPD:REF name="Views[2]">GrH8NJCzt0Wr6a6csaFRuAAA</XPD:REF>
+<XPD:REF name="Views[1]">GrH8NJCzt0Wr6a6csaFRuAAA</XPD:REF>
+<XPD:REF name="Views[2]">1OrRlqhm/UCtJ4kG3BjvjAAA</XPD:REF>
 <XPD:REF name="Views[3]">zZWi6dcqA0KGE0J9pZE5XgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -510,8 +510,8 @@
 <XPD:REF name="Participant">WYjSihHo90223xBYxYdNVAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">FFxcsKiYYUycrKJIPQwlqQAA</XPD:REF>
-<XPD:REF name="Views[1]">tlkeds80dUugVPPfJYVzdwAA</XPD:REF>
-<XPD:REF name="Views[2]">czoxdHZm+ECL24PaWHHS9gAA</XPD:REF>
+<XPD:REF name="Views[1]">czoxdHZm+ECL24PaWHHS9gAA</XPD:REF>
+<XPD:REF name="Views[2]">tlkeds80dUugVPPfJYVzdwAA</XPD:REF>
 <XPD:REF name="Views[3]">yGyauiCmNkyF65mCzJvUZwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="AYkd3/iMjUSWfz2uShng2AAA">
@@ -519,8 +519,8 @@
 <XPD:REF name="Participant">Yx/bRoRHQE6tDR+Kl5OSZwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">rR/L4CL0fU+y59eIJEC87QAA</XPD:REF>
-<XPD:REF name="Views[1]">PEyui+Nnvk+UWQIS29CoVQAA</XPD:REF>
-<XPD:REF name="Views[2]">6BhYWFDwkU2OMZiMWwVzeQAA</XPD:REF>
+<XPD:REF name="Views[1]">6BhYWFDwkU2OMZiMWwVzeQAA</XPD:REF>
+<XPD:REF name="Views[2]">PEyui+Nnvk+UWQIS29CoVQAA</XPD:REF>
 <XPD:REF name="Views[3]">2i18AwZkW0iCiI2OdvA0AwAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -599,7 +599,7 @@
 <XPD:REF name="Model">IzkE5ZkbZE2ZiTkykKtXkAAA</XPD:REF>
 <XPD:REF name="ContainerView">KzfNS+hMjESYOXk9zVxQpAAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="ppxCidyHeUmARcSTzqSifgAA">
-<XPD:ATTR name="Text" type="string">[Nova Lozinka != Potrvda Nove Lozinke]</XPD:ATTR>
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -1142,7 +1142,6 @@
 <XPD:ATTR name="#Operands" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Operands[0]" type="UMLInteractionOperand" guid="IzkE5ZkbZE2ZiTkykKtXkAAA">
 <XPD:ATTR name="Name" type="string">InteractionOperand1</XPD:ATTR>
-<XPD:ATTR name="Guard" type="string">Nova Lozinka != Potrvda Nove Lozinke</XPD:ATTR>
 <XPD:REF name="CombinedFragment">xEmlW4V+nUKTPhl7dvdrmgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
 <XPD:REF name="Views[0]">HJ/T+AzL9ki3/oLpONWtswAA</XPD:REF>

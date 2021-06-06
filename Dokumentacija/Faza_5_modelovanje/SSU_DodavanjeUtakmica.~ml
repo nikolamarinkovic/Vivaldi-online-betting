@@ -391,7 +391,7 @@
 <XPD:REF name="DiagramOwner">gS1Di4j88kOxE0pX1p85uwAA</XPD:REF>
 <XPD:OBJ name="DiagramView" type="UMLSequenceDiagramView" guid="yXgARIUhsE+ERcpmMVOvawAA">
 <XPD:REF name="Diagram">Tww2lxmBVU6QQiECx811RQAA</XPD:REF>
-<XPD:ATTR name="#OwnedViews" type="integer">16</XPD:ATTR>
+<XPD:ATTR name="#OwnedViews" type="integer">15</XPD:ATTR>
 <XPD:OBJ name="OwnedViews[0]" type="UMLCombinedFragmentView" guid="TTXWCNpYYkqAAX+cnZP88AAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
@@ -740,14 +740,14 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="DlJs9dRhYkOYY9IoikQhzwAA">
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">6</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">6 : redirect()</XPD:ATTR>
 <XPD:REF name="Model">MKDHhomZV0SbRZInbcNBKAAA</XPD:REF>
 <XPD:REF name="HostEdge">06ox+XgvsUKodnBVHRgLkQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="zbv3pCYuXE+WG8n6OzUYoAAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">&lt;&lt;redirect&gt;&gt;</XPD:ATTR>
 <XPD:REF name="Model">MKDHhomZV0SbRZInbcNBKAAA</XPD:REF>
 <XPD:REF name="HostEdge">06ox+XgvsUKodnBVHRgLkQAA</XPD:REF>
 </XPD:OBJ>
@@ -775,62 +775,25 @@
 <XPD:ATTR name="Text" type="string">Dijagram interakcije administratora je analogan
 </XPD:ATTR>
 </XPD:OBJ>
-<XPD:OBJ name="OwnedViews[13]" type="UMLSeqStimulusView" guid="o6skc4xYwUCuW9LWKd0fQgAA">
+<XPD:OBJ name="OwnedViews[13]" type="UMLSeqStimulusView" guid="iufP4u6h90aiMKVReJzeNwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">395,420;213,420</XPD:ATTR>
-<XPD:REF name="Model">2gY9gtm/C0CxX/RgijlenQAA</XPD:REF>
-<XPD:REF name="Head">CidzLCtchUi1/ZGhSmvbzQAA</XPD:REF>
-<XPD:REF name="Tail">E5JmRqlCBUqnJREpsMKK5gAA</XPD:REF>
-<XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="+7esrPtjWECCHoMOll7zJwAA">
-<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">7 : Utakmica uspesno dodata!</XPD:ATTR>
-<XPD:REF name="Model">2gY9gtm/C0CxX/RgijlenQAA</XPD:REF>
-<XPD:REF name="HostEdge">o6skc4xYwUCuW9LWKd0fQgAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="1cWdwWTiP0qhKxT6AwGe1QAA">
-<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
-<XPD:REF name="Model">2gY9gtm/C0CxX/RgijlenQAA</XPD:REF>
-<XPD:REF name="HostEdge">o6skc4xYwUCuW9LWKd0fQgAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="edwvqGwgW02qTZz4Hz2ZYAAA">
-<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Alpha" type="real">-1.5707963267949</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:REF name="Model">2gY9gtm/C0CxX/RgijlenQAA</XPD:REF>
-<XPD:REF name="HostEdge">o6skc4xYwUCuW9LWKd0fQgAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Activation" type="UMLActivationView" guid="YlIoaKp8IkiWqEvNZ+5umwAA">
-<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">213</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">420</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
-</XPD:OBJ>
-</XPD:OBJ>
-<XPD:OBJ name="OwnedViews[14]" type="UMLSeqStimulusView" guid="iufP4u6h90aiMKVReJzeNwAA">
-<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
-<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">653,610;401,610</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">653,624;395,624</XPD:ATTR>
 <XPD:REF name="Model">VYylVsE8XkGtz0n7kMnMdAAA</XPD:REF>
 <XPD:REF name="Head">E5JmRqlCBUqnJREpsMKK5gAA</XPD:REF>
 <XPD:REF name="Tail">Q+2Fn2jkP0uN7LiyoKR7mgAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="pRwaW9+l8UeszybJ71VFrQAA">
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">8</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">7 : Vreme utakmice nevalidno!</XPD:ATTR>
 <XPD:REF name="Model">VYylVsE8XkGtz0n7kMnMdAAA</XPD:REF>
 <XPD:REF name="HostEdge">iufP4u6h90aiMKVReJzeNwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="4eWY3toh+0SzyVaIRUe/xgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">&lt;&lt;redirect&gt;&gt;</XPD:ATTR>
 <XPD:REF name="Model">VYylVsE8XkGtz0n7kMnMdAAA</XPD:REF>
 <XPD:REF name="HostEdge">iufP4u6h90aiMKVReJzeNwAA</XPD:REF>
 </XPD:OBJ>
@@ -842,24 +805,25 @@
 <XPD:REF name="HostEdge">iufP4u6h90aiMKVReJzeNwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="LL6+9dglHEGes/7lsYE+CgAA">
-<XPD:ATTR name="Left" type="integer">388</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">610</XPD:ATTR>
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">395</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">624</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:OBJ name="OwnedViews[15]" type="UMLSeqStimulusView" guid="aNhJHfHoYEG+ObIeMdT/QQAA">
+<XPD:OBJ name="OwnedViews[14]" type="UMLSeqStimulusView" guid="aNhJHfHoYEG+ObIeMdT/QQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">388,632;213,632</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">395,632;213,632</XPD:ATTR>
 <XPD:REF name="Model">TQVkMraHGk6mz+mfuUokMwAA</XPD:REF>
 <XPD:REF name="Head">CidzLCtchUi1/ZGhSmvbzQAA</XPD:REF>
 <XPD:REF name="Tail">E5JmRqlCBUqnJREpsMKK5gAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="HeEI96qyikKXPOWph2y9ygAA">
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">9 : Vreme utakmice nevalidno!</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">8 : Vreme utakmice nevalidno!</XPD:ATTR>
 <XPD:REF name="Model">TQVkMraHGk6mz+mfuUokMwAA</XPD:REF>
 <XPD:REF name="HostEdge">aNhJHfHoYEG+ObIeMdT/QQAA</XPD:REF>
 </XPD:OBJ>
@@ -887,7 +851,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:ATTR name="#ParticipatingStimuli" type="integer">9</XPD:ATTR>
+<XPD:ATTR name="#ParticipatingStimuli" type="integer">8</XPD:ATTR>
 <XPD:OBJ name="ParticipatingStimuli[0]" type="UMLStimulus" guid="cR/V0aWx+EKiWEYIyl+bagAA">
 <XPD:ATTR name="Name" type="string">dodajUtakmicu</XPD:ATTR>
 <XPD:ATTR name="Arguments" type="string">idGost, idDomacin, vreme, kvotaX, kvota1, kvota2</XPD:ATTR>
@@ -960,8 +924,7 @@
 <XPD:REF name="Views[3]">CVv9Emu9mUysQiDdLf+KoAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[5]" type="UMLStimulus" guid="MKDHhomZV0SbRZInbcNBKAAA">
-<XPD:ATTR name="StereotypeName" type="string">redirect</XPD:ATTR>
-<XPD:ATTR name="Arguments" type="string">Utakmica uspesno dodata!</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">redirect</XPD:ATTR>
 <XPD:REF name="Sender">2yPi06YdREyi6KgPuPDliQAA</XPD:REF>
 <XPD:REF name="Receiver">FyanseSnYkOSGCFHNz3lSAAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLCallAction" guid="Ur+jNzKIX0u/ilTQvYly+wAA">
@@ -974,25 +937,11 @@
 <XPD:REF name="Views[2]">zbv3pCYuXE+WG8n6OzUYoAAA</XPD:REF>
 <XPD:REF name="Views[3]">XihreXHkj0OEdE/5bBUt8QAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[6]" type="UMLStimulus" guid="2gY9gtm/C0CxX/RgijlenQAA">
-<XPD:ATTR name="Name" type="string">Utakmica uspesno dodata!</XPD:ATTR>
-<XPD:REF name="Sender">FyanseSnYkOSGCFHNz3lSAAA</XPD:REF>
-<XPD:REF name="Receiver">Be7a8b3No0mKxfZ204Q4vgAA</XPD:REF>
-<XPD:OBJ name="Action" type="UMLReturnAction" guid="teg10rGil067OeAJyqNxBAAA">
-<XPD:REF name="Stimulus">2gY9gtm/C0CxX/RgijlenQAA</XPD:REF>
-</XPD:OBJ>
-<XPD:REF name="InteractionInstanceSet">gS1Di4j88kOxE0pX1p85uwAA</XPD:REF>
-<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
-<XPD:REF name="Views[0]">o6skc4xYwUCuW9LWKd0fQgAA</XPD:REF>
-<XPD:REF name="Views[1]">+7esrPtjWECCHoMOll7zJwAA</XPD:REF>
-<XPD:REF name="Views[2]">1cWdwWTiP0qhKxT6AwGe1QAA</XPD:REF>
-<XPD:REF name="Views[3]">edwvqGwgW02qTZz4Hz2ZYAAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[7]" type="UMLStimulus" guid="VYylVsE8XkGtz0n7kMnMdAAA">
-<XPD:ATTR name="StereotypeName" type="string">redirect</XPD:ATTR>
+<XPD:OBJ name="ParticipatingStimuli[6]" type="UMLStimulus" guid="VYylVsE8XkGtz0n7kMnMdAAA">
+<XPD:ATTR name="Name" type="string">Vreme utakmice nevalidno!</XPD:ATTR>
 <XPD:REF name="Sender">2yPi06YdREyi6KgPuPDliQAA</XPD:REF>
 <XPD:REF name="Receiver">FyanseSnYkOSGCFHNz3lSAAA</XPD:REF>
-<XPD:OBJ name="Action" type="UMLCallAction" guid="66XvA/UeQkaJBqh/vnr53gAA">
+<XPD:OBJ name="Action" type="UMLReturnAction" guid="zEiq3Q4cEUi4mu/dFombOQAA">
 <XPD:REF name="Stimulus">VYylVsE8XkGtz0n7kMnMdAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:REF name="InteractionInstanceSet">gS1Di4j88kOxE0pX1p85uwAA</XPD:REF>
@@ -1002,7 +951,7 @@
 <XPD:REF name="Views[2]">4eWY3toh+0SzyVaIRUe/xgAA</XPD:REF>
 <XPD:REF name="Views[3]">Rx8YTy5jEUKBipuhoh26tgAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[8]" type="UMLStimulus" guid="TQVkMraHGk6mz+mfuUokMwAA">
+<XPD:OBJ name="ParticipatingStimuli[7]" type="UMLStimulus" guid="TQVkMraHGk6mz+mfuUokMwAA">
 <XPD:ATTR name="Name" type="string">Vreme utakmice nevalidno!</XPD:ATTR>
 <XPD:REF name="Sender">FyanseSnYkOSGCFHNz3lSAAA</XPD:REF>
 <XPD:REF name="Receiver">Be7a8b3No0mKxfZ204Q4vgAA</XPD:REF>
@@ -1056,9 +1005,8 @@
 <XPD:REF name="Views[1]">CidzLCtchUi1/ZGhSmvbzQAA</XPD:REF>
 <XPD:ATTR name="#SendingStimuli" type="integer">1</XPD:ATTR>
 <XPD:REF name="SendingStimuli[0]">cR/V0aWx+EKiWEYIyl+bagAA</XPD:REF>
-<XPD:ATTR name="#ReceivingStimuli" type="integer">2</XPD:ATTR>
+<XPD:ATTR name="#ReceivingStimuli" type="integer">1</XPD:ATTR>
 <XPD:REF name="ReceivingStimuli[0]">TQVkMraHGk6mz+mfuUokMwAA</XPD:REF>
-<XPD:REF name="ReceivingStimuli[1]">2gY9gtm/C0CxX/RgijlenQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingInstances[1]" type="UMLObject" guid="N0S1hm5jL0mXB7h2l3gK6AAA">
 <XPD:ATTR name="Name" type="string">UtakmicaModel</XPD:ATTR>
@@ -1078,10 +1026,9 @@
 <XPD:ATTR name="#Views" type="integer">2</XPD:ATTR>
 <XPD:REF name="Views[0]">qX2AJOrKvEWIxsQ050ac7wAA</XPD:REF>
 <XPD:REF name="Views[1]">E5JmRqlCBUqnJREpsMKK5gAA</XPD:REF>
-<XPD:ATTR name="#SendingStimuli" type="integer">3</XPD:ATTR>
+<XPD:ATTR name="#SendingStimuli" type="integer">2</XPD:ATTR>
 <XPD:REF name="SendingStimuli[0]">xRm2V/QMcEO6s2PgYkn4VAAA</XPD:REF>
 <XPD:REF name="SendingStimuli[1]">TQVkMraHGk6mz+mfuUokMwAA</XPD:REF>
-<XPD:REF name="SendingStimuli[2]">2gY9gtm/C0CxX/RgijlenQAA</XPD:REF>
 <XPD:ATTR name="#ReceivingStimuli" type="integer">3</XPD:ATTR>
 <XPD:REF name="ReceivingStimuli[0]">cR/V0aWx+EKiWEYIyl+bagAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[1]">MKDHhomZV0SbRZInbcNBKAAA</XPD:REF>

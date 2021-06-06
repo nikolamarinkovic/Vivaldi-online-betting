@@ -248,7 +248,7 @@
 <XPD:ATTR name="Height" type="integer">293</XPD:ATTR>
 <XPD:REF name="Model">ePM9kZmLF0OeQUOmaeUXUQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="LabelView" guid="WTiakHNHU0COElzqujs7RgAA">
-<XPD:ATTR name="Text" type="string">Ipsravni podaci</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Ispravni podaci</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="FrameTypeLabel" type="LabelView" guid="pvA8pyLvzU2/pTmY3tHicAAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
@@ -278,7 +278,7 @@
 <XPD:ATTR name="Height" type="integer">224</XPD:ATTR>
 <XPD:REF name="Model">qnOEz/MkfEu+D5GqzqXrggAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="LabelView" guid="zWLDJ287Kk6WbGVAsXqiEQAA">
-<XPD:ATTR name="Text" type="string">Lozinke se ne poklapaju</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Neispravni podaci</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="FrameTypeLabel" type="LabelView" guid="Lsc3oKE9YkqbuXryiX66LAAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
@@ -295,7 +295,7 @@
 <XPD:REF name="Model">RNf3MjXSg0GRecG094HlFwAA</XPD:REF>
 <XPD:REF name="ContainerView">PnqZJb2RWkCS8tq1rL+exQAA</XPD:REF>
 <XPD:OBJ name="GuardLabel" type="LabelView" guid="i1cxKan7x0uC3TGGsXFeQQAA">
-<XPD:ATTR name="Text" type="string">[Lozinka != Potrvda lozinke]</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">[Lozinka != Potrvda Lozinke]</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -305,7 +305,7 @@
 <XPD:ATTR name="Left" type="integer">144</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">44</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">84</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">701</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">617</XPD:ATTR>
 <XPD:REF name="Model">hnsJvw8C2USGCqEh2TC8tAAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="beT+5g/Lvk+PY07p9TbL8QAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="cgPXWkL7JUisulI78/3qqgAA">
@@ -353,7 +353,7 @@
 <XPD:ATTR name="Left" type="integer">360</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">64</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">79</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">697</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">585</XPD:ATTR>
 <XPD:REF name="Model">dgBCmlvcQEODx3SslddBNwAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="uiyRS6o1fke2t8wCefX+IAAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="eP2lTO+YkEqX9KHW31uxxgAA">
@@ -428,7 +428,7 @@
 <XPD:ATTR name="Left" type="integer">392</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">156</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">569</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">481</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[7]" type="UMLSeqStimulusView" guid="2CyG4LKEsE+cDQYWWRolkgAA">
@@ -690,7 +690,7 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">609,500;405,500</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">609,500;412,500</XPD:ATTR>
 <XPD:REF name="Model">AbeDCTmuJk+sbJRSymQQcwAA</XPD:REF>
 <XPD:REF name="Head">OpuaEYZGGEmuwtq21SoKtgAA</XPD:REF>
 <XPD:REF name="Tail">VF6IcNHdKE673wJp0dyIeAAA</XPD:REF>
@@ -716,8 +716,7 @@
 <XPD:REF name="HostEdge">K7AJPVRUfkmEjPWVsl4YaQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="yE1ftcw66kmeC3Xomhm0swAA">
-<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">392</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">399</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">500</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
@@ -880,7 +879,7 @@
 <XPD:ATTR name="StereotypeName" type="string">redirect</XPD:ATTR>
 <XPD:REF name="Sender">XEqrbxepoEGtrLKMepwhzwAA</XPD:REF>
 <XPD:REF name="Receiver">dgBCmlvcQEODx3SslddBNwAA</XPD:REF>
-<XPD:OBJ name="Action" type="UMLReturnAction" guid="JXSxFzgbGE+lJc8fme1MJQAA">
+<XPD:OBJ name="Action" type="UMLCallAction" guid="2zE5wqFYUky7II9RaP+yjQAA">
 <XPD:REF name="Stimulus">AbeDCTmuJk+sbJRSymQQcwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:REF name="InteractionInstanceSet">CfmD9zhDkEmzBqUGeW4KowAA</XPD:REF>
@@ -906,7 +905,7 @@
 </XPD:OBJ>
 <XPD:ATTR name="#Fragments" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Fragments[0]" type="UMLCombinedFragment" guid="ePM9kZmLF0OeQUOmaeUXUQAA">
-<XPD:ATTR name="Name" type="string">Ipsravni podaci</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Ispravni podaci</XPD:ATTR>
 <XPD:ATTR name="InteractionOperator" type="UMLInteractionOperatorKind">iokOpt</XPD:ATTR>
 <XPD:REF name="EnclosingInteractionInstanceSet">CfmD9zhDkEmzBqUGeW4KowAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
@@ -920,7 +919,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="Fragments[1]" type="UMLCombinedFragment" guid="qnOEz/MkfEu+D5GqzqXrggAA">
-<XPD:ATTR name="Name" type="string">Lozinke se ne poklapaju</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Neispravni podaci</XPD:ATTR>
 <XPD:ATTR name="InteractionOperator" type="UMLInteractionOperatorKind">iokOpt</XPD:ATTR>
 <XPD:REF name="EnclosingInteractionInstanceSet">CfmD9zhDkEmzBqUGeW4KowAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
@@ -928,7 +927,7 @@
 <XPD:ATTR name="#Operands" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Operands[0]" type="UMLInteractionOperand" guid="RNf3MjXSg0GRecG094HlFwAA">
 <XPD:ATTR name="Name" type="string">InteractionOperand1</XPD:ATTR>
-<XPD:ATTR name="Guard" type="string">Lozinka != Potrvda lozinke</XPD:ATTR>
+<XPD:ATTR name="Guard" type="string">Lozinka != Potrvda Lozinke</XPD:ATTR>
 <XPD:REF name="CombinedFragment">qnOEz/MkfEu+D5GqzqXrggAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
 <XPD:REF name="Views[0]">+o2AF9BivUyPGz8UULSj8AAA</XPD:REF>

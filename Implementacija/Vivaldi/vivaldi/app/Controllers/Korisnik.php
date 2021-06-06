@@ -1,9 +1,11 @@
 <?php
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Autori:
+  *     Marko Gloginja,
+  *     Stefan Lukovic,
+  *     Marko Lisicic,
+  *     Nikola Marinkovic
  */
 
 namespace App\Controllers;
@@ -21,12 +23,22 @@ use App\Models\TiketKladjenjeModel;
 
 
 /**
- * Description of Korisnik
- *
- * @author Marko
- */
+* Korisnik.php – klasa za funkcionalnosti korisnika
+*
+* @version 1.0
+*/
 class Korisnik extends BaseController{
-    //put your code here
+    /*
+        * Funkcija koja sluzi za prikaz stranica Korisnika
+        *
+        * @param $page, $data
+        * 
+        * $page - ime stranice na koju idemo, $data - podaci koji se prosledjuju stranici
+        * 
+        * @return void
+        *
+        
+    */
     
     protected function prikaz($page, $data) {
         $data['controller']='Korisnik';
@@ -43,11 +55,33 @@ class Korisnik extends BaseController{
         $this->prikaz('pocetnaKorisnik',[]);
     }
     
+    /*
+        * Funkcija koja sluzi za odjavljivanje Administratora
+        * 
+        * @return redirektuje na pocetnu stranicu Administratora
+        *
+        * Autori:
+  *     Marko Gloginja,
+  *     Stefan Lukovic
+        
+    */
+    
     public function odjava(){  
         $this->session->destroy();
         return redirect()->to(base_url('/'));
 
     }
+    
+    /*
+        * Funkcija koja sluzi za prikaz stranice ruleta Korisnika
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
     
     public function rulet(){
         $km = new KorisnikModel();
@@ -57,6 +91,17 @@ class Korisnik extends BaseController{
                     ->first();
         $this->prikaz('ruletKorisnik',['tokeni' => $Korisnik->Tokeni]);
     }
+    
+    /*
+        * Funkcija koja sluzi za pokretanje igre ruleta iz uloge Korisnika
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     
     public function rulet_spin(){
         $handlers = [
@@ -315,6 +360,17 @@ class Korisnik extends BaseController{
         
        
     }
+   
+    /*
+        * Funkcija koja sluzi za pokretanje slot masine iz uloge Korisnika
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     
     public function spin(){
         
@@ -387,6 +443,17 @@ class Korisnik extends BaseController{
         
     }
     
+    /*
+        * Funkcija koja sluzi za prikaz stranice slota Korisnika
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     public function slot(){
         $km = new KorisnikModel();
         $korIme =$this->session->get('korisnik')->KorisnickoIme;
@@ -397,6 +464,17 @@ class Korisnik extends BaseController{
         $this->prikaz('slotKorisnik',['Tokeni'=>$Korisnik->Tokeni]);
     }
     
+    /*
+        * Funkcija koja sluzi za prikaz stranice lucky6 Korisnika
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     public function lucky6(){
         $km = new KorisnikModel();
         $korIme = $this->session->get('korisnik')->KorisnickoIme;
@@ -405,6 +483,17 @@ class Korisnik extends BaseController{
                     ->first();
         $this->prikaz('lucky6Korisnik',['Tokeni'=>$Korisnik->Tokeni]);
     }
+    
+    /*
+        * Funkcija koja sluzi za pokretanje igre lucky6 Korisnika
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     
     public function lucky6_drawing(){
         $kvote = [
@@ -533,6 +622,17 @@ class Korisnik extends BaseController{
         echo $izvuceni_brojevi . $Korisnik->Tokeni . ',';
     }
     
+    /*
+        * Funkcija koja sluzi za prikaz stranice sportskog kladjenja Korisnika
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     public function sport(){
         date_default_timezone_set('Europe/Belgrade');
         $vremeTrenutno = strtotime(date("Y-m-d\TH:i"));
@@ -548,6 +648,19 @@ class Korisnik extends BaseController{
                 ->first();
         $this->prikaz('sportKorisnik',['timovi'=>$timovi, 'utakmice'=>$utakmice,'tokeni'=>$korisnik->Tokeni]);
     }
+    
+    /*
+        * Funkcija koja sluzi za sastavljanje tiketa na stranici sportskog kladjenja Korisnika
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic,
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     
     public function sportSubmit(){
         date_default_timezone_set('Europe/Belgrade');
@@ -656,6 +769,17 @@ class Korisnik extends BaseController{
         
     }
     
+    /*
+        * Funkcija koja sluzi za prikaz profila Korisnika
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     public function profil(){
         $km = new KorisnikModel();
         $korIme = $this->session->get('korisnik')->KorisnickoIme;
@@ -666,6 +790,17 @@ class Korisnik extends BaseController{
   
         $this->prikaz('profilKorisnik',['korisnik'=>$korisnik]);
     }
+    
+    /*
+        * Funkcija koja sluzi za prikaz istorije odigranih igara korsnika na stranici  Korisnika
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     
     public function istorijaSubmit(){
      $km = new KorisnikModel();
@@ -812,6 +947,17 @@ class Korisnik extends BaseController{
         $this->prikaz('profilKorisnik',['korisnik'=>$korisnik,'ruletNiz'=>$ruletNiz,'slotNiz'=>$slotNiz,'luckyNiz'=>$luckyNiz,'sportNiz'=>$sportNiz]);
     }
     
+    /*
+        * Funkcija koja vrsi promenu lozinke Korisnika i azurira je u bazi podataka
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     public function promenaLozinke(){
         $errors=[];
         $km = new KorisnikModel();
@@ -856,6 +1002,17 @@ class Korisnik extends BaseController{
         $this->prikaz('profilKorisnik',['korisnik'=>$korisnik,'uspesno'=>1]);
     }
     
+    /*
+        * Funkcija koja vrsi kupovinu tokena na stranici Korisnika i azurira njegovo stanje u bazi
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     public function kupovinaTokena(){
         $errors=[];
         $km = new KorisnikModel();
@@ -880,6 +1037,17 @@ class Korisnik extends BaseController{
         $km->update($korisnik->IdKorisnik, $noviTokeni);
         $this->prikaz('profilKorisnik',['korisnik'=>$korisnik,"uplata"=>1]);
     }
+    
+    /*
+        * Funkcija koja vrsi prodaju tokena na stranici Korisnika i azurira njegovo stanje u bazi
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
     
     public function prodajaTokena(){
         $errors=[];

@@ -1,4 +1,13 @@
 <?php
+
+/*
+ * TiketKladjenjeModel.php – model tiketa kladjenja u bazi podataka
+*
+* @version 1.0
+    Autor:
+  *     Stefan Lukovic
+*/
+
 namespace App\Models;
 use CodeIgniter\Model;
 class TiketKladjenjeModel extends Model

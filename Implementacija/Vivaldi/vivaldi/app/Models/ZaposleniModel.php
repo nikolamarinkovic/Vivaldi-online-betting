@@ -1,4 +1,13 @@
 <?php
+
+/*
+ * ZaposleniModel.php – model zaposlenog u bazi podataka
+*
+* @version 1.0
+    Autor:
+  *     Nikola Marinkovic
+*/
+
 namespace App\Models;
 use CodeIgniter\Model;
 class ZaposleniModel extends Model

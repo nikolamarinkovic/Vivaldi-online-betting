@@ -1,4 +1,13 @@
 <?php
+
+/*
+ * TiketLucky6Model.php – model tiketa igre lucky6 u bazi podataka
+*
+* @version 1.0
+    Autor:
+  *     Marko Lisicic
+*/
+
 namespace App\Models;
 use CodeIgniter\Model;
 class TiketLucky6Model extends Model

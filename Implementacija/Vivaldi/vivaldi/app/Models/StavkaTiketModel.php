@@ -1,4 +1,13 @@
 <?php
+
+/*
+ * StavkaTiketModel.php – model stavke tiketa u bazi podataka
+*
+* @version 1.0
+    Autor:
+  *     Stefan Lukovic
+*/
+
 namespace App\Models;
 use CodeIgniter\Model;
 class StavkaTiketModel extends Model

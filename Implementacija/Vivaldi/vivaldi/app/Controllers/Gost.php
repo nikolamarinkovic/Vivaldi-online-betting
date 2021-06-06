@@ -1,9 +1,11 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ /*
+    Autori:
+  *     Marko Gloginja,
+  *     Stefan Lukovic,
+  *     Marko Lisicic,
+  *     Nikola Marinkovic
  */
 
 namespace App\Controllers;
@@ -11,13 +13,26 @@ use \App\Models\KorisnikModel;
 use \App\Models\ZaposleniModel;
 use App\Models\TimModel;
 use App\Models\UtakmicaModel;
+
 /**
- * Description of Gost
- *
- * @author Marko
- */
+* Gost.php – klasa za funkcionalnosti gosta
+*
+* @version 1.0
+*/
+
 class Gost extends BaseController{
-    //put your code here
+    
+    /*
+        * Funkcija koja sluzi za prikaz stranica Gosta
+        *
+        * @param $page, $data
+        * 
+        * $page - ime stranice na koju idemo, $data - podaci koji se prosledjuju stranici
+        * 
+        * @return void
+        *
+        
+    */
     
     protected function prikaz($page, $data) {
         $data['controller']='Gost';

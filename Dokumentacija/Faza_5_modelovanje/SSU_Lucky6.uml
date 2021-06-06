@@ -1038,14 +1038,14 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="EHOLAsyqwE6svuB14SSjXQAA">
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">17 : Unesite tokene()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">17</XPD:ATTR>
 <XPD:REF name="Model">V7WDLwFhpUOoiF64hRQJ7gAA</XPD:REF>
 <XPD:REF name="HostEdge">lXDRY1FGv0m+dFpNyjfK+AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="briAoKrP0U+YWB187USVrAAA">
-<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">&lt;&lt;redirect&gt;&gt;</XPD:ATTR>
 <XPD:REF name="Model">V7WDLwFhpUOoiF64hRQJ7gAA</XPD:REF>
 <XPD:REF name="HostEdge">lXDRY1FGv0m+dFpNyjfK+AAA</XPD:REF>
 </XPD:OBJ>
@@ -1329,9 +1329,8 @@
 <XPD:REF name="Views[3]">PzPfbOFGkUmgpLqfaXSvaAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[16]" type="UMLStimulus" guid="V7WDLwFhpUOoiF64hRQJ7gAA">
-<XPD:ATTR name="Name" type="string">Unesite tokene</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">redirect</XPD:ATTR>
 <XPD:ATTR name="IsSpecification" type="boolean">True</XPD:ATTR>
-<XPD:ATTR name="Arguments" type="string">Unesite tokene</XPD:ATTR>
 <XPD:REF name="Sender">iqrqciLjzEitc4yBDfIu7QAA</XPD:REF>
 <XPD:REF name="Receiver">c5paYYjz40SoYzdMxwz3rQAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLCallAction" guid="Ww7jL6heP0+CUmlVo+zK5AAA">

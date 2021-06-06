@@ -1,3 +1,14 @@
+
+<?php
+
+ /*
+    Autori:
+  *     Stefan Lukovic
+ */
+
+?>
+
+
 <div class="body">
             <h1 class="naslov">Dobrodosli</h1>
             <hr>

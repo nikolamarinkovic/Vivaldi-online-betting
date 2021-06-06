@@ -1,4 +1,16 @@
-        <div class="body">
+
+<?php
+
+ /*
+    Autori:
+  *     Stefan Lukovic
+ */
+
+?>
+
+
+
+<div class="body">
             <h1 class="naslov">Profil</h1>
             <hr>
             <div class="profil">

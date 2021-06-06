@@ -1,4 +1,18 @@
-        <div class="body">
+
+<?php
+
+ /*
+    Autori:
+  *     Marko Gloginja
+ */
+
+?>
+
+
+
+
+
+<div class="body">
             <h1 class="naslov">Dodavanje moderatora/administratora</h1>
             <hr>
             <form class="registracija" action=<?php echo base_url("Administrator/dodavanjeZaposlenog")?> method="POST">

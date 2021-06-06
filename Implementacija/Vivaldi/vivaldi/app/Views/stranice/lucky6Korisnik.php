@@ -1,3 +1,15 @@
+
+<?php
+
+ /*
+    Autori:
+  *     Marko Gloginja
+ */
+
+?>
+
+
+
 <script src="<?php echo base_url("skripta_lucky6.js")?>"></script>
 
 <div class="body">

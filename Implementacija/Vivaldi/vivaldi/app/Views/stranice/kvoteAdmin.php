@@ -1,4 +1,11 @@
-    <?php use App\Models\UtakmicaModel;
+    <?php 
+    
+ /*
+    Autori:
+  *     Marko Gloginja
+ */
+    
+    use App\Models\UtakmicaModel;
     use App\Models\TimModel;?>    
     <div class="body">
             <h1 class="naslov">Azuriranje kvota</h1>

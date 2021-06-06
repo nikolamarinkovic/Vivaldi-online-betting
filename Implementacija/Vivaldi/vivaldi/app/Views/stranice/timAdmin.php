@@ -1,4 +1,15 @@
-        <div class="body">
+
+<?php
+
+ /*
+    Autori:
+  *     Marko Lisicic
+ */
+
+?>
+
+
+<div class="body">
             <h1 class="naslov">Dodavanje tima</h1>
             <hr>
             <form class="dodavanje_tima" action=<?php echo base_url("Administrator/dodajTim")?> method="POST">

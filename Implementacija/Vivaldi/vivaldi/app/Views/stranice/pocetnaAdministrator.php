@@ -1,3 +1,16 @@
+
+<?php
+
+ /*
+    Autori:
+  *     Marko Gloginja
+ */
+
+?>
+
+
+
+
 <div class="body">
             <h1 class="naslov">Dobrodosli</h1>
             <hr>

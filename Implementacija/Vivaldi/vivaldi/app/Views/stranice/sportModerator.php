@@ -1,3 +1,14 @@
+
+<?php
+
+ /*
+    Autori:
+  *     Marko Lisicic
+ */
+
+?>
+
+
 <?php use App\Models\TimModel;?>  
 <div class="body">
             <h1 class="naslov">Sportska kladjenja</h1>

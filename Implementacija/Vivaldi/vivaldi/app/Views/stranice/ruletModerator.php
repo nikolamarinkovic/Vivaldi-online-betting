@@ -1,3 +1,14 @@
+
+<?php
+
+ /*
+    Autori:
+  *     Nikola Marinkovic
+ */
+
+?>
+
+
 <div class="body">
             <h1 class="naslov">Rulet</h1>
             <hr>

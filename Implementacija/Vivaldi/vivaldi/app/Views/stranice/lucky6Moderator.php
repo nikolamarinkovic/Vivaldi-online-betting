@@ -1,3 +1,15 @@
+
+<?php
+
+ /*
+    Autori:
+  *     Marko Gloginja
+ */
+
+?>
+
+
+
 <div class="body">
             <h1 class="naslov">Lucky 6</h1>
             <hr>

@@ -1,4 +1,16 @@
 
+
+<?php
+
+ /*
+    Autori:
+  *     Nikola Marinkovic
+ */
+
+?>
+
+
+
 <link rel="stylesheet" href="<?php echo base_url("slot.css")?>">
 <div class="body">
             <h1 class="naslov">Slot masine</h1>

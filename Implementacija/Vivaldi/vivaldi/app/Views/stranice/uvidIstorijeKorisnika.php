@@ -1,4 +1,15 @@
-        <div class="body">
+
+<?php
+
+ /*
+    Autori:
+  *     Marko Lisicic
+ */
+
+?>
+
+
+<div class="body">
             <h1 class="naslov">Profil korisnika</h1>
             <hr>
             <div class="uvid">

@@ -1,3 +1,14 @@
+
+<?php
+
+ /*
+    Autori:
+  *     Nikola Marinkovic
+ */
+
+?>
+
+
 <script src="<?php echo base_url("skripta_rulet.js")?>"></script>
 <div class="body">
             <h1 class="naslov">Rulet</h1>

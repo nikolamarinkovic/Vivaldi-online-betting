@@ -1,5 +1,12 @@
 <?php
 
+/*
+    Autori:
+  *     Marko Gloginja,
+  *     Stefan Lukovic,
+  *     Marko Lisicic,
+  *     Nikola Marinkovic
+ */
 namespace App\Controllers;
 use \App\Models\KorisnikModel;
 use \App\Models\ZaposleniModel;
@@ -14,11 +21,26 @@ use App\Models\RuletModel;
 use App\Models\StavkaRuletModel;
 use App\Models\TiketSlotModel;
 /**
- * Description of Administrator
- *
- * @author Marko
- */
+* Administrator.php – klasa za funkcionalnosti administratora
+*
+* @version 1.0
+*/
 class Administrator extends BaseController {
+    
+    /*
+        * Funkcija koja sluzi za prikaz stranica Administratora
+        *
+        * @param $page, $data
+        * 
+        * $page - ime stranice na koju idemo, $data - podaci koji se prosledjuju stranici
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     
     protected function prikaz($page, $data) {
         $data['controller']='Administrator';
@@ -36,22 +58,77 @@ class Administrator extends BaseController {
         $this->prikaz('pocetnaAdministrator',[]);
     }
     
+    /*
+        * Funkcija koja sluzi za odjavljivanje Administratora
+        * 
+        * @return redirektuje na pocetnu stranicu Administratora
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
+    
     public function odjava(){
         $this->session->destroy();
         return redirect()->to(base_url('/'));
     }
     
+    /*
+        * Funkcija koja sluzi za prikaz stranice ruleta Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
+    
     public function rulet(){
         $this->prikaz('ruletAdmin',[]);
     }
+    
+    /*
+        * Funkcija koja sluzi za prikaz stranice slota Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     
     public function slot(){
         $this->prikaz('slotAdmin',[]);
     }
     
+    /*
+        * Funkcija koja sluzi za prikaz stranice lucky6 Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
+    
     public function lucky6(){
         $this->prikaz('lucky6Admin',[]);
     }
+    
+    /*
+        * Funkcija koja sluzi za prikaz stranice sportskog kladjenja Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     
     public function sport(){
             $tm = new TimModel();        
@@ -61,6 +138,17 @@ class Administrator extends BaseController {
         $this->prikaz('sportAdmin',['timovi'=>$timovi, 'utakmice'=>$utakmice]);
     }
     
+    /*
+        * Funkcija koja sluzi za prikaz profila Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
+    
     public function profil(){
         $zm = new ZaposleniModel();
         $korIme = $this->session->get('administrator')->KorisnickoIme;
@@ -69,6 +157,17 @@ class Administrator extends BaseController {
                     ->first();
         $this->prikaz('profilAdmin',["zaposlen"=>$zaposleni]);
     }
+    
+    /*
+        * Funkcija koja vrsi promenu lozinke Administratora i azurira je u bazi podataka
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
     
     public function promenaLozinke(){
         $errors=[];
@@ -113,18 +212,61 @@ class Administrator extends BaseController {
         $this->prikaz('profilAdmin',['zaposlen'=>$zaposlen,"uspesno"=>"Sifra uspesno promenjena!"]);
     }
     
+    /*
+        * Funkcija koja sluzi za prikaz utakmica na stranici Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     public function utakmica(){
         $this->prikaz('utakmicaAdmin',[]);
     }
+    
+     /*
+        * Funkcija koja sluzi za prikaz kvota na stranici Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
     
     public function kvote(){            
         $this->prikaz('kvoteAdmin',[]);
     }
     
+    /*
+        * Funkcija koja sluzi za ispis uspesnog dodavanja tima na stranici Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic
+        
+    */
+    
     public function tim(){
         $uspeh = $this->session->getFlashdata('uspesno');
         $this->prikaz('timAdmin',["uspeh"=>$uspeh]);
     }
+    
+    /*
+        * Funkcija koja sluzi za dodavanje tima u bazu podataka iz uloge Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic
+        
+    */
+    
     public function dodajTim(){
         if(!$this->validate(['tim_ime'=>'required'])){
             if(!empty($this->validator->getErrors()['tim_ime']))
@@ -143,6 +285,17 @@ class Administrator extends BaseController {
         $this->session->setFlashdata('uspesno',"Tim uspesno postavljen!");
         return redirect()->to(base_url('Administrator/tim'));     
     }
+    
+    /*
+        * Funkcija koja dodavanje utakmica u bazu podataka iz uloge Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
     
     public function dodajUtakmicu(){
         $errors = [];
@@ -193,10 +346,33 @@ class Administrator extends BaseController {
                 'Kvota2' => $kvota2]);
         return $this->prikaz('utakmicaAdmin',["uspesno"=>"Uspesno ste dodali utakmicu!"]);
     }
+    
+    /*
+        * Funkcija koja sluzi za ispis uspesnog dodavanja novog zaposlenog na stranici  Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
+    
     public function modadm(){
         $uspesno = $this->session->getFlashdata("uspesno");
         $this->prikaz('modadmAdmin',['uspesno'=>$uspesno]);
     }
+    
+     /*
+        * Funkcija koja dodavanje novog zaposlenog (administratora ili moderatoora) iz uloge  Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     
     public function dodavanjeZaposlenog() {
         $errors = [];
@@ -280,11 +456,29 @@ class Administrator extends BaseController {
         return redirect()->to(base_url('Administrator/modadm'));
     }
     
+     /*
+        * Funkcija koja sluzi za prikaz korsnika na stranici  Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Nikola Marinkovic
+        
+    */
     
     public function uvid(){
         $this->prikaz('uvidAdmin',[]);
     }
     
+    /*
+        * Funkcija koja vrsi filtriranje i pretragu korsnika na stranici Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Nikola Marinkovic
+        
+    */
     
     public function uvidSubmit(){
         $sviKorisnici = false; //ako je prazno polje, vrati sve korisnike/moderatore/administrator, u zavisnosti od izabranog radio buttona
@@ -350,6 +544,17 @@ class Administrator extends BaseController {
         
         
     }
+    
+    /*
+        * Funkcija koja sluzi za prikaz istorije odigranih igara korsnika na stranici  Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     
     public function istorijaKorisnikSubmit(){
         
@@ -490,6 +695,16 @@ class Administrator extends BaseController {
         //return $this->prikaz('uvidIstorijeKorisnika',['korisnik'=>$korisnik]);
     }
     
+    /*
+        * Funkcija koja azurira kvote u bazi podataka iz uloge Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
     
     public function azurirajKvotu(){
         $ukupno = $this->request->getVar('ukupno');
@@ -530,6 +745,17 @@ class Administrator extends BaseController {
         $this->prikaz('kvoteAdmin',["uspesno"=>"Kvote uspesno promenjene!"]);
     }
     
+    /*
+        * Funkcija koja sluzi unos rezultata utakmice iz uloge Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
+    
     public function dodajRezultat(){
         date_default_timezone_set('Europe/Belgrade');
         $vremeTrenutno = strtotime(date("Y-m-d\TH:i"));
@@ -539,6 +765,17 @@ class Administrator extends BaseController {
         $utakmice = $um->where('Rezultat',"0")->where('UNIX_TIMESTAMP(Vreme) < ', $vremeTrenutno - 60*90)->findAll();
         $this->prikaz('upisRezultataAdmin',['utakmice'=>$utakmice]);
     }
+    
+    /*
+        * Funkcija koja sluzi unos rezultata utakmice iz uloge Administratora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     
     public function submitRezultat(){
         date_default_timezone_set('Europe/Belgrade');

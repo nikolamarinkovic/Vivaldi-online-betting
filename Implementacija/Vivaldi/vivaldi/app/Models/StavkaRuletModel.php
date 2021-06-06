@@ -1,4 +1,13 @@
 <?php
+
+/*
+ * StavkaRuletModel.php – model stavke ruleta u bazi podataka
+*
+* @version 1.0
+    Autor:
+  *     Stefan Lukovic
+*/
+
 namespace App\Models;
 use CodeIgniter\Model;
 class StavkaRuletModel extends Model

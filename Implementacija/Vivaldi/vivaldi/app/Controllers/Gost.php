@@ -3,9 +3,7 @@
  /*
     Autori:
   *     Marko Gloginja,
-  *     Stefan Lukovic,
-  *     Marko Lisicic,
-  *     Nikola Marinkovic
+  *     Stefan Lukovic
  */
 
 namespace App\Controllers;
@@ -31,6 +29,9 @@ class Gost extends BaseController{
         * 
         * @return void
         *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
         
     */
     
@@ -49,14 +50,40 @@ class Gost extends BaseController{
         $this->prikaz('pocetnaGost',[]);
     }
     
+    /*
+        * Funkcija koja sluzi za ispis uspesne prijave
+        *
+        * @param $poruka
+        * 
+        * $poruka - poruka koja se ispisuje
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     public function prijava($poruka = null){
         
         $info = $this->session->getFlashdata('info');
         $this->prikaz('prijava', ['poruka'=>$poruka, 'info'=>$info]);
     }
-    //0 nema korrisnika
-    //1 ima korisnika
-    //2 los password
+    
+    /*
+        * Funkcija koja vrsi proveru postojanja korisnika u bazi
+        *
+        *legenda: 0-nema korisnika; 1-postoji korisnik; 2-lozinka nije ispravna
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     private function proveraKorisnik() {
         $km = new KorisnikModel();     
         $korisnik = $km
@@ -78,6 +105,20 @@ class Gost extends BaseController{
         $this->session->set('korisnik', $korisnik);
         return 1;//redirect()->to(base_url('Korisnik'));
     }
+    
+    /*
+        * Funkcija koja vrsi proveru postojanja zaposlenog u bazi
+        *
+        *legenda: 0-nema zaposlenog; 1-postoji zaposlen; 2-lozinka nije ispravna
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
      private function proveraZaposleni() {
          
         $km = new ZaposleniModel();     
@@ -106,6 +147,18 @@ class Gost extends BaseController{
             return 3;
         }
     }
+    
+    /*
+        * Funkcija koja vrsi prijavu na sistem
+        * 
+        * @return redirektuje na pocetnu stranicu odgovarajuceg korisnika/zaposlenog
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     public function login(){
         $errors = [];
         if(!$this->validate(['username_login'=>'required', 'password_login'=>'required' ])){
@@ -141,9 +194,19 @@ class Gost extends BaseController{
         if($status == 3){
             return redirect()->to(base_url('Administrator'));
         }
-        
-       
+              
     }
+    
+    /*
+        * Funkcija koja vrsi registraciju korisnika ili zaposlenog u bazi podataka
+        * 
+        * @return redirektuje na stranicu za prijavu korisnika/zaposlenog
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
     
     public function registration()
     {
@@ -211,21 +274,76 @@ class Gost extends BaseController{
 
     }
     
+    /*
+        * Funkcija koja sluzi za prikaz stranice za registraciju
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     public function registracija(){
         $this->prikaz('registracija',[]);
     }
+    
+    /*
+        * Funkcija koja sluzi za prikaz stranice ruleta Gosta
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
     
     public function rulet(){
         $this->prikaz('ruletGost',[]);
     }
     
+    /*
+        * Funkcija koja sluzi za prikaz stranice slota Gosta
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     public function slot(){
         $this->prikaz('slotGost',[]);
     }
     
+     /*
+        * Funkcija koja sluzi za prikaz stranice lucky6 Gosta
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     public function lucky6(){
         $this->prikaz('lucky6Gost',[]);
     }
+    
+    /*
+        * Funkcija koja sluzi za prikaz stranice sportskog kladjenja Gosta
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
     
     public function sport(){
         date_default_timezone_set('Europe/Belgrade');
@@ -237,6 +355,17 @@ class Gost extends BaseController{
         $utakmice = $um->where('Rezultat',"0")->where('UNIX_TIMESTAMP(Vreme) > ', $vremeTrenutno - 60*90)->findAll();
         $this->prikaz('sportGost',['timovi'=>$timovi, 'utakmice'=>$utakmice]);
     }
+    
+    /*
+        * Funkcija koja sluzi za prikaz profila Gosta
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
     
     public function profil(){
         $this->prikaz('profilGost',[]);

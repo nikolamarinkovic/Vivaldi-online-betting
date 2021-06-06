@@ -254,7 +254,7 @@
 </XPD:OBJ>
 <XPD:OBJ name="FrameTypeLabel" type="LabelView" guid="7O1ZfWbn00WDqUsfVhXSuwAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">opt</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">seq</XPD:ATTR>
 </XPD:OBJ>
 <XPD:ATTR name="#ContainedViews" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="ContainedViews[0]" type="UMLInteractionOperandView" guid="zMLpis9x9E6y9N/fQ2StOAAA">
@@ -284,7 +284,7 @@
 </XPD:OBJ>
 <XPD:OBJ name="FrameTypeLabel" type="LabelView" guid="MAMI2ZdF0EyuJpTtG9ioGQAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">opt</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">seq</XPD:ATTR>
 </XPD:OBJ>
 <XPD:ATTR name="#ContainedViews" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="ContainedViews[0]" type="UMLInteractionOperandView" guid="+e5gWrdZr0OR8/8DO1hf5QAA">
@@ -961,7 +961,7 @@
 <XPD:ATTR name="#Fragments" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Fragments[0]" type="UMLCombinedFragment" guid="cb3jhKGs3ECrN96nFKycBgAA">
 <XPD:ATTR name="Name" type="string">Ispravni podaci</XPD:ATTR>
-<XPD:ATTR name="InteractionOperator" type="UMLInteractionOperatorKind">iokOpt</XPD:ATTR>
+<XPD:ATTR name="InteractionOperator" type="UMLInteractionOperatorKind">iokSeq</XPD:ATTR>
 <XPD:REF name="EnclosingInteractionInstanceSet">r9qtIUomEEqFu7fuelJibQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
 <XPD:REF name="Views[0]">lvoUMS52dkadzIr3C/VjLwAA</XPD:REF>
@@ -976,7 +976,7 @@
 </XPD:OBJ>
 <XPD:OBJ name="Fragments[1]" type="UMLCombinedFragment" guid="AlRCI9tpmEWAYSDqEA0cYAAA">
 <XPD:ATTR name="Name" type="string">Neispravni podaci</XPD:ATTR>
-<XPD:ATTR name="InteractionOperator" type="UMLInteractionOperatorKind">iokOpt</XPD:ATTR>
+<XPD:ATTR name="InteractionOperator" type="UMLInteractionOperatorKind">iokSeq</XPD:ATTR>
 <XPD:REF name="EnclosingInteractionInstanceSet">r9qtIUomEEqFu7fuelJibQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
 <XPD:REF name="Views[0]">bBeFaBdZwECQyscR3ihXDQAA</XPD:REF>

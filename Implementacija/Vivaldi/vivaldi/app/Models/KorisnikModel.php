@@ -1,4 +1,13 @@
 <?php
+
+/*
+ * KorisnikModel.php – model korisnika u bazi podataka
+*
+* @version 1.0
+    Autor:
+  *     Marko Gloginja
+*/
+
 namespace App\Models;
 use CodeIgniter\Model;
 class KorisnikModel extends Model

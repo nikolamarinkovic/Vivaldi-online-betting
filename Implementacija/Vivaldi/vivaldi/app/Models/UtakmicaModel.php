@@ -1,4 +1,13 @@
 <?php
+
+/*
+ * UtakmicaModel.php – model utakmice u bazi podataka
+*
+* @version 1.0
+    Autor:
+  *     Nikola Marinkovic
+*/
+
 namespace App\Models;
 use CodeIgniter\Model;
 class UtakmicaModel extends Model

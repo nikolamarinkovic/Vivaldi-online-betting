@@ -1,9 +1,11 @@
 <?php
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Autori:
+  *     Marko Gloginja,
+  *     Stefan Lukovic,
+  *     Marko Lisicic,
+  *     Nikola Marinkovic
  */
 
 namespace App\Controllers;
@@ -20,11 +22,27 @@ use App\Models\RuletModel;
 use App\Models\StavkaRuletModel;
 use App\Models\TiketSlotModel;
 /**
- * Description of Moderator
- *
- * @author Marko
- */
+* Moderator.php – klasa za funkcionalnosti moderatora
+*
+* @version 1.0
+*/
 class Moderator extends BaseController{
+    
+    /*
+        * Funkcija koja sluzi za prikaz stranica Moderatora
+        *
+        * @param $page, $data
+        * 
+        * $page - ime stranice na koju idemo, $data - podaci koji se prosledjuju stranici
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
+    
     protected function prikaz($page, $data) {
         $data['controller']='Moderator';
         echo view('sablon/header_moderator');
@@ -41,23 +59,76 @@ class Moderator extends BaseController{
         $this->prikaz('pocetnaModerator',[]);
     }
     
+    /*
+        * Funkcija koja sluzi za odjavljivanje Moderatora
+        * 
+        * @return redirektuje na pocetnu stranicu Moderatora
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     public function odjava(){
         $this->session->destroy();
         return redirect()->to(base_url('/'));
     }
     
+    /*
+        * Funkcija koja sluzi za prikaz stranice ruleta Moderatora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     
     public function rulet(){
         $this->prikaz('ruletModerator',[]);
     }
     
+    /*
+        * Funkcija koja sluzi za prikaz stranice slota Moderatora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
+    
     public function slot(){
         $this->prikaz('slotModerator',[]);
     }
     
+    /*
+        * Funkcija koja sluzi za prikaz stranice lucky6 Moderatora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
+    
     public function lucky6(){
         $this->prikaz('lucky6Moderator',[]);
     }
+    
+    /*
+        * Funkcija koja sluzi za prikaz stranice sportskog kladjenja Moderatora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     
     public function sport(){
             $tm = new TimModel();        
@@ -78,6 +149,17 @@ class Moderator extends BaseController{
 //        $this->prikaz('profilKorisnik',['korisnik'=>$korisnik]);
 //    }
     
+    /*
+        * Funkcija koja sluzi za prikaz profila Moderatora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
+    
     public function profil(){
         $zm = new ZaposleniModel();
         $korIme = $this->session->get('moderator')->KorisnickoIme;
@@ -86,6 +168,17 @@ class Moderator extends BaseController{
                     ->first();
         $this->prikaz('profilModerator',["zaposlen"=>$zaposleni]);
     }
+    
+    /*
+        * Funkcija koja vrsi promenu lozinke Moderatora i azurira je u bazi podataka
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
     
     public function promenaLozinke(){
         $errors=[];
@@ -130,18 +223,61 @@ class Moderator extends BaseController{
         $this->prikaz('profilModerator',['zaposlen'=>$zaposlen,"uspesno"=>"Sifra uspesno promenjena!"]);
     }
     
+   /*
+        * Funkcija koja sluzi za prikaz utakmica na stranici Moderatora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     public function utakmica(){
         $this->prikaz('utakmicaModerator',[]);
     }
+    
+     /*
+        * Funkcija koja sluzi za prikaz kvota na stranici Moderatora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
     
     public function kvote(){
         $this->prikaz('kvoteModerator',[]);
     }
     
+     /*
+        * Funkcija koja sluzi za ispis uspesnog dodavanja tima na stranici Moderatora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic
+        
+    */
+    
     public function tim(){
         $uspeh = $this->session->getFlashdata('uspesno');
         $this->prikaz('timModerator',["uspeh"=>$uspeh]);
     }
+    
+    /*
+        * Funkcija koja sluzi za dodavanje tima u bazu podataka iz uloge Moderatora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic
+        
+    */
+    
     public function dodajTim(){  
         if(!$this->validate(['tim_ime'=>'required'])){
             if(!empty($this->validator->getErrors()['tim_ime']))
@@ -161,6 +297,17 @@ class Moderator extends BaseController{
         $this->session->setFlashdata('uspesno',"Tim uspesno postavljen!");
         return redirect()->to(base_url('Moderator/tim'));     
     }
+    
+    /*
+        * Funkcija koja dodavanje utakmica u bazu podataka iz uloge Moderatora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
     
     public function dodajUtakmicu(){
         $errors = [];
@@ -213,6 +360,17 @@ class Moderator extends BaseController{
         return $this->prikaz('utakmicaModerator',["uspesno"=>"Utakmica uspesno dodata!"]);
     }
 
+     /*
+        * Funkcija koja azurira kvote u bazi podataka iz uloge Moderatora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Gloginja,
+            Stefan Lukovic
+        
+    */
+    
     public function azurirajKvotu(){
         $ukupno = $this->request->getVar('ukupno');
         $um = new UtakmicaModel();
@@ -252,6 +410,17 @@ class Moderator extends BaseController{
         $this->prikaz('kvoteModerator',["uspesno"=>"Kvote uspesno promenjene!"]);
     }
     
+    /*
+        * Funkcija koja sluzi unoos rezultata utakmice iz uloge Moderatora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
+    
     public function dodajRezultat(){
         date_default_timezone_set('Europe/Belgrade');
         $vremeTrenutno = strtotime(date("Y-m-d\TH:i"));
@@ -262,6 +431,17 @@ class Moderator extends BaseController{
         
         $this->prikaz('upisRezultataModerator',['utakmice'=>$utakmice]);
     }
+    
+    /*
+        * Funkcija koja sluzi unoos rezultata utakmice iz uloge Moderatora
+        * 
+        * @return void
+        *
+        * Autori:
+            Marko Lisicic,
+            Nikola Marinkovic
+        
+    */
     
     public function submitRezultat(){
         date_default_timezone_set('Europe/Belgrade');

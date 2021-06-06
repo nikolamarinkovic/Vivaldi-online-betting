@@ -332,8 +332,8 @@
 <XPD:REF name="Participant">8SwDtbJO9EOfzdZAlxDuEAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">jkc9MaWYk0inWOYY8tBt0gAA</XPD:REF>
-<XPD:REF name="Views[1]">dS4y9ct3LkuqNauCl6//LAAA</XPD:REF>
-<XPD:REF name="Views[2]">78r0J+tJPU+0/Fqmm9AY3AAA</XPD:REF>
+<XPD:REF name="Views[1]">78r0J+tJPU+0/Fqmm9AY3AAA</XPD:REF>
+<XPD:REF name="Views[2]">dS4y9ct3LkuqNauCl6//LAAA</XPD:REF>
 <XPD:REF name="Views[3]">ge6k4/yOaUGiWsAk9hnXWQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="hVcPfHmKFUKas1gG98aQFwAA">
@@ -341,8 +341,8 @@
 <XPD:REF name="Participant">2HwkzTY4FE+V0huD2TJslgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">O6to1maaB06GAxi8EJvTqAAA</XPD:REF>
-<XPD:REF name="Views[1]">woE/S5d+NE+0edt7wveRqwAA</XPD:REF>
-<XPD:REF name="Views[2]">f25hBUPBME228EzLYqndfAAA</XPD:REF>
+<XPD:REF name="Views[1]">f25hBUPBME228EzLYqndfAAA</XPD:REF>
+<XPD:REF name="Views[2]">woE/S5d+NE+0edt7wveRqwAA</XPD:REF>
 <XPD:REF name="Views[3]">Dvz4rs0EdE2vXoFiOowSyQAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -359,8 +359,8 @@
 <XPD:REF name="Participant">4f6lQhyK9EmeP+H9b46zEQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">dLIhkv8IuUuu7Twkf4TYiwAA</XPD:REF>
-<XPD:REF name="Views[1]">BOJd5/v6GkawPhtXeR7vtAAA</XPD:REF>
-<XPD:REF name="Views[2]">kRRcKCi0/E2r47AsrsMyZQAA</XPD:REF>
+<XPD:REF name="Views[1]">kRRcKCi0/E2r47AsrsMyZQAA</XPD:REF>
+<XPD:REF name="Views[2]">BOJd5/v6GkawPhtXeR7vtAAA</XPD:REF>
 <XPD:REF name="Views[3]">rcXaWCrj1EG5jVL0iGhi6QAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="lOQKSvGjFkqzN9UgwoGcYwAA">
@@ -368,8 +368,8 @@
 <XPD:REF name="Participant">2HwkzTY4FE+V0huD2TJslgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">8R5POZeXxEuzATrPk19YpgAA</XPD:REF>
-<XPD:REF name="Views[1]">ddpMiKeOtkSGCE+HzdnLRwAA</XPD:REF>
-<XPD:REF name="Views[2]">OhHUHIXPEUenkUeOKF1JAwAA</XPD:REF>
+<XPD:REF name="Views[1]">OhHUHIXPEUenkUeOKF1JAwAA</XPD:REF>
+<XPD:REF name="Views[2]">ddpMiKeOtkSGCE+HzdnLRwAA</XPD:REF>
 <XPD:REF name="Views[3]">IY74OXYAT0iEoPrN82fk1wAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -435,7 +435,7 @@
 </XPD:OBJ>
 <XPD:OBJ name="FrameTypeLabel" type="LabelView" guid="QEM0YKEhP0618m0hvaMOLwAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">opt</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">seq</XPD:ATTR>
 </XPD:OBJ>
 <XPD:ATTR name="#ContainedViews" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="ContainedViews[0]" type="UMLInteractionOperandView" guid="vxd/0zqwpEaXFdP5+yzBlAAA">
@@ -465,7 +465,7 @@
 </XPD:OBJ>
 <XPD:OBJ name="FrameTypeLabel" type="LabelView" guid="lpNRXTIh0ki196WF+OHxnQAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">opt</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">seq</XPD:ATTR>
 </XPD:OBJ>
 <XPD:ATTR name="#ContainedViews" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="ContainedViews[0]" type="UMLInteractionOperandView" guid="NbsEEL7jS0SI8rXBns1G5AAA">
@@ -1015,7 +1015,7 @@
 </XPD:OBJ>
 <XPD:OBJ name="Fragments[1]" type="UMLCombinedFragment" guid="dejQlF9P0kabIc8QXC/TgAAA">
 <XPD:ATTR name="Name" type="string">Podaci ispravni</XPD:ATTR>
-<XPD:ATTR name="InteractionOperator" type="UMLInteractionOperatorKind">iokOpt</XPD:ATTR>
+<XPD:ATTR name="InteractionOperator" type="UMLInteractionOperatorKind">iokSeq</XPD:ATTR>
 <XPD:REF name="EnclosingInteractionInstanceSet">bCL+9pcejkGHGx/iXreEgQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
 <XPD:REF name="Views[0]">qJwFyjvsmEGaAI21wmCWTQAA</XPD:REF>
@@ -1029,7 +1029,7 @@
 </XPD:OBJ>
 <XPD:OBJ name="Fragments[2]" type="UMLCombinedFragment" guid="kyb0ZLDOa0KpxS2ZLYabaQAA">
 <XPD:ATTR name="Name" type="string">Neispravni podaci</XPD:ATTR>
-<XPD:ATTR name="InteractionOperator" type="UMLInteractionOperatorKind">iokOpt</XPD:ATTR>
+<XPD:ATTR name="InteractionOperator" type="UMLInteractionOperatorKind">iokSeq</XPD:ATTR>
 <XPD:REF name="EnclosingInteractionInstanceSet">bCL+9pcejkGHGx/iXreEgQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
 <XPD:REF name="Views[0]">q6Y5w3yoN0qAqmjZtLafFwAA</XPD:REF>

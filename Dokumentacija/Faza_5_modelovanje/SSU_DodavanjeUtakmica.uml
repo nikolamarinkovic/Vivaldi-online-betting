@@ -581,7 +581,7 @@
 <XPD:ATTR name="Left" type="integer">388</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">196</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">269</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">473</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[7]" type="UMLSeqStimulusView" guid="9vjs4m7X80+M9nkxTf9ypAAA">
@@ -617,7 +617,7 @@
 <XPD:ATTR name="Left" type="integer">646</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">250</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">227</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">407</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[8]" type="UMLSeqStimulusView" guid="93z2i6TjikywAfLmhin6+QAA">
@@ -770,9 +770,9 @@
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">28</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">24</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">245</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">260</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">68</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Dijagram interakcije administratora je analogan
+<XPD:ATTR name="Text" type="string">Dijagram interakcije za Administratora je analogan
 </XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[13]" type="UMLSeqStimulusView" guid="o6skc4xYwUCuW9LWKd0fQgAA">
@@ -816,7 +816,7 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">653,610;401,610</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">646,610;408,610</XPD:ATTR>
 <XPD:REF name="Model">VYylVsE8XkGtz0n7kMnMdAAA</XPD:REF>
 <XPD:REF name="Head">E5JmRqlCBUqnJREpsMKK5gAA</XPD:REF>
 <XPD:REF name="Tail">Q+2Fn2jkP0uN7LiyoKR7mgAA</XPD:REF>
@@ -842,7 +842,7 @@
 <XPD:REF name="HostEdge">iufP4u6h90aiMKVReJzeNwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="LL6+9dglHEGes/7lsYE+CgAA">
-<XPD:ATTR name="Left" type="integer">388</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">395</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">610</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
@@ -852,7 +852,7 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">388,632;213,632</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">395,632;213,632</XPD:ATTR>
 <XPD:REF name="Model">TQVkMraHGk6mz+mfuUokMwAA</XPD:REF>
 <XPD:REF name="Head">CidzLCtchUi1/ZGhSmvbzQAA</XPD:REF>
 <XPD:REF name="Tail">E5JmRqlCBUqnJREpsMKK5gAA</XPD:REF>
@@ -933,6 +933,7 @@
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[3]" type="UMLStimulus" guid="bwQCiHm2EUSHxbtovhzSYwAA">
 <XPD:ATTR name="Name" type="string">save</XPD:ATTR>
+<XPD:ATTR name="IsSpecification" type="boolean">True</XPD:ATTR>
 <XPD:ATTR name="Arguments" type="string">idGost, idDomacin, vreme, kvotaX, kvota1, kvota2</XPD:ATTR>
 <XPD:REF name="Sender">2yPi06YdREyi6KgPuPDliQAA</XPD:REF>
 <XPD:REF name="Receiver">N0S1hm5jL0mXB7h2l3gK6AAA</XPD:REF>

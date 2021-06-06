@@ -1,4 +1,13 @@
 <?php
+
+/*
+ * TiketRuletModel.php – model tiketa ruleta u bazi podataka
+*
+* @version 1.0
+    Autor:
+  *     Marko Lisicic
+*/
+
 namespace App\Models;
 use CodeIgniter\Model;
 class TiketRuletModel extends Model

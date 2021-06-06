@@ -1,4 +1,13 @@
 <?php
+
+/*
+ * Lucky6Model.php – model lucky6 igre u bazi podataka
+*
+* @version 1.0
+    Autor:
+  *     Marko Gloginja
+*/
+
 namespace App\Models;
 use CodeIgniter\Model;
 class Lucky6Model extends Model

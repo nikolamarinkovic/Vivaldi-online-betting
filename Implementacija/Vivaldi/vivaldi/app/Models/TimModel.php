@@ -1,4 +1,13 @@
 <?php
+
+/*
+ * TimModel.php – model tima u bazi podataka
+*
+* @version 1.0
+    Autor:
+  *     Nikola Marinkovic
+*/
+
 namespace App\Models;
 use CodeIgniter\Model;
 class TimModel extends Model

@@ -1,0 +1,294 @@
+TP1: Uspesno prijavljivanje na sistem korisnika
+Preduslov: Korisnik postoji u sistemu i ima svoje kredencijale (korisnicko ime, lozinku)
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+VT	4. Korisnik treba da dobije pocetnu stranu korisnika.
+
+TP2: Uspesno prijavljivanje na sistem moderatora 
+Preduslov: Korisnik postoji u sistemu i ima svoje kredencijale i mora biti moderator(korisnicko ime, lozinku)
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+VT	4. Korisnik treba da dobije pocetnu stranu moderatora
+
+TP3: Uspesno prijavljivanje na sistem administratora
+Preduslov: Korisnik postoji u sistemu i ima svoje kredencijale i mora biti moderator(korisnicko ime, lozinku)
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+VT	4. Korisnik treba da dobije pocetnu stranu administratora
+
+TP4: Neuspesno prijavljivanje na sistem korisnika,administratora ili moderatora (Korisnicko ime ne postoji u bazi)
+Preduslov: Korisnik,administrator ili moderator ne postoji u sistemu.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+VT	4. Korisnik dobija poruku da uneto korisnicko ime ne postoji u bazi.
+
+TP5: Neuspesno prijavljivanje na sistem korisnika,administratora ili moderatora (Nije uneto korisnicko ime)
+Preduslov: /
+
+	1. Korisnik unosi lozinku u polje predvidjeno za to.
+	2. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+VT	3. Korisnik dobija poruku da nije uneto korisnicko ime.
+
+TP6: Neuspesno prijavljivanje na sistem korisnika,administratora ili moderatora (Nije uneta lozinka)
+Preduslov: /
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+VT	3. Korisnik dobija poruku da nije uneta lozinka.
+
+
+TP7: Neuspesno prijavljivanje na sistem korisnika (Lozinka nije tacna)
+Preduslov: Korisnik,administrator ili moderator postoji u sistemu i ima svoje kredencijale (korisnicko ime, lozinku)
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+VT	4. Korisnik dobija poruku da uneta lozinka se ne poklapa sa korisnickim imenom u bazi, odnosno da nije tacna.
+
+TP8: Uspesna registracija korisnika
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	3. Korisnik unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Korisnik unosi ime u polje predvidjeno za to.
+	5. Korisnik unosi prezime u polje predvidjeno za to.
+	6. Korisnik unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	7. Korisnik unosi broj kartice(tacno 16 cifara) u polje predvidjeno za to.
+	8. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	9. Korisnik odlazi na stranicu prijave i dobija poruku da je registracija uspesna.
+
+TP9: Neuspesna registracija korisnika
+Preduslov: Uneto korisnicko ime vec postoji u bazi.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Korisnik unosi ime u polje predvidjeno za to.
+	5. Korisnik unosi prezime u polje predvidjeno za to.
+	6. Korisnik unosi JMBG u polje predvidjeno za to.
+	7. Korisnik unosi broj kartice u polje predvidjeno za to.
+	8. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	9. Korisnik dobija poruku da je korisnicko ime zauzeto.
+
+TP10: Neuspesna registracija korisnika
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik unosi potvrdu lozinke koja je razlicita od prethodno unete lozinke u polje predvidjeno za to.
+	4. Korisnik unosi ime u polje predvidjeno za to.
+	5. Korisnik unosi prezime u polje predvidjeno za to.
+	6. Korisnik unosi JMBG u polje predvidjeno za to.
+	7. Korisnik unosi broj kartice u polje predvidjeno za to.
+	8. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	9. Korisnik dobija poruku da se lozinke ne poklapaju.
+
+TP11: Neuspesna registracija korisnika
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku koja sadrzi manje od 8 karaktera u polje predvidjeno za to.
+	3. Korisnik unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Korisnik unosi ime u polje predvidjeno za to.
+	5. Korisnik unosi prezime u polje predvidjeno za to.
+	6. Korisnik unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	7. Korisnik unosi broj kartice(tacno 16 cifara) u polje predvidjeno za to.
+	8. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	9. Korisnik dobija poruku da lozinka mora da ima inimalno 8 karaktera.
+
+TP12: Neuspesna registracija korisnika
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	3. Korisnik unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Korisnik unosi ime u polje predvidjeno za to.
+	5. Korisnik unosi prezime u polje predvidjeno za to.
+	6. Korisnik unosi JMBG koji sadrzi manje od 13 cifara ili sadrzi karaktere ili specijalne znakove u polje predvidjeno za to.
+	7. Korisnik unosi broj kartice(tacno 16 cifara) u polje predvidjeno za to.
+	8. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	9. Korisnik dobija poruku da JMBG mora da ima tacno 13 cifara.
+
+TP13: Neuspesna registracija korisnika
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	3. Korisnik unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Korisnik unosi ime u polje predvidjeno za to.
+	5. Korisnik unosi prezime u polje predvidjeno za to.
+	6. Korisnik unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	7. Korisnik unosi broj kartice koji sadrzi manje od 16 cifara ili sadrzi karaktere ili specijalne znakove u polje predvidjeno za to.
+	8. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	9. Korisnik dobija poruku da broj kartice mora da ima tacno 16 cifara.
+
+TP14: Neuspesna registracija korisnika
+Preduslov: /
+
+	1. Korisnik unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	2. Korisnik unosi potvrdu lozinke u polje predvidjeno za to.
+	3. Korisnik unosi ime u polje predvidjeno za to.
+	4. Korisnik unosi prezime u polje predvidjeno za to.
+	5. Korisnik unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	6. Korisnik unosi broj kartice(tacno 16 cifara) u polje predvidjeno za to.
+	7. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	8. Korisnik dobija poruku da korisnicko ime nije uneto.
+
+TP15: Neuspesna registracija korisnika
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Korisnik unosi korisnicko ime predvidjeno za to.
+	2. Korisnik unosi potvrdu lozinke u polje predvidjeno za to.
+	3. Korisnik unosi ime u polje predvidjeno za to.
+	4. Korisnik unosi prezime u polje predvidjeno za to.
+	5. Korisnik unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	6. Korisnik unosi broj kartice(tacno 16 cifara) u polje predvidjeno za to.
+	7. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	8. Korisnik dobija poruku da lozinka nije uneta.
+
+TP16: Neuspesna registracija korisnika
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Korisnik unosi korisnicko ime predvidjeno za to.
+	2. Korisnik unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	3. Korisnik unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Korisnik unosi prezime u polje predvidjeno za to.
+	5. Korisnik unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	6. Korisnik unosi broj kartice(tacno 16 cifara) u polje predvidjeno za to.
+	7. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	8. Korisnik dobija poruku da ime nije uneto.
+
+TP17: Neuspesna registracija korisnika
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Korisnik unosi korisnicko ime predvidjeno za to.
+	2. Korisnik unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	3. Korisnik unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Korisnik unosi ime u polje predvidjeno za to.
+	5. Korisnik unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	6. Korisnik unosi broj kartice(tacno 16 cifara) u polje predvidjeno za to.
+	7. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	8. Korisnik dobija poruku da prezime nije uneto.
+
+TP18: Neuspesna registracija korisnika
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Korisnik unosi korisnicko ime predvidjeno za to.
+	2. Korisnik unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	3. Korisnik unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Korisnik unosi ime u polje predvidjeno za to.
+	5. Korisnik unosi prezime u polje predvidjeno za to.
+	6. Korisnik unosi broj kartice(tacno 16 cifara) u polje predvidjeno za to.
+	7. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	8. Korisnik dobija poruku da JMBG nije unet.
+
+TP19: Neuspesna registracija korisnika
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Korisnik unosi korisnicko ime predvidjeno za to.
+	2. Korisnik unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	3. Korisnik unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Korisnik unosi ime u polje predvidjeno za to.
+	5. Korisnik unosi prezime u polje predvidjeno za to.
+	6. Korisnik unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	7. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	8. Korisnik dobija poruku da broj kartice nije unet.
+
+- ovde za registraciju moderatora ili admina dodati testove!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+TP: Uspesna igra ruleta
+Preduslov: Korisnik mora imati profil i mora biti ulogovan.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+	4. Korisnik odlazi na stranicu ruleta.
+	5. Korisnik pritiska polje ili polja na koja zeli da stavi ulog koji je manji ili veci od trenutnog broja tokena pre isteka vremena.
+VT	6. Korisnik saceka da istekne vreme i u zavisnosti od ishoda bude obavesten porukom da li je dobio ili ne.
+
+(
+TP: Neuspesna igra ruleta
+Preduslov: Korisnik mora imati profil i mora biti ulogovan sa trenutnim brojem tokena 0.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+	4. Korisnik odlazi na stranicu ruleta.
+	5. Korisnik pritiska polje ili polja na koja zeli da stavi ulog pre isteka vremena.
+VT	6. Korisnik broj ulozenih tokena se nigde ne azurira jer je trenutno stanje tokena 0.
+Kako ovo testirati??????????????????????????????????????????
+)
+
+TP: Uspesna igra slota
+Preduslov: Korisnik mora imati profil i mora biti ulogovan..
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+	4. Korisnik odlazi na stranicu slota.
+	5. Korisnik podesava ulog sa mogucim poljima za dodavanje koji je manji ili jednak od trenutnog broja tokena.
+	6. Korisnik pritiska ruckicu na slot masini i ceka da izadju simboli.
+VT	7. Korisnik dobija obavestenje da li je dobio ili nije na osnovu konacnog ishoda pojavljenh simbola.
+
+TP: Neuspesna igra slota
+Preduslov: Korisnik mora imati profil i mora biti ulogovan sa trenutnim brojem tokena 0.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+	4. Korisnik odlazi na stranicu slota.
+	5. Korisnik podesava ulog sa mogucim poljima za dodavanje.
+VT	6. Mesto gde pise koliko tokena je ulozeno posle postavljanja uloga idalje ostaje 0
+
+TP: Neuspesna igra slota
+Preduslov: Korisnik mora imati profil i mora biti ulogovan.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+	4. Korisnik odlazi na stranicu slota.
+VT	5. Korisnik pritiska ruckicu od slot masine bez postavljanja uloga i dobija poruku da nije postavio ulog.
+
+TP: Uspesna igra lucky6
+Preduslov: Korisnik mora imati profil i mora biti ulogovan.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+	4. Korisnik odlazi na stranicu Lucky6
+	5. Korisnik bira 6 brojeva od ponudjenih i na mestu uplate unosi ulog koji je manji ili jedank od trenutnog broja tokena pre isteka vremena.
+VT	6. Korisnik saceka da istekne vreme i da izadju izvuceni brojevi i dobija obavestenje da li je dobio ili ne.
+
+TP: Neuspesna igra lucky6
+Preduslov: Korisnik mora imati profil i mora biti ulogovan.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+	4. Korisnik odlazi na stranicu Lucky6
+	5. Korisnik bira 6 brojeva od ponudjenih i na mestu uplate unosi ulog koji je veci od trenutnog broja tokena pre isteka vremena.
+VT	6. Korisnik saceka da istekne vreme  i dobija obavestenje da nema dovoljno tokena za ulog.
+
+TP: Neuspesna igra lucky6
+Preduslov: Korisnik mora imati profil i mora biti ulogovan.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
+	4. Korisnik odlazi na stranicu Lucky6
+	5. Korisnik bira 6 brojeva.
+VT	6. Korisnik saceka da istekne vreme i nista se nece desiti, vreme krece iz pocetka.
+
+
+
+
+

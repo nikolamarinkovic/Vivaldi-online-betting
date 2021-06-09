@@ -170,6 +170,18 @@ Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
 	7. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
 VT	8. Korisnik dobija poruku da lozinka nije uneta.
 
+TP15/1: Neuspesna registracija korisnika
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Korisnik unosi korisnicko ime predvidjeno za to.
+	2. Korisnik unosi lozinku u polje predvidjeno za to.
+	3. Korisnik unosi ime u polje predvidjeno za to.
+	4. Korisnik unosi prezime u polje predvidjeno za to.
+	5. Korisnik unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	6. Korisnik unosi broj kartice(tacno 16 cifara) u polje predvidjeno za to.
+	7. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	8. Korisnik dobija poruku da potvrda lozinke nije uneta.
+
 TP16: Neuspesna registracija korisnika
 Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
 
@@ -307,6 +319,19 @@ Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
 	7. Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
 VT	8. Administrator dobija poruku da lozinka nije uneta.
 
+TP26/1: Neuspesno dodavanje novog administratora/moderatora
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Administrator unosi korisnicko ime u polje predvidjeno za to.
+	2. Administrator unosi lozinku u polje predvidjeno za to.
+	3. Administrator unosi ime u polje predvidjeno za to.
+	4. Administrator unosi prezime u polje predvidjeno za to.
+	5. Administrator unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	6. Administrator bira tip zaposlenog (administrator ili moderator).
+	7. Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	8. Administrator dobija poruku da potvrda lozinke nije uneta.
+
+
 TP27: Neuspesno dodavanje novog administratora/moderatora
 Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
 
@@ -355,7 +380,7 @@ Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
 	7. Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
 VT	8. Administrator dobija poruku da tip zaposlenog nije izabran.
 
-TP31: Uspesna igra ruleta
+TP31: Uspesna igra ruleta!!Mora se manuelno testirati
 Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
@@ -366,7 +391,7 @@ Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 VT	6. Korisnik saceka da istekne vreme i u zavisnosti od ishoda bude obavesten porukom da li je dobio ili ne.
 
 (
-TP32: Neuspesna igra ruleta
+TP32: Neuspesna igra ruleta!!Mora se manuelno testirati
 Preduslov: Korisnik mora imati profil i mora biti ulogovan sa trenutnim brojem tokena 0.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.

@@ -66,7 +66,7 @@ Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
 	8. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
 VT	9. Korisnik odlazi na stranicu prijave i dobija poruku da je registracija uspesna.
 
-TP9: Neuspesna registracija korisnika
+TP9: Neuspesna registracija korisnika!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Nema ovog ogranicenja
 Preduslov: Uneto korisnicko ime vec postoji u bazi.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
@@ -117,6 +117,21 @@ Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
 	7. Korisnik unosi broj kartice(tacno 16 cifara) u polje predvidjeno za to.
 	8. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
 VT	9. Korisnik dobija poruku da JMBG mora da ima tacno 13 cifara.
+
+
+TP12/1: Neuspesna registracija korisnika
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
+	2. Korisnik unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	3. Korisnik unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Korisnik unosi ime u polje predvidjeno za to.
+	5. Korisnik unosi prezime u polje predvidjeno za to.
+	6. Korisnik unosi JMBG koji iz kojeg se vidi da je korisnik maloletan u polje predvidjeno za to.
+	7. Korisnik unosi broj kartice(tacno 16 cifara) u polje predvidjeno za to.
+	8. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	9. Korisnik dobija poruku da nije punoletan.
+
 
 TP13: Neuspesna registracija korisnika
 Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
@@ -577,15 +592,15 @@ Preduslov: Administrator/Moderator mora biti ulogovan.
 	8. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
 VT	9. Administrator/Moderator dobija poruku da vreme nije validno.
 
-TP52: Uspesno dodavanje utakmice
+TP52: Uspesno azuriranje kvota
 Preduslov: Administrator/Moderator mora biti ulogovan.
 
 	1. Administrator/Moderator odlazi na stranicu azuriranje kvota.
 	2. Administrator/Moderator bira u listi utakmica koju kvotu zeli da promeni i u polju upisuje novu kvotu.
 	3. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
-VT	4. Administrator/Moderator dobija poruku da je utakmica uspesno dodata.
+VT	4. Administrator/Moderator dobija poruku da su kvote uspesno azurirane.
 
-TP53: Neuspesno dodavanje utakmice
+TP53: Neuspesno azuriranje kvota
 Preduslov: Administrator/Moderator mora biti ulogovan.
 
 	1. Administrator/Moderator odlazi na stranicu azuriranje kvota.
@@ -593,7 +608,7 @@ Preduslov: Administrator/Moderator mora biti ulogovan.
 	3. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
 VT	4. Administrator/Moderator dobija poruku da kvota nije validna.
 
-TP54: Uspesno dodavanje utakmice
+TP54: Uspesno dodavanje tima
 Preduslov: Administrator/Moderator mora biti ulogovan i ime tima ne postoji u bazi.
 
 	1. Administrator/Moderator odlazi na stranicu dodavanje tima.
@@ -601,14 +616,14 @@ Preduslov: Administrator/Moderator mora biti ulogovan i ime tima ne postoji u ba
 	3. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
 VT	4. Administrator/Moderator dobija poruku da je tim uspesno dodat.
 
-TP55: Neuspesno dodavanje utakmice
+TP55: Neuspesno dodavanje tima
 Preduslov: Administrator/Moderator mora biti ulogovan.
 
 	1. Administrator/Moderator odlazi na stranicu dodavanje tima.
 	2. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
 VT	3. Administrator/Moderator dobija poruku da nije uneto ime tima.
 
-TP55: Neuspesno dodavanje utakmice
+TP55: Neuspesno dodavanje tima
 Preduslov: Administrator/Moderator mora biti ulogovan.
 
 	1. Administrator/Moderator odlazi na stranicu dodavanje tima.
@@ -624,7 +639,7 @@ Preduslov: Korisnik/Moderator/Administrator mora biti ulogovan i stara lozinka j
 	3. Korisnik/Moderator/Administrator unosi novu lozinku (minimalno 8 karaktera) u polje predvidjeno za to.
 	4. Korisnik/Moderator/Administrator unosi potvrdu lozinke u polje predvidjeno za to.
 	5. Korisnik/Moderator/Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
-VT	6. Korisnik/Moderator/Administrator dobija poruku da broj kartice nije unet.
+VT	6. Korisnik/Moderator/Administrator dobija poruku da je lozinka uspesno promenjena.
 
 TP57: Neuspesna promena lozinke Korisnika/Moderatora/Administratora
 Preduslov: Korisnik/Moderator/Administrator mora biti ulogovan.
@@ -635,44 +650,102 @@ Preduslov: Korisnik/Moderator/Administrator mora biti ulogovan.
 	4. Korisnik/Moderator/Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
 VT	5. Korisnik/Moderator/Administrator dobija poruku da stara lozinka nije uneta.
 
-TP58: Uspesna promena lozinke Korisnika/Moderatora/Administratora
+TP58: Neuspesna promena lozinke Korisnika/Moderatora/Administratora
 Preduslov: Korisnik/Moderator/Administrator mora biti ulogovan.
 
-	1. Korisnik/Moderator/Administrator odlazi na stranicu profil.
+	1. Korisnik/Moderator/Administrator odlazi na stranicu profil i stara lozinka je ispravna.
 	2. Korisnik/Moderator/Administrator unosi staru lozinku u polje predvidjeno za to.
-	4. Korisnik/Moderator/Administrator unosi potvrdu lozinke u polje predvidjeno za to.
-	5. Korisnik/Moderator/Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
-VT	6. Korisnik/Moderator/Administrator dobija poruku da nova lozinka nije uneta.
+	3. Korisnik/Moderator/Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Korisnik/Moderator/Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	5. Korisnik/Moderator/Administrator dobija poruku da nova lozinka nije uneta.
 
-TP59: Uspesna promena lozinke Korisnika/Moderatora/Administratora
-Preduslov: Korisnik/Moderator/Administrator mora biti ulogovan.
-
-	1. Korisnik/Moderator/Administrator odlazi na stranicu profil.
-	2. Korisnik/Moderator/Administrator unosi staru lozinku u polje predvidjeno za to.
-	3. Korisnik/Moderator/Administrator unosi novu lozinku (minimalno 8 karaktera) u polje predvidjeno za to.
-	4. Korisnik/Moderator/Administrator unosi potvrdu lozinke u polje predvidjeno za to.
-	5. Korisnik/Moderator/Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
-VT	6. Korisnik/Moderator/Administrator dobija poruku da broj kartice nije unet.
-
-TP56: Uspesna promena lozinke Korisnika/Moderatora/Administratora
+TP59: Neuspesna promena lozinke Korisnika/Moderatora/Administratora
 Preduslov: Korisnik/Moderator/Administrator mora biti ulogovan i stara lozinka je ispravna.
 
 	1. Korisnik/Moderator/Administrator odlazi na stranicu profil.
 	2. Korisnik/Moderator/Administrator unosi staru lozinku u polje predvidjeno za to.
 	3. Korisnik/Moderator/Administrator unosi novu lozinku (minimalno 8 karaktera) u polje predvidjeno za to.
+	4. Korisnik/Moderator/Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	5. Korisnik/Moderator/Administrator dobija poruku da potvrda lozinke nije uneta.
+
+TP60: Neuspesna promena lozinke Korisnika/Moderatora/Administratora
+Preduslov: Korisnik/Moderator/Administrator mora biti ulogovan.
+
+	1. Korisnik/Moderator/Administrator odlazi na stranicu profil.
+	2. Korisnik/Moderator/Administrator unosi staru lozinku koja nije ispravna u polje predvidjeno za to.
+	3. Korisnik/Moderator/Administrator unosi novu lozinku (minimalno 8 karaktera) u polje predvidjeno za to.
 	4. Korisnik/Moderator/Administrator unosi potvrdu lozinke u polje predvidjeno za to.
 	5. Korisnik/Moderator/Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
-VT	6. Korisnik/Moderator/Administrator dobija poruku da broj kartice nije unet.
+VT	6. Korisnik/Moderator/Administrator dobija poruku da je stara lozinka nije ispravna.
 
-TP56: Uspesna promena lozinke Korisnika/Moderatora/Administratora
+TP61: Neuspesna promena lozinke Korisnika/Moderatora/Administratora
 Preduslov: Korisnik/Moderator/Administrator mora biti ulogovan i stara lozinka je ispravna.
 
 	1. Korisnik/Moderator/Administrator odlazi na stranicu profil.
 	2. Korisnik/Moderator/Administrator unosi staru lozinku u polje predvidjeno za to.
 	3. Korisnik/Moderator/Administrator unosi novu lozinku (minimalno 8 karaktera) u polje predvidjeno za to.
-	4. Korisnik/Moderator/Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Korisnik/Moderator/Administrator unosi potvrdu lozinke koja se ne poklapa sa novom lozinkom u polje predvidjeno za to.
 	5. Korisnik/Moderator/Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
-VT	6. Korisnik/Moderator/Administrator dobija poruku da broj kartice nije unet.
+VT	6. Korisnik/Moderator/Administrator dobija poruku da se lozinke ne poklapaju.
+
+TP62: Uspesna kupovina tokena
+Preduslov: Korisnik mora biti ulogovan.
+
+	1. Korisnik odlazi na stranicu profil.
+	2. Korisnik unosi kolicinu tokena (veca od 0) koju zeli da kupi.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	4. Korisnikovo stanje tokena se uvecava za unetu kolicinu.
+
+TP63: Neuspesna kupovina tokena
+Preduslov: Korisnik mora biti ulogovan.
+
+	1. Korisnik odlazi na stranicu profil.
+	2. Korisnik unosi kolicinu tokena (manju od nule) koju zeli da kupi.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	4. Korisnik dobija poruku da kolicina tokena mora biti veca od 0.
+
+TP64: Neuspesna kupovina tokena
+Preduslov: Korisnik mora biti ulogovan.
+
+	1. Korisnik odlazi na stranicu profil.
+	2. Korisnik brise vec postavljenu vrednost tokena.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	4. Korisnik dobija poruku da kolicina tokena nije uneta.
+
+TP65: Uspesna prodaja tokena
+Preduslov: Korisnik mora biti ulogovan.
+
+	1. Korisnik odlazi na stranicu profil.
+	2. Korisnik unosi kolicinu tokena (veca od 0 i manja ili jednaka trenutnom stanju) koju zeli da proda.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	4. Korisnikovo stanje tokena se umanjuje za unetu kolicinu.
+
+TP66: Neuspesna prodaja tokena
+Preduslov: Korisnik mora biti ulogovan.
+
+	1. Korisnik odlazi na stranicu profil.
+	2. Korisnik unosi kolicinu tokena (manju od nule) koju zeli da proda.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	4. Korisnik dobija poruku da kolicina tokena mora biti veca od 0.
+
+TP67: Neuspesna prodaja tokena
+Preduslov: Korisnik mora biti ulogovan.
+
+	1. Korisnik odlazi na stranicu profil.
+	2. Korisnik brise vec postavljenu vrednost tokena.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	4. Korisnik dobija poruku da kolicina tokena nije uneta.
+
+TP68: Neuspesna prodaja tokena
+Preduslov: Korisnik mora biti ulogovan.
+
+	1. Korisnik odlazi na stranicu profil.
+	2. Korisnik unosi kolicinu tokena (vecu od trenutnog stanja) koju zeli da proda.
+	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	4. Korisnik dobija poruku da kolicina tokena mora biti manja ili jednaka trenutnom stanju.
+
+
+
 
 
 

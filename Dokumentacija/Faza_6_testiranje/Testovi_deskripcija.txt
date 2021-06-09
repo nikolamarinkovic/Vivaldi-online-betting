@@ -133,7 +133,7 @@ Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
 VT	9. Korisnik dobija poruku da nije punoletan.
 
 
-TP13: Neuspesna registracija korisnika
+TP13: Neuspesna registracija korisnika!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Nije provereno
 Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.

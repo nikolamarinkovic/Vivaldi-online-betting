@@ -403,7 +403,7 @@ VT	6. Korisnik broj ulozenih tokena se nigde ne azurira jer je trenutno stanje t
 Kako ovo testirati??????????????????????????????????????????
 )
 
-TP33: Uspesna igra slota
+TP33: Uspesna igra slota (Manuelno)
 Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
@@ -433,7 +433,7 @@ Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 	4. Korisnik odlazi na stranicu slota.
 VT	5. Korisnik pritiska ruckicu od slot masine bez postavljanja uloga i dobija poruku da nije postavio ulog.
 
-TP36: Uspesna igra lucky6
+TP36: Uspesna igra lucky6 (Manuelno)
 Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
@@ -453,7 +453,7 @@ Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 	5. Korisnik bira 6 brojeva od ponudjenih i na mestu uplate unosi ulog koji je veci od trenutnog broja tokena pre isteka vremena.
 VT	6. Korisnik saceka da istekne vreme  i dobija obavestenje da nema dovoljno tokena za ulog.
 
-TP38: Neuspesna igra lucky6
+TP38: Neuspesna igra lucky6 (Manuelno)
 Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
@@ -471,7 +471,7 @@ Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 	3. Korisnik bira za selektovane utakmice ishod meca klikom na radio button dugme.
 	4. Korisnik u polje uplata unosi iznos koji zeli da uplati pri cemu iznos mora biti manji ili jednak od njegovog trenutnog stanja tokena na racunu.
 	5. Korisnik potvrdjuje tiket pritiskom na dugme "Submit"
-VT	6. Nakon zavrsetka utakmica zaposleni upisuju rezultat i ukoliko su ishodi svih utakmica pogodjeni, njegovo stanje se uvecava za dobitak tiketa.
+VT	6. Nakon uplate dobija obavestenje za uspesnu uplatu tiketa.
 
 TP40: Neuspesna igra sportskog kladjenja
 Preduslov: Korisnik mora imati profil i mora biti ulogovan.
@@ -625,7 +625,7 @@ Preduslov: Administrator/Moderator mora biti ulogovan.
 	3. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
 VT	4. Administrator/Moderator dobija poruku da su kvote uspesno azurirane.
 
-TP53: Neuspesno azuriranje kvota
+TP53: Neuspesno azuriranje kvota (Manuelno)
 Preduslov: Administrator/Moderator mora biti ulogovan.
 
 	1. Administrator/Moderator odlazi na stranicu azuriranje kvota.

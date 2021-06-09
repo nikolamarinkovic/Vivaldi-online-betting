@@ -103,7 +103,7 @@ Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
 	6. Korisnik unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
 	7. Korisnik unosi broj kartice(tacno 16 cifara) u polje predvidjeno za to.
 	8. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
-VT	9. Korisnik dobija poruku da lozinka mora da ima inimalno 8 karaktera.
+VT	9. Korisnik dobija poruku da lozinka mora da ima minimalno 8 karaktera.
 
 TP12: Neuspesna registracija korisnika
 Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
@@ -203,9 +203,144 @@ Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
 	7. Korisnik potvrdjuje unete podatke pritiskom na dugme "Submit"
 VT	8. Korisnik dobija poruku da broj kartice nije unet.
 
-- ovde za registraciju moderatora ili admina dodati testove!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+TP20: Uspesno dodavanje novog administratora/moderatora
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
 
-TP: Uspesna igra ruleta
+	1. Administrator unosi korisnicko ime u polje predvidjeno za to.
+	2. Administrator unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	3. Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Administrator unosi ime u polje predvidjeno za to.
+	5. Administrator unosi prezime u polje predvidjeno za to.
+	6. Administrator unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	7. Administrator bira tip zaposlenog (administrator ili moderator).
+	8. Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	9. Administrator dobija poruku da je novi zaposleni uspesno dodat.
+
+TP21: Neuspesno dodavanje novog administratora/moderatora
+Preduslov: Uneto korisnicko ime vec postoji u bazi.
+
+	1. Administrator unosi korisnicko ime u polje predvidjeno za to.
+	2. Administrator unosi lozinku u polje predvidjeno za to.
+	3. Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Administrator unosi ime u polje predvidjeno za to.
+	5. Administrator unosi prezime u polje predvidjeno za to.
+	6. Administrator unosi JMBG u polje predvidjeno za to.
+	7. Administrator bira tip zaposlenog (administrator ili moderator).
+	8. Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	9. Administrator dobija poruku da je korisnicko ime zauzeto.
+
+TP22: Neuspesno dodavanje novog administratora/moderatora
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Administrator unosi korisnicko ime u polje predvidjeno za to.
+	2. Administrator unosi lozinku u polje predvidjeno za to.
+	3. Administrator unosi potvrdu lozinke koja je razlicita od prethodno unete lozinke u polje predvidjeno za to.
+	4. Administrator unosi ime u polje predvidjeno za to.
+	5. Administrator unosi prezime u polje predvidjeno za to.
+	6. Administrator unosi JMBG u polje predvidjeno za to.
+	7. Administrator bira tip zaposlenog (administrator ili moderator).
+	8. Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	9. Administrator dobija poruku da se lozinke ne poklapaju.
+
+TP23: Neuspesno dodavanje novog administratora/moderatora
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Administrator unosi korisnicko ime u polje predvidjeno za to.
+	2. Administrator unosi lozinku koja sadrzi manje od 8 karaktera u polje predvidjeno za to.
+	3. Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Administrator unosi ime u polje predvidjeno za to.
+	5. Administrator unosi prezime u polje predvidjeno za to.
+	6. Administrator unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	7. Administrator bira tip zaposlenog (administrator ili moderator).
+	8. Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	9. Administrator dobija poruku da lozinka mora da ima minimalno 8 karaktera.
+
+TP24: Neuspesno dodavanje novog administratora/moderatora
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Administrator unosi korisnicko ime u polje predvidjeno za to.
+	2. Administrator unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	3. Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Administrator unosi ime u polje predvidjeno za to.
+	5. Administrator unosi prezime u polje predvidjeno za to.
+	6. Administrator unosi JMBG koji sadrzi manje od 13 cifara ili sadrzi karaktere ili specijalne znakove u polje predvidjeno za to.
+	7. Administrator bira tip zaposlenog (administrator ili moderator).
+	8. Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	9. Administrator dobija poruku da JMBG mora da ima tacno 13 cifara.
+
+TP25: Neuspesno dodavanje novog administratora/moderatora
+Preduslov: /
+
+	1. Administrator unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	2. Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	3. Administrator unosi ime u polje predvidjeno za to.
+	4. Administrator unosi prezime u polje predvidjeno za to.
+	5. Administrator unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	6. Administrator bira tip zaposlenog (administrator ili moderator).
+	7. Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	8. Administrator dobija poruku da korisnicko ime nije uneto.
+
+TP26: Neuspesno dodavanje novog administratora/moderatora
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Administrator unosi korisnicko ime u polje predvidjeno za to.
+	2. Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	3. Administrator unosi ime u polje predvidjeno za to.
+	4. Administrator unosi prezime u polje predvidjeno za to.
+	5. Administrator unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	6. Administrator bira tip zaposlenog (administrator ili moderator).
+	7. Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	8. Administrator dobija poruku da lozinka nije uneta.
+
+TP27: Neuspesno dodavanje novog administratora/moderatora
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Administrator unosi korisnicko ime u polje predvidjeno za to.
+	2. Administrator unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	3. Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Administrator unosi prezime u polje predvidjeno za to.
+	5. Administrator unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	6. Administrator bira tip zaposlenog (administrator ili moderator).
+	7. Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	8. Administrator dobija poruku da ime nije uneto.
+
+TP28: Neuspesno dodavanje novog administratora/moderatora
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Administrator unosi korisnicko ime u polje predvidjeno za to.
+	2. Administrator unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	3. Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Administrator unosi ime u polje predvidjeno za to.
+	5. Administrator unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	6. Administrator bira tip zaposlenog (administrator ili moderator).
+	7. Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	8. Administrator dobija poruku da prezime nije uneto.
+
+TP29: Neuspesno dodavanje novog administratora/moderatora
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Administrator unosi korisnicko ime u polje predvidjeno za to.
+	2. Administrator unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	3. Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Administrator unosi ime u polje predvidjeno za to.
+	5. Administrator unosi prezime u polje predvidjeno za to.
+	6. Administrator bira tip zaposlenog (administrator ili moderator).
+	7. Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	8. Administrator dobija poruku da JMBG nije unet.
+
+TP30: Neuspesno dodavanje novog administratora/moderatora
+Preduslov: Uneto korisnicko ime ne sme vec biti u bazi.
+
+	1. Administrator unosi korisnicko ime u polje predvidjeno za to.
+	2. Administrator unosi lozinku u polje(minimalno 8 karaktera) predvidjeno za to.
+	3. Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Administrator unosi ime u polje predvidjeno za to.
+	5. Administrator unosi prezime u polje predvidjeno za to.
+	6. Administrator unosi JMBG(tacno 13 cifara) u polje predvidjeno za to.
+	7. Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	8. Administrator dobija poruku da tip zaposlenog nije izabran.
+
+TP31: Uspesna igra ruleta
 Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
@@ -216,7 +351,7 @@ Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 VT	6. Korisnik saceka da istekne vreme i u zavisnosti od ishoda bude obavesten porukom da li je dobio ili ne.
 
 (
-TP: Neuspesna igra ruleta
+TP32: Neuspesna igra ruleta
 Preduslov: Korisnik mora imati profil i mora biti ulogovan sa trenutnim brojem tokena 0.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
@@ -228,8 +363,8 @@ VT	6. Korisnik broj ulozenih tokena se nigde ne azurira jer je trenutno stanje t
 Kako ovo testirati??????????????????????????????????????????
 )
 
-TP: Uspesna igra slota
-Preduslov: Korisnik mora imati profil i mora biti ulogovan..
+TP33: Uspesna igra slota
+Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
 	2. Korisnik unosi lozinku u polje predvidjeno za to.
@@ -239,7 +374,7 @@ Preduslov: Korisnik mora imati profil i mora biti ulogovan..
 	6. Korisnik pritiska ruckicu na slot masini i ceka da izadju simboli.
 VT	7. Korisnik dobija obavestenje da li je dobio ili nije na osnovu konacnog ishoda pojavljenh simbola.
 
-TP: Neuspesna igra slota
+TP34: Neuspesna igra slota
 Preduslov: Korisnik mora imati profil i mora biti ulogovan sa trenutnim brojem tokena 0.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
@@ -249,7 +384,7 @@ Preduslov: Korisnik mora imati profil i mora biti ulogovan sa trenutnim brojem t
 	5. Korisnik podesava ulog sa mogucim poljima za dodavanje.
 VT	6. Mesto gde pise koliko tokena je ulozeno posle postavljanja uloga idalje ostaje 0
 
-TP: Neuspesna igra slota
+TP35: Neuspesna igra slota
 Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
@@ -258,17 +393,17 @@ Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 	4. Korisnik odlazi na stranicu slota.
 VT	5. Korisnik pritiska ruckicu od slot masine bez postavljanja uloga i dobija poruku da nije postavio ulog.
 
-TP: Uspesna igra lucky6
+TP36: Uspesna igra lucky6
 Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
 	2. Korisnik unosi lozinku u polje predvidjeno za to.
 	3. Korisnik potvrdjuje unete podatke pritiskom na dugme "Prijavi se"
 	4. Korisnik odlazi na stranicu Lucky6
-	5. Korisnik bira 6 brojeva od ponudjenih i na mestu uplate unosi ulog koji je manji ili jedank od trenutnog broja tokena pre isteka vremena.
+	5. Korisnik bira 6 brojeva od ponudjenih i na mestu uplate unosi ulog koji je manji ili jednak od trenutnog broja tokena pre isteka vremena.
 VT	6. Korisnik saceka da istekne vreme i da izadju izvuceni brojevi i dobija obavestenje da li je dobio ili ne.
 
-TP: Neuspesna igra lucky6
+TP37: Neuspesna igra lucky6
 Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
@@ -278,7 +413,7 @@ Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 	5. Korisnik bira 6 brojeva od ponudjenih i na mestu uplate unosi ulog koji je veci od trenutnog broja tokena pre isteka vremena.
 VT	6. Korisnik saceka da istekne vreme  i dobija obavestenje da nema dovoljno tokena za ulog.
 
-TP: Neuspesna igra lucky6
+TP38: Neuspesna igra lucky6
 Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 
 	1. Korisnik unosi korisnicko ime u polje predvidjeno za to.
@@ -287,6 +422,264 @@ Preduslov: Korisnik mora imati profil i mora biti ulogovan.
 	4. Korisnik odlazi na stranicu Lucky6
 	5. Korisnik bira 6 brojeva.
 VT	6. Korisnik saceka da istekne vreme i nista se nece desiti, vreme krece iz pocetka.
+
+TP39: Uspesna igra sportskog kladjenja
+Preduslov: Korisnik mora imati profil i mora biti ulogovan.
+
+	1. Korisnik odlazi na stranicu sportsko kladjenje.
+	2. Korisnik selektuje utakmice koje zeli da igra klikom na checkbox dugme.
+	3. Korisnik bira za selektovane utakmice ishod meca klikom na radio button dugme.
+	4. Korisnik u polje uplata unosi iznos koji zeli da uplati pri cemu iznos mora biti manji ili jednak od njegovog trenutnog stanja tokena na racunu.
+	5. Korisnik potvrdjuje tiket pritiskom na dugme "Submit"
+VT	6. Nakon zavrsetka utakmica zaposleni upisuju rezultat i ukoliko su ishodi svih utakmica pogodjeni, njegovo stanje se uvecava za dobitak tiketa.
+
+TP40: Neuspesna igra sportskog kladjenja
+Preduslov: Korisnik mora imati profil i mora biti ulogovan.
+
+	1. Korisnik odlazi na stranicu sportsko kladjenje.
+	2. Korisnik bira ishod meca klikom na radio button dugme.
+	3. Korisnik u polje uplata unosi iznos koji zeli da uplati pri cemu iznos mora biti manji ili jednak od njegovog trenutnog stanja tokena na racunu.
+	4. Korisnik potvrdjuje tiket pritiskom na dugme "Submit".
+VT	5. Korisnik dobija poruku da nijedna utakmica nije izabrana.
+
+TP41: Neuspesna igra sportskog kladjenja
+Preduslov: Korisnik mora imati profil i mora biti ulogovan.
+
+	1. Korisnik odlazi na stranicu sportsko kladjenje.
+	2. Korisnik selektuje utakmice koje zeli da igra klikom na checkbox dugme.
+	3. Korisnik u polje uplata unosi iznos koji zeli da uplati pri cemu iznos mora biti manji ili jednak od njegovog trenutnog stanja tokena na racunu.
+	4. Korisnik potvrdjuje tiket pritiskom na dugme "Submit".
+VT	5. Korisnik dobija poruku da nijedna utakmica nije izabrana.
+
+TP42: Neuspesna igra sportskog kladjenja
+Preduslov: Korisnik mora imati profil i mora biti ulogovan.
+
+	1. Korisnik odlazi na stranicu sportsko kladjenje.
+	2. Korisnik selektuje utakmice koje zeli da igra klikom na checkbox dugme.
+	3. Korisnik bira za selektovane utakmice ishod meca klikom na radio button dugme.
+	4. Korisnik u polje uplata unosi iznos koji je veci od trenutnog stanja tokena.
+	5. Korisnik potvrdjuje tiket pritiskom na dugme "Submit".
+VT	6. Korisnik dobija poruku da nema dovoljan broj tokena.
+
+TP43: Uspesno dodavanje utakmice
+Preduslov: Administrator/Moderator mora biti ulogovan.
+
+	1. Administrator/Moderator odlazi na stranicu dodavanje utakmice.
+	2. Administrator/Moderator bira domacina iz padajuce liste.
+	3. Administrator/Moderator bira gosta koji nije isti tim kao domacin iz padajuce liste.
+	4. Administrator/Moderator upisuje kvotu za ishod 1.
+	5. Administrator/Moderator upisuje kvotu za ishod X.
+	6. Administrator/Moderator upisuje kvotu za ishod 2.
+	7. Administrator/Moderator bira datum i vreme utakmice iz kalendara.
+	8. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
+VT	9. Administrator/Moderator dobija poruku da je utakmica uspesno dodata.
+
+TP44: Neuspesno dodavanje utakmice
+Preduslov: Administrator/Moderator mora biti ulogovan.
+
+	1. Administrator/Moderator odlazi na stranicu dodavanje utakmice.
+	2. Administrator/Moderator bira domacina iz padajuce liste.
+	3. Administrator/Moderator bira gosta koji je isti tim kao domacin iz padajuce liste.
+	4. Administrator/Moderator upisuje kvotu za ishod 1.
+	5. Administrator/Moderator upisuje kvotu za ishod X.
+	6. Administrator/Moderator upisuje kvotu za ishod 2.
+	7. Administrator/Moderator bira datum i vreme utakmice iz kalendara.
+	8. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
+VT	9. Administrator/Moderator dobija poruku da timovi moraju biti razliciti.
+
+TP45: Neuspesno dodavanje utakmice
+Preduslov: Administrator/Moderator mora biti ulogovan.
+
+	1. Administrator/Moderator odlazi na stranicu dodavanje utakmice.
+	2. Administrator/Moderator bira domacina iz padajuce liste.
+	3. Administrator/Moderator bira gosta koji nije isti tim kao domacin iz padajuce liste.
+	5. Administrator/Moderator upisuje kvotu za ishod X.
+	6. Administrator/Moderator upisuje kvotu za ishod 2.
+	7. Administrator/Moderator bira datum i vreme utakmice iz kalendara.
+	8. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
+VT	9. Administrator/Moderator dobija poruku da mora upisati kvotu 1.
+
+TP46: Neuspesno dodavanje utakmice
+Preduslov: Administrator/Moderator mora biti ulogovan.
+
+	1. Administrator/Moderator odlazi na stranicu dodavanje utakmice.
+	2. Administrator/Moderator bira domacina iz padajuce liste.
+	3. Administrator/Moderator bira gosta koji nije isti tim kao domacin iz padajuce liste.
+	4. Administrator/Moderator upisuje kvotu za ishod 1.
+	6. Administrator/Moderator upisuje kvotu za ishod 2.
+	7. Administrator/Moderator bira datum i vreme utakmice iz kalendara.
+	8. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
+VT	9. Administrator/Moderator dobija poruku da mora upisati kvotu X.
+
+
+TP47: Neuspesno dodavanje utakmice
+Preduslov: Administrator/Moderator mora biti ulogovan.
+
+	1. Administrator/Moderator odlazi na stranicu dodavanje utakmice.
+	2. Administrator/Moderator bira domacina iz padajuce liste.
+	3. Administrator/Moderator bira gosta koji nije isti tim kao domacin iz padajuce liste.
+	4. Administrator/Moderator upisuje kvotu za ishod 1.
+	5. Administrator/Moderator upisuje kvotu za ishod X.
+	7. Administrator/Moderator bira datum i vreme utakmice iz kalendara.
+	8. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
+VT	9. Administrator/Moderator dobija poruku da mora upisati kvotu 2.
+
+
+TP48: Neuspesno dodavanje utakmice
+Preduslov: Administrator/Moderator mora biti ulogovan.
+
+	1. Administrator/Moderator odlazi na stranicu dodavanje utakmice.
+	2. Administrator/Moderator bira domacina iz padajuce liste.
+	3. Administrator/Moderator bira gosta koji nije isti tim kao domacin iz padajuce liste.
+	4. Administrator/Moderator upisuje kvotu za ishod 1.
+	5. Administrator/Moderator upisuje kvotu za ishod X.
+	6. Administrator/Moderator upisuje kvotu za ishod 2.
+	8. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
+VT	9. Administrator/Moderator dobija poruku da mora izabrati vreme.
+
+
+TP49: Neuspesno dodavanje utakmice
+Preduslov: Administrator/Moderator mora biti ulogovan.
+
+	1. Administrator/Moderator odlazi na stranicu dodavanje utakmice.
+	2. Administrator/Moderator bira domacina iz padajuce liste.
+	3. Administrator/Moderator bira gosta koji nije isti tim kao domacin iz padajuce liste.
+	4. Administrator/Moderator upisuje kvotu za ishod 1.
+	5. Administrator/Moderator upisuje kvotu manju od 1 za ishod X.
+	6. Administrator/Moderator upisuje kvotu za ishod 2.
+	7. Administrator/Moderator bira datum i vreme utakmice iz kalendara.
+	8. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
+VT	9. Administrator/Moderator dobija poruku da kvota mora biti veca od 1.
+
+TP50: Neuspesno dodavanje utakmice
+Preduslov: Administrator/Moderator mora biti ulogovan.
+
+	1. Administrator/Moderator odlazi na stranicu dodavanje utakmice.
+	2. Administrator/Moderator bira domacina iz padajuce liste.
+	3. Administrator/Moderator bira gosta koji nije isti tim kao domacin iz padajuce liste.
+	4. Administrator/Moderator upisuje kvotu za ishod 1.
+	5. Administrator/Moderator upisuje kvotu za ishod X.
+	6. Administrator/Moderator upisuje kvotu manju od 1 za ishod 2.
+	7. Administrator/Moderator bira datum i vreme utakmice iz kalendara.
+	8. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
+VT	9. Administrator/Moderator dobija poruku da kvota mora biti veca od 1.
+
+TP51: Neuspesno dodavanje utakmice
+Preduslov: Administrator/Moderator mora biti ulogovan.
+
+	1. Administrator/Moderator odlazi na stranicu dodavanje utakmice.
+	2. Administrator/Moderator bira domacina iz padajuce liste.
+	3. Administrator/Moderator bira gosta koji nije isti tim kao domacin iz padajuce liste.
+	4. Administrator/Moderator upisuje kvotu manju od 1 za ishod 1.
+	5. Administrator/Moderator upisuje kvotu za ishod X.
+	6. Administrator/Moderator upisuje kvotu za ishod 2.
+	7. Administrator/Moderator bira datum i vreme koji su prosli iz kalendara.
+	8. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
+VT	9. Administrator/Moderator dobija poruku da vreme nije validno.
+
+TP52: Uspesno dodavanje utakmice
+Preduslov: Administrator/Moderator mora biti ulogovan.
+
+	1. Administrator/Moderator odlazi na stranicu azuriranje kvota.
+	2. Administrator/Moderator bira u listi utakmica koju kvotu zeli da promeni i u polju upisuje novu kvotu.
+	3. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
+VT	4. Administrator/Moderator dobija poruku da je utakmica uspesno dodata.
+
+TP53: Neuspesno dodavanje utakmice
+Preduslov: Administrator/Moderator mora biti ulogovan.
+
+	1. Administrator/Moderator odlazi na stranicu azuriranje kvota.
+	2. Administrator/Moderator bira u listi utakmica koju kvotu zeli da promeni i u polju upisuje novu kvotu koja je manja od 1.
+	3. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
+VT	4. Administrator/Moderator dobija poruku da kvota nije validna.
+
+TP54: Uspesno dodavanje utakmice
+Preduslov: Administrator/Moderator mora biti ulogovan i ime tima ne postoji u bazi.
+
+	1. Administrator/Moderator odlazi na stranicu dodavanje tima.
+	2. Administrator/Moderator upisuje ime tima.
+	3. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
+VT	4. Administrator/Moderator dobija poruku da je tim uspesno dodat.
+
+TP55: Neuspesno dodavanje utakmice
+Preduslov: Administrator/Moderator mora biti ulogovan.
+
+	1. Administrator/Moderator odlazi na stranicu dodavanje tima.
+	2. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
+VT	3. Administrator/Moderator dobija poruku da nije uneto ime tima.
+
+TP55: Neuspesno dodavanje utakmice
+Preduslov: Administrator/Moderator mora biti ulogovan.
+
+	1. Administrator/Moderator odlazi na stranicu dodavanje tima.
+	2. Administrator/Moderator upisuje ime tima.
+	3. Administrator/Moderator potvrdjuje podatke pritiskom na dugme "Submit".
+VT	4. Administrator/Moderator dobija poruku da je ime tima vec postoji.
+
+TP56: Uspesna promena lozinke Korisnika/Moderatora/Administratora
+Preduslov: Korisnik/Moderator/Administrator mora biti ulogovan i stara lozinka je ispravna.
+
+	1. Korisnik/Moderator/Administrator odlazi na stranicu profil.
+	2. Korisnik/Moderator/Administrator unosi staru lozinku u polje predvidjeno za to.
+	3. Korisnik/Moderator/Administrator unosi novu lozinku (minimalno 8 karaktera) u polje predvidjeno za to.
+	4. Korisnik/Moderator/Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	5. Korisnik/Moderator/Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	6. Korisnik/Moderator/Administrator dobija poruku da broj kartice nije unet.
+
+TP57: Neuspesna promena lozinke Korisnika/Moderatora/Administratora
+Preduslov: Korisnik/Moderator/Administrator mora biti ulogovan.
+
+	1. Korisnik/Moderator/Administrator odlazi na stranicu profil.
+	2. Korisnik/Moderator/Administrator unosi novu lozinku (minimalno 8 karaktera) u polje predvidjeno za to.
+	3. Korisnik/Moderator/Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	4. Korisnik/Moderator/Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	5. Korisnik/Moderator/Administrator dobija poruku da stara lozinka nije uneta.
+
+TP58: Uspesna promena lozinke Korisnika/Moderatora/Administratora
+Preduslov: Korisnik/Moderator/Administrator mora biti ulogovan.
+
+	1. Korisnik/Moderator/Administrator odlazi na stranicu profil.
+	2. Korisnik/Moderator/Administrator unosi staru lozinku u polje predvidjeno za to.
+	4. Korisnik/Moderator/Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	5. Korisnik/Moderator/Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	6. Korisnik/Moderator/Administrator dobija poruku da nova lozinka nije uneta.
+
+TP59: Uspesna promena lozinke Korisnika/Moderatora/Administratora
+Preduslov: Korisnik/Moderator/Administrator mora biti ulogovan.
+
+	1. Korisnik/Moderator/Administrator odlazi na stranicu profil.
+	2. Korisnik/Moderator/Administrator unosi staru lozinku u polje predvidjeno za to.
+	3. Korisnik/Moderator/Administrator unosi novu lozinku (minimalno 8 karaktera) u polje predvidjeno za to.
+	4. Korisnik/Moderator/Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	5. Korisnik/Moderator/Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	6. Korisnik/Moderator/Administrator dobija poruku da broj kartice nije unet.
+
+TP56: Uspesna promena lozinke Korisnika/Moderatora/Administratora
+Preduslov: Korisnik/Moderator/Administrator mora biti ulogovan i stara lozinka je ispravna.
+
+	1. Korisnik/Moderator/Administrator odlazi na stranicu profil.
+	2. Korisnik/Moderator/Administrator unosi staru lozinku u polje predvidjeno za to.
+	3. Korisnik/Moderator/Administrator unosi novu lozinku (minimalno 8 karaktera) u polje predvidjeno za to.
+	4. Korisnik/Moderator/Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	5. Korisnik/Moderator/Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	6. Korisnik/Moderator/Administrator dobija poruku da broj kartice nije unet.
+
+TP56: Uspesna promena lozinke Korisnika/Moderatora/Administratora
+Preduslov: Korisnik/Moderator/Administrator mora biti ulogovan i stara lozinka je ispravna.
+
+	1. Korisnik/Moderator/Administrator odlazi na stranicu profil.
+	2. Korisnik/Moderator/Administrator unosi staru lozinku u polje predvidjeno za to.
+	3. Korisnik/Moderator/Administrator unosi novu lozinku (minimalno 8 karaktera) u polje predvidjeno za to.
+	4. Korisnik/Moderator/Administrator unosi potvrdu lozinke u polje predvidjeno za to.
+	5. Korisnik/Moderator/Administrator potvrdjuje unete podatke pritiskom na dugme "Submit"
+VT	6. Korisnik/Moderator/Administrator dobija poruku da broj kartice nije unet.
+
+
+
+
+
+
+
 
 
 

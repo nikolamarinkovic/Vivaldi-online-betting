@@ -1,0 +1,1 @@
+Lozinke svih korisnika/moderatora/administratora su 12345678 (njihovi usenamovi su u bazi,sifre su enkriptovane)
